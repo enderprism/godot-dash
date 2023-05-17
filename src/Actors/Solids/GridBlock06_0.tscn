@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/levelTextures/solid/Blocks/GridBlocks/GridBlock06.webp" type="Texture" id=2]
+
+[node name="GridBlock06_0" type="StaticBody2D"]
+collision_layer = 8
+
+[node name="GridBlock06" type="Sprite" parent="."]
+texture = ExtResource( 2 )

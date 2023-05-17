@@ -1,0 +1,230 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://src/Scenes/Levels/Level.gd" type="Script" id=1]
+[ext_resource path="res://src/Actors/TriggerTemplates/NormalTrigger.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Actors/Pads/BluePad.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Actors/Solids/RegularBlock.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/audio/levels/Explorers.mp3" type="AudioStream" id=5]
+[ext_resource path="res://src/Actors/TriggerTemplates/TouchTrigger.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/Actors/Orbs/GreenDashOrb.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/Actors/Portals/MiniSizePortal.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/Actors/Portals/SwingcopterPortal.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/Actors/Hazards/RegularSpike01_0.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/Actors/Portals/ShipPortal.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/Actors/Portals/Speed Portals/SpeedPortal4x.tscn" type="PackedScene" id=12]
+[ext_resource path="res://src/Actors/Pads/YellowPad.tscn" type="PackedScene" id=13]
+[ext_resource path="res://src/Actors/AreaTriggers/JBlock.tscn" type="PackedScene" id=14]
+[ext_resource path="res://src/Actors/Orbs/SpiderOrb.tscn" type="PackedScene" id=15]
+[ext_resource path="res://src/Actors/Portals/NormalSizePortal.tscn" type="PackedScene" id=16]
+[ext_resource path="res://src/Actors/Orbs/BlueOrb.tscn" type="PackedScene" id=17]
+[ext_resource path="res://src/Scenes/LevelEnd.tscn" type="PackedScene" id=18]
+[ext_resource path="res://src/Actors/Portals/GravityPortalA_0.tscn" type="PackedScene" id=19]
+[ext_resource path="res://src/Actors/Orbs/RedOrb.tscn" type="PackedScene" id=20]
+[ext_resource path="res://src/Actors/Portals/ExitTeleportal.tscn" type="PackedScene" id=21]
+[ext_resource path="res://src/Actors/Portals/Teleportal.tscn" type="PackedScene" id=22]
+[ext_resource path="res://src/Actors/Portals/GravityPortalB_0.tscn" type="PackedScene" id=23]
+[ext_resource path="res://src/Actors/Portals/CubePortal.tscn" type="PackedScene" id=24]
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 1 )
+level_music = ExtResource( 5 )
+platformer = true
+
+[node name="NormalTrigger" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1708, -61 )
+target_path = "PLAYER"
+property = "arrow_trigger_direction"
+value = [ Vector2( -1, 0 ), Vector2( 0, 0 ) ]
+one_time = true
+
+[node name="Random" parent="." instance=ExtResource( 2 )]
+position = Vector2( -427, -61 )
+property = "random"
+value = [ false, PoolVector2Array( 0, 20, 10, 50, 50, 85, 85, 100 ) ]
+
+[node name="RandomGroups" type="Node2D" parent="Random"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Node2D" type="Node2D" parent="Random/RandomGroups"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="RedOrb" parent="Random/RandomGroups/Node2D" instance=ExtResource( 20 )]
+position = Vector2( -610, -244 )
+
+[node name="Node2D2" type="Node2D" parent="Random/RandomGroups"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="RedOrb2" parent="Random/RandomGroups/Node2D2" instance=ExtResource( 20 )]
+position = Vector2( -305, -244 )
+
+[node name="Node2D3" type="Node2D" parent="Random/RandomGroups"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="RedOrb3" parent="Random/RandomGroups/Node2D3" instance=ExtResource( 20 )]
+position = Vector2( 0, -244 )
+
+[node name="Node2D4" type="Node2D" parent="Random/RandomGroups"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="RedOrb4" parent="Random/RandomGroups/Node2D4" instance=ExtResource( 20 )]
+position = Vector2( 244, -244 )
+
+[node name="RegularBlock" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2379, -1220 )
+rotation = -1.5708
+scale = Vector2( 20, 1 )
+
+[node name="RegularBlock2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1403, -1464 )
+rotation = -1.5708
+scale = Vector2( 20, 1 )
+
+[node name="RegularBlock3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1403, -1464 )
+rotation = -1.5708
+scale = Vector2( 20, 1 )
+
+[node name="RegularBlock4" parent="." instance=ExtResource( 4 )]
+position = Vector2( -1830, -1220 )
+rotation = 1.5708
+scale = Vector2( 20, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 2379, 0 )
+
+[node name="SpiderOrb" parent="." instance=ExtResource( 15 )]
+position = Vector2( 2013, -305 )
+scale = Vector2( 2, 2 )
+
+[node name="TouchTrigger" parent="." instance=ExtResource( 6 )]
+position = Vector2( 2745, -2745 )
+scale = Vector2( 2, 2 )
+target_path = "PLAYER"
+property = "arrow_trigger_direction"
+value = [ Vector2( 0, -1 ), Vector2( 0, 0 ) ]
+
+[node name="TouchTrigger2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 2440, -2745 )
+scale = Vector2( 2, 2 )
+target_path = "PLAYERCAMERA"
+duration = 0.5
+property = "rotation_degrees"
+value = [ 0.0, Vector2( 0, 0 ) ]
+easing_type = 2
+easing_curve = 3
+
+[node name="CameraRotate" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1525, -244 )
+rotation = -3.14159
+target_path = "PLAYERCAMERA"
+duration = 0.5
+property = "rotation_degrees"
+value = [ -90.0, Vector2( 0, 0 ) ]
+easing_type = 2
+easing_curve = 3
+
+[node name="YellowPad2" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1281, -549 )
+rotation = -1.57079
+scale = Vector2( 5, 1 )
+reverse = true
+
+[node name="YellowPad3" parent="." instance=ExtResource( 13 )]
+position = Vector2( -1342, -488 )
+rotation = -4.71238
+scale = Vector2( 5, 5 )
+reverse = true
+
+[node name="MiniSizePortal" parent="." instance=ExtResource( 8 )]
+position = Vector2( -1464, -915 )
+
+[node name="NormalSizePortal" parent="MiniSizePortal" instance=ExtResource( 16 )]
+position = Vector2( 2684, 0 )
+
+[node name="GreenDashOrb" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1952, -1159 )
+rotation = -1.57079
+
+[node name="SwingcopterPortal_0" parent="." instance=ExtResource( 9 )]
+position = Vector2( -61, 427 )
+
+[node name="BluePad" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2501, 244 )
+rotation = -1.57079
+reverse = true
+
+[node name="RegularSpike01_0" parent="." instance=ExtResource( 10 )]
+position = Vector2( 2196, -976 )
+rotation = -1.57079
+scale = Vector2( 2, 2 )
+
+[node name="GravityPortalA_0" parent="." instance=ExtResource( 19 )]
+position = Vector2( 1342, 183 )
+
+[node name="ShipPortal_0" parent="." instance=ExtResource( 11 )]
+position = Vector2( 122, -183 )
+
+[node name="SpeedPortal4x_0" parent="." instance=ExtResource( 12 )]
+position = Vector2( 1281, 183 )
+
+[node name="YellowPad" parent="." instance=ExtResource( 13 )]
+position = Vector2( 3050, 244 )
+reverse = true
+
+[node name="JBlock" parent="." instance=ExtResource( 14 )]
+position = Vector2( 2257, -61 )
+
+[node name="JBlock2" parent="." instance=ExtResource( 14 )]
+position = Vector2( 2257, -183 )
+
+[node name="JBlock3" parent="." instance=ExtResource( 14 )]
+position = Vector2( 2257, -305 )
+
+[node name="JBlock4" parent="." instance=ExtResource( 14 )]
+position = Vector2( 1525, -305 )
+
+[node name="JBlock5" parent="." instance=ExtResource( 14 )]
+position = Vector2( 1525, -427 )
+
+[node name="JBlock6" parent="." instance=ExtResource( 14 )]
+position = Vector2( 1525, -549 )
+
+[node name="BlueOrb" parent="." instance=ExtResource( 17 )]
+position = Vector2( 427, -61 )
+
+[node name="GravityPortalB_0" parent="." instance=ExtResource( 23 )]
+position = Vector2( 3172, -549 )
+rotation = -1.57079
+
+[node name="Teleportal" parent="." instance=ExtResource( 22 )]
+position = Vector2( -305, -732 )
+rotation = -1.57079
+
+[node name="ExitTeleportal" parent="Teleportal" instance=ExtResource( 21 )]
+position = Vector2( -304.992, 3477 )
+
+[node name="LevelEnd" parent="." instance=ExtResource( 18 )]
+position = Vector2( 7015, -671 )
+
+[node name="RegularBlock5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 4392, -549 )
+scale = Vector2( 10, 1 )
+
+[node name="CubePortal_0" parent="." instance=ExtResource( 24 )]
+position = Vector2( 3538, -122 )
+
+[node name="SpiderOrb2" parent="." instance=ExtResource( 15 )]
+position = Vector2( 4026, -61 )
+
+[node name="SpiderOrb3" parent="." instance=ExtResource( 15 )]
+position = Vector2( 4697, -427 )

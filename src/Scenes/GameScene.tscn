@@ -1,0 +1,348 @@
+[gd_scene load_steps=64 format=2]
+
+[ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Scenes/Levels/Level1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/audio/levels/Amp It Up.mp3" type="AudioStream" id=3]
+[ext_resource path="res://src/Scenes/Levels/Trigger Test.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Scenes/Levels/TestLevel.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Scenes/PauseMenu.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/Actors/Ground.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/Scenes/BackgroundKillZone.gd" type="Script" id=8]
+[ext_resource path="res://src/Actors/Background.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/playerTextures/Spider Dash/spiderDash_007.png" type="Texture" id=10]
+[ext_resource path="res://assets/playerTextures/Spider Dash/spiderDash_006.png" type="Texture" id=11]
+[ext_resource path="res://src/Scenes/Levels/Level.gd" type="Script" id=12]
+[ext_resource path="res://src/Scenes/Levels/Level2.tscn" type="PackedScene" id=13]
+[ext_resource path="res://src/Scenes/LevelScene.gd" type="Script" id=14]
+[ext_resource path="res://assets/playerTextures/Spider Dash/spiderDash_001.png" type="Texture" id=15]
+[ext_resource path="res://assets/playerTextures/Spider Dash/spiderDash_004.png" type="Texture" id=16]
+[ext_resource path="res://assets/playerTextures/Spider Dash/spiderDash_005.png" type="Texture" id=17]
+[ext_resource path="res://assets/playerTextures/Spider Dash/spiderDash_002.png" type="Texture" id=18]
+[ext_resource path="res://assets/playerTextures/Spider Dash/spiderDash_008.png" type="Texture" id=19]
+[ext_resource path="res://assets/playerTextures/Spider Dash/spiderDash_003.png" type="Texture" id=20]
+[ext_resource path="res://src/Actors/SpiderDash.gd" type="Script" id=21]
+[ext_resource path="res://src/Scenes/Levels/SlopeDemo.tscn" type="PackedScene" id=22]
+[ext_resource path="res://assets/audio/levels/Never Gonna Give You Up.mp3" type="AudioStream" id=23]
+[ext_resource path="res://src/Scenes/Levels/Explorers.tscn" type="PackedScene" id=24]
+[ext_resource path="res://src/Scenes/Levels/ArrowTriggerTest.tscn" type="PackedScene" id=25]
+[ext_resource path="res://assets/playerTextures/DashBoom/playerDash2_boom2_008.png" type="Texture" id=26]
+[ext_resource path="res://assets/playerTextures/DashBoom/playerDash2_boom2_006.png" type="Texture" id=27]
+[ext_resource path="res://assets/playerTextures/DashBoom/playerDash2_boom2_003.png" type="Texture" id=28]
+[ext_resource path="res://assets/playerTextures/DashBoom/playerDash2_boom2_001.png" type="Texture" id=29]
+[ext_resource path="res://assets/playerTextures/DashBoom/playerDash2_boom2_004.png" type="Texture" id=30]
+[ext_resource path="res://assets/playerTextures/DashBoom/playerDash2_boom2_005.png" type="Texture" id=31]
+[ext_resource path="res://src/Actors/DashBoom.gd" type="Script" id=32]
+[ext_resource path="res://assets/playerTextures/DashBoom/playerDash2_boom2_009.png" type="Texture" id=33]
+[ext_resource path="res://assets/playerTextures/DashBoom/playerDash2_boom2_007.png" type="Texture" id=34]
+[ext_resource path="res://assets/playerTextures/DashBoom/playerDash2_boom2_002.png" type="Texture" id=35]
+[ext_resource path="res://assets/playerTextures/DeathEffect/playerExplosion_13_004.png" type="Texture" id=36]
+[ext_resource path="res://assets/playerTextures/DeathEffect/playerExplosion_13_012.png" type="Texture" id=37]
+[ext_resource path="res://assets/playerTextures/DeathEffect/playerExplosion_13_002.png" type="Texture" id=38]
+[ext_resource path="res://src/Actors/DeathEffect.gd" type="Script" id=39]
+[ext_resource path="res://assets/playerTextures/DeathEffect/playerExplosion_13_008.png" type="Texture" id=40]
+[ext_resource path="res://assets/playerTextures/DeathEffect/playerExplosion_13_009.png" type="Texture" id=41]
+[ext_resource path="res://assets/playerTextures/DeathEffect/playerExplosion_13_005.png" type="Texture" id=42]
+[ext_resource path="res://assets/playerTextures/DeathEffect/playerExplosion_13_006.png" type="Texture" id=43]
+[ext_resource path="res://assets/playerTextures/DeathEffect/playerExplosion_13_007.png" type="Texture" id=44]
+[ext_resource path="res://assets/playerTextures/DeathEffect/playerExplosion_13_010.png" type="Texture" id=45]
+[ext_resource path="res://assets/playerTextures/DeathEffect/playerExplosion_13_001.png" type="Texture" id=46]
+[ext_resource path="res://assets/playerTextures/DeathEffect/playerExplosion_13_011.png" type="Texture" id=47]
+[ext_resource path="res://assets/playerTextures/DeathEffect/playerExplosion_13_003.png" type="Texture" id=48]
+[ext_resource path="res://assets/levelTextures/ground/floorLine_001.png" type="Texture" id=49]
+[ext_resource path="res://src/Scenes/Line.gd" type="Script" id=50]
+[ext_resource path="res://src/Actors/Trail.gd" type="Script" id=51]
+[ext_resource path="res://src/GUI Elements/InLevelGUI.tscn" type="PackedScene" id=52]
+[ext_resource path="res://src/Scenes/Levels/SpiderTests.tscn" type="PackedScene" id=54]
+
+[sub_resource type="CanvasItemMaterial" id=5]
+blend_mode = 1
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 15 ), ExtResource( 18 ), ExtResource( 20 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 19 ), null ],
+"loop": false,
+"name": "default",
+"speed": 30.0
+} ]
+
+[sub_resource type="CanvasItemMaterial" id=6]
+blend_mode = 1
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ null, ExtResource( 29 ), ExtResource( 35 ), ExtResource( 28 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 27 ), ExtResource( 34 ), ExtResource( 26 ), ExtResource( 33 ), null ],
+"loop": false,
+"name": "default",
+"speed": 30.0
+} ]
+
+[sub_resource type="Gradient" id=11]
+offsets = PoolRealArray( 0, 0.152091 )
+colors = PoolColorArray( 0, 1, 1, 0, 0, 1, 1, 1 )
+
+[sub_resource type="Gradient" id=13]
+offsets = PoolRealArray( 0, 0.152091 )
+colors = PoolColorArray( 0, 1, 1, 0, 0, 1, 0, 1 )
+
+[sub_resource type="CanvasItemMaterial" id=9]
+blend_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id=8]
+blend_mode = 1
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ ExtResource( 46 ), ExtResource( 38 ), ExtResource( 48 ), ExtResource( 36 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 45 ), ExtResource( 47 ), ExtResource( 37 ), null ],
+"loop": false,
+"name": "DeathEffect",
+"speed": 30.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 3072, 11 )
+
+[node name="Scene" type="Node2D"]
+script = ExtResource( 14 )
+levels = [ "Level1", "Playground", "Trigger Test", "SlopeDemo", "ArrowTriggerTest", "Explorers", "TestLevel", "SpiderTests" ]
+
+[node name="Background2" type="CanvasLayer" parent="."]
+layer = -50
+follow_viewport_enable = true
+follow_viewport_scale = 0.333
+
+[node name="Background" parent="Background2" instance=ExtResource( 9 )]
+position = Vector2( 1, 489 )
+scale = Vector2( 3, 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Levels" type="Node2D" parent="."]
+position = Vector2( 0, 488 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Level1" parent="Levels" instance=ExtResource( 2 )]
+visible = false
+scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_lock_": true
+}
+level_music = ExtResource( 23 )
+
+[node name="Solid" parent="Levels/Level1" index="0"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="NoGroup" parent="Levels/Level1/Solid" index="0"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Triggers" parent="Levels/Level1" index="1"]
+position = Vector2( 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Move<Group1>" parent="Levels/Level1/Triggers" index="0"]
+position = Vector2( 427, 1 )
+
+[node name="Pads" parent="Levels/Level1" index="2"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Orbs" parent="Levels/Level1" index="3"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="[Group2]" parent="Levels/Level1" index="4"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Hazards" parent="Levels/Level1" index="5"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Text" parent="Levels/Level1" index="6"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Portals" parent="Levels/Level1" index="7"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Playground" parent="Levels" instance=ExtResource( 13 )]
+visible = false
+scale = Vector2( 0.5, 0.5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Trigger Test" parent="Levels" instance=ExtResource( 4 )]
+visible = false
+scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_lock_": true
+}
+level_music = ExtResource( 3 )
+
+[node name="SlopeDemo" parent="Levels" instance=ExtResource( 22 )]
+visible = false
+scale = Vector2( 0.5, 0.5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ArrowTriggerTest" parent="Levels" instance=ExtResource( 25 )]
+visible = false
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Explorers" parent="Levels" instance=ExtResource( 24 )]
+visible = false
+scale = Vector2( 0.5, 0.5 )
+
+[node name="TestLevel" parent="Levels" instance=ExtResource( 5 )]
+visible = false
+scale = Vector2( 0.5, 0.5 )
+
+[node name="SpiderTests" parent="Levels" instance=ExtResource( 54 )]
+scale = Vector2( 0.5, 0.5 )
+
+[node name="SpiderDash" type="Node2D" parent="."]
+scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 21 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="SpiderDash"]
+modulate = Color( 0, 1, 1, 1 )
+material = SubResource( 5 )
+position = Vector2( -32, 0 )
+rotation = -1.5708
+frames = SubResource( 3 )
+frame = 8
+playing = true
+centered = false
+flip_v = true
+
+[node name="DashBoom" type="AnimatedSprite" parent="."]
+modulate = Color( 0, 1, 1, 1 )
+material = SubResource( 6 )
+position = Vector2( 0, -66 )
+frames = SubResource( 4 )
+frame = 10
+playing = true
+script = ExtResource( 32 )
+
+[node name="Trail" type="Line2D" parent="."]
+process_priority = 5
+position = Vector2( 0, 455 )
+points = PoolVector2Array( 0, 1 )
+width = 20.0
+default_color = Color( 0, 1, 1, 1 )
+gradient = SubResource( 11 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+round_precision = 16
+script = ExtResource( 51 )
+length = 150.0
+wave_trail = true
+
+[node name="DebugTrail" type="Line2D" parent="."]
+process_priority = 5
+visible = false
+position = Vector2( 0, 455 )
+points = PoolVector2Array( 0, 1 )
+width = 2.0
+default_color = Color( 0, 1, 0, 1 )
+gradient = SubResource( 13 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+round_precision = 16
+script = ExtResource( 51 )
+length = 150.0
+enabled = false
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, 488 )
+scale = Vector2( 0.5, 0.5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Ground" parent="." instance=ExtResource( 7 )]
+position = Vector2( 3.05176e-05, 488 )
+scale = Vector2( 1.5, 1.5 )
+z_index = 50
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Line" type="Sprite" parent="."]
+material = SubResource( 9 )
+position = Vector2( 366, 489 )
+scale = Vector2( 0.5, 0.5 )
+z_index = 50
+texture = ExtResource( 49 )
+script = ExtResource( 50 )
+
+[node name="DeathEffect" type="AnimatedSprite" parent="."]
+material = SubResource( 8 )
+position = Vector2( 3.05176e-05, 389 )
+scale = Vector2( 1.5, 1.5 )
+z_index = 50
+frames = SubResource( 7 )
+animation = "DeathEffect"
+frame = 12
+playing = true
+script = ExtResource( 39 )
+
+[node name="LevelMusic" type="AudioStreamPlayer" parent="."]
+autoplay = true
+bus = "Music"
+
+[node name="BackgroundKillZone" type="Area2D" parent="."]
+position = Vector2( 1024, -5000 )
+collision_layer = 2
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BackgroundKillZone"]
+shape = SubResource( 1 )
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( -674, 0 )
+
+[node name="PauseLayer" type="CanvasLayer" parent="."]
+layer = 75
+
+[node name="PauseMenu" parent="PauseLayer" instance=ExtResource( 6 )]
+visible = false
+
+[node name="GUI" parent="." instance=ExtResource( 52 )]
+
+[connection signal="area_entered" from="Levels/Level1/Triggers/Move<Group1>" to="Player" method="_on_MoveGroup1_area_entered"]
+[connection signal="area_entered" from="Levels/Level1/Triggers/Move<Group2>" to="Player" method="_on_MoveGroup2_area_entered"]
+[connection signal="dead" from="Player" to="DeathEffect" method="_on_Player_dead"]
+[connection signal="spider_jumped" from="Player" to="SpiderDash" method="_on_Player_spider_jumped"]
+[connection signal="started_dashing" from="Player" to="DashBoom" method="_on_Player_started_dashing"]
+[connection signal="area_entered" from="BackgroundKillZone" to="BackgroundKillZone" method="_on_RegularSpike01_0_area_entered"]
+
+[editable path="Levels/Level1"]
