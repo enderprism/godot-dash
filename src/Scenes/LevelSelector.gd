@@ -2,6 +2,7 @@ extends Control
 
 export var _selected_level: String = "Trigger Test"
 var new_pos: Vector2
+const selection_width: int = 1920
 
 func _ready() -> void:
 	$Levels.rect_size.x = $Levels.get_child_count() * OS.get_window_size().x
@@ -38,9 +39,9 @@ func _on_FadeScreen_fade_finished() -> void:
 func _on_Left_pressed() -> void:
 	$Switch/PosTween.stop_all()
 	$Levels.rect_position = new_pos # snaps in case the tween hasn't finished animating
-	new_pos = Vector2(int($Levels.rect_position.x+OS.get_window_size().x), $Levels.rect_position.y)
-	if new_pos.x >= OS.get_window_size().x:
-		new_pos.x = -OS.get_window_size().x * ($Levels.get_child_count() - 1)
+	new_pos = Vector2(int($Levels.rect_position.x+selection_width), $Levels.rect_position.y)
+	if new_pos.x >= selection_width:
+		new_pos.x = -selection_width * ($Levels.get_child_count() - 1)
 	$Switch/PosTween.remove_all()
 	$Switch/PosTween.interpolate_property($Levels, "rect_position", null, new_pos, 0.2, Tween.TRANS_BOUNCE, Tween.EASE_OUT)
 	$Switch/PosTween.start()
@@ -49,7 +50,7 @@ func _on_Left_pressed() -> void:
 func _on_Right_pressed() -> void:
 	$Switch/PosTween.stop_all()
 	$Levels.rect_position = new_pos # snaps in case the tween hasn't finished animating
-	new_pos = Vector2(int($Levels.rect_position.x-OS.get_window_size().x) % int($Levels.rect_size.x), $Levels.rect_position.y)
+	new_pos = Vector2(int($Levels.rect_position.x-selection_width) % int($Levels.rect_size.x), $Levels.rect_position.y)
 	$Switch/PosTween.remove_all()
 	$Switch/PosTween.interpolate_property($Levels, "rect_position", null, new_pos, 0.2, Tween.TRANS_BOUNCE, Tween.EASE_OUT)
 	$Switch/PosTween.start()
