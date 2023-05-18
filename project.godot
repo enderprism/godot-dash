@@ -165,10 +165,6 @@ wave_platformer_move_down={
 2d_physics/layer_7="area_triggers"
 2d_physics/layer_8="level_end"
 
-[mono]
-
-project/assembly_name="Godot Dash"
-
 [physics]
 
 common/enable_pause_aware_picking=true

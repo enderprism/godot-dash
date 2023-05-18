@@ -2,7 +2,7 @@ extends Control
 
 export var _selected_level: String = "Trigger Test"
 var new_pos: Vector2
-const selection_width: int = 1920;
+const selection_width: int = 1920
 
 func _ready() -> void:
 	$Levels.rect_size.x = $Levels.get_child_count() * OS.get_window_size().x
