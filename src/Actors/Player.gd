@@ -163,11 +163,11 @@ func _physics_process(delta: float) -> void:
 		if (slope_object.scale.x >= 1 && UP_DIRECTION.y < 0) || (slope_object.scale.x <= -1 && UP_DIRECTION.y > 0):
 			floor_angle = abs(get_floor_angle()) * -1
 
-	_is_small_hitbox_colliding = "Block" in str(raycast_left_side_top.get_collider()) \
-	|| "Block" in str(raycast_left_side_bottom.get_collider()) \
-	|| "Block" in str(raycast_top.get_collider()) \
-	|| "Block" in str(raycast_right_side_top.get_collider()) \
-	|| "Block" in str(raycast_right_side_bottom.get_collider())
+#	_is_small_hitbox_colliding = "Block" in str(raycast_left_side_top.get_collider()) \
+#	|| "Block" in str(raycast_left_side_bottom.get_collider()) \
+#	|| "Block" in str(raycast_top.get_collider()) \
+#	|| "Block" in str(raycast_right_side_top.get_collider()) \
+#	|| "Block" in str(raycast_right_side_bottom.get_collider())
 
 	if (Input.is_action_just_pressed("jump") && !_is_dead && gamemode == "spider" && (is_on_floor() || is_on_wall()) ) && \
 		!(_is_pink_orb_colliding || _is_yellow_orb_colliding || _is_red_orb_colliding || \
@@ -880,3 +880,8 @@ func _on_NormalSizePortal_area_entered() -> void:
 	if UP_DIRECTION.y > 0:
 		if !gamemode == "wave": position.y += 30
 		else: position.y += 15
+
+
+func _on_BlockOverlap_body_entered(body: Node) -> void:
+	_is_small_hitbox_colliding = true
+	print(body)

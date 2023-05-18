@@ -1,4 +1,4 @@
-[gd_scene load_steps=99 format=2]
+[gd_scene load_steps=100 format=2]
 
 [ext_resource path="res://assets/playerTextures/jetpack.png" type="Texture" id=1]
 [ext_resource path="res://src/Actors/Player.gd" type="Script" id=2]
@@ -96,6 +96,9 @@ color_ramp = SubResource( 4 )
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 60, 60 )
+
+[sub_resource type="RectangleShape2D" id=82]
+extents = Vector2( 25, 25 )
 
 [sub_resource type="Animation" id=15]
 length = 0.001
@@ -1278,7 +1281,7 @@ material = SubResource( 5 )
 position = Vector2( -7.62939e-06, -66 )
 scale = Vector2( 1.25, 1.25 )
 frames = SubResource( 63 )
-frame = 8
+frame = 2
 playing = true
 offset = Vector2( -90, 0 )
 
@@ -1329,10 +1332,19 @@ shape = SubResource( 1 )
 position = Vector2( 0, -66 )
 shape = SubResource( 1 )
 
+[node name="BlockOverlap" type="Area2D" parent="."]
+collision_mask = 8
+
+[node name="HitboxBlockOverlap" type="CollisionShape2D" parent="BlockOverlap"]
+position = Vector2( 0, -66 )
+shape = SubResource( 82 )
+
 [node name="CollisionRaycasts" type="Node2D" parent="."]
-visible = false
 position = Vector2( 0, -66 )
 scale = Vector2( 1.2, 1.2 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="RaycastRightSideTop" type="RayCast2D" parent="CollisionRaycasts"]
 position = Vector2( 0, -21 )
@@ -1340,9 +1352,6 @@ scale = Vector2( 1.2, 1 )
 enabled = true
 cast_to = Vector2( 20, 0 )
 collision_mask = 8
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="RaycastRightSideBottom" type="RayCast2D" parent="CollisionRaycasts"]
 position = Vector2( 0, 21 )
@@ -1350,9 +1359,6 @@ scale = Vector2( 1.2, 1 )
 enabled = true
 cast_to = Vector2( 20, 0 )
 collision_mask = 8
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="RaycastLeftSideTop" type="RayCast2D" parent="CollisionRaycasts"]
 position = Vector2( 0, -21 )
@@ -1361,9 +1367,6 @@ scale = Vector2( 1.2, 1 )
 enabled = true
 cast_to = Vector2( 20, 0 )
 collision_mask = 8
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="RaycastTop" type="RayCast2D" parent="CollisionRaycasts"]
 position = Vector2( 0, 21 )
@@ -1372,9 +1375,6 @@ scale = Vector2( 1.2, 1 )
 enabled = true
 cast_to = Vector2( 3.67176e-06, 42 )
 collision_mask = 8
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="RaycastLeftSideBottom" type="RayCast2D" parent="CollisionRaycasts"]
 position = Vector2( 0, 21 )
@@ -1383,9 +1383,6 @@ scale = Vector2( 1.2, 1 )
 enabled = true
 cast_to = Vector2( 20, 0 )
 collision_mask = 8
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="SpiderSprites" type="Node2D" parent="."]
 visible = false
@@ -1527,3 +1524,5 @@ drag_margin_right = 0.4
 drag_margin_bottom = 0.0
 editor_draw_limits = true
 editor_draw_drag_margin = true
+
+[connection signal="body_entered" from="BlockOverlap" to="." method="_on_BlockOverlap_body_entered"]
