@@ -77,11 +77,11 @@ _global_script_class_icons={
 config/name="Godot Dash"
 config/description="A (bad) remake of Geometry Dash 2.2 by RobTop."
 run/main_scene="res://src/Scenes/StartScreen.tscn"
-boot_splash/image="res://exports/new_logo_x512.png"
+boot_splash/image="res://new-icon.png"
 boot_splash/fullsize=false
 boot_splash/bg_color=Color( 0.0196078, 0.235294, 0.380392, 1 )
-config/icon="res://exports/new_logo_x512.png"
-config/windows_native_icon="res://exports/new_logo_x512.ico"
+config/icon="res://new-icon.png"
+config/windows_native_icon="res://new-icon.ico"
 config/quit_on_go_back=false
 
 [autoload]
