@@ -335,6 +335,7 @@ layer = 75
 
 [node name="PauseMenu" parent="PauseLayer" instance=ExtResource( 6 )]
 visible = false
+rect_min_size = Vector2( 1920, 1080 )
 
 [node name="GUI" parent="." instance=ExtResource( 52 )]
 
