@@ -1333,56 +1333,12 @@ position = Vector2( 0, -66 )
 shape = SubResource( 1 )
 
 [node name="BlockOverlap" type="Area2D" parent="."]
+modulate = Color( 0, 0, 0, 1 )
 collision_mask = 8
 
 [node name="HitboxBlockOverlap" type="CollisionShape2D" parent="BlockOverlap"]
 position = Vector2( 0, -66 )
 shape = SubResource( 82 )
-
-[node name="CollisionRaycasts" type="Node2D" parent="."]
-position = Vector2( 0, -66 )
-scale = Vector2( 1.2, 1.2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="RaycastRightSideTop" type="RayCast2D" parent="CollisionRaycasts"]
-position = Vector2( 0, -21 )
-scale = Vector2( 1.2, 1 )
-enabled = true
-cast_to = Vector2( 20, 0 )
-collision_mask = 8
-
-[node name="RaycastRightSideBottom" type="RayCast2D" parent="CollisionRaycasts"]
-position = Vector2( 0, 21 )
-scale = Vector2( 1.2, 1 )
-enabled = true
-cast_to = Vector2( 20, 0 )
-collision_mask = 8
-
-[node name="RaycastLeftSideTop" type="RayCast2D" parent="CollisionRaycasts"]
-position = Vector2( 0, -21 )
-rotation = 3.14159
-scale = Vector2( 1.2, 1 )
-enabled = true
-cast_to = Vector2( 20, 0 )
-collision_mask = 8
-
-[node name="RaycastTop" type="RayCast2D" parent="CollisionRaycasts"]
-position = Vector2( 0, 21 )
-rotation = 3.14159
-scale = Vector2( 1.2, 1 )
-enabled = true
-cast_to = Vector2( 3.67176e-06, 42 )
-collision_mask = 8
-
-[node name="RaycastLeftSideBottom" type="RayCast2D" parent="CollisionRaycasts"]
-position = Vector2( 0, 21 )
-rotation = 3.14159
-scale = Vector2( 1.2, 1 )
-enabled = true
-cast_to = Vector2( 20, 0 )
-collision_mask = 8
 
 [node name="SpiderSprites" type="Node2D" parent="."]
 visible = false

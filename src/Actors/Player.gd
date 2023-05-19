@@ -9,12 +9,6 @@ signal started_dashing
 signal dead
 
 onready var player_icon: = $Icon
-onready var raycast_right_side_top: = $CollisionRaycasts/RaycastRightSideTop
-onready var raycast_left_side_top: = $CollisionRaycasts/RaycastLeftSideTop
-onready var raycast_top: = $CollisionRaycasts/RaycastTop
-onready var raycast_right_side_bottom: = $CollisionRaycasts/RaycastRightSideBottom
-onready var raycast_left_side_bottom: = $CollisionRaycasts/RaycastLeftSideBottom
-# onready var scene_player =
 
 var _debug_time: = 0.0
 var _is_small_hitbox_colliding: = false
@@ -162,12 +156,6 @@ func _physics_process(delta: float) -> void:
 				break
 		if (slope_object.scale.x >= 1 && UP_DIRECTION.y < 0) || (slope_object.scale.x <= -1 && UP_DIRECTION.y > 0):
 			floor_angle = abs(get_floor_angle()) * -1
-
-#	_is_small_hitbox_colliding = "Block" in str(raycast_left_side_top.get_collider()) \
-#	|| "Block" in str(raycast_left_side_bottom.get_collider()) \
-#	|| "Block" in str(raycast_top.get_collider()) \
-#	|| "Block" in str(raycast_right_side_top.get_collider()) \
-#	|| "Block" in str(raycast_right_side_bottom.get_collider())
 
 	if (Input.is_action_just_pressed("jump") && !_is_dead && gamemode == "spider" && (is_on_floor() || is_on_wall()) ) && \
 		!(_is_pink_orb_colliding || _is_yellow_orb_colliding || _is_red_orb_colliding || \
