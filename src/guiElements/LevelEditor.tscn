@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://assets/levelTextures/solid/Blocks/GridBlocks/GridBlock08.webp" type="Texture" id=1]
 [ext_resource path="res://assets/guiTextures/EditorPlayPlayer.png" type="Texture" id=2]
@@ -15,6 +15,8 @@
 [ext_resource path="res://assets/levelTextures/solid/Blocks/GridBlocks/GridBlock04.webp" type="Texture" id=13]
 [ext_resource path="res://src/scenes/uiElements/GuiElementsTheme.tres" type="Theme" id=14]
 [ext_resource path="res://assets/guiTextures/EditorPlayMusic.png" type="Texture" id=15]
+[ext_resource path="res://assets/guiTextures/EditorRedo.png" type="Texture" id=16]
+[ext_resource path="res://assets/guiTextures/EditorUndo.png" type="Texture" id=17]
 
 [node name="Node2D" type="Node2D"]
 
@@ -363,11 +365,11 @@ __meta__ = {
 [node name="TextureButton" type="TextureButton" parent="CanvasLayer/LevelEditor/HBoxContainer"]
 margin_right = 128.0
 margin_bottom = 128.0
-texture_normal = ExtResource( 15 )
-texture_pressed = ExtResource( 15 )
-texture_hover = ExtResource( 15 )
-texture_disabled = ExtResource( 15 )
-texture_focused = ExtResource( 15 )
+texture_normal = ExtResource( 17 )
+texture_pressed = ExtResource( 17 )
+texture_hover = ExtResource( 17 )
+texture_disabled = ExtResource( 17 )
+texture_focused = ExtResource( 17 )
 __meta__ = {
 "_edit_use_anchors_": true
 }
@@ -376,31 +378,17 @@ __meta__ = {
 margin_left = 132.0
 margin_right = 260.0
 margin_bottom = 128.0
-texture_normal = ExtResource( 15 )
-texture_pressed = ExtResource( 15 )
-texture_hover = ExtResource( 15 )
-texture_disabled = ExtResource( 15 )
-texture_focused = ExtResource( 15 )
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="TextureButton3" type="TextureButton" parent="CanvasLayer/LevelEditor/HBoxContainer"]
-margin_left = 264.0
-margin_right = 392.0
-margin_bottom = 128.0
-texture_normal = ExtResource( 15 )
-texture_pressed = ExtResource( 15 )
-texture_hover = ExtResource( 15 )
-texture_disabled = ExtResource( 15 )
-texture_focused = ExtResource( 15 )
+texture_normal = ExtResource( 16 )
+texture_pressed = ExtResource( 16 )
+texture_hover = ExtResource( 16 )
+texture_disabled = ExtResource( 16 )
+texture_focused = ExtResource( 16 )
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
 [node name="Background2" type="CanvasLayer" parent="."]
 layer = -50
-visible = false
 follow_viewport_enable = true
 follow_viewport_scale = 0.333
 
@@ -412,7 +400,6 @@ __meta__ = {
 }
 
 [node name="Ground" parent="." instance=ExtResource( 4 )]
-visible = false
 position = Vector2( 3.05176e-05, 488 )
 scale = Vector2( 1.5, 1.5 )
 z_index = 50
@@ -422,5 +409,4 @@ __meta__ = {
 }
 
 [node name="Camera2D" type="Camera2D" parent="."]
-visible = false
-position = Vector2( 960, 540 )
+position = Vector2( 968, 144 )
