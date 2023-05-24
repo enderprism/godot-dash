@@ -12,42 +12,42 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "Actor",
 "language": "GDScript",
-"path": "res://src/Actors/Actor.gd"
+"path": "res://src/actors/Actor.gd"
 }, {
 "base": "Tween",
 "class": "CameraStaticManager",
 "language": "GDScript",
-"path": "res://src/Scenes/Levels/CameraStaticManager.gd"
+"path": "res://src/scenes/levels/CameraStaticManager.gd"
 }, {
 "base": "Area2D",
 "class": "GDOrb",
 "language": "GDScript",
-"path": "res://src/Actors/Orbs/Orb.gd"
+"path": "res://src/actors/orbs/Orb.gd"
 }, {
 "base": "Node2D",
 "class": "Level",
 "language": "GDScript",
-"path": "res://src/Scenes/Levels/Level.gd"
+"path": "res://src/scenes/levels/Level.gd"
 }, {
 "base": "CollisionShape2D",
 "class": "SolidHitbox",
 "language": "GDScript",
-"path": "res://src/Actors/SolidHitbox.gd"
+"path": "res://src/actors/SolidHitbox.gd"
 }, {
 "base": "CollisionPolygon2D",
 "class": "SolidSlopeHitbox",
 "language": "GDScript",
-"path": "res://src/Actors/Solids/SlopeHitbox.gd"
+"path": "res://src/actors/solids/SlopeHitbox.gd"
 }, {
 "base": "Area2D",
 "class": "Trigger",
 "language": "GDScript",
-"path": "res://src/Actors/Trigger.gd"
+"path": "res://src/actors/Trigger.gd"
 }, {
 "base": "AnimationPlayer",
 "class": "TriggerManager",
 "language": "GDScript",
-"path": "res://src/Scenes/Levels/TriggerManager.gd"
+"path": "res://src/scenes/levels/TriggerManager.gd"
 }, {
 "base": "Control",
 "class": "VirtualJoystick",
@@ -57,7 +57,7 @@ _global_script_classes=[ {
 "base": "Area2D",
 "class": "toggler",
 "language": "GDScript",
-"path": "res://src/Actors/Orbs/ToggleOrb.gd"
+"path": "res://src/actors/orbs/ToggleOrb.gd"
 } ]
 _global_script_class_icons={
 "Actor": "",
@@ -76,17 +76,21 @@ _global_script_class_icons={
 
 config/name="Godot Dash"
 config/description="A (bad) remake of Geometry Dash 2.2 by RobTop."
-run/main_scene="res://src/Scenes/StartScreen.tscn"
-boot_splash/image="res://new-icon.png"
+run/main_scene="res://src/scenes/StartScreen.tscn"
+boot_splash/image="res://NewIcon.png"
 boot_splash/fullsize=false
 boot_splash/bg_color=Color( 0.0196078, 0.235294, 0.380392, 1 )
-config/icon="res://new-icon.png"
+config/icon="res://NewIcon.png"
 config/windows_native_icon="res://new-icon.ico"
 config/quit_on_go_back=false
 
+[audio]
+
+default_bus_layout="res://DefaultBusLayout.tres"
+
 [autoload]
 
-MenuLoop="*res://src/Scenes/OtherUIElements/menuLoop.tscn"
+MenuLoop="*res://src/scenes/uiElements/menuLoop.tscn"
 CurrentLevel="*res://autoloads/current_level.gd"
 LevelProgress="*res://autoloads/level_progress.gd"
 
@@ -175,4 +179,4 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
-environment/default_environment="res://default_env.tres"
+environment/default_environment="res://DefaultEnv.tres"

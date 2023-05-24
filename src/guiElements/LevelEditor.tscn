@@ -1,0 +1,426 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://assets/levelTextures/solid/Blocks/GridBlocks/GridBlock08.webp" type="Texture" id=1]
+[ext_resource path="res://assets/guiTextures/EditorPlayPlayer.png" type="Texture" id=2]
+[ext_resource path="res://assets/levelTextures/solid/Blocks/GridBlocks/GridBlock07.webp" type="Texture" id=3]
+[ext_resource path="res://src/actors/Ground.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/levelTextures/solid/Blocks/GridBlocks/GridBlock06.webp" type="Texture" id=5]
+[ext_resource path="res://src/actors/Background.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/scenes/uiElements/EditorPanelTheme.tres" type="Theme" id=7]
+[ext_resource path="res://assets/levelTextures/solid/Blocks/GridBlocks/GridBlock03.webp" type="Texture" id=8]
+[ext_resource path="res://assets/levelTextures/solid/Blocks/RegularPlatform01.webp" type="Texture" id=9]
+[ext_resource path="res://assets/levelTextures/solid/Blocks/GridBlocks/GridBlock02.webp" type="Texture" id=10]
+[ext_resource path="res://assets/levelTextures/solid/Blocks/GridBlocks/GridBlock01.webp" type="Texture" id=11]
+[ext_resource path="res://assets/levelTextures/solid/Blocks/RegularBlock01.webp" type="Texture" id=12]
+[ext_resource path="res://assets/levelTextures/solid/Blocks/GridBlocks/GridBlock04.webp" type="Texture" id=13]
+[ext_resource path="res://src/scenes/uiElements/GuiElementsTheme.tres" type="Theme" id=14]
+[ext_resource path="res://assets/guiTextures/EditorPlayMusic.png" type="Texture" id=15]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="LevelEditor" type="Control" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="TabContainer" type="TabContainer" parent="CanvasLayer/LevelEditor"]
+anchor_top = 0.711111
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Blocks" type="Tabs" parent="CanvasLayer/LevelEditor/TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 264.0
+margin_top = 62.0
+margin_right = -264.0
+margin_bottom = -16.0
+theme = ExtResource( 14 )
+tab_align = 0
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/LevelEditor/TabContainer/Blocks"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 7 )
+columns = 15
+
+[node name="Button" type="Button" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer"]
+margin_right = 64.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+theme = ExtResource( 7 )
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer/Button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -8.0
+theme = ExtResource( 7 )
+texture = ExtResource( 12 )
+expand = true
+stretch_mode = 6
+
+[node name="Button2" type="Button" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer"]
+margin_left = 80.0
+margin_right = 144.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+theme = ExtResource( 7 )
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer/Button2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 9.0
+margin_right = -8.0
+margin_bottom = -8.0
+texture = ExtResource( 9 )
+expand = true
+stretch_mode = 6
+
+[node name="Button3" type="Button" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer"]
+margin_left = 160.0
+margin_right = 224.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+theme = ExtResource( 7 )
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer/Button3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 9.0
+margin_right = -8.0
+margin_bottom = -8.0
+texture = ExtResource( 11 )
+expand = true
+stretch_mode = 6
+
+[node name="Button4" type="Button" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer"]
+margin_left = 240.0
+margin_right = 304.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+theme = ExtResource( 7 )
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer/Button4"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 9.0
+margin_right = -8.0
+margin_bottom = -8.0
+texture = ExtResource( 10 )
+expand = true
+stretch_mode = 6
+
+[node name="Button5" type="Button" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer"]
+margin_left = 320.0
+margin_right = 384.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+theme = ExtResource( 7 )
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer/Button5"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 9.0
+margin_right = -8.0
+margin_bottom = -8.0
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 6
+
+[node name="Button6" type="Button" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer"]
+margin_left = 400.0
+margin_right = 464.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+theme = ExtResource( 7 )
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer/Button6"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 9.0
+margin_right = -8.0
+margin_bottom = -8.0
+texture = ExtResource( 13 )
+expand = true
+stretch_mode = 6
+
+[node name="Button7" type="Button" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer"]
+margin_left = 480.0
+margin_right = 544.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+theme = ExtResource( 7 )
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer/Button7"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 9.0
+margin_right = -8.0
+margin_bottom = -8.0
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 6
+
+[node name="Button8" type="Button" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer"]
+margin_left = 560.0
+margin_right = 624.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+theme = ExtResource( 7 )
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer/Button8"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 9.0
+margin_right = -8.0
+margin_bottom = -8.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+
+[node name="Button9" type="Button" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer"]
+margin_left = 640.0
+margin_right = 704.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+theme = ExtResource( 7 )
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer/Button9"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 9.0
+margin_right = -8.0
+margin_bottom = -8.0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 6
+
+[node name="Button10" type="Button" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer"]
+margin_left = 720.0
+margin_right = 784.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+theme = ExtResource( 7 )
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer/Button10"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 9.0
+margin_right = -8.0
+margin_bottom = -8.0
+texture = ExtResource( 12 )
+expand = true
+stretch_mode = 6
+
+[node name="Hazards" type="Tabs" parent="CanvasLayer/LevelEditor/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+theme = ExtResource( 14 )
+tab_align = 0
+
+[node name="Interactibles" type="Tabs" parent="CanvasLayer/LevelEditor/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+theme = ExtResource( 14 )
+tab_align = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/LevelEditor"]
+anchor_top = 0.755556
+anchor_right = 0.133333
+anchor_bottom = 1.0
+margin_right = 8.0
+rect_pivot_offset = Vector2( -720, -152 )
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Button" type="Button" parent="CanvasLayer/LevelEditor/VBoxContainer"]
+margin_top = 97.0
+margin_right = 263.0
+margin_bottom = 117.0
+text = "BUILD"
+
+[node name="Button2" type="Button" parent="CanvasLayer/LevelEditor/VBoxContainer"]
+margin_top = 121.0
+margin_right = 263.0
+margin_bottom = 141.0
+text = "EDIT"
+
+[node name="Button3" type="Button" parent="CanvasLayer/LevelEditor/VBoxContainer"]
+margin_top = 145.0
+margin_right = 263.0
+margin_bottom = 165.0
+text = "DELETE"
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/LevelEditor"]
+margin_left = 1656.0
+margin_top = 816.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+columns = 2
+
+[node name="Button" type="Button" parent="CanvasLayer/LevelEditor/GridContainer"]
+margin_right = 130.0
+margin_bottom = 130.0
+rect_min_size = Vector2( 130, 130 )
+text = "DRAG"
+
+[node name="Button2" type="Button" parent="CanvasLayer/LevelEditor/GridContainer"]
+margin_left = 134.0
+margin_right = 264.0
+margin_bottom = 130.0
+rect_min_size = Vector2( 130, 130 )
+text = "ROTATE"
+
+[node name="Button3" type="Button" parent="CanvasLayer/LevelEditor/GridContainer"]
+margin_top = 134.0
+margin_right = 130.0
+margin_bottom = 264.0
+rect_min_size = Vector2( 130, 130 )
+text = "FREE MOVE"
+
+[node name="Button4" type="Button" parent="CanvasLayer/LevelEditor/GridContainer"]
+margin_left = 134.0
+margin_top = 134.0
+margin_right = 264.0
+margin_bottom = 264.0
+rect_min_size = Vector2( 130, 130 )
+text = "RESET POSITION"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/LevelEditor"]
+anchor_left = 0.00833333
+anchor_top = 0.133333
+anchor_right = 0.075
+anchor_bottom = 0.503704
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/LevelEditor/VBoxContainer2"]
+margin_right = 128.0
+margin_bottom = 128.0
+texture_normal = ExtResource( 15 )
+texture_pressed = ExtResource( 15 )
+texture_hover = ExtResource( 15 )
+texture_disabled = ExtResource( 15 )
+texture_focused = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="TextureButton2" type="TextureButton" parent="CanvasLayer/LevelEditor/VBoxContainer2"]
+margin_top = 132.0
+margin_right = 128.0
+margin_bottom = 260.0
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 2 )
+texture_hover = ExtResource( 2 )
+texture_disabled = ExtResource( 2 )
+texture_focused = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/LevelEditor"]
+anchor_left = 0.00833333
+anchor_top = 0.0148148
+anchor_right = 0.241667
+anchor_bottom = 0.133333
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/LevelEditor/HBoxContainer"]
+margin_right = 128.0
+margin_bottom = 128.0
+texture_normal = ExtResource( 15 )
+texture_pressed = ExtResource( 15 )
+texture_hover = ExtResource( 15 )
+texture_disabled = ExtResource( 15 )
+texture_focused = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="TextureButton2" type="TextureButton" parent="CanvasLayer/LevelEditor/HBoxContainer"]
+margin_left = 132.0
+margin_right = 260.0
+margin_bottom = 128.0
+texture_normal = ExtResource( 15 )
+texture_pressed = ExtResource( 15 )
+texture_hover = ExtResource( 15 )
+texture_disabled = ExtResource( 15 )
+texture_focused = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="TextureButton3" type="TextureButton" parent="CanvasLayer/LevelEditor/HBoxContainer"]
+margin_left = 264.0
+margin_right = 392.0
+margin_bottom = 128.0
+texture_normal = ExtResource( 15 )
+texture_pressed = ExtResource( 15 )
+texture_hover = ExtResource( 15 )
+texture_disabled = ExtResource( 15 )
+texture_focused = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Background2" type="CanvasLayer" parent="."]
+layer = -50
+visible = false
+follow_viewport_enable = true
+follow_viewport_scale = 0.333
+
+[node name="Background" parent="Background2" instance=ExtResource( 6 )]
+position = Vector2( 1, 489 )
+scale = Vector2( 3, 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Ground" parent="." instance=ExtResource( 4 )]
+visible = false
+position = Vector2( 3.05176e-05, 488 )
+scale = Vector2( 1.5, 1.5 )
+z_index = 50
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+visible = false
+position = Vector2( 960, 540 )
