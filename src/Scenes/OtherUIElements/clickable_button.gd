@@ -4,6 +4,7 @@ export var _switch_scene: bool = false
 export var _scene_to_go: String
 export var _level_selector_button: bool = false
 export var _selected_level: String
+var _selected_level_scene: PackedScene
 
 func _ready() -> void:
 	connect("button_down", self, "_button_held")
@@ -25,6 +26,7 @@ func _button_unheld() -> void:
 			get_node("/root/LevelSelector/playLevelSound").play()
 			MenuLoop.stop_menuloop()
 			CurrentLevel.current_level = _selected_level
+			CurrentLevel.current_level_scene = _selected_level_scene
 			if _scene_to_go == "GameScene": _scene_to_go = "res://src/Scenes/GameScene.tscn"
 			CurrentLevel.scene_to_go = _scene_to_go
 			yield(get_tree().create_timer(1),"timeout")

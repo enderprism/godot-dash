@@ -34,7 +34,7 @@ func enable_selected_level(selected_level) -> void:
 			disable_level($Levels.get_node(level))
 		else:
 			$Levels.get_node(level).visible = true
-			get_node("/root/Scene/Player").is_platformer = $Levels.get_node(level).platformer
+			$Player.is_platformer = $Levels.get_node(level).platformer
 			$LevelMusic.set_stream($Levels.get_node(level).level_music)
 			$LevelMusic.play($Levels.get_node(level).music_start)
 

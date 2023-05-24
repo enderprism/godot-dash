@@ -1,6 +1,6 @@
 extends Control
 
-export var _selected_level: String = "Trigger Test"
+var _selected_level: String = "Trigger Test"
 var new_pos: Vector2
 const selection_width: int = 1920
 
