@@ -1,10 +1,52 @@
-[gd_resource type="Theme" load_steps=3 format=2]
+[gd_resource type="Theme" load_steps=6 format=2]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 1, 0, 0, 1 )
 
+[sub_resource type="StyleBoxFlat" id=3]
+content_margin_left = 264.0
+content_margin_right = 264.0
+content_margin_top = 16.0
+content_margin_bottom = 16.0
+bg_color = Color( 0, 0, 0, 0.501961 )
+border_width_top = 2
+border_color = Color( 0.8, 0.8, 0.8, 0.501961 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+content_margin_left = 32.0
+content_margin_right = 32.0
+content_margin_top = 16.0
+content_margin_bottom = 16.0
+bg_color = Color( 0, 0, 0, 0.501961 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+shadow_color = Color( 1, 1, 1, 0.6 )
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id=5]
+content_margin_left = 32.0
+content_margin_right = 32.0
+content_margin_top = 16.0
+content_margin_bottom = 16.0
+bg_color = Color( 0.231373, 0.231373, 0.231373, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+shadow_color = Color( 1, 1, 1, 1 )
+shadow_size = 4
+
 [resource]
 Button/styles/focus = SubResource( 1 )
 HSlider/styles/slider = SubResource( 2 )
+TabContainer/styles/panel = SubResource( 3 )
+TabContainer/styles/tab_bg = SubResource( 4 )
+TabContainer/styles/tab_fg = SubResource( 5 )
