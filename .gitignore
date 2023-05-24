@@ -1,16 +1,17 @@
 *.import
 *.blend1
 
-
 # Godot-specific ignores
 .import/
 export.cfg
 export_presets.cfg
 
+# Godot directories
+android/
+scenes/
+
 # Imported translations (automatically generated from CSV files)
 *.translation
-
-scenes/
 
 # Mono-specific ignores
 .mono/
@@ -23,4 +24,5 @@ exports/Linux\ Rocks
 exports/MacOS\'s\ Not\ Linux
 exports/Windows\ Sucks
 
-android/
+# IDE directories
+.vscode/
