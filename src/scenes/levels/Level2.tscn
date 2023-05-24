@@ -1,0 +1,605 @@
+[gd_scene load_steps=52 format=2]
+
+[ext_resource path="res://src/actors/portals/CubePortal.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/actors/portals/UFOPortal.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/actors/pads/YellowPad.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/actors/portals/SpiderPortal.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/actors/portals/SwingcopterPortal.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/actors/pads/RedPad.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/actors/pads/BluePad.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/actors/pads/MagentaPad.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/actors/orbs/PinkOrb.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/actors/portals/ShipPortal.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/actors/portals/BallPortal.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/actors/portals/WavePortal.tscn" type="PackedScene" id=12]
+[ext_resource path="res://src/actors/portals/RobotPortal.tscn" type="PackedScene" id=13]
+[ext_resource path="res://src/actors/orbs/YellowOrb.tscn" type="PackedScene" id=14]
+[ext_resource path="res://src/actors/orbs/RedOrb.tscn" type="PackedScene" id=15]
+[ext_resource path="res://src/actors/orbs/BlueOrb.tscn" type="PackedScene" id=16]
+[ext_resource path="res://src/actors/orbs/GreenDashOrb.tscn" type="PackedScene" id=17]
+[ext_resource path="res://assets/fonts/PUSAB___.otf" type="DynamicFontData" id=18]
+[ext_resource path="res://src/actors/orbs/GreenOrb.tscn" type="PackedScene" id=19]
+[ext_resource path="res://src/actors/orbs/MagentaDashOrb.tscn" type="PackedScene" id=20]
+[ext_resource path="res://src/actors/orbs/ToggleOrb.tscn" type="PackedScene" id=21]
+[ext_resource path="res://src/scenes/levels/Level.gd" type="Script" id=22]
+[ext_resource path="res://src/actors/portals/GravityPortalA_0.tscn" type="PackedScene" id=23]
+[ext_resource path="res://src/actors/portals/GravityPortalB_0.tscn" type="PackedScene" id=24]
+[ext_resource path="res://src/actors/portals/speedPortals/SpeedPortal4x.tscn" type="PackedScene" id=25]
+[ext_resource path="res://src/actors/portals/speedPortals/SpeedPortal1x.tscn" type="PackedScene" id=26]
+[ext_resource path="res://src/actors/portals/speedPortals/SpeedPortal0-5x.tscn" type="PackedScene" id=27]
+[ext_resource path="res://src/actors/portals/speedPortals/SpeedPortal3x.tscn" type="PackedScene" id=28]
+[ext_resource path="res://src/actors/portals/speedPortals/SpeedPortal2x.tscn" type="PackedScene" id=29]
+[ext_resource path="res://src/actors/solids/RegularPlatform.tscn" type="PackedScene" id=30]
+[ext_resource path="res://src/actors/solids/GridBlock05_0.tscn" type="PackedScene" id=31]
+[ext_resource path="res://src/actors/solids/RegularBlock.tscn" type="PackedScene" id=32]
+[ext_resource path="res://src/actors/solids/GridBlock02_0.tscn" type="PackedScene" id=33]
+[ext_resource path="res://src/actors/hazards/RegularSpike01_0.tscn" type="PackedScene" id=34]
+[ext_resource path="res://src/actors/hazards/RegularSpike02_0.tscn" type="PackedScene" id=35]
+[ext_resource path="res://src/actors/hazards/RegularSpike03_0.tscn" type="PackedScene" id=36]
+[ext_resource path="res://src/scenes/LevelEnd.tscn" type="PackedScene" id=37]
+[ext_resource path="res://src/actors/solids/CustomBlock.tscn" type="PackedScene" id=38]
+[ext_resource path="res://src/actors/pads/SpiderPad.tscn" type="PackedScene" id=39]
+[ext_resource path="res://src/actors/orbs/SpiderOrb.tscn" type="PackedScene" id=40]
+[ext_resource path="res://src/actors/portals/MiniSizePortal.tscn" type="PackedScene" id=41]
+[ext_resource path="res://src/actors/portals/NormalSizePortal.tscn" type="PackedScene" id=42]
+[ext_resource path="res://assets/audio/levels/Milkshake.mp3" type="AudioStream" id=43]
+[ext_resource path="res://src/actors/orbs/TeleportOrb.tscn" type="PackedScene" id=44]
+[ext_resource path="res://src/actors/portals/Teleportal.tscn" type="PackedScene" id=45]
+[ext_resource path="res://src/actors/portals/ExitTeleportal.tscn" type="PackedScene" id=46]
+[ext_resource path="res://src/actors/orbs/ExitTeleportOrb.tscn" type="PackedScene" id=47]
+[ext_resource path="res://assets/levelTextures/solid/Blocks/RegularBlock01.webp" type="Texture" id=48]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 18 )
+
+[sub_resource type="DynamicFontData" id=6]
+font_path = "res://assets/fonts/ARIAL.TTF"
+
+[sub_resource type="DynamicFont" id=7]
+size = 120
+font_data = SubResource( 6 )
+
+[node name="Level2" type="Node2D"]
+script = ExtResource( 22 )
+level_music = ExtResource( 43 )
+platformer = true
+
+[node name="SpiderStaticCenter" type="Position2D" parent="."]
+position = Vector2( 1342, -427 )
+__meta__ = {
+"_gizmo_extents_": 122.0
+}
+
+[node name="Triggers" type="Node2D" parent="."]
+
+[node name="Pads" type="Node2D" parent="."]
+
+[node name="PinkPad" parent="Pads" instance=ExtResource( 8 )]
+position = Vector2( 2501, -61 )
+
+[node name="PinkPad2" parent="Pads" instance=ExtResource( 8 )]
+position = Vector2( 1281, 427 )
+
+[node name="YellowPad" parent="Pads" instance=ExtResource( 3 )]
+position = Vector2( 4514, -61 )
+
+[node name="RedPad" parent="Pads" instance=ExtResource( 6 )]
+position = Vector2( 6100, -61 )
+
+[node name="BluePad" parent="Pads" instance=ExtResource( 7 )]
+position = Vector2( 7869, -61 )
+
+[node name="RedPad2" parent="Pads" instance=ExtResource( 6 )]
+position = Vector2( 2867, -427 )
+
+[node name="YellowPad2" parent="Pads" instance=ExtResource( 3 )]
+position = Vector2( 4697, -1159 )
+rotation = 3.14159
+reverse = true
+
+[node name="YellowPad3" parent="Pads" instance=ExtResource( 3 )]
+position = Vector2( 2745, -1159 )
+rotation = 3.14159
+reverse = true
+
+[node name="PinkPad3" parent="Pads" instance=ExtResource( 8 )]
+position = Vector2( 14579, -61 )
+
+[node name="SpiderPad" parent="Pads" instance=ExtResource( 39 )]
+position = Vector2( 2135, -793 )
+rotation = 3.14159
+
+[node name="SpiderPad2" parent="Pads" instance=ExtResource( 39 )]
+position = Vector2( 1037, -61 )
+
+[node name="Orbs" type="Node2D" parent="."]
+
+[node name="PinkOrb" parent="Orbs" instance=ExtResource( 9 )]
+position = Vector2( 2501, -244 )
+
+[node name="YellowOrb" parent="Orbs" instance=ExtResource( 14 )]
+position = Vector2( 4514, -244 )
+
+[node name="RedOrb" parent="Orbs" instance=ExtResource( 15 )]
+position = Vector2( 6100, -244 )
+
+[node name="BlueOrb" parent="Orbs" instance=ExtResource( 16 )]
+position = Vector2( 7869, -244 )
+
+[node name="GreenDashOrb" parent="Orbs" instance=ExtResource( 17 )]
+position = Vector2( 854, 427 )
+rotation = -1.09432
+
+[node name="MagentaDashOrb" parent="Orbs" instance=ExtResource( 20 )]
+position = Vector2( 732, 183 )
+
+[node name="GreenOrb" parent="Orbs" instance=ExtResource( 19 )]
+position = Vector2( 9638, -244 )
+
+[node name="ToggleOrb" parent="Orbs" instance=ExtResource( 21 )]
+position = Vector2( 610, 427 )
+
+[node name="SpiderOrb" parent="Orbs" instance=ExtResource( 40 )]
+position = Vector2( 2135, -427 )
+opposite_gravity = true
+
+[node name="SpiderOrb2" parent="Orbs" instance=ExtResource( 40 )]
+position = Vector2( 1098, 122 )
+
+[node name="ToggleOrb2" parent="Orbs" instance=ExtResource( 21 )]
+position = Vector2( 1647, -61 )
+rotation = -1.5708
+
+[node name="ToggledGroup" type="Node2D" parent="Orbs/ToggleOrb2"]
+position = Vector2( 366, 61 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RegularBlock25" parent="Orbs/ToggleOrb2/ToggledGroup" instance=ExtResource( 32 )]
+position = Vector2( 0, -183 )
+rotation = 1.5708
+
+[node name="RegularBlock26" parent="Orbs/ToggleOrb2/ToggledGroup" instance=ExtResource( 32 )]
+position = Vector2( 0, -61 )
+rotation = 1.5708
+
+[node name="RegularBlock27" parent="Orbs/ToggleOrb2/ToggledGroup" instance=ExtResource( 32 )]
+position = Vector2( 0, 61 )
+rotation = 1.5708
+
+[node name="RegularBlock28" parent="Orbs/ToggleOrb2/ToggledGroup" instance=ExtResource( 32 )]
+position = Vector2( 3.05176e-05, 183 )
+rotation = 1.5708
+
+[node name="TeleportOrb" parent="Orbs" instance=ExtResource( 44 )]
+position = Vector2( 5673, -61 )
+
+[node name="ExitTeleportOrb" parent="Orbs/TeleportOrb" instance=ExtResource( 47 )]
+position = Vector2( -2074, -732 )
+
+[node name="Solids" type="Node2D" parent="."]
+
+[node name="RegularPlatform" parent="Solids" instance=ExtResource( 30 )]
+position = Vector2( 2867, -305 )
+
+[node name="GridBlock05_0" parent="Solids" instance=ExtResource( 31 )]
+position = Vector2( 3172, -1403 )
+
+[node name="GridBlock05_1" parent="Solids" instance=ExtResource( 31 )]
+position = Vector2( 3294, -1403 )
+
+[node name="GridBlock05_2" parent="Solids" instance=ExtResource( 31 )]
+position = Vector2( 3416, -1403 )
+
+[node name="GridBlock05_3" parent="Solids" instance=ExtResource( 31 )]
+position = Vector2( 3538, -1403 )
+
+[node name="GridBlock05_4" parent="Solids" instance=ExtResource( 31 )]
+position = Vector2( 3660, -1403 )
+
+[node name="GridBlock05_5" parent="Solids" instance=ExtResource( 31 )]
+position = Vector2( 3782, -1403 )
+
+[node name="GridBlock05_6" parent="Solids" instance=ExtResource( 31 )]
+position = Vector2( 3904, -1403 )
+
+[node name="GridBlock05_7" parent="Solids" instance=ExtResource( 31 )]
+position = Vector2( 4026, -1403 )
+
+[node name="GridBlock05_8" parent="Solids" instance=ExtResource( 31 )]
+position = Vector2( 4148, -1403 )
+
+[node name="GridBlock05_9" parent="Solids" instance=ExtResource( 31 )]
+position = Vector2( 4270, -1403 )
+
+[node name="RegularBlock" parent="Solids" instance=ExtResource( 32 )]
+position = Vector2( 3050, -1281 )
+rotation = 3.14159
+
+[node name="RegularBlock13" parent="Solids" instance=ExtResource( 32 )]
+position = Vector2( 1159, -915 )
+rotation = 3.14159
+
+[node name="RegularBlock14" parent="Solids" instance=ExtResource( 32 )]
+position = Vector2( 1281, -915 )
+rotation = 3.14159
+
+[node name="RegularBlock15" parent="Solids" instance=ExtResource( 32 )]
+position = Vector2( 1403, -915 )
+rotation = 3.14159
+
+[node name="RegularBlock16" parent="Solids" instance=ExtResource( 32 )]
+position = Vector2( 1525, -915 )
+rotation = 3.14159
+
+[node name="RegularBlock17" parent="Solids" instance=ExtResource( 32 )]
+position = Vector2( 671, -915 )
+rotation = 3.14159
+
+[node name="RegularBlock18" parent="Solids" instance=ExtResource( 32 )]
+position = Vector2( 793, -915 )
+rotation = 3.14159
+
+[node name="RegularBlock19" parent="Solids" instance=ExtResource( 32 )]
+position = Vector2( 915, -915 )
+rotation = 3.14159
+
+[node name="RegularBlock20" parent="Solids" instance=ExtResource( 32 )]
+position = Vector2( 1037, -915 )
+rotation = 3.14159
+
+[node name="RegularBlock21" parent="Solids" instance=ExtResource( 32 )]
+position = Vector2( 1647, -915 )
+rotation = 3.14159
+
+[node name="RegularBlock22" parent="Solids" instance=ExtResource( 32 )]
+position = Vector2( 1769, -915 )
+rotation = 3.14159
+
+[node name="RegularBlock23" parent="Solids" instance=ExtResource( 32 )]
+position = Vector2( 1891, -915 )
+rotation = 3.14159
+
+[node name="RegularBlock24" parent="Solids" instance=ExtResource( 32 )]
+position = Vector2( 2013, -915 )
+rotation = 3.14159
+
+[node name="RegularBlock34" parent="Solids" instance=ExtResource( 32 )]
+position = Vector2( 2135, -915 )
+rotation = 3.14159
+
+[node name="RegularBlock29" parent="Solids" instance=ExtResource( 32 )]
+position = Vector2( 2440, -1769 )
+rotation = 3.14159
+
+[node name="RegularBlock30" parent="Solids" instance=ExtResource( 32 )]
+position = Vector2( 2562, -1769 )
+rotation = 3.14159
+
+[node name="RegularBlock31" parent="Solids" instance=ExtResource( 32 )]
+position = Vector2( 2684, -1769 )
+rotation = 3.14159
+
+[node name="RegularBlock32" parent="Solids" instance=ExtResource( 32 )]
+position = Vector2( 2806, -1769 )
+rotation = 3.14159
+
+[node name="RegularBlock33" parent="Solids" instance=ExtResource( 32 )]
+position = Vector2( 2928, -1769 )
+rotation = 3.14159
+
+[node name="RegularBlock2" parent="Solids" instance=ExtResource( 32 )]
+position = Vector2( 3172, -1281 )
+rotation = 3.14159
+
+[node name="RegularBlock3" parent="Solids" instance=ExtResource( 32 )]
+position = Vector2( 3294, -1281 )
+rotation = 3.14159
+
+[node name="RegularBlock4" parent="Solids" instance=ExtResource( 32 )]
+position = Vector2( 3416, -1281 )
+rotation = 3.14159
+
+[node name="RegularBlock5" parent="Solids" instance=ExtResource( 32 )]
+position = Vector2( 3538, -1281 )
+rotation = 3.14159
+
+[node name="RegularBlock6" parent="Solids" instance=ExtResource( 32 )]
+position = Vector2( 3660, -1281 )
+rotation = 3.14159
+
+[node name="RegularBlock7" parent="Solids" instance=ExtResource( 32 )]
+position = Vector2( 3782, -1281 )
+rotation = 3.14159
+
+[node name="RegularBlock8" parent="Solids" instance=ExtResource( 32 )]
+position = Vector2( 3904, -1281 )
+rotation = 3.14159
+
+[node name="RegularBlock9" parent="Solids" instance=ExtResource( 32 )]
+position = Vector2( 4026, -1281 )
+rotation = 3.14159
+
+[node name="RegularBlock10" parent="Solids" instance=ExtResource( 32 )]
+position = Vector2( 4148, -1281 )
+rotation = 3.14159
+
+[node name="RegularBlock11" parent="Solids" instance=ExtResource( 32 )]
+position = Vector2( 4270, -1281 )
+rotation = 3.14159
+
+[node name="RegularBlock12" parent="Solids" instance=ExtResource( 32 )]
+position = Vector2( 4392, -1281 )
+rotation = 3.14159
+
+[node name="GridBlock02_0" parent="Solids" instance=ExtResource( 33 )]
+position = Vector2( 3050, -1403 )
+rotation = -1.5708
+
+[node name="GridBlock02_1" parent="Solids" instance=ExtResource( 33 )]
+position = Vector2( 4392, -1403 )
+rotation = 1.5708
+
+[node name="GridBlock05_10" parent="Solids" instance=ExtResource( 31 )]
+position = Vector2( 3172, -1525 )
+
+[node name="GridBlock05_11" parent="Solids" instance=ExtResource( 31 )]
+position = Vector2( 3294, -1525 )
+
+[node name="GridBlock05_12" parent="Solids" instance=ExtResource( 31 )]
+position = Vector2( 3416, -1525 )
+
+[node name="GridBlock05_13" parent="Solids" instance=ExtResource( 31 )]
+position = Vector2( 3538, -1525 )
+
+[node name="GridBlock05_14" parent="Solids" instance=ExtResource( 31 )]
+position = Vector2( 3660, -1525 )
+
+[node name="GridBlock05_15" parent="Solids" instance=ExtResource( 31 )]
+position = Vector2( 3782, -1525 )
+
+[node name="GridBlock05_16" parent="Solids" instance=ExtResource( 31 )]
+position = Vector2( 3904, -1525 )
+
+[node name="GridBlock05_17" parent="Solids" instance=ExtResource( 31 )]
+position = Vector2( 4026, -1525 )
+
+[node name="GridBlock05_18" parent="Solids" instance=ExtResource( 31 )]
+position = Vector2( 4148, -1525 )
+
+[node name="GridBlock05_19" parent="Solids" instance=ExtResource( 31 )]
+position = Vector2( 4270, -1525 )
+
+[node name="GridBlock02_2" parent="Solids" instance=ExtResource( 33 )]
+position = Vector2( 3050, -1525 )
+rotation = -1.5708
+
+[node name="GridBlock02_3" parent="Solids" instance=ExtResource( 33 )]
+position = Vector2( 4392, -1525 )
+rotation = 1.5708
+
+[node name="GridBlock05_20" parent="Solids" instance=ExtResource( 31 )]
+position = Vector2( 3172, -1647 )
+
+[node name="GridBlock05_21" parent="Solids" instance=ExtResource( 31 )]
+position = Vector2( 3294, -1647 )
+
+[node name="GridBlock05_22" parent="Solids" instance=ExtResource( 31 )]
+position = Vector2( 3416, -1647 )
+
+[node name="GridBlock05_23" parent="Solids" instance=ExtResource( 31 )]
+position = Vector2( 3538, -1647 )
+
+[node name="GridBlock05_24" parent="Solids" instance=ExtResource( 31 )]
+position = Vector2( 3660, -1647 )
+
+[node name="GridBlock05_25" parent="Solids" instance=ExtResource( 31 )]
+position = Vector2( 3782, -1647 )
+
+[node name="GridBlock05_26" parent="Solids" instance=ExtResource( 31 )]
+position = Vector2( 3904, -1647 )
+
+[node name="GridBlock05_27" parent="Solids" instance=ExtResource( 31 )]
+position = Vector2( 4026, -1647 )
+
+[node name="GridBlock05_28" parent="Solids" instance=ExtResource( 31 )]
+position = Vector2( 4148, -1647 )
+
+[node name="GridBlock05_29" parent="Solids" instance=ExtResource( 31 )]
+position = Vector2( 4270, -1647 )
+
+[node name="GridBlock02_4" parent="Solids" instance=ExtResource( 33 )]
+position = Vector2( 3050, -1647 )
+rotation = -1.5708
+
+[node name="GridBlock02_5" parent="Solids" instance=ExtResource( 33 )]
+position = Vector2( 4392, -1647 )
+rotation = 1.5708
+
+[node name="RegularPlatform2" parent="Solids" instance=ExtResource( 30 )]
+position = Vector2( 2745, -1281 )
+rotation = -3.14159
+
+[node name="RegularPlatform3" parent="Solids" instance=ExtResource( 30 )]
+position = Vector2( 4697, -1281 )
+rotation = -3.14159
+
+[node name="Hazards" type="Node2D" parent="."]
+position = Vector2( 3843, -1159 )
+rotation = -3.14159
+
+[node name="RegularSpike02_0" parent="Hazards" instance=ExtResource( 35 )]
+position = Vector2( 244, 0 )
+
+[node name="RegularSpike02_1" parent="Hazards" instance=ExtResource( 35 )]
+
+[node name="RegularSpike01_0" parent="Hazards" instance=ExtResource( 34 )]
+position = Vector2( 122, 0 )
+
+[node name="RegularSpike03_0" parent="Hazards" instance=ExtResource( 36 )]
+position = Vector2( -568, 0.00146484 )
+
+[node name="Portals" type="Node2D" parent="."]
+
+[node name="Gamemode" type="Node2D" parent="Portals"]
+
+[node name="CubePortal_0" parent="Portals/Gamemode" instance=ExtResource( 1 )]
+position = Vector2( 2013, 183 )
+
+[node name="ShipPortal_0" parent="Portals/Gamemode" instance=ExtResource( 10 )]
+position = Vector2( 3660, -183 )
+
+[node name="RobotPortal_0" parent="Portals/Gamemode" instance=ExtResource( 13 )]
+position = Vector2( 11834, -183 )
+
+[node name="UFOPortal_0" parent="Portals/Gamemode" instance=ExtResource( 2 )]
+position = Vector2( 5246, 183 )
+
+[node name="WavePortal_0" parent="Portals/Gamemode" instance=ExtResource( 12 )]
+position = Vector2( 7015, -183 )
+
+[node name="BallPortal_0" parent="Portals/Gamemode" instance=ExtResource( 11 )]
+position = Vector2( 8845, -183 )
+
+[node name="SwingcopterPortal_0" parent="Portals/Gamemode" instance=ExtResource( 5 )]
+position = Vector2( 10553, -183 )
+
+[node name="SpiderPortal_0" parent="Portals/Gamemode" instance=ExtResource( 4 )]
+position = Vector2( 12810, -183 )
+
+[node name="Gravity" type="Node2D" parent="Portals"]
+
+[node name="GravityPortalB_0" parent="Portals/Gravity" instance=ExtResource( 24 )]
+position = Vector2( 7991, -549 )
+rotation = -0.785398
+
+[node name="GravityPortalA_0" parent="Portals/Gravity" instance=ExtResource( 23 )]
+position = Vector2( 11346, -427 )
+rotation = -1.5708
+
+[node name="Speed" type="Node2D" parent="Portals"]
+
+[node name="SpeedPortal0-5x_0" parent="Portals/Speed" instance=ExtResource( 27 )]
+position = Vector2( 13420, -183 )
+
+[node name="SpeedPortal1x_0" parent="Portals/Speed" instance=ExtResource( 26 )]
+position = Vector2( 14152, -183 )
+
+[node name="SpeedPortal2x_0" parent="Portals/Speed" instance=ExtResource( 29 )]
+position = Vector2( 15128, -183 )
+
+[node name="SpeedPortal3x_0" parent="Portals/Speed" instance=ExtResource( 28 )]
+position = Vector2( 16348, -183 )
+
+[node name="SpeedPortal4x_0" parent="Portals/Speed" instance=ExtResource( 25 )]
+position = Vector2( 17690, -183 )
+
+[node name="GravityPortalA_0" parent="Portals" instance=ExtResource( 23 )]
+position = Vector2( 2806, -793 )
+
+[node name="GravityPortalB_1" parent="Portals" instance=ExtResource( 24 )]
+position = Vector2( 12749, -183 )
+
+[node name="GravityPortalB_0" parent="Portals" instance=ExtResource( 24 )]
+position = Vector2( 11773, -183 )
+
+[node name="NormalSizePortal" parent="Portals" instance=ExtResource( 42 )]
+position = Vector2( 1281, -793 )
+rotation = -1.5708
+scale = Vector2( 0.5, 0.5 )
+
+[node name="NormalSizePortal2" parent="Portals" instance=ExtResource( 42 )]
+position = Vector2( 2745, -244 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="MiniSizePortal" parent="Portals" instance=ExtResource( 41 )]
+position = Vector2( 366, 244 )
+z_index = -1
+
+[node name="Teleportal" parent="Portals" instance=ExtResource( 45 )]
+position = Vector2( 732, -1037 )
+rotation = -1.5708
+scale = Vector2( 0.5, 0.5 )
+
+[node name="ExitTeleportal" parent="Portals/Teleportal" instance=ExtResource( 46 )]
+position = Vector2( 1586, 1220 )
+rotation = 1.5708
+scale = Vector2( 2, 2 )
+
+[node name="GravityPortalB_0" parent="Portals/Teleportal/ExitTeleportal" instance=ExtResource( 24 )]
+position = Vector2( 61.0029, 0.00219727 )
+
+[node name="Teleportal2" parent="Portals" instance=ExtResource( 45 )]
+position = Vector2( 2562, -549 )
+rotation = 1.5708
+scale = Vector2( 0.5, 0.5 )
+
+[node name="ExitTeleportal" parent="Portals/Teleportal2" instance=ExtResource( 46 )]
+position = Vector2( -366.002, -487.998 )
+rotation = 3.14159
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="(Unfinished)" type="RichTextLabel" parent="."]
+margin_left = 587.0
+margin_top = 305.0
+margin_right = 902.0
+margin_bottom = 343.0
+custom_fonts/normal_font = SubResource( 1 )
+text = "(Unfinished)"
+
+[node name="(Unfinished)2" type="RichTextLabel" parent="."]
+margin_left = 3544.0
+margin_top = -1037.0
+margin_right = 3897.0
+margin_bottom = -999.0
+custom_fonts/normal_font = SubResource( 1 )
+text = "Reverse pads"
+
+[node name="Robot and Spider doesn\'t work yet" type="RichTextLabel" parent="."]
+margin_left = 11902.0
+margin_top = -427.0
+margin_right = 12836.0
+margin_bottom = -359.0
+custom_fonts/normal_font = SubResource( 1 )
+text = "Robot and Spider don't work yet
+"
+
+[node name="Label" type="Label" parent="."]
+margin_left = 2216.0
+margin_top = -427.0
+margin_right = 2277.0
+margin_bottom = -292.0
+custom_fonts/font = SubResource( 7 )
+text = "↓"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 1179.0
+margin_top = 61.0
+margin_right = 1240.0
+margin_bottom = 196.0
+custom_fonts/font = SubResource( 7 )
+text = "↑"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="YellowPad" parent="." instance=ExtResource( 3 )]
+position = Vector2( 793, -61 )
+
+[node name="SpiderOrb" parent="." instance=ExtResource( 40 )]
+position = Vector2( 976, -427 )
+opposite_gravity = true
+
+[node name="LevelEnd" parent="." instance=ExtResource( 37 )]
+position = Vector2( 19276, -793 )
+
+[node name="CustomBlock" parent="." instance=ExtResource( 38 )]
+position = Vector2( 5795, -2257 )
+base_texture = ExtResource( 48 )

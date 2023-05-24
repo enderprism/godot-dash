@@ -8,7 +8,6 @@ export_presets.cfg
 
 # Godot directories
 android/
-scenes/
 
 # Imported translations (automatically generated from CSV files)
 *.translation
