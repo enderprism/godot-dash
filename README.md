@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="new-icon.png" align="center" width="256"></img>
+    <img src="NewIcon.png" align="center" width="256"></img>
     <h1 align="center">Godot Dash</h1>
 </p>
 

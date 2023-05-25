@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/audio/soundEffects/menuLoop.mp3" type="AudioStream" id=1]
+[ext_resource path="res://src/scenes/uiElements/menuLoop.gd" type="Script" id=2]
+
+[node name="menuLoop" type="AudioStreamPlayer"]
+stream = ExtResource( 1 )
+autoplay = true
+bus = "Music"
+script = ExtResource( 2 )
