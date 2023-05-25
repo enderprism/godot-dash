@@ -2442,10 +2442,10 @@ scale = Vector2( 1e-05, 1e-05 )
 position = Vector2( -610, -122 )
 
 [node name="PinkOrb" parent="SpiderStructure/Entrance/Orbs" instance=ExtResource( 38 )]
-position = Vector2( 488, 0.000976562 )
+position = Vector2( 488, 61.001 )
 
 [node name="PinkOrb2" parent="SpiderStructure/Entrance/Orbs" instance=ExtResource( 38 )]
-position = Vector2( 815, -61 )
+position = Vector2( 815, -30 )
 
 [node name="PinkOrb3" parent="SpiderStructure/Entrance/Orbs" instance=ExtResource( 38 )]
 position = Vector2( 1146, -122 )
@@ -2561,6 +2561,9 @@ rotation = 1.57079
 z_index = 1
 collision_layer = 0
 collision_mask = 0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock02_18" parent="SpiderStructure" instance=ExtResource( 5 )]
 position = Vector2( 22265, -915 )
@@ -2568,6 +2571,9 @@ rotation = 1.57079
 z_index = 1
 collision_layer = 0
 collision_mask = 0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock02_19" parent="SpiderStructure" instance=ExtResource( 5 )]
 position = Vector2( 22265, -1037 )
@@ -2575,6 +2581,9 @@ rotation = 1.57079
 z_index = 1
 collision_layer = 0
 collision_mask = 0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock02_20" parent="SpiderStructure" instance=ExtResource( 5 )]
 position = Vector2( 22265, -1159 )
@@ -2582,168 +2591,294 @@ rotation = 1.57079
 z_index = 1
 collision_layer = 0
 collision_mask = 0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock02_21" parent="SpiderStructure" instance=ExtResource( 5 )]
 position = Vector2( 22387, -671 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock02_22" parent="SpiderStructure" instance=ExtResource( 5 )]
 position = Vector2( 22509, -671 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock04_2" parent="SpiderStructure" instance=ExtResource( 39 )]
 position = Vector2( 22265, -671 )
 rotation = 1.57081
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock02_23" parent="SpiderStructure" instance=ExtResource( 5 )]
 position = Vector2( 22387, -1281 )
 rotation = -3.14159
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock02_24" parent="SpiderStructure" instance=ExtResource( 5 )]
 position = Vector2( 22509, -1281 )
 rotation = -3.14159
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock02_25" parent="SpiderStructure" instance=ExtResource( 5 )]
 position = Vector2( 22631, -671 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock02_26" parent="SpiderStructure" instance=ExtResource( 5 )]
 position = Vector2( 22753, -671 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock02_27" parent="SpiderStructure" instance=ExtResource( 5 )]
 position = Vector2( 22631, -1281 )
 rotation = -3.14159
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock02_28" parent="SpiderStructure" instance=ExtResource( 5 )]
 position = Vector2( 22753, -1281 )
 rotation = -3.14159
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock02_29" parent="SpiderStructure" instance=ExtResource( 5 )]
 position = Vector2( 22875, -671 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock02_30" parent="SpiderStructure" instance=ExtResource( 5 )]
 position = Vector2( 22997, -549 )
 rotation = 1.57079
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock02_32" parent="SpiderStructure" instance=ExtResource( 5 )]
 position = Vector2( 22997, -427 )
 rotation = 1.57079
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock02_33" parent="SpiderStructure" instance=ExtResource( 5 )]
 position = Vector2( 22997, -305 )
 rotation = 1.57079
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock02_34" parent="SpiderStructure" instance=ExtResource( 5 )]
 position = Vector2( 22997, -183 )
 rotation = 1.57079
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock03_2" parent="SpiderStructure" instance=ExtResource( 6 )]
 position = Vector2( 22997, -671 )
 rotation = 1.57079
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock03_4" parent="SpiderStructure" instance=ExtResource( 6 )]
 position = Vector2( 23607, -671 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock03_5" parent="SpiderStructure" instance=ExtResource( 6 )]
 position = Vector2( 23607, -1281 )
 rotation = -1.57079
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock02_37" parent="SpiderStructure" instance=ExtResource( 5 )]
 position = Vector2( 22997, -1769 )
 rotation = 1.57079
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock02_38" parent="SpiderStructure" instance=ExtResource( 5 )]
 position = Vector2( 22997, -1647 )
 rotation = 1.57079
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock02_39" parent="SpiderStructure" instance=ExtResource( 5 )]
 position = Vector2( 22997, -1525 )
 rotation = 1.57079
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock03_3" parent="SpiderStructure" instance=ExtResource( 6 )]
 position = Vector2( 22997, -1281 )
 rotation = 3.14159
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock02_40" parent="SpiderStructure" instance=ExtResource( 5 )]
 position = Vector2( 22997, -1403 )
 rotation = 1.57079
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock02_41" parent="SpiderStructure" instance=ExtResource( 5 )]
 position = Vector2( 23607, -1769 )
 rotation = 4.71238
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock02_42" parent="SpiderStructure" instance=ExtResource( 5 )]
 position = Vector2( 23607, -1647 )
 rotation = 4.71238
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock02_43" parent="SpiderStructure" instance=ExtResource( 5 )]
 position = Vector2( 23607, -1525 )
 rotation = 4.71238
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock02_44" parent="SpiderStructure" instance=ExtResource( 5 )]
 position = Vector2( 23607, -1403 )
 rotation = 4.71238
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock02_45" parent="SpiderStructure" instance=ExtResource( 5 )]
 position = Vector2( 23607, -549 )
 rotation = 4.71238
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock02_46" parent="SpiderStructure" instance=ExtResource( 5 )]
 position = Vector2( 23607, -427 )
 rotation = 4.71238
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock02_47" parent="SpiderStructure" instance=ExtResource( 5 )]
 position = Vector2( 23607, -305 )
 rotation = 4.71238
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock02_48" parent="SpiderStructure" instance=ExtResource( 5 )]
 position = Vector2( 23607, -183 )
 rotation = 4.71238
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock02_31" parent="SpiderStructure" instance=ExtResource( 5 )]
 position = Vector2( 22875, -1281 )
 rotation = -3.14159
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock02_36" parent="SpiderStructure" instance=ExtResource( 5 )]
 position = Vector2( 23729, -671 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock02_50" parent="SpiderStructure" instance=ExtResource( 5 )]
 position = Vector2( 23851, -671 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock02_51" parent="SpiderStructure" instance=ExtResource( 5 )]
 position = Vector2( 23729, -1281 )
 rotation = -3.14159
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock02_52" parent="SpiderStructure" instance=ExtResource( 5 )]
 position = Vector2( 23851, -1281 )
 rotation = -3.14159
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock02_53" parent="SpiderStructure" instance=ExtResource( 5 )]
 position = Vector2( 23973, -671 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock02_54" parent="SpiderStructure" instance=ExtResource( 5 )]
 position = Vector2( 24095, -671 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock02_49" parent="SpiderStructure" instance=ExtResource( 5 )]
 position = Vector2( 23119, -61 )
 z_index = 1
 collision_layer = 0
 collision_mask = 0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock02_63" parent="SpiderStructure" instance=ExtResource( 5 )]
 position = Vector2( 23241, -61 )
 z_index = 1
 collision_layer = 0
 collision_mask = 0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock02_64" parent="SpiderStructure" instance=ExtResource( 5 )]
 position = Vector2( 23363, -61 )
 z_index = 1
 collision_layer = 0
 collision_mask = 0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock02_65" parent="SpiderStructure" instance=ExtResource( 5 )]
 position = Vector2( 23485, -61 )
 z_index = 1
 collision_layer = 0
 collision_mask = 0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock02_66" parent="SpiderStructure" instance=ExtResource( 5 )]
 position = Vector2( 23119, -1891 )
@@ -2751,6 +2886,9 @@ rotation = -3.14159
 z_index = 1
 collision_layer = 0
 collision_mask = 0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock02_67" parent="SpiderStructure" instance=ExtResource( 5 )]
 position = Vector2( 23241, -1891 )
@@ -2758,6 +2896,9 @@ rotation = -3.14159
 z_index = 1
 collision_layer = 0
 collision_mask = 0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock02_68" parent="SpiderStructure" instance=ExtResource( 5 )]
 position = Vector2( 23363, -1891 )
@@ -2765,6 +2906,9 @@ rotation = -3.14159
 z_index = 1
 collision_layer = 0
 collision_mask = 0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock02_69" parent="SpiderStructure" instance=ExtResource( 5 )]
 position = Vector2( 23485, -1891 )
@@ -2772,25 +2916,43 @@ rotation = -3.14159
 z_index = 1
 collision_layer = 0
 collision_mask = 0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock02_55" parent="SpiderStructure" instance=ExtResource( 5 )]
 position = Vector2( 23973, -1281 )
 rotation = -3.14159
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock02_56" parent="SpiderStructure" instance=ExtResource( 5 )]
 position = Vector2( 24095, -1281 )
 rotation = -3.14159
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock02_57" parent="SpiderStructure" instance=ExtResource( 5 )]
 position = Vector2( 24217, -671 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock02_58" parent="SpiderStructure" instance=ExtResource( 5 )]
 position = Vector2( 24217, -1281 )
 rotation = -3.14159
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock04_3" parent="SpiderStructure" instance=ExtResource( 39 )]
 position = Vector2( 22265, -1281 )
 rotation = -3.14159
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock02_59" parent="SpiderStructure" instance=ExtResource( 5 )]
 position = Vector2( 24339, -915 )
@@ -2798,6 +2960,9 @@ rotation = 4.71238
 z_index = 1
 collision_layer = 0
 collision_mask = 0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock02_62" parent="SpiderStructure" instance=ExtResource( 5 )]
 position = Vector2( 24339, -793 )
@@ -2805,6 +2970,9 @@ rotation = 4.71238
 z_index = 1
 collision_layer = 0
 collision_mask = 0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock02_60" parent="SpiderStructure" instance=ExtResource( 5 )]
 position = Vector2( 24339, -1037 )
@@ -2812,6 +2980,9 @@ rotation = 4.71238
 z_index = 1
 collision_layer = 0
 collision_mask = 0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock02_61" parent="SpiderStructure" instance=ExtResource( 5 )]
 position = Vector2( 24339, -1159 )
@@ -2819,2048 +2990,4040 @@ rotation = 4.71238
 z_index = 1
 collision_layer = 0
 collision_mask = 0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock04_4" parent="SpiderStructure" instance=ExtResource( 39 )]
 position = Vector2( 24339, -671 )
 rotation = 6.28318
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock04_6" parent="SpiderStructure" instance=ExtResource( 39 )]
 position = Vector2( 23607, -61 )
 rotation = 6.28318
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock04_7" parent="SpiderStructure" instance=ExtResource( 39 )]
 position = Vector2( 22997, -61 )
 rotation = 7.85397
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock04_5" parent="SpiderStructure" instance=ExtResource( 39 )]
 position = Vector2( 24339, -1281 )
 rotation = -1.57079
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock04_8" parent="SpiderStructure" instance=ExtResource( 39 )]
 position = Vector2( 23607, -1891 )
 rotation = -1.57079
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock04_9" parent="SpiderStructure" instance=ExtResource( 39 )]
 position = Vector2( 22997, -1891 )
 rotation = -3.14159
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_3" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22143, -549 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_7" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22143, -427 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_11" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22143, -305 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_15" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22143, -183 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_19" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22143, -61 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_42" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22265, -549 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_43" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22387, -549 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_44" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22509, -549 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_45" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22265, -427 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_46" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22387, -427 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_47" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22509, -427 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_48" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22265, -305 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_49" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22387, -305 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_50" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22509, -305 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_51" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22265, -183 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_52" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22753, -183 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_53" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22875, -183 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_54" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22265, -61 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_55" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22387, -61 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_56" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22509, -61 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_57" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22631, -549 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_58" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22753, -549 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_59" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22875, -549 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_60" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22631, -427 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_61" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22753, -427 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_62" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22875, -427 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_63" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22631, -305 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_64" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22753, -305 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_65" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22875, -305 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_66" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22631, -183 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_67" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22509, -183 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_68" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22387, -183 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_69" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22631, -61 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_70" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22753, -61 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_71" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22875, -61 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_72" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23729, -549 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_73" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23851, -549 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_74" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23973, -549 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_75" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23729, -427 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_76" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23851, -427 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_77" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23973, -427 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_78" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23729, -305 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_79" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23851, -305 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_92" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23973, -305 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_93" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23729, -183 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_94" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24217, -183 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_107" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24339, -183 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_108" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23729, -61 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_109" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23851, -61 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_110" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23973, -61 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_111" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24095, -549 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_112" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24217, -549 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_113" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24339, -549 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_114" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24095, -427 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_115" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24217, -427 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_116" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24339, -427 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_117" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24095, -305 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_118" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24217, -305 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_119" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24339, -305 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_120" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24095, -183 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_121" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23973, -183 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_122" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23851, -183 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_123" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24095, -61 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_124" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24217, -61 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_125" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24339, -61 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_129" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23729, -1769 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_130" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23851, -1769 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_131" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23973, -1769 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_132" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23729, -1647 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_133" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23851, -1647 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_134" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23973, -1647 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_135" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23729, -1525 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_136" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24217, -1525 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_137" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24339, -1525 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_138" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23729, -1403 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_139" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23851, -1403 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_140" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23973, -1403 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_144" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24095, -1769 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_145" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24217, -1769 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_146" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24339, -1769 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_147" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24095, -1647 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_148" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24217, -1647 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_149" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24339, -1647 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_150" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24095, -1525 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_151" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23973, -1525 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_152" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23851, -1525 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_153" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24095, -1403 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_154" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24217, -1403 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_155" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24339, -1403 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_165" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22143, 61 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_166" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22265, 61 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_167" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22387, 61 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_168" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22509, 61 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_169" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22631, 61 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_170" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22753, 61 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_171" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22875, 61 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_179" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22997, 61 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_180" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23119, 61 )
 z_index = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_181" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23241, 61 )
 z_index = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_182" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23363, 61 )
 z_index = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_183" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23485, 61 )
 z_index = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_184" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23607, 61 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_172" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23729, 61 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_173" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23851, 61 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_174" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23973, 61 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_175" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24095, 61 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_176" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24217, 61 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_177" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24339, 61 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_80" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22265, -1769 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_81" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22387, -1769 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_82" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22509, -1769 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_83" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22265, -1647 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_84" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22387, -1647 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_85" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22509, -1647 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_86" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22265, -1525 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_87" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22753, -1525 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_88" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22875, -1525 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_89" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22265, -1403 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_90" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22387, -1403 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_91" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22509, -1403 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_95" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22631, -1769 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_96" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22753, -1769 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_97" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22875, -1769 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_98" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22631, -1647 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_99" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22753, -1647 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_100" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22875, -1647 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_101" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22631, -1525 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_102" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22509, -1525 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_103" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22387, -1525 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_104" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22631, -1403 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_105" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22753, -1403 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_106" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22875, -1403 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_20" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22143, -1281 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_21" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22143, -1159 )
 z_index = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_22" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22143, -1037 )
 z_index = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_23" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22143, -915 )
 z_index = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_40" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22143, -793 )
 z_index = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_41" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22143, -671 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_27" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22143, -1769 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_213" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23729, -1891 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_214" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23851, -1891 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_215" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23973, -1891 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_216" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24095, -1891 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_217" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24217, -1891 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_218" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24339, -1891 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_220" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22265, -1891 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_221" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22387, -1891 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_222" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22509, -1891 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_223" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22631, -1891 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_224" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22753, -1891 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_225" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22875, -1891 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_229" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22143, -1891 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_31" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22143, -1647 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_35" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22143, -1525 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_39" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22143, -1403 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_185" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22143, 183 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_186" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22265, 183 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_187" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22387, 183 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_188" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22509, 183 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_189" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22631, 183 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_190" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22753, 183 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_191" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22875, 183 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_192" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22997, 183 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_193" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23119, 183 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_194" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23241, 183 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_195" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23363, 183 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_196" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23485, 183 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_197" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23607, 183 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_198" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23729, 183 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_199" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23851, 183 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_200" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23973, 183 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_201" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24095, 183 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_202" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24217, 183 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_203" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24339, 183 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_230" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22143, -2135 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_231" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22265, -2135 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_232" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22387, -2135 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_233" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22509, -2135 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_234" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22631, -2135 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_235" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22753, -2135 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_236" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22875, -2135 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_237" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22997, -2135 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_238" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23119, -2135 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_239" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23241, -2135 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_240" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23363, -2135 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_241" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23485, -2135 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_242" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23607, -2135 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_243" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23729, -2135 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_244" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23851, -2135 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_245" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23973, -2135 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_246" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24095, -2135 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_247" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24217, -2135 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_248" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24339, -2135 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_250" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22143, -2013 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_251" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22265, -2013 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_252" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22387, -2013 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_253" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22509, -2013 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_262" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22631, -2013 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_263" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22753, -2013 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_264" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22875, -2013 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_265" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22997, -2013 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_266" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23119, -2013 )
 z_index = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_267" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23241, -2013 )
 z_index = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_268" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23363, -2013 )
 z_index = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_269" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23485, -2013 )
 z_index = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_270" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23607, -2013 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_271" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23729, -2013 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_272" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23851, -2013 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_273" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23973, -2013 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_274" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24095, -2013 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_275" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24217, -2013 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_276" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24339, -2013 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_126" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24461, -183 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_127" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24461, -549 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_128" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24461, -427 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_141" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24461, -305 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_142" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24461, -61 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_178" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24461, 61 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_159" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24461, -915 )
 z_index = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_160" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24461, -1281 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_161" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24461, -1159 )
 z_index = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_162" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24461, -1037 )
 z_index = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_163" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24461, -793 )
 z_index = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_164" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24461, -671 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_143" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24461, -1525 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_156" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24461, -1769 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_157" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24461, -1647 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_158" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24461, -1403 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_219" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24461, -1891 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_204" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24461, 183 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_249" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24461, -2135 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_277" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24461, -2013 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_279" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24583, -183 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_280" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24583, -549 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_281" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24583, -427 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_282" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24583, -305 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_283" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24583, -61 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_284" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24583, 61 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_291" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24583, -1525 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_292" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24583, -1769 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_293" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24583, -1647 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_294" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24583, -1403 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_295" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24583, -1891 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_296" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24583, 183 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_297" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24583, -2135 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_298" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24583, -2013 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_299" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24705, -183 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_300" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24705, -549 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_301" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24705, -427 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_302" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24705, -305 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_303" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24705, -61 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_304" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24705, 61 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_311" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24705, -1525 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_312" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24705, -1769 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_313" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24705, -1647 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_314" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24705, -1403 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_315" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24705, -1891 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_316" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24705, 183 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_317" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24705, -2135 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_318" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24705, -2013 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_319" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24827, -183 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_320" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24827, -549 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_321" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24827, -427 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_322" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24827, -305 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_323" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24827, -61 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_324" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24827, 61 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_331" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24827, -1525 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_332" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24827, -1769 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_333" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24827, -1647 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_334" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24827, -1403 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_335" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24827, -1891 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_336" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24827, 183 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_337" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24827, -2135 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_338" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24827, -2013 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_339" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24949, -183 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_340" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24949, -549 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_341" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24949, -427 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_342" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24949, -305 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_343" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24949, -61 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_344" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24949, 61 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_351" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24949, -1525 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_352" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24949, -1769 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_353" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24949, -1647 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_354" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24949, -1403 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_355" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24949, -1891 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_356" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24949, 183 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_357" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24949, -2135 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_358" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24949, -2013 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_359" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25071, -183 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_360" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25071, -549 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_361" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25071, -427 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_362" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25071, -305 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_363" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25071, -61 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_364" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25071, 61 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_371" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25071, -1525 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_372" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25071, -1769 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_373" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25071, -1647 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_374" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25071, -1403 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_375" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25071, -1891 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_376" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25071, 183 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_377" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25071, -2135 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_378" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25071, -2013 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_379" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25193, -183 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_380" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25193, -549 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_381" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25193, -427 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_382" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25193, -305 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_383" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25193, -61 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_384" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25193, 61 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_391" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25193, -1525 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_392" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25193, -1769 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_393" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25193, -1647 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_394" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25193, -1403 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_395" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25193, -1891 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_396" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25193, 183 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_205" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22143, 305 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_206" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22265, 305 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_207" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22387, 305 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_208" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22509, 305 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_209" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22631, 305 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_210" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22753, 305 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_211" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22875, 305 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_212" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22997, 305 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_226" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23119, 305 )
 z_index = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_227" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23241, 305 )
 z_index = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_228" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23363, 305 )
 z_index = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_254" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23485, 305 )
 z_index = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_255" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23607, 305 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_256" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23729, 305 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_257" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23851, 305 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_258" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23973, 305 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_259" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24095, 305 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_260" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24217, 305 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_261" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24339, 305 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_278" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22143, 427 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_399" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22265, 427 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_400" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22387, 427 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_401" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22509, 427 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_402" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22631, 427 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_403" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22753, 427 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_404" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22875, 427 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_405" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22997, 427 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_406" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23119, 427 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_407" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23241, 427 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_408" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23363, 427 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_409" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23485, 427 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_410" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23607, 427 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_411" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23729, 427 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_412" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23851, 427 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_413" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23973, 427 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_414" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24095, 427 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_415" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24217, 427 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_416" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24339, 427 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_417" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24461, 305 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_418" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24461, 427 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_419" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24583, 305 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_420" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24583, 427 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_421" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24705, 305 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_422" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24705, 427 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_423" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24827, 305 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_424" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24827, 427 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_425" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24949, 305 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_426" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24949, 427 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_427" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25071, 305 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_428" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25071, 427 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_429" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25193, 305 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_430" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25193, 427 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_587" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22143, 549 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_588" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22265, 549 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_589" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22387, 549 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_590" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22509, 549 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_591" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22631, 549 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_592" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22753, 549 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_593" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22875, 549 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_594" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22997, 549 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_595" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23119, 549 )
 z_index = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_596" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23241, 549 )
 z_index = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_597" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23363, 549 )
 z_index = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_598" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23485, 549 )
 z_index = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_599" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23607, 549 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_600" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23729, 549 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_601" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23851, 549 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_602" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23973, 549 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_603" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24095, 549 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_604" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24217, 549 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_605" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24339, 549 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_606" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22143, 671 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_607" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22265, 671 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_608" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22387, 671 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_609" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22509, 671 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_610" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22631, 671 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_611" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22753, 671 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_612" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22875, 671 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_613" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22997, 671 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_614" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23119, 671 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_615" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23241, 671 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_616" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23363, 671 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_617" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23485, 671 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_618" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23607, 671 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_619" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23729, 671 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_620" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23851, 671 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_621" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23973, 671 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_622" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24095, 671 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_623" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24217, 671 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_624" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24339, 671 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_625" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24461, 549 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_626" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24461, 671 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_627" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24583, 549 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_628" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24583, 671 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_629" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24705, 549 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_630" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24705, 671 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_631" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24827, 549 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_632" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24827, 671 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_633" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24949, 549 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_634" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24949, 671 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_635" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25071, 549 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_636" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25071, 671 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_637" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25193, 549 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_638" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25193, 671 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_639" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22143, 793 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_640" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22265, 793 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_641" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22387, 793 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_642" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22509, 793 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_643" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22631, 793 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_644" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22753, 793 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_645" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22875, 793 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_646" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22997, 793 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_647" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23119, 793 )
 z_index = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_648" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23241, 793 )
 z_index = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_649" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23363, 793 )
 z_index = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_650" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23485, 793 )
 z_index = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_651" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23607, 793 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_652" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23729, 793 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_653" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23851, 793 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_654" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23973, 793 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_655" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24095, 793 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_656" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24217, 793 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_657" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24339, 793 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_658" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22143, 915 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_659" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22265, 915 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_660" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22387, 915 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_661" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22509, 915 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_662" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22631, 915 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_663" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22753, 915 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_664" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22875, 915 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_665" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22997, 915 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_666" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23119, 915 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_667" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23241, 915 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_668" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23363, 915 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_669" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23485, 915 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_670" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23607, 915 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_671" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23729, 915 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_672" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23851, 915 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_673" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23973, 915 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_674" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24095, 915 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_675" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24217, 915 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_676" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24339, 915 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_677" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24461, 793 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_678" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24461, 915 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_679" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24583, 793 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_680" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24583, 915 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_681" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24705, 793 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_682" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24705, 915 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_683" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24827, 793 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_684" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24827, 915 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_685" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24949, 793 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_686" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24949, 915 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_687" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25071, 793 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_688" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25071, 915 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_689" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25193, 793 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_690" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25193, 915 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_397" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25193, -2135 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_398" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25193, -2013 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_431" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22143, -2379 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_432" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22265, -2379 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_433" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22387, -2379 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_434" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22509, -2379 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_435" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22631, -2379 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_436" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22753, -2379 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_437" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22875, -2379 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_438" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22997, -2379 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_439" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23119, -2379 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_440" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23241, -2379 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_441" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23363, -2379 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_442" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23485, -2379 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_443" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23607, -2379 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_444" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23729, -2379 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_445" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23851, -2379 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_446" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23973, -2379 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_447" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24095, -2379 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_448" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24217, -2379 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_449" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24339, -2379 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_450" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22143, -2257 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_451" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22265, -2257 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_452" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22387, -2257 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_453" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22509, -2257 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_454" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22631, -2257 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_455" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22753, -2257 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_456" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22875, -2257 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_457" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22997, -2257 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_458" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23119, -2257 )
 z_index = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_459" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23241, -2257 )
 z_index = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_460" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23363, -2257 )
 z_index = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_461" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23485, -2257 )
 z_index = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_462" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23607, -2257 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_463" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23729, -2257 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_464" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23851, -2257 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_465" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23973, -2257 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_466" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24095, -2257 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_467" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24217, -2257 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_468" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24339, -2257 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_469" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24461, -2379 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_470" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24461, -2257 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_471" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24583, -2379 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_472" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24583, -2257 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_473" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24705, -2379 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_474" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24705, -2257 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_475" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24827, -2379 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_476" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24827, -2257 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_477" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24949, -2379 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_478" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24949, -2257 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_479" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25071, -2379 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_480" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25071, -2257 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_481" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25193, -2379 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_482" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25193, -2257 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_483" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22143, -2623 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_484" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22265, -2623 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_485" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22387, -2623 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_486" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22509, -2623 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_487" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22631, -2623 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_488" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22753, -2623 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_489" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22875, -2623 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_490" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22997, -2623 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_491" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23119, -2623 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_492" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23241, -2623 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_493" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23363, -2623 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_494" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23485, -2623 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_495" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23607, -2623 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_496" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23729, -2623 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_497" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23851, -2623 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_498" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23973, -2623 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_499" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24095, -2623 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_500" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24217, -2623 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_501" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24339, -2623 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_502" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22143, -2501 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_503" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22265, -2501 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_504" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22387, -2501 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_505" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22509, -2501 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_506" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22631, -2501 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_507" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22753, -2501 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_508" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22875, -2501 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_509" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22997, -2501 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_510" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23119, -2501 )
 z_index = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_511" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23241, -2501 )
 z_index = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_512" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23363, -2501 )
 z_index = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_513" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23485, -2501 )
 z_index = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_514" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23607, -2501 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_515" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23729, -2501 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_516" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23851, -2501 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_517" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23973, -2501 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_518" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24095, -2501 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_519" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24217, -2501 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_520" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24339, -2501 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_521" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24461, -2623 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_522" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24461, -2501 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_523" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24583, -2623 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_524" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24583, -2501 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_525" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24705, -2623 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_526" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24705, -2501 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_527" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24827, -2623 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_528" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24827, -2501 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_529" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24949, -2623 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_530" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24949, -2501 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_531" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25071, -2623 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_532" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25071, -2501 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_533" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25193, -2623 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_534" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25193, -2501 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_535" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22143, -2867 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_536" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22265, -2867 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_537" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22387, -2867 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_538" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22509, -2867 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_539" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22631, -2867 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_540" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22753, -2867 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_541" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22875, -2867 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_542" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22997, -2867 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_543" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23119, -2867 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_544" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23241, -2867 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_545" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23363, -2867 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_546" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23485, -2867 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_547" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23607, -2867 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_548" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23729, -2867 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_549" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23851, -2867 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_550" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23973, -2867 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_551" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24095, -2867 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_552" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24217, -2867 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_553" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24339, -2867 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_554" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22143, -2745 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_555" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22265, -2745 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_556" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22387, -2745 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_557" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22509, -2745 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_558" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22631, -2745 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_559" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22753, -2745 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_560" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22875, -2745 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_561" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 22997, -2745 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_562" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23119, -2745 )
 z_index = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_563" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23241, -2745 )
 z_index = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_564" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23363, -2745 )
 z_index = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_565" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23485, -2745 )
 z_index = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_566" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23607, -2745 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_567" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23729, -2745 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_568" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23851, -2745 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_569" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 23973, -2745 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_570" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24095, -2745 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_571" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24217, -2745 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_572" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24339, -2745 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_573" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24461, -2867 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_574" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24461, -2745 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_575" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24583, -2867 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_576" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24583, -2745 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_577" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24705, -2867 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_578" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24705, -2745 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_579" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24827, -2867 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_580" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24827, -2745 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_581" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24949, -2867 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_582" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24949, -2745 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_583" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25071, -2867 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_584" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25071, -2745 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_585" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25193, -2867 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_586" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 25193, -2745 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_285" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24583, -915 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_286" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24583, -1281 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_287" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24583, -1159 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_288" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24583, -1037 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_289" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24583, -793 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_290" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24583, -671 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_305" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24705, -915 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_306" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24705, -1281 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_307" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24705, -1159 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_308" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24705, -1037 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_309" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24705, -793 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_310" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24705, -671 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_325" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24827, -915 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_326" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24827, -1281 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_327" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24827, -1159 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_328" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24827, -1037 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_329" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24827, -793 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_330" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24827, -671 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_345" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24949, -915 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_346" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24949, -1281 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_347" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24949, -1159 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_348" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24949, -1037 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_349" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24949, -793 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GridBlock05_350" parent="SpiderStructure" instance=ExtResource( 7 )]
 position = Vector2( 24949, -671 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="RegularBlock2" parent="SpiderStructure" instance=ExtResource( 47 )]
 visible = false
 position = Vector2( 24461, -671 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="RegularBlock3" parent="SpiderStructure" instance=ExtResource( 47 )]
 visible = false
 position = Vector2( 24583, -671 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="RegularBlock4" parent="SpiderStructure" instance=ExtResource( 47 )]
 visible = false
 position = Vector2( 24705, -671 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="RegularBlock5" parent="SpiderStructure" instance=ExtResource( 47 )]
 visible = false
 position = Vector2( 24827, -671 )
 rotation = 6.28318
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="RegularBlock6" parent="SpiderStructure" instance=ExtResource( 47 )]
 visible = false
 position = Vector2( 24949, -671 )
 rotation = 6.28318
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Background" type="Node2D" parent="SpiderStructure"]
 position = Vector2( 21594, -3294 )
@@ -6496,10 +8659,81 @@ rotation = 3.14159
 scale = Vector2( 0.5, 0.5 )
 
 [node name="CrossStructure2" type="Node2D" parent="."]
+visible = false
 position = Vector2( 23424, -183 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="NormalTrigger2" parent="CrossStructure2" instance=ExtResource( 11 )]
+position = Vector2( -122, 0 )
+rotation = -1.57081
+target_path = "../SpiderStructure/DoorHorizontalLeft"
+duration = 0.5
+property = "position"
+value = [ Vector2( 22936, -976 ), Vector2( 0, 0 ) ]
+easing_type = 1
+easing_curve = 3
+
+[node name="NormalTrigger3" parent="CrossStructure2" instance=ExtResource( 11 )]
+position = Vector2( -122, 0 )
+rotation = -1.57081
+target_path = "../SpiderStructure/DoorHorizontalRight"
+duration = 0.5
+property = "position"
+value = [ Vector2( 23424, -976 ), Vector2( 0, 0 ) ]
+easing_type = 1
+easing_curve = 3
+
+[node name="NormalTrigger4" parent="CrossStructure2" instance=ExtResource( 11 )]
+position = Vector2( -122, 0 )
+rotation = -1.57081
+target_path = "../SpiderStructure/DoorHorizontalLeft"
+duration = 0.5
+property = "modulate"
+value = [ Color( 1, 1, 1, 0 ), Vector2( 0, 0 ) ]
+easing_type = 1
+easing_curve = 3
+
+[node name="NormalTrigger5" parent="CrossStructure2" instance=ExtResource( 11 )]
+position = Vector2( -122, 0 )
+rotation = -1.57081
+target_path = "../SpiderStructure/DoorHorizontalRight"
+duration = 0.5
+property = "modulate"
+value = [ Color( 1, 1, 1, 0 ), Vector2( 0, 0 ) ]
+easing_type = 1
+easing_curve = 3
+
+[node name="NormalTrigger6" parent="CrossStructure2" instance=ExtResource( 11 )]
+position = Vector2( -122, 0 )
+rotation = -1.57081
+target_path = "../SpiderStructure/DoorVerticalTop"
+duration = 0.5
+property = "position"
+value = [ Vector2( 23302, -1098 ), Vector2( 0, 0 ) ]
+easing_type = 1
+easing_curve = 3
+
+[node name="NormalTrigger7" parent="CrossStructure2" instance=ExtResource( 11 )]
+position = Vector2( -122, 0 )
+rotation = -1.57081
+target_path = "../SpiderStructure/DoorVerticalBottom"
+duration = 0.5
+property = "position"
+value = [ Vector2( 23302, -854 ), Vector2( 0, 0 ) ]
+easing_type = 1
+easing_curve = 3
+
+[node name="NormalTrigger8" parent="CrossStructure2" instance=ExtResource( 11 )]
+position = Vector2( -122, 0 )
+rotation = -1.57081
+target_path = "../SpiderStructure/DoorVerticalTop"
+duration = 0.5
+property = "modulate"
+value = [ Color( 1, 1, 1, 1 ), Vector2( 0, 0 ) ]
+easing_type = 1
+easing_curve = 3
 
 [node name="GravityPortalB_1" parent="CrossStructure2" instance=ExtResource( 15 )]
 visible = false
@@ -6624,90 +8858,6 @@ property = "toggle"
 value = [ true, Vector2( 0, 0 ) ]
 show = true
 
-[node name="NormalTrigger2" parent="CrossStructure2" instance=ExtResource( 11 )]
-position = Vector2( -122, 0 )
-rotation = 4.71238
-target_path = "../SpiderStructure/DoorHorizontalLeft"
-duration = 0.5
-property = "position"
-value = [ Vector2( -244, 0 ), Vector2( 0, 0 ) ]
-relative = true
-easing_type = 1
-easing_curve = 3
-
-[node name="NormalTrigger3" parent="CrossStructure2" instance=ExtResource( 11 )]
-position = Vector2( -122, 0 )
-rotation = 4.71238
-target_path = "../SpiderStructure/DoorHorizontalRight"
-duration = 0.5
-property = "position"
-value = [ Vector2( 244, 0 ), Vector2( 0, 0 ) ]
-relative = true
-easing_type = 1
-easing_curve = 3
-
-[node name="NormalTrigger4" parent="CrossStructure2" instance=ExtResource( 11 )]
-position = Vector2( -122, 0 )
-rotation = 4.71238
-target_path = "../SpiderStructure/DoorHorizontalLeft"
-duration = 0.5
-property = "modulate"
-value = [ Color( 1, 1, 1, 0 ), Vector2( 0, 0 ) ]
-easing_type = 1
-easing_curve = 3
-
-[node name="NormalTrigger5" parent="CrossStructure2" instance=ExtResource( 11 )]
-position = Vector2( -122, 0 )
-rotation = 4.71238
-target_path = "../SpiderStructure/DoorHorizontalRight"
-duration = 0.5
-property = "modulate"
-value = [ Color( 1, 1, 1, 0 ), Vector2( 0, 0 ) ]
-easing_type = 1
-easing_curve = 3
-
-[node name="NormalTrigger6" parent="CrossStructure2" instance=ExtResource( 11 )]
-position = Vector2( -122, 0 )
-rotation = 4.71238
-target_path = "../SpiderStructure/DoorVerticalTop"
-duration = 0.5
-property = "position"
-value = [ Vector2( 0, 244 ), Vector2( 0, 0 ) ]
-relative = true
-easing_type = 1
-easing_curve = 3
-
-[node name="NormalTrigger7" parent="CrossStructure2" instance=ExtResource( 11 )]
-position = Vector2( -122, 0 )
-rotation = 4.71238
-target_path = "../SpiderStructure/DoorVerticalBottom"
-duration = 0.5
-property = "position"
-value = [ Vector2( 0, -244 ), Vector2( 0, 0 ) ]
-relative = true
-easing_type = 1
-easing_curve = 3
-
-[node name="NormalTrigger8" parent="CrossStructure2" instance=ExtResource( 11 )]
-position = Vector2( -122, 0 )
-rotation = 4.71238
-target_path = "../SpiderStructure/DoorVerticalTop"
-duration = 0.5
-property = "modulate"
-value = [ Color( 1, 1, 1, 1 ), Vector2( 0, 0 ) ]
-easing_type = 1
-easing_curve = 3
-
-[node name="NormalTrigger9" parent="CrossStructure2" instance=ExtResource( 11 )]
-position = Vector2( -122, 0 )
-rotation = 4.71238
-target_path = "../SpiderStructure/DoorVerticalBottom"
-duration = 0.5
-property = "modulate"
-value = [ Color( 1, 1, 1, 1 ), Vector2( 0, 0 ) ]
-easing_type = 1
-easing_curve = 3
-
 [node name="JBlock" parent="CrossStructure2" instance=ExtResource( 34 )]
 visible = false
 position = Vector2( -1098, -610 )
@@ -6718,12 +8868,102 @@ visible = false
 position = Vector2( -244, -1647 )
 rotation = -1.57079
 
+[node name="NormalTrigger9" parent="CrossStructure2" instance=ExtResource( 11 )]
+position = Vector2( -122, 0 )
+rotation = -1.57081
+target_path = "../SpiderStructure/DoorVerticalBottom"
+duration = 0.5
+property = "modulate"
+value = [ Color( 1, 1, 1, 1 ), Vector2( 0, 0 ) ]
+easing_type = 1
+easing_curve = 3
+
 [node name="CrossStructure3" type="Node2D" parent="."]
 visible = false
 position = Vector2( 22387, -793 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="NormalTrigger2" parent="CrossStructure3" instance=ExtResource( 11 )]
+position = Vector2( 0, -122 )
+rotation = 3.14159
+target_path = "../SpiderStructure/DoorHorizontalLeft"
+duration = 0.5
+property = "position"
+value = [ Vector2( 23180, -976 ), Vector2( 0, 0 ) ]
+easing_type = 1
+easing_curve = 3
+
+[node name="NormalTrigger3" parent="CrossStructure3" instance=ExtResource( 11 )]
+position = Vector2( 0, -122 )
+rotation = 3.14159
+target_path = "../SpiderStructure/DoorHorizontalRight"
+duration = 0.5
+property = "position"
+value = [ Vector2( 23424, -976 ), Vector2( 0, 0 ) ]
+easing_type = 1
+easing_curve = 3
+
+[node name="NormalTrigger4" parent="CrossStructure3" instance=ExtResource( 11 )]
+position = Vector2( 0, -122 )
+rotation = 3.14159
+target_path = "../SpiderStructure/DoorHorizontalLeft"
+duration = 0.5
+property = "modulate"
+value = [ Color( 1, 1, 1, 1 ), Vector2( 0, 0 ) ]
+easing_type = 1
+easing_curve = 3
+
+[node name="NormalTrigger5" parent="CrossStructure3" instance=ExtResource( 11 )]
+position = Vector2( 0, -122 )
+rotation = 3.14159
+target_path = "../SpiderStructure/DoorHorizontalRight"
+duration = 0.5
+property = "modulate"
+value = [ Color( 1, 1, 1, 1 ), Vector2( 0, 0 ) ]
+easing_type = 1
+easing_curve = 3
+
+[node name="NormalTrigger6" parent="CrossStructure3" instance=ExtResource( 11 )]
+position = Vector2( 0, -122 )
+rotation = 3.14159
+target_path = "../SpiderStructure/DoorVerticalTop"
+duration = 0.5
+property = "position"
+value = [ Vector2( 23302, -1342 ), Vector2( 0, 0 ) ]
+easing_type = 1
+easing_curve = 3
+
+[node name="NormalTrigger7" parent="CrossStructure3" instance=ExtResource( 11 )]
+position = Vector2( 0, -122 )
+rotation = 3.14159
+target_path = "../SpiderStructure/DoorVerticalBottom"
+duration = 0.5
+property = "position"
+value = [ Vector2( 23302, -610 ), Vector2( 0, 0 ) ]
+easing_type = 1
+easing_curve = 3
+
+[node name="NormalTrigger8" parent="CrossStructure3" instance=ExtResource( 11 )]
+position = Vector2( 0, -122 )
+rotation = 3.14159
+target_path = "../SpiderStructure/DoorVerticalTop"
+duration = 0.5
+property = "modulate"
+value = [ Color( 1, 1, 1, 0 ), Vector2( 0, 0 ) ]
+easing_type = 1
+easing_curve = 3
+
+[node name="NormalTrigger9" parent="CrossStructure3" instance=ExtResource( 11 )]
+position = Vector2( 0, -122 )
+rotation = 3.14159
+target_path = "../SpiderStructure/DoorVerticalBottom"
+duration = 0.5
+property = "modulate"
+value = [ Color( 1, 1, 1, 0 ), Vector2( 0, 0 ) ]
+easing_type = 1
+easing_curve = 3
 
 [node name="RegularSpike01_15" parent="CrossStructure3" instance=ExtResource( 2 )]
 position = Vector2( 214, -152 )
@@ -6806,90 +9046,6 @@ position = Vector2( 854, -122 )
 [node name="PinkOrb2" parent="CrossStructure3" instance=ExtResource( 38 )]
 position = Vector2( 1281, -122 )
 
-[node name="NormalTrigger2" parent="CrossStructure3" instance=ExtResource( 11 )]
-position = Vector2( 0, -122 )
-rotation = 3.14159
-target_path = "../SpiderStructure/DoorHorizontalLeft"
-duration = 0.5
-property = "position"
-value = [ Vector2( 244, 0 ), Vector2( 0, 0 ) ]
-relative = true
-easing_type = 1
-easing_curve = 3
-
-[node name="NormalTrigger3" parent="CrossStructure3" instance=ExtResource( 11 )]
-position = Vector2( 0, -122 )
-rotation = 3.14159
-target_path = "../SpiderStructure/DoorHorizontalRight"
-duration = 0.5
-property = "position"
-value = [ Vector2( -244, 0 ), Vector2( 0, 0 ) ]
-relative = true
-easing_type = 1
-easing_curve = 3
-
-[node name="NormalTrigger4" parent="CrossStructure3" instance=ExtResource( 11 )]
-position = Vector2( 0, -122 )
-rotation = 3.14159
-target_path = "../SpiderStructure/DoorHorizontalLeft"
-duration = 0.5
-property = "modulate"
-value = [ Color( 1, 1, 1, 1 ), Vector2( 0, 0 ) ]
-easing_type = 1
-easing_curve = 3
-
-[node name="NormalTrigger5" parent="CrossStructure3" instance=ExtResource( 11 )]
-position = Vector2( 0, -122 )
-rotation = 3.14159
-target_path = "../SpiderStructure/DoorHorizontalRight"
-duration = 0.5
-property = "modulate"
-value = [ Color( 1, 1, 1, 1 ), Vector2( 0, 0 ) ]
-easing_type = 1
-easing_curve = 3
-
-[node name="NormalTrigger6" parent="CrossStructure3" instance=ExtResource( 11 )]
-position = Vector2( 0, -122 )
-rotation = 3.14159
-target_path = "../SpiderStructure/DoorVerticalTop"
-duration = 0.5
-property = "position"
-value = [ Vector2( 0, -244 ), Vector2( 0, 0 ) ]
-relative = true
-easing_type = 1
-easing_curve = 3
-
-[node name="NormalTrigger7" parent="CrossStructure3" instance=ExtResource( 11 )]
-position = Vector2( 0, -122 )
-rotation = 3.14159
-target_path = "../SpiderStructure/DoorVerticalBottom"
-duration = 0.5
-property = "position"
-value = [ Vector2( 0, 244 ), Vector2( 0, 0 ) ]
-relative = true
-easing_type = 1
-easing_curve = 3
-
-[node name="NormalTrigger8" parent="CrossStructure3" instance=ExtResource( 11 )]
-position = Vector2( 0, -122 )
-rotation = 3.14159
-target_path = "../SpiderStructure/DoorVerticalTop"
-duration = 0.5
-property = "modulate"
-value = [ Color( 1, 1, 1, 0 ), Vector2( 0, 0 ) ]
-easing_type = 1
-easing_curve = 3
-
-[node name="NormalTrigger9" parent="CrossStructure3" instance=ExtResource( 11 )]
-position = Vector2( 0, -122 )
-rotation = 3.14159
-target_path = "../SpiderStructure/DoorVerticalBottom"
-duration = 0.5
-property = "modulate"
-value = [ Color( 1, 1, 1, 0 ), Vector2( 0, 0 ) ]
-easing_type = 1
-easing_curve = 3
-
 [node name="CubePortal_0" parent="CrossStructure3" instance=ExtResource( 19 )]
 visible = false
 position = Vector2( 0, -122 )
@@ -6963,30 +9119,28 @@ __meta__ = {
 }
 
 [node name="NormalTrigger2" parent="CrossStructure4" instance=ExtResource( 11 )]
-position = Vector2( 122.002, 0 )
-rotation = -1.5708
+position = Vector2( 122, 0 )
+rotation = -1.57081
 target_path = "../SpiderStructure/DoorHorizontalLeft"
 duration = 0.5
 property = "position"
-value = [ Vector2( -244, 0 ), Vector2( 0, 0 ) ]
-relative = true
+value = [ Vector2( 22936, -976 ), Vector2( 0, 0 ) ]
 easing_type = 1
 easing_curve = 3
 
 [node name="NormalTrigger3" parent="CrossStructure4" instance=ExtResource( 11 )]
-position = Vector2( 122.002, 0 )
-rotation = -1.5708
+position = Vector2( 122, 0 )
+rotation = -1.57081
 target_path = "../SpiderStructure/DoorHorizontalRight"
 duration = 0.5
 property = "position"
-value = [ Vector2( 244, 0 ), Vector2( 0, 0 ) ]
-relative = true
+value = [ Vector2( 23424, -976 ), Vector2( 0, 0 ) ]
 easing_type = 1
 easing_curve = 3
 
 [node name="NormalTrigger4" parent="CrossStructure4" instance=ExtResource( 11 )]
-position = Vector2( 122.002, 0 )
-rotation = -1.5708
+position = Vector2( 122, 0 )
+rotation = -1.57081
 target_path = "../SpiderStructure/DoorHorizontalLeft"
 duration = 0.5
 property = "modulate"
@@ -6995,8 +9149,8 @@ easing_type = 1
 easing_curve = 3
 
 [node name="NormalTrigger5" parent="CrossStructure4" instance=ExtResource( 11 )]
-position = Vector2( 122.002, 0 )
-rotation = -1.5708
+position = Vector2( 122, 0 )
+rotation = -1.57081
 target_path = "../SpiderStructure/DoorHorizontalRight"
 duration = 0.5
 property = "modulate"
@@ -7005,30 +9159,28 @@ easing_type = 1
 easing_curve = 3
 
 [node name="NormalTrigger6" parent="CrossStructure4" instance=ExtResource( 11 )]
-position = Vector2( 122.002, 0 )
-rotation = -1.5708
+position = Vector2( 122, 0 )
+rotation = -1.57081
 target_path = "../SpiderStructure/DoorVerticalTop"
 duration = 0.5
 property = "position"
-value = [ Vector2( 0, 244 ), Vector2( 0, 0 ) ]
-relative = true
+value = [ Vector2( 23302, -1098 ), Vector2( 0, 0 ) ]
 easing_type = 1
 easing_curve = 3
 
 [node name="NormalTrigger7" parent="CrossStructure4" instance=ExtResource( 11 )]
-position = Vector2( 122.002, 0 )
-rotation = -1.5708
+position = Vector2( 122, 0 )
+rotation = -1.57081
 target_path = "../SpiderStructure/DoorVerticalBottom"
 duration = 0.5
 property = "position"
-value = [ Vector2( 0, -244 ), Vector2( 0, 0 ) ]
-relative = true
+value = [ Vector2( 23302, -854 ), Vector2( 0, 0 ) ]
 easing_type = 1
 easing_curve = 3
 
 [node name="NormalTrigger8" parent="CrossStructure4" instance=ExtResource( 11 )]
-position = Vector2( 122.002, 0 )
-rotation = -1.5708
+position = Vector2( 122, 0 )
+rotation = -1.57081
 target_path = "../SpiderStructure/DoorVerticalTop"
 duration = 0.5
 property = "modulate"
@@ -7037,8 +9189,8 @@ easing_type = 1
 easing_curve = 3
 
 [node name="NormalTrigger9" parent="CrossStructure4" instance=ExtResource( 11 )]
-position = Vector2( 122.002, 0 )
-rotation = -1.5708
+position = Vector2( 122, 0 )
+rotation = -1.57081
 target_path = "../SpiderStructure/DoorVerticalBottom"
 duration = 0.5
 property = "modulate"
@@ -7379,23 +9531,13 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="HBlocks" type="StaticBody2D" parent="CrossStructure5"]
-position = Vector2( -915, 122 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CrossStructure5/HBlocks"]
-shape = SubResource( 1 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="CrossStructure5/HBlocks"]
-shape = SubResource( 2 )
-
 [node name="NormalTrigger2" parent="CrossStructure5" instance=ExtResource( 11 )]
 position = Vector2( 0, 122 )
 rotation = 3.14159
 target_path = "../SpiderStructure/DoorHorizontalLeft"
 duration = 0.5
 property = "position"
-value = [ Vector2( 244, 0 ), Vector2( 0, 0 ) ]
-relative = true
+value = [ Vector2( 23180, -976 ), Vector2( 0, 0 ) ]
 easing_type = 1
 easing_curve = 3
 
@@ -7405,8 +9547,7 @@ rotation = 3.14159
 target_path = "../SpiderStructure/DoorHorizontalRight"
 duration = 0.5
 property = "position"
-value = [ Vector2( -244, 0 ), Vector2( 0, 0 ) ]
-relative = true
+value = [ Vector2( 23424, -976 ), Vector2( 0, 0 ) ]
 easing_type = 1
 easing_curve = 3
 
@@ -7436,8 +9577,7 @@ rotation = 3.14159
 target_path = "../SpiderStructure/DoorVerticalTop"
 duration = 0.5
 property = "position"
-value = [ Vector2( 0, -244 ), Vector2( 0, 0 ) ]
-relative = true
+value = [ Vector2( 23302, -1342 ), Vector2( 0, 0 ) ]
 easing_type = 1
 easing_curve = 3
 
@@ -7447,8 +9587,7 @@ rotation = 3.14159
 target_path = "../SpiderStructure/DoorVerticalBottom"
 duration = 0.5
 property = "position"
-value = [ Vector2( 0, 244 ), Vector2( 0, 0 ) ]
-relative = true
+value = [ Vector2( 23302, -610 ), Vector2( 0, 0 ) ]
 easing_type = 1
 easing_curve = 3
 
@@ -7471,6 +9610,15 @@ property = "modulate"
 value = [ Color( 1, 1, 1, 0 ), Vector2( 0, 0 ) ]
 easing_type = 1
 easing_curve = 3
+
+[node name="HBlocks" type="StaticBody2D" parent="CrossStructure5"]
+position = Vector2( -915, 122 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CrossStructure5/HBlocks"]
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CrossStructure5/HBlocks"]
+shape = SubResource( 2 )
 
 [node name="RegularSpike01_0" parent="CrossStructure5" instance=ExtResource( 2 )]
 position = Vector2( -183, 244 )
@@ -7568,27 +9716,25 @@ __meta__ = {
 }
 
 [node name="NormalTrigger2" parent="CrossStructure6" instance=ExtResource( 11 )]
-rotation = 4.71238
+rotation = -1.57081
 target_path = "../SpiderStructure/DoorHorizontalLeft"
 duration = 0.5
 property = "position"
-value = [ Vector2( -244, 0 ), Vector2( 0, 0 ) ]
-relative = true
+value = [ Vector2( 22936, -976 ), Vector2( 0, 0 ) ]
 easing_type = 1
 easing_curve = 3
 
 [node name="NormalTrigger3" parent="CrossStructure6" instance=ExtResource( 11 )]
-rotation = 4.71238
+rotation = -1.57081
 target_path = "../SpiderStructure/DoorHorizontalRight"
 duration = 0.5
 property = "position"
-value = [ Vector2( 244, 0 ), Vector2( 0, 0 ) ]
-relative = true
+value = [ Vector2( 23424, -976 ), Vector2( 0, 0 ) ]
 easing_type = 1
 easing_curve = 3
 
 [node name="NormalTrigger4" parent="CrossStructure6" instance=ExtResource( 11 )]
-rotation = 4.71238
+rotation = -1.57081
 target_path = "../SpiderStructure/DoorHorizontalLeft"
 duration = 0.5
 property = "modulate"
@@ -7597,7 +9743,7 @@ easing_type = 1
 easing_curve = 3
 
 [node name="NormalTrigger5" parent="CrossStructure6" instance=ExtResource( 11 )]
-rotation = 4.71238
+rotation = -1.57081
 target_path = "../SpiderStructure/DoorHorizontalRight"
 duration = 0.5
 property = "modulate"
@@ -7606,27 +9752,25 @@ easing_type = 1
 easing_curve = 3
 
 [node name="NormalTrigger6" parent="CrossStructure6" instance=ExtResource( 11 )]
-rotation = 4.71238
+rotation = -1.57081
 target_path = "../SpiderStructure/DoorVerticalTop"
 duration = 0.5
 property = "position"
-value = [ Vector2( 0, 244 ), Vector2( 0, 0 ) ]
-relative = true
+value = [ Vector2( 23302, -1098 ), Vector2( 0, 0 ) ]
 easing_type = 1
 easing_curve = 3
 
 [node name="NormalTrigger7" parent="CrossStructure6" instance=ExtResource( 11 )]
-rotation = 4.71238
+rotation = -1.57081
 target_path = "../SpiderStructure/DoorVerticalBottom"
 duration = 0.5
 property = "position"
-value = [ Vector2( 0, -244 ), Vector2( 0, 0 ) ]
-relative = true
+value = [ Vector2( 23302, -854 ), Vector2( 0, 0 ) ]
 easing_type = 1
 easing_curve = 3
 
 [node name="NormalTrigger8" parent="CrossStructure6" instance=ExtResource( 11 )]
-rotation = 4.71238
+rotation = -1.57081
 target_path = "../SpiderStructure/DoorVerticalTop"
 duration = 0.5
 property = "modulate"
@@ -7635,7 +9779,7 @@ easing_type = 1
 easing_curve = 3
 
 [node name="NormalTrigger9" parent="CrossStructure6" instance=ExtResource( 11 )]
-rotation = 4.71238
+rotation = -1.57081
 target_path = "../SpiderStructure/DoorVerticalBottom"
 duration = 0.5
 property = "modulate"
@@ -7848,8 +9992,7 @@ rotation = 3.14159
 target_path = "../SpiderStructure/DoorHorizontalLeft"
 duration = 0.5
 property = "position"
-value = [ Vector2( 244, 0 ), Vector2( 0, 0 ) ]
-relative = true
+value = [ Vector2( 23180, -976 ), Vector2( 0, 0 ) ]
 easing_type = 1
 easing_curve = 3
 
@@ -7858,8 +10001,7 @@ rotation = 3.14159
 target_path = "../SpiderStructure/DoorHorizontalRight"
 duration = 0.5
 property = "position"
-value = [ Vector2( -244, 0 ), Vector2( 0, 0 ) ]
-relative = true
+value = [ Vector2( 23424, -976 ), Vector2( 0, 0 ) ]
 easing_type = 1
 easing_curve = 3
 
@@ -7886,8 +10028,7 @@ rotation = 3.14159
 target_path = "../SpiderStructure/DoorVerticalTop"
 duration = 0.5
 property = "position"
-value = [ Vector2( 0, -244 ), Vector2( 0, 0 ) ]
-relative = true
+value = [ Vector2( 23302, -1342 ), Vector2( 0, 0 ) ]
 easing_type = 1
 easing_curve = 3
 
@@ -7896,8 +10037,7 @@ rotation = 3.14159
 target_path = "../SpiderStructure/DoorVerticalBottom"
 duration = 0.5
 property = "position"
-value = [ Vector2( 0, 244 ), Vector2( 0, 0 ) ]
-relative = true
+value = [ Vector2( 23302, -610 ), Vector2( 0, 0 ) ]
 easing_type = 1
 easing_curve = 3
 

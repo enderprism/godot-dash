@@ -1,6 +1,7 @@
 extends Node
 
 var current_level: String
+var current_level_scene: PackedScene
 var is_camera_static: bool
 var is_background_static: bool
 var scene_to_go: String = "null"

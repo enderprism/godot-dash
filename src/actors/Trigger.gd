@@ -89,9 +89,6 @@ func _on_trigger_area_entered(area: Area2D) -> void:
 				target = get_node("/root/Scene/LevelMusic")
 			else:
 				target = get_node("../"+target_path)
-		else:
-			print("No group defined!")
-			pass
 		var trigger_tween = get_tree().create_tween().set_parallel()
 		if target_path == "PLAYERCAMERA" && property == "static":
 			if exit_static:
@@ -139,7 +136,7 @@ func _on_trigger_area_entered(area: Area2D) -> void:
 				trigger_tween.play()
 	if one_time:
 		CurrentLevel.append_onetime_trigger_to_list(get_path())
-		set_monitorable(false)
+		set_deferred("monitorable", false)
 
 func enter_static(camera):
 	var trigger_tween = get_tree().create_tween().set_parallel()

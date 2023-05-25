@@ -1,18 +1,12 @@
-[gd_scene load_steps=64 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://src/actors/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://src/scenes/levels/Level1.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/audio/levels/Amp It Up.mp3" type="AudioStream" id=3]
-[ext_resource path="res://src/scenes/levels/Trigger Test.tscn" type="PackedScene" id=4]
-[ext_resource path="res://src/scenes/levels/TestLevel.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/scenes/PauseMenu.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/actors/Ground.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/scenes/BackgroundKillZone.gd" type="Script" id=8]
 [ext_resource path="res://src/actors/Background.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/playerTextures/spiderDash/spiderDash_007.png" type="Texture" id=10]
 [ext_resource path="res://assets/playerTextures/spiderDash/spiderDash_006.png" type="Texture" id=11]
-[ext_resource path="res://src/scenes/levels/Level.gd" type="Script" id=12]
-[ext_resource path="res://src/scenes/levels/Level2.tscn" type="PackedScene" id=13]
 [ext_resource path="res://src/scenes/LevelScene.gd" type="Script" id=14]
 [ext_resource path="res://assets/playerTextures/spiderDash/spiderDash_001.png" type="Texture" id=15]
 [ext_resource path="res://assets/playerTextures/spiderDash/spiderDash_004.png" type="Texture" id=16]
@@ -21,10 +15,6 @@
 [ext_resource path="res://assets/playerTextures/spiderDash/spiderDash_008.png" type="Texture" id=19]
 [ext_resource path="res://assets/playerTextures/spiderDash/spiderDash_003.png" type="Texture" id=20]
 [ext_resource path="res://src/actors/SpiderDash.gd" type="Script" id=21]
-[ext_resource path="res://src/scenes/levels/SlopeDemo.tscn" type="PackedScene" id=22]
-[ext_resource path="res://assets/audio/levels/Never Gonna Give You Up.mp3" type="AudioStream" id=23]
-[ext_resource path="res://src/scenes/levels/Explorers.tscn" type="PackedScene" id=24]
-[ext_resource path="res://src/scenes/levels/ArrowTriggerTest.tscn" type="PackedScene" id=25]
 [ext_resource path="res://assets/playerTextures/dashBoom/playerDash2_boom2_008.png" type="Texture" id=26]
 [ext_resource path="res://assets/playerTextures/dashBoom/playerDash2_boom2_006.png" type="Texture" id=27]
 [ext_resource path="res://assets/playerTextures/dashBoom/playerDash2_boom2_003.png" type="Texture" id=28]
@@ -52,7 +42,6 @@
 [ext_resource path="res://src/scenes/Line.gd" type="Script" id=50]
 [ext_resource path="res://src/actors/Trail.gd" type="Script" id=51]
 [ext_resource path="res://src/guiElements/InLevelGUI.tscn" type="PackedScene" id=52]
-[ext_resource path="res://src/scenes/levels/SpiderTests.tscn" type="PackedScene" id=54]
 
 [sub_resource type="CanvasItemMaterial" id=5]
 blend_mode = 1
@@ -122,102 +111,6 @@ position = Vector2( 0, 488 )
 __meta__ = {
 "_edit_lock_": true
 }
-
-[node name="Level1" parent="Levels" instance=ExtResource( 2 )]
-visible = false
-scale = Vector2( 0.5, 0.5 )
-script = ExtResource( 12 )
-__meta__ = {
-"_edit_lock_": true
-}
-level_music = ExtResource( 23 )
-
-[node name="Solid" parent="Levels/Level1" index="0"]
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="NoGroup" parent="Levels/Level1/Solid" index="0"]
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Triggers" parent="Levels/Level1" index="1"]
-position = Vector2( 0, 0 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Move<Group1>" parent="Levels/Level1/Triggers" index="0"]
-position = Vector2( 427, 1 )
-
-[node name="Pads" parent="Levels/Level1" index="2"]
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Orbs" parent="Levels/Level1" index="3"]
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="[Group2]" parent="Levels/Level1" index="4"]
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Hazards" parent="Levels/Level1" index="5"]
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Text" parent="Levels/Level1" index="6"]
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Portals" parent="Levels/Level1" index="7"]
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Playground" parent="Levels" instance=ExtResource( 13 )]
-visible = false
-scale = Vector2( 0.5, 0.5 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Trigger Test" parent="Levels" instance=ExtResource( 4 )]
-visible = false
-scale = Vector2( 0.5, 0.5 )
-script = ExtResource( 12 )
-__meta__ = {
-"_edit_lock_": true
-}
-level_music = ExtResource( 3 )
-
-[node name="SlopeDemo" parent="Levels" instance=ExtResource( 22 )]
-visible = false
-scale = Vector2( 0.5, 0.5 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="ArrowTriggerTest" parent="Levels" instance=ExtResource( 25 )]
-visible = false
-scale = Vector2( 0.5, 0.5 )
-
-[node name="Explorers" parent="Levels" instance=ExtResource( 24 )]
-visible = false
-scale = Vector2( 0.5, 0.5 )
-
-[node name="TestLevel" parent="Levels" instance=ExtResource( 5 )]
-visible = false
-scale = Vector2( 0.5, 0.5 )
-
-[node name="SpiderTests" parent="Levels" instance=ExtResource( 54 )]
-scale = Vector2( 0.5, 0.5 )
 
 [node name="SpiderDash" type="Node2D" parent="."]
 scale = Vector2( 0.5, 0.5 )
@@ -339,11 +232,7 @@ rect_min_size = Vector2( 1920, 1080 )
 
 [node name="GUI" parent="." instance=ExtResource( 52 )]
 
-[connection signal="area_entered" from="Levels/Level1/Triggers/Move<Group1>" to="Player" method="_on_MoveGroup1_area_entered"]
-[connection signal="area_entered" from="Levels/Level1/Triggers/Move<Group2>" to="Player" method="_on_MoveGroup2_area_entered"]
 [connection signal="dead" from="Player" to="DeathEffect" method="_on_Player_dead"]
 [connection signal="spider_jumped" from="Player" to="SpiderDash" method="_on_Player_spider_jumped"]
 [connection signal="started_dashing" from="Player" to="DashBoom" method="_on_Player_started_dashing"]
 [connection signal="area_entered" from="BackgroundKillZone" to="BackgroundKillZone" method="_on_RegularSpike01_0_area_entered"]
-
-[editable path="Levels/Level1"]

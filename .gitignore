@@ -17,11 +17,7 @@ android/
 data_*/
 
 # Exported builds
-exports/Android\ Arrived
-exports/HTML
-exports/Linux\ Rocks
-exports/MacOS\'s\ Not\ Linux
-exports/Windows\ Sucks
+exports/
 
 # IDE directories
 .vscode/

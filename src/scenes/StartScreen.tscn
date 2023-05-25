@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/guiTextures/Logo.png" type="Texture" id=1]
 [ext_resource path="res://assets/guiTextures/levelSelectorButton.png" type="Texture" id=2]
@@ -12,97 +12,6 @@
 [ext_resource path="res://src/scenes/uiElements/GuiElementsTheme.tres" type="Theme" id=10]
 [ext_resource path="res://assets/guiTextures/GJ_closeBtn_001.png" type="Texture" id=11]
 [ext_resource path="res://assets/fonts/PUSAB___.otf" type="DynamicFontData" id=12]
-
-[sub_resource type="Animation" id=8]
-resource_name = "IconSelectorClick"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/path = NodePath("IconSelector:rect_scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 0.5, 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1.15, 1.15 ) ]
-}
-
-[sub_resource type="Animation" id=9]
-resource_name = "IconSelectorStopClick"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/path = NodePath("IconSelector:rect_scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 0.5, 1 ),
-"update": 0,
-"values": [ Vector2( 1.15, 1.15 ), Vector2( 1, 1 ) ]
-}
-
-[sub_resource type="Animation" id=10]
-resource_name = "LevelSelectorClick"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/path = NodePath("LevelSelector:rect_scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 0.5, 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1.15, 1.15 ) ]
-}
-
-[sub_resource type="Animation" id=11]
-resource_name = "LevelSelectorStopClick"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/path = NodePath("LevelSelector:rect_scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 0.5, 1 ),
-"update": 0,
-"values": [ Vector2( 1.15, 1.15 ), Vector2( 1, 1 ) ]
-}
-
-[sub_resource type="Animation" id=12]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("LevelSelector:rect_scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("IconSelector:rect_scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ) ]
-}
 
 [sub_resource type="DynamicFont" id=13]
 size = 50
@@ -189,13 +98,6 @@ size_flags_vertical = 4
 disabled = true
 icon = ExtResource( 4 )
 flat = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Menu/Buttons"]
-anims/IconSelectorClick = SubResource( 8 )
-anims/IconSelectorStopClick = SubResource( 9 )
-anims/LevelSelectorClick = SubResource( 10 )
-anims/LevelSelectorStopClick = SubResource( 11 )
-anims/RESET = SubResource( 12 )
 
 [node name="CloseGame" type="Button" parent="."]
 margin_left = 32.0

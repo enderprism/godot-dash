@@ -23,20 +23,28 @@ func _ready() -> void:
 	CurrentLevel.scene_to_go = "null"
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	MenuLoop.stop_menuloop()
-	enable_selected_level(CurrentLevel.current_level)
+	enable_selected_level(CurrentLevel.current_level_scene)
 
 func disable_level(node):
 	node.queue_free()
 
-func enable_selected_level(selected_level) -> void:
-	for level in levels:
-		if level != selected_level:
-			disable_level($Levels.get_node(level))
-		else:
-			$Levels.get_node(level).visible = true
-			get_node("/root/Scene/Player").is_platformer = $Levels.get_node(level).platformer
-			$LevelMusic.set_stream($Levels.get_node(level).level_music)
-			$LevelMusic.play($Levels.get_node(level).music_start)
+#func enable_selected_level(selected_level) -> void:
+#	for level in levels:
+#		if level != selected_level:
+#			disable_level($Levels.get_node(level))
+#		else:
+#			$Levels.get_node(level).visible = true
+#			$Player.is_platformer = $Levels.get_node(level).platformer
+#			$LevelMusic.set_stream($Levels.get_node(level).level_music)
+#			$LevelMusic.play($Levels.get_node(level).music_start)
+
+func enable_selected_level(packed_level) -> void:
+	var instanciated_level = packed_level.instance()
+	$Levels.add_child(instanciated_level)
+	var _level = $Levels.get_child(0)
+	$Player.is_platformer = _level.platformer
+	$LevelMusic.set_stream(_level.level_music)
+	$LevelMusic.play(_level.music_start)
 
 func _physics_process(delta: float) -> void:
 	$"GUI/platformer-controls".visible = $Player.is_platformer

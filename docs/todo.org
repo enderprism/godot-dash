@@ -1,0 +1,37 @@
+#+title: GD Notes
+#+author: EnderPrism
+
+* DONE Dash Boom
+* TODO In-Game Editor
+* Godot scene editor
+** DONE Make the level creation process easier
+CLOSED: [2023-05-24 mer. 21:02]
+*** Level Selector
+**** Level buttons
+I'm adding a variable that will contain the selected level, as a =PackedScene=.
+#+begin_src gdscript
+extends Control
+
+export var used_level: PackedScene
+
+func _ready() -> void:
+	$LevelMenu/LevelButton/VBoxContainer/Label.text = name
+	$LevelMenu/LevelButton._selected_level = name
+#+end_src
+Then, the =PackedScene= is passed to the level tab's button child, which will then send it to =current_level.gd=.
+*** GameScene
+**** Make the levels instanciated instead of freed
+The level script will get the =PackedScene= mentionned earlier and will instance it inside of the =Levels= child.
+#+begin_src gdscript
+func enable_selected_level(selected_level) -> void:
+	var packed_level: PackedScene = CurrentLevel.current_level_scene
+	var instanciated_level = packed_level.instance()
+	$Levels.add_child(instanciated_level)
+	var _level = $Levels.get_child(0)
+	$Player.is_platformer = _level.platformer
+	$LevelMusic.set_stream(_level.level_music)
+	$LevelMusic.play(_level.music_start)
+#+end_src
+* DONE Replace the main menu buttons with =clickable_buttons=
+CLOSED: [2023-05-24 mer. 21:02]
+Will also allow to remove the =AnimationPlayer= but it will need some modifications to the code

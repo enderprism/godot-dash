@@ -71,8 +71,6 @@ __meta__ = {
 "_gizmo_extents_": 122.0
 }
 
-[node name="Triggers" type="Node2D" parent="."]
-
 [node name="Pads" type="Node2D" parent="."]
 
 [node name="PinkPad" parent="Pads" instance=ExtResource( 8 )]
