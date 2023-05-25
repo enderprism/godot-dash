@@ -157,7 +157,7 @@ func _physics_process(delta: float) -> void:
 		if (slope_object.scale.x >= 1 && UP_DIRECTION.y < 0) || (slope_object.scale.x <= -1 && UP_DIRECTION.y > 0):
 			floor_angle = abs(get_floor_angle()) * -1
 
-	if (Input.is_action_just_pressed("jump") && !_is_dead && gamemode == "spider" && (is_on_floor() || is_on_wall()) ) && \
+	if (Input.is_action_just_pressed("jump") && !_is_dead && gamemode == "spider" && (is_on_floor() || is_on_wall() || is_on_ceiling()) ) && \
 		!(_is_pink_orb_colliding || _is_yellow_orb_colliding || _is_red_orb_colliding || \
 		 _is_blue_orb_colliding || _is_green_orb_colliding || _is_green_dash_orb_colliding || \
 		 _is_black_orb_colliding || _is_spider_orb_colliding || _is_toggle_orb_colliding):
@@ -243,7 +243,14 @@ func _physics_process(delta: float) -> void:
 		if !(gamemode == "ball" || gamemode == "swingcopter"):
 #			$SpiderSprites.scale.y = 2 if UP_DIRECTION.y < 0 else -2
 			player_icon.flip_v = false if UP_DIRECTION.y < 0 else true
-	if (_is_small_hitbox_colliding || _is_hazard_colliding) && !_is_dead:
+	
+	if _spider_immunity_timer > 0:
+		_spider_immunity_timer -= 1
+	if _spider_immunity_timer != 0:
+		_is_small_hitbox_colliding = false
+		_is_hazard_colliding = false
+	
+	if (_is_small_hitbox_colliding || (_is_hazard_colliding && _spider_immunity_timer == 0)) && !_is_dead:
 		$AnimationPlayer.current_animation = "DeathAnimation"
 
 	if !level_ended:
@@ -525,7 +532,10 @@ func _spider_manage_states():
 			_spider_state_machine.travel("fall loop")
 			_is_spider_jumping = false
 
+var _spider_immunity_timer: int
+
 func do_spider_jump():
+	_spider_immunity_timer = 10
 	if arrow_trigger_direction == Vector2(0.0, -1.0):
 		var collision_point: float = $SpiderSprites/SpiderRaycast.get_collision_point().y
 		var arrival_coordinates: float

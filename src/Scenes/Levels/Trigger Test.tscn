@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/Actors/Portals/Speed Portals/SpeedPortal0-5x.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Scenes/Levels/Level.gd" type="Script" id=2]
 [ext_resource path="res://src/Actors/TriggerTemplates/NormalTrigger.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Scenes/Fonts/pusab_75.tres" type="DynamicFont" id=4]
 [ext_resource path="res://src/Actors/Solids/GridBlock01_0.tscn" type="PackedScene" id=5]
@@ -8,6 +9,7 @@
 [ext_resource path="res://src/Scenes/LevelEnd.tscn" type="PackedScene" id=8]
 
 [node name="Trigger Test" type="Node2D"]
+script = ExtResource( 2 )
 
 [node name="SpeedPortal0-5x_0" parent="." instance=ExtResource( 1 )]
 position = Vector2( 427, -183 )

@@ -1281,7 +1281,7 @@ material = SubResource( 5 )
 position = Vector2( -7.62939e-06, -66 )
 scale = Vector2( 1.25, 1.25 )
 frames = SubResource( 63 )
-frame = 2
+frame = 11
 playing = true
 offset = Vector2( -90, 0 )
 

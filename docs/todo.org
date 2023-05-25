@@ -3,8 +3,9 @@
 
 * DONE Dash Boom
 * TODO In-Game Editor
-* TODO Godot scene editor
-** Make the level creation process easier
+* Godot scene editor
+** DONE Make the level creation process easier
+CLOSED: [2023-05-24 mer. 21:02]
 *** Level Selector
 **** Level buttons
 I'm adding a variable that will contain the selected level, as a =PackedScene=.
@@ -31,3 +32,6 @@ func enable_selected_level(selected_level) -> void:
 	$LevelMusic.set_stream(_level.level_music)
 	$LevelMusic.play(_level.music_start)
 #+end_src
+* DONE Replace the main menu buttons with =clickable_buttons=
+CLOSED: [2023-05-24 mer. 21:02]
+Will also allow to remove the =AnimationPlayer= but it will need some modifications to the code
