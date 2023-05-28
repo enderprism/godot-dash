@@ -1,0 +1,714 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://src/scenes/levels/Level.gd" type="Script" id=1]
+[ext_resource path="res://src/actors/solids/GridSlopeWithOutline01.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/actors/solids/GridBlock05_0.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/actors/solids/GridBlock02_0.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/actors/solids/GridBlock04_0.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/audio/levels/Scheming Weasel.mp3" type="AudioStream" id=6]
+[ext_resource path="res://src/actors/solids/GridSlope02WithOutline.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/actors/solids/RegularBlock.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/actors/orbs/SpiderOrb.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/actors/pads/SpiderPad.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/actors/hazards/RegularSpike01_0.tscn" type="PackedScene" id=11]
+
+[node name="SlopeDemo" type="Node2D"]
+script = ExtResource( 1 )
+level_music = ExtResource( 6 )
+
+[node name="SmolSlope" type="Node2D" parent="."]
+position = Vector2( 1159, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="45°Structure" type="Node2D" parent="SmolSlope"]
+position = Vector2( -366, -183 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="GridSlope01_0" parent="SmolSlope/45°Structure" instance=ExtResource( 2 )]
+position = Vector2( -122, 122 )
+
+[node name="GridSlope01_1" parent="SmolSlope/45°Structure" instance=ExtResource( 2 )]
+
+[node name="GridSlope01_2" parent="SmolSlope/45°Structure" instance=ExtResource( 2 )]
+position = Vector2( 122, -122 )
+
+[node name="GridBlock04_0" parent="SmolSlope/45°Structure" instance=ExtResource( 5 )]
+position = Vector2( 0, 122 )
+
+[node name="GridBlock04_1" parent="SmolSlope/45°Structure" instance=ExtResource( 5 )]
+position = Vector2( 122, 0 )
+
+[node name="GridBlock05_0" parent="SmolSlope/45°Structure" instance=ExtResource( 3 )]
+position = Vector2( 122, 122 )
+
+[node name="45°Structure2" type="Node2D" parent="SmolSlope"]
+position = Vector2( 366, -183 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="GridSlope01_0" parent="SmolSlope/45°Structure2" instance=ExtResource( 2 )]
+position = Vector2( -122, 122 )
+
+[node name="GridSlope01_1" parent="SmolSlope/45°Structure2" instance=ExtResource( 2 )]
+
+[node name="GridSlope01_2" parent="SmolSlope/45°Structure2" instance=ExtResource( 2 )]
+position = Vector2( 122, -122 )
+
+[node name="GridBlock04_0" parent="SmolSlope/45°Structure2" instance=ExtResource( 5 )]
+position = Vector2( 0, 122 )
+
+[node name="GridBlock04_1" parent="SmolSlope/45°Structure2" instance=ExtResource( 5 )]
+position = Vector2( 122, 0 )
+
+[node name="GridBlock05_0" parent="SmolSlope/45°Structure2" instance=ExtResource( 3 )]
+position = Vector2( 122, 122 )
+
+[node name="Fill" type="Node2D" parent="SmolSlope"]
+position = Vector2( -122, -61 )
+rotation = -3.14159
+scale = Vector2( 1, -1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="GridBlock05_1" parent="SmolSlope/Fill" instance=ExtResource( 3 )]
+
+[node name="GridBlock05_2" parent="SmolSlope/Fill" instance=ExtResource( 3 )]
+position = Vector2( -122, -1.14441e-05 )
+
+[node name="GridBlock05_3" parent="SmolSlope/Fill" instance=ExtResource( 3 )]
+position = Vector2( 0, -122 )
+
+[node name="GridBlock05_4" parent="SmolSlope/Fill" instance=ExtResource( 3 )]
+position = Vector2( -122, -122 )
+
+[node name="GridBlock02_0" parent="SmolSlope/Fill" instance=ExtResource( 4 )]
+position = Vector2( 0, -244 )
+rotation = -3.14159
+scale = Vector2( 1, -1 )
+
+[node name="GridBlock02_1" parent="SmolSlope/Fill" instance=ExtResource( 4 )]
+position = Vector2( -122, -244 )
+rotation = -3.14159
+scale = Vector2( 1, -1 )
+
+[node name="GridBlock02_2" parent="SmolSlope/Fill" instance=ExtResource( 4 )]
+position = Vector2( -244, -244 )
+rotation = -3.14159
+scale = Vector2( 1, -1 )
+
+[node name="GridBlock05_5" parent="SmolSlope/Fill" instance=ExtResource( 3 )]
+position = Vector2( -244, -1.90735e-05 )
+
+[node name="GridBlock05_6" parent="SmolSlope/Fill" instance=ExtResource( 3 )]
+position = Vector2( -244, -122 )
+
+[node name="SmolSlope2" type="Node2D" parent="."]
+position = Vector2( 1159, -1220 )
+rotation = 3.14159
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="45°Structure" type="Node2D" parent="SmolSlope2"]
+position = Vector2( -366, -183 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="GridSlope01_0" parent="SmolSlope2/45°Structure" instance=ExtResource( 2 )]
+position = Vector2( -122, 122 )
+
+[node name="GridSlope01_1" parent="SmolSlope2/45°Structure" instance=ExtResource( 2 )]
+
+[node name="GridSlope01_2" parent="SmolSlope2/45°Structure" instance=ExtResource( 2 )]
+position = Vector2( 122, -122 )
+
+[node name="GridBlock04_0" parent="SmolSlope2/45°Structure" instance=ExtResource( 5 )]
+position = Vector2( 0, 122 )
+
+[node name="GridBlock04_1" parent="SmolSlope2/45°Structure" instance=ExtResource( 5 )]
+position = Vector2( 122, 0 )
+
+[node name="GridBlock05_0" parent="SmolSlope2/45°Structure" instance=ExtResource( 3 )]
+position = Vector2( 122, 122 )
+
+[node name="45°Structure2" type="Node2D" parent="SmolSlope2"]
+position = Vector2( 366, -183 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="GridSlope01_0" parent="SmolSlope2/45°Structure2" instance=ExtResource( 2 )]
+position = Vector2( -122, 122 )
+
+[node name="GridSlope01_1" parent="SmolSlope2/45°Structure2" instance=ExtResource( 2 )]
+
+[node name="GridSlope01_2" parent="SmolSlope2/45°Structure2" instance=ExtResource( 2 )]
+position = Vector2( 122, -122 )
+
+[node name="GridBlock04_0" parent="SmolSlope2/45°Structure2" instance=ExtResource( 5 )]
+position = Vector2( 0, 122 )
+
+[node name="GridBlock04_1" parent="SmolSlope2/45°Structure2" instance=ExtResource( 5 )]
+position = Vector2( 122, 0 )
+
+[node name="GridBlock05_0" parent="SmolSlope2/45°Structure2" instance=ExtResource( 3 )]
+position = Vector2( 122, 122 )
+
+[node name="Fill" type="Node2D" parent="SmolSlope2"]
+position = Vector2( -122, -61 )
+rotation = -3.14159
+scale = Vector2( 1, -1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="GridBlock05_1" parent="SmolSlope2/Fill" instance=ExtResource( 3 )]
+
+[node name="GridBlock05_2" parent="SmolSlope2/Fill" instance=ExtResource( 3 )]
+position = Vector2( -122, -1.14441e-05 )
+
+[node name="GridBlock05_3" parent="SmolSlope2/Fill" instance=ExtResource( 3 )]
+position = Vector2( 0, -122 )
+
+[node name="GridBlock05_4" parent="SmolSlope2/Fill" instance=ExtResource( 3 )]
+position = Vector2( -122, -122 )
+
+[node name="GridBlock02_0" parent="SmolSlope2/Fill" instance=ExtResource( 4 )]
+position = Vector2( 0, -244 )
+rotation = -3.14159
+scale = Vector2( 1, -1 )
+
+[node name="GridBlock02_1" parent="SmolSlope2/Fill" instance=ExtResource( 4 )]
+position = Vector2( -122, -244 )
+rotation = -3.14159
+scale = Vector2( 1, -1 )
+
+[node name="GridBlock02_2" parent="SmolSlope2/Fill" instance=ExtResource( 4 )]
+position = Vector2( -244, -244 )
+rotation = -3.14159
+scale = Vector2( 1, -1 )
+
+[node name="GridBlock05_5" parent="SmolSlope2/Fill" instance=ExtResource( 3 )]
+position = Vector2( -244, -1.90735e-05 )
+
+[node name="GridBlock05_6" parent="SmolSlope2/Fill" instance=ExtResource( 3 )]
+position = Vector2( -244, -122 )
+
+[node name="BigSlope" type="Node2D" parent="."]
+position = Vector2( 3904, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Fill2" type="Node2D" parent="BigSlope"]
+position = Vector2( 0, -183 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="GridBlock02_0" parent="BigSlope/Fill2" instance=ExtResource( 4 )]
+position = Vector2( -305, -122 )
+
+[node name="GridBlock05_0" parent="BigSlope/Fill2" instance=ExtResource( 3 )]
+position = Vector2( -305, 0 )
+
+[node name="GridBlock05_2" parent="BigSlope/Fill2" instance=ExtResource( 3 )]
+position = Vector2( -183, 0 )
+
+[node name="GridBlock05_3" parent="BigSlope/Fill2" instance=ExtResource( 3 )]
+position = Vector2( -61, 0 )
+
+[node name="GridBlock05_4" parent="BigSlope/Fill2" instance=ExtResource( 3 )]
+position = Vector2( 61, 0 )
+
+[node name="GridBlock05_5" parent="BigSlope/Fill2" instance=ExtResource( 3 )]
+position = Vector2( 183, 0 )
+
+[node name="GridBlock05_6" parent="BigSlope/Fill2" instance=ExtResource( 3 )]
+position = Vector2( 305, 0 )
+
+[node name="GridBlock05_7" parent="BigSlope/Fill2" instance=ExtResource( 3 )]
+position = Vector2( 427, 0 )
+
+[node name="GridBlock05_1" parent="BigSlope/Fill2" instance=ExtResource( 3 )]
+position = Vector2( -427, 0 )
+
+[node name="GridBlock05_8" parent="BigSlope/Fill2" instance=ExtResource( 3 )]
+position = Vector2( -549, 122 )
+
+[node name="GridBlock05_9" parent="BigSlope/Fill2" instance=ExtResource( 3 )]
+position = Vector2( -427, 122 )
+
+[node name="GridBlock05_10" parent="BigSlope/Fill2" instance=ExtResource( 3 )]
+position = Vector2( -305, 122 )
+
+[node name="GridBlock05_11" parent="BigSlope/Fill2" instance=ExtResource( 3 )]
+position = Vector2( -183, 122 )
+
+[node name="GridBlock05_12" parent="BigSlope/Fill2" instance=ExtResource( 3 )]
+position = Vector2( -61, 122 )
+
+[node name="GridBlock05_13" parent="BigSlope/Fill2" instance=ExtResource( 3 )]
+position = Vector2( 61, 122 )
+
+[node name="GridBlock05_14" parent="BigSlope/Fill2" instance=ExtResource( 3 )]
+position = Vector2( 183, 122 )
+
+[node name="GridBlock05_16" parent="BigSlope/Fill2" instance=ExtResource( 3 )]
+position = Vector2( 305, 122 )
+
+[node name="GridBlock05_17" parent="BigSlope/Fill2" instance=ExtResource( 3 )]
+position = Vector2( 427, 122 )
+
+[node name="GridBlock05_18" parent="BigSlope/Fill2" instance=ExtResource( 3 )]
+position = Vector2( 549, 122 )
+
+[node name="GridBlock05_19" parent="BigSlope/Fill2" instance=ExtResource( 3 )]
+position = Vector2( 671, 122 )
+
+[node name="GridBlock05_15" parent="BigSlope/Fill2" instance=ExtResource( 3 )]
+position = Vector2( -671, 122 )
+
+[node name="GridBlock02_1" parent="BigSlope/Fill2" instance=ExtResource( 4 )]
+position = Vector2( -183, -122 )
+
+[node name="GridBlock02_2" parent="BigSlope/Fill2" instance=ExtResource( 4 )]
+position = Vector2( -61, -122 )
+
+[node name="GridBlock02_3" parent="BigSlope/Fill2" instance=ExtResource( 4 )]
+position = Vector2( 61, -122 )
+
+[node name="GridBlock02_4" parent="BigSlope/Fill2" instance=ExtResource( 4 )]
+position = Vector2( 183, -122 )
+
+[node name="GridBlock02_5" parent="BigSlope/Fill2" instance=ExtResource( 4 )]
+position = Vector2( 305, -122 )
+
+[node name="22°Structure" type="Node2D" parent="BigSlope"]
+position = Vector2( -732, -183 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="GridSlope02_0" parent="BigSlope/22°Structure" instance=ExtResource( 7 )]
+position = Vector2( -244, 122 )
+
+[node name="GridSlope02_1" parent="BigSlope/22°Structure" instance=ExtResource( 7 )]
+
+[node name="GridSlope02_2" parent="BigSlope/22°Structure" instance=ExtResource( 7 )]
+position = Vector2( 244, -122 )
+
+[node name="GridBlock04_0" parent="BigSlope/22°Structure" instance=ExtResource( 5 )]
+position = Vector2( -61, 122 )
+
+[node name="GridBlock04_1" parent="BigSlope/22°Structure" instance=ExtResource( 5 )]
+position = Vector2( 183, 0 )
+
+[node name="22°Structure2" type="Node2D" parent="BigSlope"]
+position = Vector2( 732, -183 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="GridSlope02_0" parent="BigSlope/22°Structure2" instance=ExtResource( 7 )]
+position = Vector2( 244, 122 )
+scale = Vector2( -1, 1 )
+
+[node name="GridSlope02_1" parent="BigSlope/22°Structure2" instance=ExtResource( 7 )]
+scale = Vector2( -1, 1 )
+
+[node name="GridSlope02_2" parent="BigSlope/22°Structure2" instance=ExtResource( 7 )]
+position = Vector2( -244, -122 )
+scale = Vector2( -1, 1 )
+
+[node name="GridBlock04_0" parent="BigSlope/22°Structure2" instance=ExtResource( 5 )]
+position = Vector2( 61, 122 )
+scale = Vector2( -1, 1 )
+
+[node name="GridBlock04_1" parent="BigSlope/22°Structure2" instance=ExtResource( 5 )]
+position = Vector2( -183, 0 )
+scale = Vector2( -1, 1 )
+
+[node name="BigSlope2" type="Node2D" parent="."]
+position = Vector2( 3904, -1220 )
+rotation = 3.14159
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Fill2" type="Node2D" parent="BigSlope2"]
+position = Vector2( 0, -183 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="GridBlock02_0" parent="BigSlope2/Fill2" instance=ExtResource( 4 )]
+position = Vector2( -305, -122 )
+
+[node name="GridBlock05_0" parent="BigSlope2/Fill2" instance=ExtResource( 3 )]
+position = Vector2( -305, 0 )
+
+[node name="GridBlock05_2" parent="BigSlope2/Fill2" instance=ExtResource( 3 )]
+position = Vector2( -183, 0 )
+
+[node name="GridBlock05_3" parent="BigSlope2/Fill2" instance=ExtResource( 3 )]
+position = Vector2( -61, 0 )
+
+[node name="GridBlock05_4" parent="BigSlope2/Fill2" instance=ExtResource( 3 )]
+position = Vector2( 61, 0 )
+
+[node name="GridBlock05_5" parent="BigSlope2/Fill2" instance=ExtResource( 3 )]
+position = Vector2( 183, 0 )
+
+[node name="GridBlock05_6" parent="BigSlope2/Fill2" instance=ExtResource( 3 )]
+position = Vector2( 305, 0 )
+
+[node name="GridBlock05_7" parent="BigSlope2/Fill2" instance=ExtResource( 3 )]
+position = Vector2( 427, 0 )
+
+[node name="GridBlock05_1" parent="BigSlope2/Fill2" instance=ExtResource( 3 )]
+position = Vector2( -427, 0 )
+
+[node name="GridBlock05_8" parent="BigSlope2/Fill2" instance=ExtResource( 3 )]
+position = Vector2( -549, 122 )
+
+[node name="GridBlock05_9" parent="BigSlope2/Fill2" instance=ExtResource( 3 )]
+position = Vector2( -427, 122 )
+
+[node name="GridBlock05_10" parent="BigSlope2/Fill2" instance=ExtResource( 3 )]
+position = Vector2( -305, 122 )
+
+[node name="GridBlock05_11" parent="BigSlope2/Fill2" instance=ExtResource( 3 )]
+position = Vector2( -183, 122 )
+
+[node name="GridBlock05_12" parent="BigSlope2/Fill2" instance=ExtResource( 3 )]
+position = Vector2( -61, 122 )
+
+[node name="GridBlock05_13" parent="BigSlope2/Fill2" instance=ExtResource( 3 )]
+position = Vector2( 61, 122 )
+
+[node name="GridBlock05_14" parent="BigSlope2/Fill2" instance=ExtResource( 3 )]
+position = Vector2( 183, 122 )
+
+[node name="GridBlock05_16" parent="BigSlope2/Fill2" instance=ExtResource( 3 )]
+position = Vector2( 305, 122 )
+
+[node name="GridBlock05_17" parent="BigSlope2/Fill2" instance=ExtResource( 3 )]
+position = Vector2( 427, 122 )
+
+[node name="GridBlock05_18" parent="BigSlope2/Fill2" instance=ExtResource( 3 )]
+position = Vector2( 549, 122 )
+
+[node name="GridBlock05_19" parent="BigSlope2/Fill2" instance=ExtResource( 3 )]
+position = Vector2( 671, 122 )
+
+[node name="GridBlock05_15" parent="BigSlope2/Fill2" instance=ExtResource( 3 )]
+position = Vector2( -671, 122 )
+
+[node name="GridBlock02_1" parent="BigSlope2/Fill2" instance=ExtResource( 4 )]
+position = Vector2( -183, -122 )
+
+[node name="GridBlock02_2" parent="BigSlope2/Fill2" instance=ExtResource( 4 )]
+position = Vector2( -61, -122 )
+
+[node name="GridBlock02_3" parent="BigSlope2/Fill2" instance=ExtResource( 4 )]
+position = Vector2( 61, -122 )
+
+[node name="GridBlock02_4" parent="BigSlope2/Fill2" instance=ExtResource( 4 )]
+position = Vector2( 183, -122 )
+
+[node name="GridBlock02_5" parent="BigSlope2/Fill2" instance=ExtResource( 4 )]
+position = Vector2( 305, -122 )
+
+[node name="22°Structure" type="Node2D" parent="BigSlope2"]
+position = Vector2( -732, -183 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="GridSlope02_0" parent="BigSlope2/22°Structure" instance=ExtResource( 7 )]
+position = Vector2( -244, 122 )
+
+[node name="GridSlope02_1" parent="BigSlope2/22°Structure" instance=ExtResource( 7 )]
+
+[node name="GridSlope02_2" parent="BigSlope2/22°Structure" instance=ExtResource( 7 )]
+position = Vector2( 244, -122 )
+
+[node name="GridBlock04_0" parent="BigSlope2/22°Structure" instance=ExtResource( 5 )]
+position = Vector2( -61, 122 )
+
+[node name="GridBlock04_1" parent="BigSlope2/22°Structure" instance=ExtResource( 5 )]
+position = Vector2( 183, 0 )
+
+[node name="22°Structure2" type="Node2D" parent="BigSlope2"]
+position = Vector2( 732, -183 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="GridSlope02_0" parent="BigSlope2/22°Structure2" instance=ExtResource( 7 )]
+position = Vector2( 244, 122 )
+scale = Vector2( -1, 1 )
+
+[node name="GridSlope02_1" parent="BigSlope2/22°Structure2" instance=ExtResource( 7 )]
+scale = Vector2( -1, 1 )
+
+[node name="GridSlope02_2" parent="BigSlope2/22°Structure2" instance=ExtResource( 7 )]
+position = Vector2( -244, -122 )
+scale = Vector2( -1, 1 )
+
+[node name="GridBlock04_0" parent="BigSlope2/22°Structure2" instance=ExtResource( 5 )]
+position = Vector2( 61, 122 )
+scale = Vector2( -1, 1 )
+
+[node name="GridBlock04_1" parent="BigSlope2/22°Structure2" instance=ExtResource( 5 )]
+position = Vector2( -183, 0 )
+scale = Vector2( -1, 1 )
+
+[node name="Ceiling" type="Node2D" parent="."]
+position = Vector2( 2318, -1281 )
+
+[node name="RegularBlock" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( -2257, 0 )
+rotation = 3.14159
+
+[node name="RegularBlock2" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( -2135, 0 )
+rotation = 3.14159
+
+[node name="RegularBlock3" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( -2013, 0 )
+rotation = 3.14159
+
+[node name="RegularBlock4" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( -1891, 0 )
+rotation = 3.14159
+
+[node name="RegularBlock5" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( -1769, 0 )
+rotation = 3.14159
+
+[node name="RegularBlock6" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( -1647, 0 )
+rotation = 3.14159
+
+[node name="RegularBlock7" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( -1525, 0 )
+rotation = 3.14159
+
+[node name="RegularBlock8" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( -1403, 0 )
+rotation = 3.14159
+
+[node name="RegularBlock9" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( -1281, 0 )
+rotation = 3.14159
+
+[node name="RegularBlock10" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( -1159, 0 )
+rotation = 3.14159
+
+[node name="RegularBlock11" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( -1037, 0 )
+rotation = 3.14159
+
+[node name="RegularBlock12" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( -915, 0 )
+rotation = 3.14159
+
+[node name="RegularBlock13" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( -793, 0 )
+rotation = 3.14159
+
+[node name="RegularBlock14" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( -671, 0 )
+rotation = 3.14159
+
+[node name="RegularBlock15" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( -549, 0 )
+rotation = 3.14159
+
+[node name="RegularBlock16" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( -427, 0 )
+rotation = 3.14159
+
+[node name="RegularBlock17" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( -305, 0 )
+rotation = 3.14159
+
+[node name="RegularBlock18" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( -183, 0 )
+rotation = 3.14159
+
+[node name="RegularBlock19" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( -61, 0 )
+rotation = 3.14159
+
+[node name="RegularBlock20" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( 61, 0 )
+rotation = 3.14159
+
+[node name="RegularBlock21" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( 183, 0 )
+rotation = 3.14159
+
+[node name="RegularBlock22" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( 305, 0 )
+rotation = 3.14159
+
+[node name="RegularBlock23" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( 427, 0 )
+rotation = 3.14159
+
+[node name="RegularBlock24" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( 549, 0 )
+rotation = 3.14159
+
+[node name="RegularBlock25" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( 671, 0 )
+rotation = 3.14159
+
+[node name="RegularBlock26" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( 793, 0 )
+rotation = 3.14159
+
+[node name="RegularBlock27" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( 915, 0 )
+rotation = 3.14159
+
+[node name="RegularBlock28" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( 1037, 0 )
+rotation = 3.14159
+
+[node name="RegularBlock29" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( 1159, 0 )
+rotation = 3.14159
+
+[node name="RegularBlock30" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( 1281, 0 )
+rotation = 3.14159
+
+[node name="RegularBlock31" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( 1403, 0 )
+rotation = 3.14159
+
+[node name="RegularBlock32" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( 1525, 0 )
+rotation = 3.14159
+
+[node name="RegularBlock33" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( 1647, 0 )
+rotation = 3.14159
+
+[node name="RegularBlock34" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( 1769, 0 )
+rotation = 3.14159
+
+[node name="RegularBlock35" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( 1891, 0 )
+rotation = 3.14159
+
+[node name="RegularBlock36" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( 2013, 0 )
+rotation = 3.14159
+
+[node name="RegularBlock37" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( 2135, 0 )
+rotation = 3.14159
+
+[node name="RegularBlock38" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( 2257, 0 )
+rotation = 3.14159
+
+[node name="RegularBlock39" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( 2379, 0 )
+rotation = 3.14159
+
+[node name="RegularBlock40" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( 2501, 0 )
+rotation = 3.14159
+
+[node name="RegularBlock41" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( 2623, 0 )
+rotation = 3.14159
+
+[node name="RegularBlock42" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( 2745, 0 )
+rotation = 3.14159
+
+[node name="RegularBlock43" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( 2867, 0 )
+rotation = 3.14159
+
+[node name="RegularBlock44" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( 2989, 0 )
+rotation = 3.14159
+
+[node name="RegularBlock45" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( 3111, 0 )
+rotation = 3.14159
+
+[node name="RegularBlock46" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( 3233, 0 )
+rotation = 3.14159
+
+[node name="RegularBlock47" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( 3355, 0 )
+rotation = 3.14159
+
+[node name="RegularBlock48" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( 3477, 0 )
+rotation = 3.14159
+
+[node name="RegularBlock53" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( 3599, 0 )
+rotation = 3.14159
+
+[node name="RegularBlock49" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( 3721, 0 )
+rotation = 3.14159
+
+[node name="RegularBlock50" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( 3721, 122 )
+rotation = 3.14159
+
+[node name="RegularBlock51" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( 3721, 244 )
+rotation = 3.14159
+
+[node name="RegularBlock52" parent="Ceiling" instance=ExtResource( 8 )]
+position = Vector2( 3721, 366 )
+rotation = 3.14159
+
+[node name="SpiderOrb" parent="." instance=ExtResource( 9 )]
+position = Vector2( 244, -61 )
+
+[node name="RegularSpike01_0" parent="." instance=ExtResource( 11 )]
+position = Vector2( 5673, -61 )
+
+[node name="RegularSpike01_1" parent="." instance=ExtResource( 11 )]
+position = Vector2( 5795, -61 )
+
+[node name="RegularSpike01_2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 5917, -61 )
+
+[node name="RegularSpike01_3" parent="." instance=ExtResource( 11 )]
+position = Vector2( 6039, -61 )
+
+[node name="RegularSpike01_4" parent="." instance=ExtResource( 11 )]
+position = Vector2( 6161, -61 )
+
+[node name="SpiderPad" parent="." instance=ExtResource( 10 )]
+position = Vector2( 5917, -1159 )
+rotation = 3.14159
