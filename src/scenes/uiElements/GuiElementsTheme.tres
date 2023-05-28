@@ -1,9 +1,18 @@
-[gd_resource type="Theme" load_steps=6 format=2]
+[gd_resource type="Theme" load_steps=8 format=2]
+
+[ext_resource path="res://assets/fonts/PUSAB___.otf" type="DynamicFontData" id=1]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 25
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxFlat" id=3]
 content_margin_left = 264.0
@@ -47,6 +56,7 @@ shadow_size = 4
 [resource]
 Button/styles/focus = SubResource( 1 )
 HSlider/styles/slider = SubResource( 2 )
+TabContainer/fonts/font = SubResource( 6 )
 TabContainer/styles/panel = SubResource( 3 )
 TabContainer/styles/tab_bg = SubResource( 4 )
 TabContainer/styles/tab_fg = SubResource( 5 )
