@@ -1,3 +1,4 @@
+@tool
 # Copyright (c) 2019-2023 Krayon
 # Copyright (c) 2018 Calvin Ikenberry.
 #
@@ -21,7 +22,6 @@
 
 # See README.md for instructions
 
-tool
 extends EditorPlugin
 
 const SHORTCUT_SCANCODE = KEY_E
@@ -46,7 +46,7 @@ func _enter_tree():
     script_editor = get_editor_interface().get_script_editor()
     editor_settings = get_editor_interface().get_editor_settings()
     var input_event = InputEventKey.new()
-    input_event.scancode = SHORTCUT_SCANCODE
+    input_event.keycode = SHORTCUT_SCANCODE
     if SHORTCUT_MODIFIERS & KEY_MASK_ALT:
         input_event.alt = true
     if SHORTCUT_MODIFIERS & KEY_MASK_CMD:
@@ -57,16 +57,16 @@ func _enter_tree():
         input_event.meta = true
     if SHORTCUT_MODIFIERS & KEY_MASK_SHIFT:
         input_event.shift = true
-    shortcut = ShortCut.new()
+    shortcut = Shortcut.new()
     shortcut.set_shortcut(input_event)
-    button = ToolButton.new()
+    button = Button.new()
     button.text = editor_settings.get_setting(EXEC_PATH_SETTING)
-    if (button.text.find_last("/") >= 0): button.text = button.text.right(button.text.find_last("/")+1)
+    if (button.text.rfind("/") >= 0): button.text = button.text.right(button.text.rfind("/")+1)
     if (button.text == ""): button.text = "Set Ext. Editor"
-    button.hint_tooltip = "Open script in external editor"
+    button.tooltip_text = "Open script in external editor"
     if (shortcut && shortcut.get_as_text() != ""):
-        button.hint_tooltip += " (" + shortcut.get_as_text() + ")"
-    button.connect("pressed", self, "open_external_editor")
+        button.tooltip_text += " (" + shortcut.get_as_text() + ")"
+    button.connect("pressed", Callable(self, "open_external_editor"))
     var vbox1 = script_editor.get_child(0)
     var hbox1 = vbox1.get_child(0)
     hbox1.add_child(button)
@@ -76,7 +76,7 @@ func _exit_tree():
         button.free()
 
 func _input(event):
-    if shortcut && shortcut.is_shortcut(event) && !event.pressed && script_editor.is_visible_in_tree():
+    if shortcut && shortcut.matches_event(event) && !event.pressed && script_editor.is_visible_in_tree():
         open_external_editor()
 
 func open_external_editor():
@@ -119,14 +119,14 @@ func parse_exec_flags(flags):
         return
     var project_path = ProjectSettings.globalize_path("res://")
     var script_path = ProjectSettings.globalize_path(script.resource_path)
-    if script_path.empty():
+    if script_path.is_empty():
         return
-    var line = text_edit.cursor_get_line() + 1
-    var column = text_edit.cursor_get_column() + 1
+    var line = text_edit.get_caret_line() + 1
+    var column = text_edit.get_caret_column() + 1
     flags = flags.replacen("{line}", str(max(1, line)))
     flags = flags.replacen("{col}", str(column))
     flags = flags.strip_edges().replace("\\\\", "\\")
-    var args = PoolStringArray()
+    var args = PackedStringArray()
     var from = 0
     var num_chars = 0
     var inside_quotes = false

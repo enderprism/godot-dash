@@ -1,14 +1,16 @@
-[gd_resource type="Theme" load_steps=2 format=2]
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://ctsh3cgr6x55w"]
 
-[ext_resource path="res://src/scenes/fonts/pusab_75.tres" type="DynamicFont" id=1]
+[ext_resource type="FontFile" path="res://src/scenes/fonts/pusab_75.tres" id="1"]
 
 [resource]
-Label/colors/font_color = Color( 1, 1, 1, 1 )
-Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
-Label/colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_color_shadow = Color(0, 0, 0, 0)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/constants/line_spacing = 3
+Label/constants/outline_size = 16
 Label/constants/shadow_as_outline = 0
 Label/constants/shadow_offset_x = 1
 Label/constants/shadow_offset_y = 1
-Label/fonts/font = ExtResource( 1 )
+Label/font_sizes/font_size = 75
+Label/fonts/font = ExtResource("1")
 Label/styles/normal = null

@@ -1,9 +1,10 @@
-extends AnimatedSprite
+extends AnimatedSprite2D
 
-onready var player = $"../Player"
+@onready var player = $"../Player"
 
-func _on_Player_dead() -> void:
+func _on_player_dead() -> void:
 	frame = 0
+	play("default")
 	if player.mini:
 		scale = Vector2(0.3, 0.3)
 		position.x = player.position.x

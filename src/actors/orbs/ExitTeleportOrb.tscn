@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://assets/levelTextures/interactible/Orbs/ExitTeleportOrb.png" type="Texture" id=1]
+[ext_resource path="res://assets/levelTextures/interactible/Orbs/ExitTeleportOrb.png" type="Texture2D" id=1]
 
-[node name="ExitTeleportOrb" type="Sprite"]
+[node name="ExitTeleportOrb" type="Sprite2D"]
 scale = Vector2( 0.836, 0.836 )
 texture = ExtResource( 1 )
 flip_v = true

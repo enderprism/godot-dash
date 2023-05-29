@@ -1,7 +1,7 @@
 extends Camera2D
 
-onready var player = get_parent().get_node("Player")
-onready var background = get_parent().get_node("ParallaxBackground")
+@onready var player = get_parent().get_node("Player")
+@onready var background = get_parent().get_node("ParallaxBackground")
 var cam_speed = 500.0
 var max_dist = 200
 var cam_offset: = Vector2(200.0, 0.0)

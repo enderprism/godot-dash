@@ -1,19 +1,26 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=3 uid="uid://bcdsu1busb27d"]
 
-[ext_resource path="res://assets/levelTextures/interactible/Portals/Gamemode Portals/CubePortal.webp" type="Texture" id=1]
-[ext_resource path="res://src/actors/portals/CubePortal.gd" type="Script" id=2]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 93, 168 )
+[ext_resource type="Script" path="res://src/actors/portals/CubePortal.gd" id="2"]
+[ext_resource type="Shape2D" uid="uid://cdsohmm0mpifa" path="res://src/actors/portals/GamemodePortalCollisionShape.tres" id="3_8mbaf"]
+[ext_resource type="Texture2D" uid="uid://5wlp4u6imu8v" path="res://assets/levelTextures/interactible/Portals/portal_03_back_001.png" id="4_goda4"]
+[ext_resource type="Texture2D" uid="uid://83vd03jw8coa" path="res://assets/levelTextures/interactible/Portals/portal_03_front_001.png" id="4_tua3n"]
 
 [node name="CubePortal_0" type="Area2D"]
 collision_layer = 4
-script = ExtResource( 2 )
-
-[node name="CubePortal" type="Sprite" parent="."]
-texture = ExtResource( 1 )
+script = ExtResource("2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+visible = false
+shape = ExtResource("3_8mbaf")
+
+[node name="Portal03Front001" type="Sprite2D" parent="."]
+z_index = 5
+position = Vector2(25, 0)
+texture = ExtResource("4_tua3n")
+
+[node name="Portal03Back001" type="Sprite2D" parent="."]
+z_index = -5
+position = Vector2(-43, -1)
+texture = ExtResource("4_goda4")
 
 [connection signal="area_entered" from="." to="." method="_on_CubePortal_0_area_entered"]

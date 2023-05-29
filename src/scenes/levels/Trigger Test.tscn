@@ -1,133 +1,121 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=8 format=3 uid="uid://bmxo5ubrxke67"]
 
-[ext_resource path="res://src/actors/portals/speedPortals/SpeedPortal0-5x.tscn" type="PackedScene" id=1]
-[ext_resource path="res://src/scenes/levels/Level.gd" type="Script" id=2]
-[ext_resource path="res://src/actors/triggerTemplates/NormalTrigger.tscn" type="PackedScene" id=3]
-[ext_resource path="res://src/scenes/fonts/pusab_75.tres" type="DynamicFont" id=4]
-[ext_resource path="res://src/actors/solids/GridBlock01_0.tscn" type="PackedScene" id=5]
-[ext_resource path="res://src/actors/portals/ShipPortal.tscn" type="PackedScene" id=6]
-[ext_resource path="res://src/scenes/LevelEnd.tscn" type="PackedScene" id=8]
+[ext_resource type="PackedScene" uid="uid://bosjyq31vr5m5" path="res://src/actors/portals/speedPortals/SpeedPortal0-5x.tscn" id="1"]
+[ext_resource type="Script" path="res://src/scenes/levels/Level.gd" id="2"]
+[ext_resource type="PackedScene" uid="uid://dbkyre7gvfv3u" path="res://src/actors/triggerTemplates/NormalTrigger.tscn" id="3"]
+[ext_resource type="FontFile" path="res://src/scenes/fonts/pusab_75.tres" id="4"]
+[ext_resource type="PackedScene" uid="uid://cpu3hhlplmkfd" path="res://src/actors/solids/GridBlock01_0.tscn" id="5"]
+[ext_resource type="PackedScene" uid="uid://dmu6wd4jf6fp6" path="res://src/actors/portals/ShipPortal.tscn" id="6"]
+[ext_resource type="PackedScene" uid="uid://djjhgc2ht6lss" path="res://src/scenes/LevelEnd.tscn" id="8"]
 
 [node name="Trigger Test" type="Node2D"]
-script = ExtResource( 2 )
+script = ExtResource("2")
 
-[node name="SpeedPortal0-5x_0" parent="." instance=ExtResource( 1 )]
-position = Vector2( 427, -183 )
+[node name="SpeedPortal0-5x_0" parent="." instance=ExtResource("1")]
+position = Vector2(427, -183)
 
-[node name="Move Trigger" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1037, 0 )
+[node name="Move Trigger" parent="." instance=ExtResource("3")]
+position = Vector2(1037, 0)
 target_path = "PLAYERCAMERA"
 duration = 1.0
 property = "zoom"
-value = [ Vector2( 0.75, 0.75 ), Vector2( 0, 0 ) ]
+value = [Vector2(1.25, 1.25), Vector2(0, 0)]
 easing_type = 2
 easing_curve = 3
 
-[node name="Move Trigger3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 10797, 0 )
+[node name="Move Trigger3" parent="." instance=ExtResource("3")]
+position = Vector2(10797, 0)
 target_path = "PLAYERCAMERA"
 duration = 1.0
 property = "zoom"
-value = [ Vector2( 1.25, 0.75 ), Vector2( 0, 0 ) ]
+value = [Vector2(1.25, 0.75), Vector2(0, 0)]
 easing_type = 2
 easing_curve = 3
 
 [node name="Move Trigger2" type="Label" parent="."]
-margin_left = 732.0
-margin_top = -610.0
-margin_right = 1342.0
-margin_bottom = -563.0
-rect_pivot_offset = Vector2( 305, 23 )
-custom_fonts/font = ExtResource( 4 )
+offset_left = 732.0
+offset_top = -610.0
+offset_right = 1342.0
+offset_bottom = -563.0
+pivot_offset = Vector2(305, 23)
+theme_override_fonts/font = ExtResource("4")
 text = "Zoom Trigger"
-align = 1
-valign = 1
 
-[node name="Scale Trigger" parent="." instance=ExtResource( 3 )]
-position = Vector2( 2440, 0 )
+[node name="Scale Trigger" parent="." instance=ExtResource("3")]
+position = Vector2(2440, 0)
 
 [node name="Scale Trigger2" type="Label" parent="."]
-margin_left = 1952.0
-margin_top = -610.0
-margin_right = 2928.0
-margin_bottom = -563.0
-custom_fonts/font = ExtResource( 4 )
-text = "Camera Offset Trigger"
-align = 1
-valign = 1
+offset_left = 1952.0
+offset_top = -610.0
+offset_right = 2928.0
+offset_bottom = -563.0
+theme_override_fonts/font = ExtResource("4")
+text = "Camera3D Offset Trigger"
 
-[node name="Rotate Trigger" parent="." instance=ExtResource( 3 )]
-position = Vector2( 3843, 0 )
+[node name="Rotate Trigger" parent="." instance=ExtResource("3")]
+position = Vector2(3843, 0)
 
 [node name="Rotate Trigger2" type="Label" parent="."]
-margin_left = 3355.0
-margin_top = -610.0
-margin_right = 4331.0
-margin_bottom = -563.0
-custom_fonts/font = ExtResource( 4 )
-text = "Camera Rotate Trigger"
-align = 1
-valign = 1
+offset_left = 3355.0
+offset_top = -610.0
+offset_right = 4331.0
+offset_bottom = -563.0
+theme_override_fonts/font = ExtResource("4")
+text = "Camera3D Rotate Trigger"
 
-[node name="Alpha Trigger" parent="." instance=ExtResource( 3 )]
-position = Vector2( 5490, 0 )
+[node name="Alpha Trigger" parent="." instance=ExtResource("3")]
+position = Vector2(5490, 0)
 
 [node name="Alpha Trigger2" type="Label" parent="."]
-margin_left = 5185.0
-margin_top = -610.0
-margin_right = 5795.0
-margin_bottom = -549.0
-custom_fonts/font = ExtResource( 4 )
+offset_left = 5185.0
+offset_top = -610.0
+offset_right = 5795.0
+offset_bottom = -549.0
+theme_override_fonts/font = ExtResource("4")
 text = "Color Reset"
-align = 1
-valign = 1
 
-[node name="Move + Scale + Rotate + Alpha" parent="." instance=ExtResource( 3 )]
-position = Vector2( 7564, 0 )
+[node name="Move + Scale + Rotate + Alpha" parent="." instance=ExtResource("3")]
+position = Vector2(7564, 0)
 
 [node name="Move + Scale + Rotate + Alpha2" type="Label" parent="."]
-margin_left = 6893.0
-margin_top = -610.0
-margin_right = 8235.0
-margin_bottom = -549.0
-custom_fonts/font = ExtResource( 4 )
+offset_left = 6893.0
+offset_top = -610.0
+offset_right = 8235.0
+offset_bottom = -549.0
+theme_override_fonts/font = ExtResource("4")
 text = "Move + Scale + Rotate + Alpha"
-align = 1
-valign = 1
 
-[node name="pulsecolor trigger" parent="." instance=ExtResource( 3 )]
-position = Vector2( 9577, 0 )
+[node name="pulsecolor trigger" parent="." instance=ExtResource("3")]
+position = Vector2(9577, 0)
 
 [node name="pulsecolor trigger2" type="Label" parent="."]
-margin_left = 9150.0
-margin_top = -610.0
-margin_right = 10004.0
-margin_bottom = -549.0
-custom_fonts/font = ExtResource( 4 )
+offset_left = 9150.0
+offset_top = -610.0
+offset_right = 10004.0
+offset_bottom = -549.0
+theme_override_fonts/font = ExtResource("4")
 text = "Pulse/Color trigger"
-align = 1
-valign = 1
 
-[node name="GridBlock01_0" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1769, -549 )
+[node name="GridBlock01_0" parent="." instance=ExtResource("5")]
+position = Vector2(1525, -305)
 
-[node name="GridBlock01_1" parent="." instance=ExtResource( 5 )]
-position = Vector2( 3233, -549 )
+[node name="GridBlock01_1" parent="." instance=ExtResource("5")]
+position = Vector2(3233, -549)
 
-[node name="GridBlock01_2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 4575, -549 )
+[node name="GridBlock01_2" parent="." instance=ExtResource("5")]
+position = Vector2(4575, -549)
 
-[node name="GridBlock01_3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 6161, -549 )
+[node name="GridBlock01_3" parent="." instance=ExtResource("5")]
+position = Vector2(6161, -549)
 
-[node name="GridBlock01_4" parent="." instance=ExtResource( 5 )]
-position = Vector2( 8357, -549 )
+[node name="GridBlock01_4" parent="." instance=ExtResource("5")]
+position = Vector2(8357, -549)
 
-[node name="GridBlock01_5" parent="." instance=ExtResource( 5 )]
-position = Vector2( 10431, -549 )
+[node name="GridBlock01_5" parent="." instance=ExtResource("5")]
+position = Vector2(10431, -549)
 
-[node name="ShipPortal_0" parent="." instance=ExtResource( 6 )]
-position = Vector2( 61, -183 )
+[node name="ShipPortal_0" parent="." instance=ExtResource("6")]
+position = Vector2(61, -183)
 
-[node name="LevelEnd" parent="." instance=ExtResource( 8 )]
-position = Vector2( 11590, -488 )
+[node name="LevelEnd" parent="." instance=ExtResource("8")]
+position = Vector2(11590, -488)

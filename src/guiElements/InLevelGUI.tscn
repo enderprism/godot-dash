@@ -1,95 +1,128 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=12 format=3 uid="uid://xq5ud75oryb3"]
 
-[ext_resource path="res://assets/fonts/PUSAB___.otf" type="DynamicFontData" id=1]
-[ext_resource path="res://src/scenes/uiElements/Pusab_Font.tres" type="Theme" id=2]
-[ext_resource path="res://assets/empty.png" type="Texture" id=3]
-[ext_resource path="res://assets/guiTextures/platformerControls/PlatformerLeft.svg" type="Texture" id=4]
-[ext_resource path="res://assets/guiTextures/platformerControls/PlatformerLeftPressed.svg" type="Texture" id=5]
-[ext_resource path="res://assets/guiTextures/platformerControls/PlatformerDownPressed.svg" type="Texture" id=6]
-[ext_resource path="res://assets/guiTextures/platformerControls/PlatformerRight.svg" type="Texture" id=7]
-[ext_resource path="res://assets/guiTextures/platformerControls/PlatformerDown.svg" type="Texture" id=8]
-[ext_resource path="res://assets/guiTextures/platformerControls/PlatformerRightPressed.svg" type="Texture" id=9]
-[ext_resource path="res://assets/guiTextures/platformerControls/PauseButton.svg" type="Texture" id=10]
+[ext_resource type="FontFile" uid="uid://3d5l6qp0iyr" path="res://assets/fonts/PUSAB___.otf" id="1"]
+[ext_resource type="Texture2D" uid="uid://cx84wm80vvquy" path="res://assets/empty.png" id="1_vxsfh"]
+[ext_resource type="Theme" uid="uid://ctsh3cgr6x55w" path="res://src/scenes/uiElements/Pusab_Font.tres" id="2"]
+[ext_resource type="Texture2D" uid="uid://g61d7algc38p" path="res://assets/guiTextures/platformerControls/PlatformerLeft.svg" id="4_4wteb"]
+[ext_resource type="Texture2D" uid="uid://yxbp8hbd3l7s" path="res://assets/guiTextures/platformerControls/PauseButton.svg" id="4_ql1k3"]
+[ext_resource type="Texture2D" uid="uid://des2avusmqhev" path="res://assets/guiTextures/platformerControls/PlatformerLeftPressed.svg" id="5_tq0l6"]
+[ext_resource type="Texture2D" uid="uid://5smg6861ffwa" path="res://assets/guiTextures/platformerControls/PlatformerRight.svg" id="6_yr2qq"]
+[ext_resource type="Texture2D" uid="uid://v7jh8cc45e0k" path="res://assets/guiTextures/platformerControls/PlatformerRightPressed.svg" id="7_5ymvp"]
+[ext_resource type="Texture2D" uid="uid://bq8njbl0jql8v" path="res://assets/guiTextures/platformerControls/PlatformerDown.svg" id="8_4ju7e"]
+[ext_resource type="Texture2D" uid="uid://d0i8ildq7tgnh" path="res://assets/guiTextures/platformerControls/PlatformerDownPressed.svg" id="9_jar6y"]
 
-[sub_resource type="DynamicFont" id=12]
-size = 50
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 1 )
+[sub_resource type="FontFile" id="12"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+fallbacks = Array[Font]([ExtResource("1")])
+face_index = null
+embolden = null
+transform = null
+cache/0/75/0/ascent = 0.0
+cache/0/75/0/descent = 0.0
+cache/0/75/0/underline_position = 0.0
+cache/0/75/0/underline_thickness = 0.0
+cache/0/75/0/scale = 1.0
+cache/0/75/0/kerning_overrides/75/0 = Vector2(0, 0)
+cache/0/75/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/75/0/kerning_overrides/50/0 = Vector2(0, 0)
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/75/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/50/0 = Vector2(0, 0)
+cache/0/50/0/ascent = 0.0
+cache/0/50/0/descent = 0.0
+cache/0/50/0/underline_position = 0.0
+cache/0/50/0/underline_thickness = 0.0
+cache/0/50/0/scale = 1.0
+cache/0/50/0/kerning_overrides/75/0 = Vector2(0, 0)
+cache/0/50/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/50/0/kerning_overrides/50/0 = Vector2(0, 0)
 
 [node name="GUI" type="CanvasLayer"]
 layer = 50
 
 [node name="JumpButtonTouchscreen" type="TouchScreenButton" parent="."]
-position = Vector2( 0, 155 )
-scale = Vector2( 3.75, 1.269 )
-normal = ExtResource( 3 )
+position = Vector2(0, 155)
+scale = Vector2(3.75, 1.269)
+texture_normal = ExtResource("1_vxsfh")
+texture_pressed = ExtResource("1_vxsfh")
 passby_press = true
 action = "jump"
 visibility_mode = 1
 
 [node name="JumpButtonTouchscreen2" type="TouchScreenButton" parent="."]
-position = Vector2( 609, 804 )
-scale = Vector2( 2.561, 0.539 )
-normal = ExtResource( 3 )
+position = Vector2(609, 804)
+scale = Vector2(2.561, 0.539)
+texture_normal = ExtResource("1_vxsfh")
+texture_pressed = ExtResource("1_vxsfh")
 passby_press = true
 action = "jump"
 visibility_mode = 1
 
 [node name="JumpButtonTouchscreen3" type="TouchScreenButton" parent="."]
-position = Vector2( 155, 0 )
-scale = Vector2( 3.44336, 0.302734 )
-normal = ExtResource( 3 )
+position = Vector2(155, 0)
+scale = Vector2(3.44336, 0.302734)
+texture_normal = ExtResource("1_vxsfh")
+texture_pressed = ExtResource("1_vxsfh")
 passby_press = true
 action = "jump"
 visibility_mode = 1
 
 [node name="Percentage" type="Label" parent="."]
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -960.0
-margin_right = 960.0
-margin_bottom = 61.0
+offset_left = -960.0
+offset_right = 960.0
+offset_bottom = 61.0
 size_flags_horizontal = 3
-theme = ExtResource( 2 )
-custom_fonts/font = SubResource( 12 )
+theme = ExtResource("2")
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = SubResource("12")
+theme_override_font_sizes/font_size = 50
 text = "100%"
-align = 1
-valign = 1
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="pause-button" type="TouchScreenButton" parent="."]
-modulate = Color( 1, 1, 1, 0.5 )
-position = Vector2( 30, 30 )
-scale = Vector2( 0.2, 0.2 )
-normal = ExtResource( 10 )
-pressed = ExtResource( 10 )
+modulate = Color(1, 1, 1, 0.5)
+position = Vector2(30, 30)
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("4_ql1k3")
+texture_pressed = ExtResource("4_ql1k3")
 action = "pause"
 visibility_mode = 1
 
 [node name="platformer-controls" type="Node2D" parent="."]
 
 [node name="platformer-left" type="TouchScreenButton" parent="platformer-controls"]
-position = Vector2( 61, 865 )
-scale = Vector2( 0.3, 0.3 )
-normal = ExtResource( 4 )
-pressed = ExtResource( 5 )
+position = Vector2(61, 865)
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("4_4wteb")
+texture_pressed = ExtResource("5_tq0l6")
 passby_press = true
 action = "move_left"
 visibility_mode = 1
 
 [node name="platformer-right" type="TouchScreenButton" parent="platformer-controls"]
-position = Vector2( 220, 865 )
-scale = Vector2( 0.3, 0.3 )
-normal = ExtResource( 7 )
-pressed = ExtResource( 9 )
+position = Vector2(220, 865)
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("6_yr2qq")
+texture_pressed = ExtResource("7_5ymvp")
 passby_press = true
 action = "move_right"
 visibility_mode = 1
 
 [node name="platformer-down" type="TouchScreenButton" parent="platformer-controls"]
-position = Vector2( 394, 865 )
-scale = Vector2( 0.3, 0.3 )
-normal = ExtResource( 8 )
-pressed = ExtResource( 6 )
+position = Vector2(394, 865)
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("8_4ju7e")
+texture_pressed = ExtResource("9_jar6y")
 action = "wave_platformer_move_down"
 visibility_mode = 1

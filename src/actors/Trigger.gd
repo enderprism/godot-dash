@@ -40,7 +40,7 @@ Possible curves:
 	TRANS_BACK = 10
 
 IF YOU WANT TO DO A CAMERA STATIC:
-	Camera static is possible if you put PLAYERCAMERA as the target and 'static' as the property.
+	Camera3D static is possible if you put PLAYERCAMERA as the target and 'static' as the property.
 	It will then require 2 arguments in Value:
 		First: the object as its path. It will get its global_position.
 		Second: the active axis as a Vector2, with 0 as inactive and 1 as active.
@@ -53,21 +53,21 @@ SONG TRIGGER:
 	Put the path as SONG and property as seek, and the first element of
 	value as a float to the wanted song position.
 """
-export var target_path: String
-export var duration: float
-export var property: String
-export var value: Array = [Vector2.ZERO, Vector2.ZERO]
-export var relative: bool
-export(int, "Ease In", "Ease Out", "Ease In-Out", "Ease Out-In", "Constant") var easing_type
-export(int, "Linear", "Sine", "Quint", "Quart", "Quad", "Expo", "Elastic", "Cubic", "Circ", "Bounce", "Back") var easing_curve
-export var exit_static: bool
-export var one_time: bool
-export var show: bool
+@export var target_path: String
+@export var duration: float
+@export var property: String
+@export var value: Array = [Vector2.ZERO, Vector2.ZERO]
+@export var relative: bool
+@export_enum ("Ease In", "Ease Out", "Ease In-Out", "Ease Out-In", "Constant") var easing_type: int
+@export_enum ("Linear", "Sine", "Quint", "Quart", "Quad", "Expo", "Elastic", "Cubic", "Circ", "Bounce", "Back") var easing_curve: int
+@export var exit_static: bool
+@export var one_time: bool
+@export var show: bool
 
 var is_static: bool
 var static_pos
-onready var player_camera = get_node("/root/Scene/Player/Camera2D")
-onready var player = get_node("/root/Scene/Player")
+@onready var player_camera = get_node("/root/Scene/Player/Camera2D")
+@onready var player = get_node("/root/Scene/Player")
 
 func _on_trigger_area_entered(area: Area2D) -> void:
 	var target: Object
@@ -92,7 +92,7 @@ func _on_trigger_area_entered(area: Area2D) -> void:
 		var trigger_tween = get_tree().create_tween().set_parallel()
 		if target_path == "PLAYERCAMERA" && property == "static":
 			if exit_static:
-				exit_static(target)
+				do_exit_static(target)
 				player.is_static = false
 			else:
 				enter_static(target)
@@ -147,12 +147,12 @@ func enter_static(camera):
 	if len(CurrentLevel.static_triggers_list) >= 2:
 		get_node(CurrentLevel.static_triggers_list[0]).set_process_priority(1)
 		get_node(CurrentLevel.static_triggers_list[1]).set_process_priority(2)
-		CurrentLevel.static_triggers_list.remove(0)
+		CurrentLevel.static_triggers_list.remove_at(0)
 	if value[1].x == 1:
-		camera.drag_margin_h_enabled = false
+		camera.drag_horizontal_enabled = false
 	elif value[1].y == 1:
-		camera.drag_margin_v_enabled = false
-		camera.drag_margin_bottom = 1.0
+		camera.drag_vertical_enabled = false
+		camera.drag_bottom_margin = 1.0
 	if value[1].x == 1:
 		trigger_tween.tween_property(
 			camera,
@@ -180,14 +180,14 @@ func enter_static(camera):
 			duration
 		).set_trans(easing_curve).set_ease(easing_type)
 	trigger_tween.play()
-	yield(trigger_tween, "finished")
+	await trigger_tween.finished
 	if value[1].x == 1:
 		CurrentLevel.set_if_camera_static(true, true)
 	elif value[1].y == 1:
 		CurrentLevel.set_if_camera_static(false, true)
 	static_pos = end_pos
 
-func exit_static(camera):
+func do_exit_static(camera):
 	var trigger_tween = get_tree().create_tween().set_parallel()
 	var end_pos: Vector2 = Vector2(0.0, 62.0)
 	var end_offset: Vector2 = Vector2(0.0, -225.0)
@@ -196,10 +196,10 @@ func exit_static(camera):
 	elif player.arrow_trigger_direction == Vector2(-1.0, 0.0):
 		end_offset.x = 200 if player._x_direction > 0 else -200
 	if player.arrow_trigger_direction == Vector2(-1.0, 0.0):
-		camera.drag_margin_h_enabled = true
+		camera.drag_horizontal_enabled = true
 	elif player.arrow_trigger_direction == Vector2(0.0, -1.0):
-		camera.drag_margin_v_enabled = true
-	camera.drag_margin_bottom = 0.0
+		camera.drag_vertical_enabled = true
+	camera.drag_bottom_margin = 0.0
 	trigger_tween.tween_property(
 		camera,
 		"offset",
@@ -265,7 +265,7 @@ func _set_trigger_icon() -> void:
 		$TriggerIcon.texture = load("res://assets/levelTextures/triggers/edit_eEmptyBtn_001.png")
 
 func _physics_process(_delta: float) -> void:
-	if Engine.editor_hint:
+	if Engine.is_editor_hint():
 		# Code to execute when in editor.
 		$TriggerIcon.show()
 		_set_trigger_icon()
@@ -274,7 +274,7 @@ func _physics_process(_delta: float) -> void:
 	if len(CurrentLevel.onetime_triggers_list) >= 1:
 		get_node(CurrentLevel.onetime_triggers_list[0]).set_monitorable(false)
 		get_node(CurrentLevel.onetime_triggers_list[0]).set_monitoring(false)
-		CurrentLevel.onetime_triggers_list.remove(0)
+		CurrentLevel.onetime_triggers_list.remove_at(0)
 	if CurrentLevel.is_camera_static && property == "static" && !exit_static && len(CurrentLevel.static_triggers_list) > 0:
 		if get_node(CurrentLevel.static_triggers_list[0]).value[1].x == 1.0:
 			player_camera.global_position.x = get_node("../"+str(get_node(CurrentLevel.static_triggers_list[0]).value[0])).global_position.x

@@ -1,6 +1,6 @@
-extends Particles2D
+extends GPUParticles2D
 
-onready var player = get_parent()
+@onready var player = get_parent()
 var _base_position = position
 
 func _physics_process(delta: float) -> void:
@@ -13,7 +13,7 @@ func _physics_process(delta: float) -> void:
 			if !player.gamemode == "wave": position.y = _base_position.y - 56
 			else: position.y = _base_position.y - 26
 	if player.arrow_trigger_direction == Vector2(-1.0, 0.0):
-		if player.UP_DIRECTION.y == -1:
+		if player.gravity > 0:
 			if !player.gamemode == "wave": position.x = _base_position.x + 56
 			else: position.x = _base_position.x + 26
 		else:

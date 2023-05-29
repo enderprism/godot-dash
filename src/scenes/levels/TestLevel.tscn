@@ -40,7 +40,7 @@ one_time = true
 [node name="Random" parent="." instance=ExtResource( 2 )]
 position = Vector2( -427, -61 )
 property = "random"
-value = [ false, PoolVector2Array( 0, 20, 10, 50, 50, 85, 85, 100 ) ]
+value = [ false, PackedVector2Array( 0, 20, 10, 50, 50, 85, 85, 100 ) ]
 
 [node name="RandomGroups" type="Node2D" parent="Random"]
 __meta__ = {

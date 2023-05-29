@@ -1,6 +1,6 @@
-extends Particles2D
+extends GPUParticles2D
 
-onready var player = get_parent().get_parent()
+@onready var player = get_parent().get_parent()
 
 func _physics_process(delta: float) -> void:
 	if player.gamemode == "wave":

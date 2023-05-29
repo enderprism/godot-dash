@@ -1,12 +1,12 @@
 extends Area2D
 
 signal spike_entered
-onready var player: = get_node("/root/Scene/Player")
-export var _is_saw: bool
-export (float, -360.0, 360.0) var saw_rotation
+@onready var player: = get_node("/root/Scene/Player")
+@export var _is_saw: bool
+@export_range(-360.0, 360.0, 0.01) var saw_rotation: float
 
 func _ready() -> void:
-	connect("spike_entered", player, "_on_HazardsArea_body_entered")
+	connect("spike_entered", Callable(player, "_on_HazardsArea_body_entered"))
 
 func _physics_process(delta: float) -> void:
 	if _is_saw:

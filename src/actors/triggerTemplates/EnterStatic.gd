@@ -15,7 +15,7 @@ func enter_static(camera):
 	var trigger_tween = get_tree().create_tween().set_parallel()
 	var end_pos: Vector2 = get_node("../"+value[0]).global_position
 	# RESET THE CAMERA OFFSET WHEN ENTERING STATIC
-	camera.drag_margin_v_enabled = false
+	camera.drag_vertical_enabled = false
 	trigger_tween.tween_property(
 		camera,
 		"offset",
@@ -30,5 +30,5 @@ func enter_static(camera):
 	).set_trans(easing_curve).set_ease(easing_type)
 	trigger_tween.play()
 	CurrentLevel.set_if_camera_static(true)
-	yield(trigger_tween, "finished")
+	await trigger_tween.finished
 	is_static = true

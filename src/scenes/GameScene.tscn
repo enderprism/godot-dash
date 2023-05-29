@@ -1,238 +1,313 @@
-[gd_scene load_steps=53 format=2]
+[gd_scene load_steps=53 format=3 uid="uid://cq05d6ewu5mre"]
 
-[ext_resource path="res://src/actors/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://src/scenes/PauseMenu.tscn" type="PackedScene" id=6]
-[ext_resource path="res://src/actors/Ground.tscn" type="PackedScene" id=7]
-[ext_resource path="res://src/scenes/BackgroundKillZone.gd" type="Script" id=8]
-[ext_resource path="res://src/actors/Background.tscn" type="PackedScene" id=9]
-[ext_resource path="res://assets/playerTextures/spiderDash/spiderDash_007.png" type="Texture" id=10]
-[ext_resource path="res://assets/playerTextures/spiderDash/spiderDash_006.png" type="Texture" id=11]
-[ext_resource path="res://src/scenes/LevelScene.gd" type="Script" id=14]
-[ext_resource path="res://assets/playerTextures/spiderDash/spiderDash_001.png" type="Texture" id=15]
-[ext_resource path="res://assets/playerTextures/spiderDash/spiderDash_004.png" type="Texture" id=16]
-[ext_resource path="res://assets/playerTextures/spiderDash/spiderDash_005.png" type="Texture" id=17]
-[ext_resource path="res://assets/playerTextures/spiderDash/spiderDash_002.png" type="Texture" id=18]
-[ext_resource path="res://assets/playerTextures/spiderDash/spiderDash_008.png" type="Texture" id=19]
-[ext_resource path="res://assets/playerTextures/spiderDash/spiderDash_003.png" type="Texture" id=20]
-[ext_resource path="res://src/actors/SpiderDash.gd" type="Script" id=21]
-[ext_resource path="res://assets/playerTextures/dashBoom/playerDash2_boom2_008.png" type="Texture" id=26]
-[ext_resource path="res://assets/playerTextures/dashBoom/playerDash2_boom2_006.png" type="Texture" id=27]
-[ext_resource path="res://assets/playerTextures/dashBoom/playerDash2_boom2_003.png" type="Texture" id=28]
-[ext_resource path="res://assets/playerTextures/dashBoom/playerDash2_boom2_001.png" type="Texture" id=29]
-[ext_resource path="res://assets/playerTextures/dashBoom/playerDash2_boom2_004.png" type="Texture" id=30]
-[ext_resource path="res://assets/playerTextures/dashBoom/playerDash2_boom2_005.png" type="Texture" id=31]
-[ext_resource path="res://src/actors/DashBoom.gd" type="Script" id=32]
-[ext_resource path="res://assets/playerTextures/dashBoom/playerDash2_boom2_009.png" type="Texture" id=33]
-[ext_resource path="res://assets/playerTextures/dashBoom/playerDash2_boom2_007.png" type="Texture" id=34]
-[ext_resource path="res://assets/playerTextures/dashBoom/playerDash2_boom2_002.png" type="Texture" id=35]
-[ext_resource path="res://assets/playerTextures/deathEffect/playerExplosion_13_004.png" type="Texture" id=36]
-[ext_resource path="res://assets/playerTextures/deathEffect/playerExplosion_13_012.png" type="Texture" id=37]
-[ext_resource path="res://assets/playerTextures/deathEffect/playerExplosion_13_002.png" type="Texture" id=38]
-[ext_resource path="res://src/actors/DeathEffect.gd" type="Script" id=39]
-[ext_resource path="res://assets/playerTextures/deathEffect/playerExplosion_13_008.png" type="Texture" id=40]
-[ext_resource path="res://assets/playerTextures/deathEffect/playerExplosion_13_009.png" type="Texture" id=41]
-[ext_resource path="res://assets/playerTextures/deathEffect/playerExplosion_13_005.png" type="Texture" id=42]
-[ext_resource path="res://assets/playerTextures/deathEffect/playerExplosion_13_006.png" type="Texture" id=43]
-[ext_resource path="res://assets/playerTextures/deathEffect/playerExplosion_13_007.png" type="Texture" id=44]
-[ext_resource path="res://assets/playerTextures/deathEffect/playerExplosion_13_010.png" type="Texture" id=45]
-[ext_resource path="res://assets/playerTextures/deathEffect/playerExplosion_13_001.png" type="Texture" id=46]
-[ext_resource path="res://assets/playerTextures/deathEffect/playerExplosion_13_011.png" type="Texture" id=47]
-[ext_resource path="res://assets/playerTextures/deathEffect/playerExplosion_13_003.png" type="Texture" id=48]
-[ext_resource path="res://assets/levelTextures/ground/floorLine_001.png" type="Texture" id=49]
-[ext_resource path="res://src/scenes/Line.gd" type="Script" id=50]
-[ext_resource path="res://src/actors/Trail.gd" type="Script" id=51]
-[ext_resource path="res://src/guiElements/InLevelGUI.tscn" type="PackedScene" id=52]
+[ext_resource type="PackedScene" uid="uid://t4l1br5nnw6u" path="res://src/actors/Player.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://dn0ix4b441bgr" path="res://src/scenes/PauseMenu.tscn" id="6"]
+[ext_resource type="PackedScene" uid="uid://cdaengsb8lyil" path="res://src/actors/Ground.tscn" id="7"]
+[ext_resource type="Script" path="res://src/scenes/BackgroundKillZone.gd" id="8"]
+[ext_resource type="PackedScene" path="res://src/actors/Background.tscn" id="9"]
+[ext_resource type="Texture2D" uid="uid://r0fe2x1a4ljm" path="res://assets/playerTextures/spiderDash/spiderDash_007.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://20bwx3cojm3y" path="res://assets/playerTextures/spiderDash/spiderDash_006.png" id="11"]
+[ext_resource type="Script" path="res://src/scenes/LevelScene.gd" id="14"]
+[ext_resource type="Texture2D" uid="uid://c3r2bain14ds2" path="res://assets/playerTextures/spiderDash/spiderDash_001.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://cxvkchj87w23m" path="res://assets/playerTextures/spiderDash/spiderDash_004.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://cevvnnpy01xox" path="res://assets/playerTextures/spiderDash/spiderDash_005.png" id="17"]
+[ext_resource type="Texture2D" uid="uid://yuo0nx6dalq6" path="res://assets/playerTextures/spiderDash/spiderDash_002.png" id="18"]
+[ext_resource type="Texture2D" uid="uid://cxo7yccpv2qiq" path="res://assets/playerTextures/spiderDash/spiderDash_008.png" id="19"]
+[ext_resource type="Texture2D" uid="uid://chhejqjmb3f2x" path="res://assets/playerTextures/spiderDash/spiderDash_003.png" id="20"]
+[ext_resource type="Script" path="res://src/actors/SpiderDash.gd" id="21"]
+[ext_resource type="Texture2D" uid="uid://bg0qdld4usyiv" path="res://assets/playerTextures/deathEffect/playerExplosion_13_001.png" id="25_1gqjc"]
+[ext_resource type="Texture2D" uid="uid://def5tjsg1751w" path="res://assets/playerTextures/dashBoom/playerDash2_boom2_008.png" id="26"]
+[ext_resource type="Texture2D" uid="uid://ydy8yaewhg8q" path="res://assets/playerTextures/deathEffect/playerExplosion_13_002.png" id="26_n8oxx"]
+[ext_resource type="Texture2D" uid="uid://5pedp7aw0x6d" path="res://assets/playerTextures/dashBoom/playerDash2_boom2_006.png" id="27"]
+[ext_resource type="Texture2D" uid="uid://c1mddaifkvi26" path="res://assets/playerTextures/deathEffect/playerExplosion_13_003.png" id="27_morqa"]
+[ext_resource type="Texture2D" uid="uid://u5kvay5lb074" path="res://assets/playerTextures/dashBoom/playerDash2_boom2_003.png" id="28"]
+[ext_resource type="Texture2D" uid="uid://28rj234ip2qy" path="res://assets/playerTextures/deathEffect/playerExplosion_13_004.png" id="28_5owy3"]
+[ext_resource type="Texture2D" uid="uid://d3afgs07qb6si" path="res://assets/playerTextures/dashBoom/playerDash2_boom2_001.png" id="29"]
+[ext_resource type="Texture2D" uid="uid://r3kq2yr8qdpa" path="res://assets/playerTextures/deathEffect/playerExplosion_13_005.png" id="29_6oxc8"]
+[ext_resource type="Texture2D" uid="uid://d3cqa31wwc4do" path="res://assets/playerTextures/dashBoom/playerDash2_boom2_004.png" id="30"]
+[ext_resource type="Texture2D" uid="uid://cijt4beep87h8" path="res://assets/playerTextures/deathEffect/playerExplosion_13_006.png" id="30_64u0q"]
+[ext_resource type="Texture2D" uid="uid://beb2s3sjt3uc8" path="res://assets/playerTextures/dashBoom/playerDash2_boom2_005.png" id="31"]
+[ext_resource type="Texture2D" uid="uid://5opssh2efccj" path="res://assets/playerTextures/deathEffect/playerExplosion_13_007.png" id="31_3vq3h"]
+[ext_resource type="Script" path="res://src/actors/DashBoom.gd" id="32"]
+[ext_resource type="Texture2D" uid="uid://h7bhibrps14j" path="res://assets/playerTextures/deathEffect/playerExplosion_13_008.png" id="32_lwevh"]
+[ext_resource type="Texture2D" uid="uid://q2eyqj4eqkid" path="res://assets/playerTextures/dashBoom/playerDash2_boom2_009.png" id="33"]
+[ext_resource type="Texture2D" uid="uid://ie78neybeq2m" path="res://assets/playerTextures/deathEffect/playerExplosion_13_009.png" id="33_jmvvh"]
+[ext_resource type="Texture2D" uid="uid://bpi5fo5chjh8l" path="res://assets/playerTextures/dashBoom/playerDash2_boom2_007.png" id="34"]
+[ext_resource type="Texture2D" uid="uid://lnittgb7rowe" path="res://assets/playerTextures/deathEffect/playerExplosion_13_010.png" id="34_63ljg"]
+[ext_resource type="Texture2D" uid="uid://bd1xy2jspdlk2" path="res://assets/playerTextures/dashBoom/playerDash2_boom2_002.png" id="35"]
+[ext_resource type="Texture2D" uid="uid://c7i603o2byhbh" path="res://assets/playerTextures/deathEffect/playerExplosion_13_011.png" id="35_lh74l"]
+[ext_resource type="Texture2D" uid="uid://ds15eshi17onk" path="res://assets/playerTextures/deathEffect/playerExplosion_13_012.png" id="36_f5ms7"]
+[ext_resource type="Script" path="res://src/actors/DeathEffect.gd" id="37_50b76"]
+[ext_resource type="Texture2D" uid="uid://bek1af8w6bfm3" path="res://assets/levelTextures/ground/floorLine_001.png" id="49"]
+[ext_resource type="Script" path="res://src/scenes/Line.gd" id="50"]
+[ext_resource type="Script" path="res://src/actors/Trail.gd" id="51"]
+[ext_resource type="PackedScene" uid="uid://xq5ud75oryb3" path="res://src/guiElements/InLevelGUI.tscn" id="52"]
 
-[sub_resource type="CanvasItemMaterial" id=5]
+[sub_resource type="CanvasItemMaterial" id="5"]
 blend_mode = 1
 
-[sub_resource type="SpriteFrames" id=3]
-animations = [ {
-"frames": [ ExtResource( 15 ), ExtResource( 18 ), ExtResource( 20 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 19 ), null ],
+[sub_resource type="SpriteFrames" id="3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19")
+}, {
+"duration": 1.0,
+"texture": null
+}],
 "loop": false,
-"name": "default",
+"name": &"default",
 "speed": 30.0
-} ]
+}]
 
-[sub_resource type="CanvasItemMaterial" id=6]
+[sub_resource type="CanvasItemMaterial" id="6"]
 blend_mode = 1
 
-[sub_resource type="SpriteFrames" id=4]
-animations = [ {
-"frames": [ null, ExtResource( 29 ), ExtResource( 35 ), ExtResource( 28 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 27 ), ExtResource( 34 ), ExtResource( 26 ), ExtResource( 33 ), null ],
+[sub_resource type="SpriteFrames" id="4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33")
+}, {
+"duration": 1.0,
+"texture": null
+}],
 "loop": false,
-"name": "default",
+"name": &"default",
 "speed": 30.0
-} ]
+}]
 
-[sub_resource type="Gradient" id=11]
-offsets = PoolRealArray( 0, 0.152091 )
-colors = PoolColorArray( 0, 1, 1, 0, 0, 1, 1, 1 )
+[sub_resource type="Gradient" id="11"]
+offsets = PackedFloat32Array(0, 0.152091)
+colors = PackedColorArray(0, 1, 1, 0, 0, 1, 1, 1)
 
-[sub_resource type="Gradient" id=13]
-offsets = PoolRealArray( 0, 0.152091 )
-colors = PoolColorArray( 0, 1, 1, 0, 0, 1, 0, 1 )
+[sub_resource type="Gradient" id="13"]
+offsets = PackedFloat32Array(0, 0.152091)
+colors = PackedColorArray(0, 1, 1, 0, 0, 1, 0, 1)
 
-[sub_resource type="CanvasItemMaterial" id=9]
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_am3qv"]
 blend_mode = 1
 
-[sub_resource type="CanvasItemMaterial" id=8]
-blend_mode = 1
-
-[sub_resource type="SpriteFrames" id=7]
-animations = [ {
-"frames": [ ExtResource( 46 ), ExtResource( 38 ), ExtResource( 48 ), ExtResource( 36 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 45 ), ExtResource( 47 ), ExtResource( 37 ), null ],
+[sub_resource type="SpriteFrames" id="SpriteFrames_400i3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_1gqjc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_n8oxx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_morqa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_5owy3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_6oxc8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_64u0q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_3vq3h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_lwevh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_jmvvh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_63ljg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_lh74l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_f5ms7")
+}, {
+"duration": 1.0,
+"texture": null
+}],
 "loop": false,
-"name": "DeathEffect",
+"name": &"default",
 "speed": 30.0
-} ]
+}]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 3072, 11 )
+[sub_resource type="CanvasItemMaterial" id="9"]
+blend_mode = 1
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(6144, 22)
 
 [node name="Scene" type="Node2D"]
-script = ExtResource( 14 )
-levels = [ "Level1", "Playground", "Trigger Test", "SlopeDemo", "ArrowTriggerTest", "Explorers", "TestLevel", "SpiderTests" ]
+script = ExtResource("14")
+levels = ["Level1", "Playground", "Trigger Test", "SlopeDemo", "ArrowTriggerTest", "Explorers", "TestLevel", "SpiderTests"]
 
 [node name="Background2" type="CanvasLayer" parent="."]
 layer = -50
-follow_viewport_enable = true
+follow_viewport_enabled = true
 follow_viewport_scale = 0.333
 
-[node name="Background" parent="Background2" instance=ExtResource( 9 )]
-position = Vector2( 1, 489 )
-scale = Vector2( 3, 3 )
-__meta__ = {
-"_edit_lock_": true
-}
+[node name="Background" parent="Background2" instance=ExtResource("9")]
+position = Vector2(1, 489)
+scale = Vector2(3, 3)
 
 [node name="Levels" type="Node2D" parent="."]
-position = Vector2( 0, 488 )
-__meta__ = {
-"_edit_lock_": true
-}
+position = Vector2(0, 488)
 
 [node name="SpiderDash" type="Node2D" parent="."]
-scale = Vector2( 0.5, 0.5 )
-script = ExtResource( 21 )
-__meta__ = {
-"_edit_group_": true
-}
+scale = Vector2(0.5, 0.5)
+script = ExtResource("21")
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="SpiderDash"]
-modulate = Color( 0, 1, 1, 1 )
-material = SubResource( 5 )
-position = Vector2( -32, 0 )
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SpiderDash"]
+modulate = Color(0, 1, 1, 1)
+material = SubResource("5")
+position = Vector2(-32, 0)
 rotation = -1.5708
-frames = SubResource( 3 )
+sprite_frames = SubResource("3")
+autoplay = "default"
 frame = 8
-playing = true
 centered = false
 flip_v = true
 
-[node name="DashBoom" type="AnimatedSprite" parent="."]
-modulate = Color( 0, 1, 1, 1 )
-material = SubResource( 6 )
-position = Vector2( 0, -66 )
-frames = SubResource( 4 )
-frame = 10
-playing = true
-script = ExtResource( 32 )
+[node name="DashBoom" type="AnimatedSprite2D" parent="."]
+modulate = Color(0, 1, 1, 1)
+material = SubResource("6")
+position = Vector2(0, -66)
+sprite_frames = SubResource("4")
+frame = 9
+frame_progress = 1.0
+script = ExtResource("32")
 
 [node name="Trail" type="Line2D" parent="."]
 process_priority = 5
-position = Vector2( 0, 455 )
-points = PoolVector2Array( 0, 1 )
+position = Vector2(0, 455)
+points = PackedVector2Array(0, 1)
 width = 20.0
-default_color = Color( 0, 1, 1, 1 )
-gradient = SubResource( 11 )
+default_color = Color(0, 1, 1, 1)
+gradient = SubResource("11")
 joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
 round_precision = 16
-script = ExtResource( 51 )
+script = ExtResource("51")
 length = 150.0
 wave_trail = true
 
 [node name="DebugTrail" type="Line2D" parent="."]
 process_priority = 5
 visible = false
-position = Vector2( 0, 455 )
-points = PoolVector2Array( 0, 1 )
+position = Vector2(0, 455)
+points = PackedVector2Array(0, 1)
 width = 2.0
-default_color = Color( 0, 1, 0, 1 )
-gradient = SubResource( 13 )
+default_color = Color(0, 1, 0, 1)
+gradient = SubResource("13")
 joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
 round_precision = 16
-script = ExtResource( 51 )
+antialiased = true
+script = ExtResource("51")
 length = 150.0
 enabled = false
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 0, 488 )
-scale = Vector2( 0.5, 0.5 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="Player" parent="." instance=ExtResource("1")]
+position = Vector2(0, 488)
+scale = Vector2(0.5, 0.5)
 
-[node name="Ground" parent="." instance=ExtResource( 7 )]
-position = Vector2( 3.05176e-05, 488 )
-scale = Vector2( 1.5, 1.5 )
+[node name="Ground" parent="." instance=ExtResource("7")]
 z_index = 50
-__meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
-}
+position = Vector2(3.05176e-05, 488)
+scale = Vector2(1.5, 1.5)
 
-[node name="Line" type="Sprite" parent="."]
-material = SubResource( 9 )
-position = Vector2( 366, 489 )
-scale = Vector2( 0.5, 0.5 )
-z_index = 50
-texture = ExtResource( 49 )
-script = ExtResource( 50 )
-
-[node name="DeathEffect" type="AnimatedSprite" parent="."]
-material = SubResource( 8 )
-position = Vector2( 3.05176e-05, 389 )
-scale = Vector2( 1.5, 1.5 )
-z_index = 50
-frames = SubResource( 7 )
-animation = "DeathEffect"
+[node name="DeathEffect" type="AnimatedSprite2D" parent="."]
+z_index = 51
+material = SubResource("CanvasItemMaterial_am3qv")
+position = Vector2(0, -66)
+sprite_frames = SubResource("SpriteFrames_400i3")
 frame = 12
-playing = true
-script = ExtResource( 39 )
+frame_progress = 1.0
+script = ExtResource("37_50b76")
+
+[node name="Line" type="Sprite2D" parent="."]
+z_index = 50
+material = SubResource("9")
+position = Vector2(366, 489)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("49")
+script = ExtResource("50")
 
 [node name="LevelMusic" type="AudioStreamPlayer" parent="."]
 autoplay = true
-bus = "Music"
 
 [node name="BackgroundKillZone" type="Area2D" parent="."]
-position = Vector2( 1024, -5000 )
+position = Vector2(1024, -5000)
 collision_layer = 2
-script = ExtResource( 8 )
-__meta__ = {
-"_edit_group_": true
-}
+script = ExtResource("8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BackgroundKillZone"]
-shape = SubResource( 1 )
+shape = SubResource("1")
 
-[node name="Position2D" type="Position2D" parent="."]
-position = Vector2( -674, 0 )
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-674, 0)
 
 [node name="PauseLayer" type="CanvasLayer" parent="."]
 layer = 75
 
-[node name="PauseMenu" parent="PauseLayer" instance=ExtResource( 6 )]
+[node name="PauseMenu" parent="PauseLayer" instance=ExtResource("6")]
 visible = false
-rect_min_size = Vector2( 1920, 1080 )
+custom_minimum_size = Vector2(1920, 1080)
 
-[node name="GUI" parent="." instance=ExtResource( 52 )]
+[node name="GUI" parent="." instance=ExtResource("52")]
 
-[connection signal="dead" from="Player" to="DeathEffect" method="_on_Player_dead"]
+[connection signal="dead" from="Player" to="DeathEffect" method="_on_player_dead"]
 [connection signal="spider_jumped" from="Player" to="SpiderDash" method="_on_Player_spider_jumped"]
 [connection signal="started_dashing" from="Player" to="DashBoom" method="_on_Player_started_dashing"]
 [connection signal="area_entered" from="BackgroundKillZone" to="BackgroundKillZone" method="_on_RegularSpike01_0_area_entered"]

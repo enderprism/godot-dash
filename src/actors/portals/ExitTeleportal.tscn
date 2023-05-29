@@ -1,7 +1,18 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=3 uid="uid://b5yat7bvhg5il"]
 
-[ext_resource path="res://assets/levelTextures/interactible/Portals/TeleportationPortalB.webp" type="Texture" id=2]
+[ext_resource type="Texture2D" uid="uid://dh8lltgehv4rq" path="res://assets/levelTextures/interactible/Portals/portal_16_back_001.png" id="1_ks05e"]
+[ext_resource type="Texture2D" uid="uid://bfjul0xuh3ji8" path="res://assets/levelTextures/interactible/Portals/portal_16_front_001.png" id="2_h8xot"]
 
-[node name="ExitTeleportal" type="Sprite"]
-texture = ExtResource( 2 )
+[node name="ExitTeleportal" type="Node2D"]
+
+[node name="Portal16Back001" type="Sprite2D" parent="."]
+z_index = -5
+position = Vector2(52, 4)
+texture = ExtResource("1_ks05e")
+flip_h = true
+
+[node name="Portal16Front001" type="Sprite2D" parent="."]
+z_index = 5
+position = Vector2(-26, -1)
+texture = ExtResource("2_h8xot")
 flip_h = true

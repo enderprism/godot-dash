@@ -2,10 +2,10 @@ extends Area2D
 
 class_name toggler
 
-onready var _player: = get_node("/root/Scene/Player")
-onready var _toggled_group: = get_node("ToggledGroup")
-export var _enable: bool = false
-export var _switch: bool = false
+@onready var _player: = get_node("/root/Scene/Player")
+@onready var _toggled_group: = get_node("ToggledGroup")
+@export var _enable: bool = false
+@export var _switch: bool = false
 var _player_entered: bool = false
 const SCALE_DISABLED: Vector2 = Vector2(0.0, 0.0)
 const SCALE_ENABLED: Vector2 = Vector2(1.0, 1.0)
@@ -15,8 +15,8 @@ signal toggle_orb_exited
 signal toggle_orb_pressed
 
 func _ready() -> void:
-	connect("toggle_orb_entered", _player, "_on_ToggleOrb_area_entered")
-	connect("toggle_orb_exited", _player, "_on_ToggleOrb_area_exited")
+	connect("toggle_orb_entered", Callable(_player, "_on_ToggleOrb_area_entered"))
+	connect("toggle_orb_exited", Callable(_player, "_on_ToggleOrb_area_exited"))
 
 func _physics_process(_delta: float) -> void:
 	$ToggleRing.self_modulate = self_modulate

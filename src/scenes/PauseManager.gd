@@ -1,6 +1,6 @@
 extends Node2D
 
-export var Stream: AudioStream
+@export var Stream: AudioStream
 
 func _ready() -> void:
 	$BackgroundMusic.set_stream(Stream)

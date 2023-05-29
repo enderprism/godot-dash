@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://src/actors/Background.gd" type="Script" id=2]
-[ext_resource path="res://assets/levelTextures/background/background1-3.png" type="Texture" id=3]
+[ext_resource path="res://assets/levelTextures/background/background1-3.png" type="Texture2D" id=3]
 
 [node name="Background" type="Node2D"]
 process_priority = 1
@@ -10,62 +10,62 @@ z_index = -100
 script = ExtResource( 2 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -4096.0
-margin_top = -2807.0
-margin_right = 6145.0
-margin_bottom = -1736.0
+offset_left = -4096.0
+offset_top = -2807.0
+offset_right = 6145.0
+offset_bottom = -1736.0
 color = Color( 0, 0, 0, 1 )
 
-[node name="Background" type="Sprite" parent="."]
+[node name="Background" type="Sprite2D" parent="."]
 position = Vector2( 1024, -897 )
 texture = ExtResource( 3 )
 
-[node name="Background3" type="Sprite" parent="."]
+[node name="Background3" type="Sprite2D" parent="."]
 position = Vector2( -1024, -897 )
 texture = ExtResource( 3 )
 
-[node name="Background9" type="Sprite" parent="."]
+[node name="Background9" type="Sprite2D" parent="."]
 position = Vector2( -3072, -897 )
 texture = ExtResource( 3 )
 
-[node name="Background2" type="Sprite" parent="."]
+[node name="Background2" type="Sprite2D" parent="."]
 position = Vector2( 3072, -897 )
 texture = ExtResource( 3 )
 
-[node name="Background7" type="Sprite" parent="."]
+[node name="Background7" type="Sprite2D" parent="."]
 position = Vector2( 5121, -897 )
 texture = ExtResource( 3 )
 
-[node name="Background4" type="Sprite" parent="."]
+[node name="Background4" type="Sprite2D" parent="."]
 position = Vector2( 1024, 1151 )
 texture = ExtResource( 3 )
 flip_v = true
 
-[node name="Background5" type="Sprite" parent="."]
+[node name="Background5" type="Sprite2D" parent="."]
 position = Vector2( -1024, 1151 )
 texture = ExtResource( 3 )
 flip_v = true
 
-[node name="Background10" type="Sprite" parent="."]
+[node name="Background10" type="Sprite2D" parent="."]
 position = Vector2( -3072, 1151 )
 texture = ExtResource( 3 )
 flip_v = true
 
-[node name="Background6" type="Sprite" parent="."]
+[node name="Background6" type="Sprite2D" parent="."]
 position = Vector2( 3072, 1151 )
 texture = ExtResource( 3 )
 flip_v = true
 
-[node name="Background8" type="Sprite" parent="."]
+[node name="Background8" type="Sprite2D" parent="."]
 position = Vector2( 5121, 1151 )
 texture = ExtResource( 3 )
 flip_v = true
 
-[node name="OverflowCheckRight" type="VisibilityNotifier2D" parent="."]
+[node name="OverflowCheckRight" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2( 4120, 48.5 )
 scale = Vector2( 2.4, 197.05 )
 
-[node name="OverflowCheckLeft" type="VisibilityNotifier2D" parent="."]
+[node name="OverflowCheckLeft" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2( -2048, 49 )
 scale = Vector2( 4.8, 197 )
 

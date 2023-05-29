@@ -1,249 +1,171 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=14 format=3 uid="uid://dn0ix4b441bgr"]
 
-[ext_resource path="res://assets/levelTextures/ground/ground-long.png" type="Texture" id=1]
-[ext_resource path="res://assets/levelTextures/background/background1-3.png" type="Texture" id=2]
-[ext_resource path="res://src/scenes/uiElements/Pusab_Font.tres" type="Theme" id=3]
-[ext_resource path="res://assets/guiTextures/Restart.png" type="Texture" id=4]
-[ext_resource path="res://assets/guiTextures/ContinuePlaying.png" type="Texture" id=5]
-[ext_resource path="res://src/scenes/uiElements/GuiElementsTheme.tres" type="Theme" id=6]
-[ext_resource path="res://assets/guiTextures/GoBackToMenu.png" type="Texture" id=7]
-[ext_resource path="res://src/scenes/uiElements/FadeScreen.tscn" type="PackedScene" id=8]
-[ext_resource path="res://assets/fonts/PUSAB___.otf" type="DynamicFontData" id=9]
-[ext_resource path="res://src/scenes/PauseMenu.gd" type="Script" id=10]
-[ext_resource path="res://assets/audio/soundEffects/quitSound_01.ogg" type="AudioStream" id=11]
+[ext_resource type="Texture2D" uid="uid://dreeldi1syfm7" path="res://assets/levelTextures/ground/ground-long.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://c068eo4ul0lit" path="res://assets/levelTextures/background/background1-3.png" id="2"]
+[ext_resource type="Theme" uid="uid://ctsh3cgr6x55w" path="res://src/scenes/uiElements/Pusab_Font.tres" id="3"]
+[ext_resource type="Texture2D" uid="uid://c8pv7gaik45on" path="res://assets/guiTextures/Restart.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://bl42tu2x7ynta" path="res://assets/guiTextures/ContinuePlaying.png" id="5"]
+[ext_resource type="Theme" uid="uid://egspkbwxefg2" path="res://src/scenes/uiElements/GuiElementsTheme.tres" id="6"]
+[ext_resource type="Texture2D" uid="uid://dw2vp18jawftk" path="res://assets/guiTextures/GoBackToMenu.png" id="7"]
+[ext_resource type="PackedScene" uid="uid://cqslxljwyr3r6" path="res://src/scenes/uiElements/FadeScreen.tscn" id="8"]
+[ext_resource type="Script" path="res://src/scenes/uiElements/clickable_button.gd" id="8_uu60r"]
+[ext_resource type="FontFile" uid="uid://3d5l6qp0iyr" path="res://assets/fonts/PUSAB___.otf" id="9"]
+[ext_resource type="Script" path="res://src/scenes/PauseMenu.gd" id="10"]
+[ext_resource type="AudioStream" uid="uid://bbqvf1ujobh0o" path="res://assets/audio/soundEffects/quitSound_01.ogg" id="11"]
 
-[sub_resource type="DynamicFont" id=1]
-size = 125
-outline_size = 4
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 9 )
-
-[sub_resource type="Animation" id=2]
-resource_name = "BackToMenuClick"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/path = NodePath("Menu/Buttons/GoBackToMenu:rect_scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 0.5, 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ) ]
-}
-
-[sub_resource type="Animation" id=3]
-resource_name = "ContinueButtonClick"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/path = NodePath("Menu/Buttons/ContinuePlaying:rect_scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 0.5, 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ) ]
-}
-
-[sub_resource type="Animation" id=4]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("Menu/Buttons/ContinuePlaying:rect_scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Menu/Buttons/Restart:rect_scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Menu/Buttons/GoBackToMenu:rect_scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ) ]
-}
-
-[sub_resource type="Animation" id=5]
-resource_name = "RestartButtonClick"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/path = NodePath("Menu/Buttons/Restart:rect_scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 0.5, 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ) ]
-}
+[sub_resource type="FontFile" id="1"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+fallbacks = Array[Font]([ExtResource("9")])
+face_index = null
+embolden = null
+transform = null
+cache/0/75/0/ascent = 0.0
+cache/0/75/0/descent = 0.0
+cache/0/75/0/underline_position = 0.0
+cache/0/75/0/underline_thickness = 0.0
+cache/0/75/0/scale = 1.0
+cache/0/75/0/kerning_overrides/75/0 = Vector2(0, 0)
+cache/0/75/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/75/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
 [node name="PauseMenu" type="Control"]
-pause_mode = 2
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_pivot_offset = Vector2( 960, 540 )
-theme = ExtResource( 3 )
-script = ExtResource( 10 )
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(960, 540)
+theme = ExtResource("3")
+script = ExtResource("10")
 
 [node name="BackgroundTexture" type="TextureRect" parent="."]
 visible = false
-modulate = Color( 0, 0.6, 1, 1 )
+modulate = Color(0, 0.6, 1, 1)
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -162.0
-margin_top = -104.0
-margin_right = -960.0
-margin_bottom = -62.0
-texture = ExtResource( 2 )
-expand = true
+offset_left = -162.0
+offset_top = -104.0
+offset_right = -960.0
+offset_bottom = -62.0
+texture = ExtResource("2")
+expand_mode = 1
 stretch_mode = 1
 
 [node name="BackgroundTexture2" type="TextureRect" parent="."]
 visible = false
-modulate = Color( 0, 0.6, 1, 1 )
+modulate = Color(0, 0.6, 1, 1)
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 960.0
-margin_top = -104.0
-margin_right = 162.0
-margin_bottom = -62.0
-texture = ExtResource( 2 )
-expand = true
+offset_left = 960.0
+offset_top = -104.0
+offset_right = 162.0
+offset_bottom = -62.0
+texture = ExtResource("2")
+expand_mode = 1
 stretch_mode = 1
 
 [node name="GroundTexture" type="TextureRect" parent="."]
 visible = false
-modulate = Color( 0, 0.368627, 1, 1 )
+modulate = Color(0, 0.368627, 1, 1)
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -960.0
-margin_top = -103.0
-margin_right = 960.0
-margin_bottom = 137.0
-texture = ExtResource( 1 )
-expand = true
+offset_left = -960.0
+offset_top = -103.0
+offset_right = 960.0
+offset_bottom = 137.0
+texture = ExtResource("1")
+expand_mode = 1
 
 [node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 0.392157 )
+color = Color(0, 0, 0, 0.392157)
 
 [node name="Menu" type="VBoxContainer" parent="."]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -790.0
-margin_top = -398.0
-margin_right = 790.0
-margin_bottom = 398.0
+offset_left = -790.0
+offset_top = -398.0
+offset_right = 790.0
+offset_bottom = 398.0
 alignment = 1
 
 [node name="Labels" type="VBoxContainer" parent="Menu"]
-margin_top = 158.0
-margin_right = 1580.0
-margin_bottom = 372.0
+layout_mode = 2
 
 [node name="Label" type="Label" parent="Menu/Labels"]
-margin_right = 1580.0
-margin_bottom = 150.0
-rect_min_size = Vector2( 0, 150 )
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
 size_flags_vertical = 1
-theme = ExtResource( 3 )
-custom_fonts/font = SubResource( 1 )
+theme = ExtResource("3")
+theme_override_fonts/font = SubResource("1")
 text = "Game Paused"
-align = 1
-valign = 1
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="LevelName" type="Label" parent="Menu/Labels"]
-margin_top = 154.0
-margin_right = 1580.0
-margin_bottom = 214.0
-rect_min_size = Vector2( 0, 60 )
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
 size_flags_vertical = 1
-theme = ExtResource( 3 )
+theme = ExtResource("3")
 text = "Level Name"
-align = 1
-valign = 1
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Buttons" type="HBoxContainer" parent="Menu"]
-margin_top = 376.0
-margin_right = 1580.0
-margin_bottom = 638.0
-rect_pivot_offset = Vector2( 790, 128 )
+layout_mode = 2
 size_flags_vertical = 5
-theme = ExtResource( 6 )
+theme = ExtResource("6")
 alignment = 1
 
 [node name="Restart" type="Button" parent="Menu/Buttons"]
-margin_left = 384.0
-margin_right = 652.0
-margin_bottom = 262.0
-rect_pivot_offset = Vector2( 128, 128 )
-icon = ExtResource( 4 )
+layout_mode = 2
+icon = ExtResource("4")
 flat = true
+script = ExtResource("8_uu60r")
 
 [node name="ContinuePlaying" type="Button" parent="Menu/Buttons"]
-margin_left = 656.0
-margin_right = 924.0
-margin_bottom = 262.0
-rect_pivot_offset = Vector2( 128, 128 )
-icon = ExtResource( 5 )
+layout_mode = 2
+icon = ExtResource("5")
 flat = true
+script = ExtResource("8_uu60r")
 
 [node name="GoBackToMenu" type="Button" parent="Menu/Buttons"]
-margin_left = 928.0
-margin_right = 1196.0
-margin_bottom = 262.0
-rect_pivot_offset = Vector2( 128, 128 )
-icon = ExtResource( 7 )
+layout_mode = 2
+icon = ExtResource("7")
 flat = true
+script = ExtResource("8_uu60r")
 
-[node name="FadeScreen" parent="." instance=ExtResource( 8 )]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/BackToMenuClick = SubResource( 2 )
-anims/ContinueButtonClick = SubResource( 3 )
-anims/RESET = SubResource( 4 )
-anims/RestartButtonClick = SubResource( 5 )
+[node name="FadeScreen" parent="." instance=ExtResource("8")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
 
 [node name="PauseMenuCamera" type="Camera2D" parent="."]
-position = Vector2( 960, 540 )
-rotating = true
+position = Vector2(960, 540)
 
 [node name="QuitSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 11 )
-bus = "SFX"
+stream = ExtResource("11")
 
 [connection signal="button_down" from="Menu/Buttons/Restart" to="." method="_on_Restart_button_down"]
 [connection signal="button_up" from="Menu/Buttons/Restart" to="." method="_on_Restart_button_up"]

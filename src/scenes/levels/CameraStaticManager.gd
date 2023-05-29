@@ -2,14 +2,14 @@ extends Tween
 
 class_name CameraStaticManager
 
-onready var player_camera = get_node("/root/Scene/Player/Camera2D")
-onready var player = get_node("/root/Scene/Player")
+@onready var player_camera = get_node("/root/Scene/Player/Camera2D")
+@onready var player = get_node("/root/Scene/Player")
 var camera_base_offset: Vector2 = Vector2(200.0, -225.0)
 var is_static: bool
 var is_pos_static: bool
 var center_object_pos: Vector2
 var background_static: bool
-export var active_axis: Vector2 = Vector2(1.0, 1.0)
+@export var active_axis: Vector2 = Vector2(1.0, 1.0)
 
 func _ready() -> void:
 	is_static = false
@@ -25,7 +25,7 @@ func _physics_process(delta: float) -> void:
 func enter_static(center_object_path: String, duration: float, override: bool, offset: Vector2, disable_offset: bool):
 	remove_all()
 	is_static = true
-	player_camera.drag_margin_bottom = 1.0
+	player_camera.drag_bottom_margin = 1.0
 	var center_object = get_parent().get_parent().get_node(center_object_path)
 	if active_axis.x == 1.0:
 		interpolate_property(player_camera, "global_position:x", player_camera.global_position.x,\
@@ -47,7 +47,7 @@ func exit_static(duration: float):
 	remove_all()
 	is_static = false
 	background_static = false
-	player_camera.drag_margin_bottom = 0.0
+	player_camera.drag_bottom_margin = 0.0
 	player_camera.limit_top = -4625
 	camera_base_offset.x = 200 if player._x_direction > 0 else -200
 	interpolate_property(player_camera, "position", player_camera.position,\

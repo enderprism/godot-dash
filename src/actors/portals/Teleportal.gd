@@ -1,8 +1,8 @@
 extends Area2D
 
-onready var player: = get_node("/root/Scene/Player")
-export var y_only: bool = false
-export var one_time: bool = false
+@onready var player: = get_node("/root/Scene/Player")
+@export var y_only: bool = false
+@export var one_time: bool = false
 var teleported: bool = false
 
 func _on_Teleportal_area_entered(area: Area2D) -> void:

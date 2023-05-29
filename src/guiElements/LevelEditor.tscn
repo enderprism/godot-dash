@@ -1,22 +1,22 @@
 [gd_scene load_steps=18 format=2]
 
-[ext_resource path="res://assets/levelTextures/solid/Blocks/GridBlocks/GridBlock08.webp" type="Texture" id=1]
-[ext_resource path="res://assets/guiTextures/EditorPlayPlayer.png" type="Texture" id=2]
-[ext_resource path="res://assets/levelTextures/solid/Blocks/GridBlocks/GridBlock07.webp" type="Texture" id=3]
+[ext_resource path="res://assets/levelTextures/solid/Blocks/GridBlocks/GridBlock08.webp" type="Texture2D" id=1]
+[ext_resource path="res://assets/guiTextures/EditorPlayPlayer.png" type="Texture2D" id=2]
+[ext_resource path="res://assets/levelTextures/solid/Blocks/GridBlocks/GridBlock07.webp" type="Texture2D" id=3]
 [ext_resource path="res://src/actors/Ground.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/levelTextures/solid/Blocks/GridBlocks/GridBlock06.webp" type="Texture" id=5]
+[ext_resource path="res://assets/levelTextures/solid/Blocks/GridBlocks/GridBlock06.webp" type="Texture2D" id=5]
 [ext_resource path="res://src/actors/Background.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/scenes/uiElements/EditorPanelTheme.tres" type="Theme" id=7]
-[ext_resource path="res://assets/levelTextures/solid/Blocks/GridBlocks/GridBlock03.webp" type="Texture" id=8]
-[ext_resource path="res://assets/levelTextures/solid/Blocks/RegularPlatform01.webp" type="Texture" id=9]
-[ext_resource path="res://assets/levelTextures/solid/Blocks/GridBlocks/GridBlock02.webp" type="Texture" id=10]
-[ext_resource path="res://assets/levelTextures/solid/Blocks/GridBlocks/GridBlock01.webp" type="Texture" id=11]
-[ext_resource path="res://assets/levelTextures/solid/Blocks/RegularBlock01.webp" type="Texture" id=12]
-[ext_resource path="res://assets/levelTextures/solid/Blocks/GridBlocks/GridBlock04.webp" type="Texture" id=13]
+[ext_resource path="res://assets/levelTextures/solid/Blocks/GridBlocks/GridBlock03.webp" type="Texture2D" id=8]
+[ext_resource path="res://assets/levelTextures/solid/Blocks/RegularPlatform01.webp" type="Texture2D" id=9]
+[ext_resource path="res://assets/levelTextures/solid/Blocks/GridBlocks/GridBlock02.webp" type="Texture2D" id=10]
+[ext_resource path="res://assets/levelTextures/solid/Blocks/GridBlocks/GridBlock01.webp" type="Texture2D" id=11]
+[ext_resource path="res://assets/levelTextures/solid/Blocks/RegularBlock01.webp" type="Texture2D" id=12]
+[ext_resource path="res://assets/levelTextures/solid/Blocks/GridBlocks/GridBlock04.webp" type="Texture2D" id=13]
 [ext_resource path="res://src/scenes/uiElements/GuiElementsTheme.tres" type="Theme" id=14]
-[ext_resource path="res://assets/guiTextures/EditorPlayMusic.png" type="Texture" id=15]
-[ext_resource path="res://assets/guiTextures/EditorRedo.png" type="Texture" id=16]
-[ext_resource path="res://assets/guiTextures/EditorUndo.png" type="Texture" id=17]
+[ext_resource path="res://assets/guiTextures/EditorPlayMusic.png" type="Texture2D" id=15]
+[ext_resource path="res://assets/guiTextures/EditorRedo.png" type="Texture2D" id=16]
+[ext_resource path="res://assets/guiTextures/EditorUndo.png" type="Texture2D" id=17]
 
 [node name="Node2D" type="Node2D"]
 
@@ -35,15 +35,15 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="Blocks" type="Tabs" parent="CanvasLayer/LevelEditor/TabContainer"]
+[node name="Blocks" type="TabBar" parent="CanvasLayer/LevelEditor/TabContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 264.0
-margin_top = 65.0
-margin_right = -264.0
-margin_bottom = -16.0
+offset_left = 264.0
+offset_top = 65.0
+offset_right = -264.0
+offset_bottom = -16.0
 theme = ExtResource( 14 )
-tab_align = 0
+tab_alignment = 0
 
 [node name="GridContainer" type="GridContainer" parent="CanvasLayer/LevelEditor/TabContainer/Blocks"]
 anchor_right = 1.0
@@ -54,269 +54,269 @@ theme = ExtResource( 7 )
 columns = 15
 
 [node name="Button" type="Button" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer"]
-margin_right = 64.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 64, 64 )
+offset_right = 64.0
+offset_bottom = 64.0
+custom_minimum_size = Vector2( 64, 64 )
 theme = ExtResource( 7 )
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer/Button"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 8.0
-margin_top = 8.0
-margin_right = -8.0
-margin_bottom = -8.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -8.0
 theme = ExtResource( 7 )
 texture = ExtResource( 12 )
 expand = true
 stretch_mode = 6
 
 [node name="Button2" type="Button" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer"]
-margin_left = 80.0
-margin_right = 144.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 64, 64 )
+offset_left = 80.0
+offset_right = 144.0
+offset_bottom = 64.0
+custom_minimum_size = Vector2( 64, 64 )
 theme = ExtResource( 7 )
 
 [node name="TextureRect2" type="TextureRect" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer/Button2"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 8.0
-margin_top = 9.0
-margin_right = -8.0
-margin_bottom = -8.0
+offset_left = 8.0
+offset_top = 9.0
+offset_right = -8.0
+offset_bottom = -8.0
 texture = ExtResource( 9 )
 expand = true
 stretch_mode = 6
 
 [node name="Button3" type="Button" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer"]
-margin_left = 160.0
-margin_right = 224.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 64, 64 )
+offset_left = 160.0
+offset_right = 224.0
+offset_bottom = 64.0
+custom_minimum_size = Vector2( 64, 64 )
 theme = ExtResource( 7 )
 
 [node name="TextureRect2" type="TextureRect" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer/Button3"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 8.0
-margin_top = 9.0
-margin_right = -8.0
-margin_bottom = -8.0
+offset_left = 8.0
+offset_top = 9.0
+offset_right = -8.0
+offset_bottom = -8.0
 texture = ExtResource( 11 )
 expand = true
 stretch_mode = 6
 
 [node name="Button4" type="Button" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer"]
-margin_left = 240.0
-margin_right = 304.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 64, 64 )
+offset_left = 240.0
+offset_right = 304.0
+offset_bottom = 64.0
+custom_minimum_size = Vector2( 64, 64 )
 theme = ExtResource( 7 )
 
 [node name="TextureRect2" type="TextureRect" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer/Button4"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 8.0
-margin_top = 9.0
-margin_right = -8.0
-margin_bottom = -8.0
+offset_left = 8.0
+offset_top = 9.0
+offset_right = -8.0
+offset_bottom = -8.0
 texture = ExtResource( 10 )
 expand = true
 stretch_mode = 6
 
 [node name="Button5" type="Button" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer"]
-margin_left = 320.0
-margin_right = 384.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 64, 64 )
+offset_left = 320.0
+offset_right = 384.0
+offset_bottom = 64.0
+custom_minimum_size = Vector2( 64, 64 )
 theme = ExtResource( 7 )
 
 [node name="TextureRect2" type="TextureRect" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer/Button5"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 8.0
-margin_top = 9.0
-margin_right = -8.0
-margin_bottom = -8.0
+offset_left = 8.0
+offset_top = 9.0
+offset_right = -8.0
+offset_bottom = -8.0
 texture = ExtResource( 8 )
 expand = true
 stretch_mode = 6
 
 [node name="Button6" type="Button" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer"]
-margin_left = 400.0
-margin_right = 464.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 64, 64 )
+offset_left = 400.0
+offset_right = 464.0
+offset_bottom = 64.0
+custom_minimum_size = Vector2( 64, 64 )
 theme = ExtResource( 7 )
 
 [node name="TextureRect2" type="TextureRect" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer/Button6"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 8.0
-margin_top = 9.0
-margin_right = -8.0
-margin_bottom = -8.0
+offset_left = 8.0
+offset_top = 9.0
+offset_right = -8.0
+offset_bottom = -8.0
 texture = ExtResource( 13 )
 expand = true
 stretch_mode = 6
 
 [node name="Button7" type="Button" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer"]
-margin_left = 480.0
-margin_right = 544.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 64, 64 )
+offset_left = 480.0
+offset_right = 544.0
+offset_bottom = 64.0
+custom_minimum_size = Vector2( 64, 64 )
 theme = ExtResource( 7 )
 
 [node name="TextureRect2" type="TextureRect" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer/Button7"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 8.0
-margin_top = 9.0
-margin_right = -8.0
-margin_bottom = -8.0
+offset_left = 8.0
+offset_top = 9.0
+offset_right = -8.0
+offset_bottom = -8.0
 texture = ExtResource( 5 )
 expand = true
 stretch_mode = 6
 
 [node name="Button8" type="Button" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer"]
-margin_left = 560.0
-margin_right = 624.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 64, 64 )
+offset_left = 560.0
+offset_right = 624.0
+offset_bottom = 64.0
+custom_minimum_size = Vector2( 64, 64 )
 theme = ExtResource( 7 )
 
 [node name="TextureRect2" type="TextureRect" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer/Button8"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 8.0
-margin_top = 9.0
-margin_right = -8.0
-margin_bottom = -8.0
+offset_left = 8.0
+offset_top = 9.0
+offset_right = -8.0
+offset_bottom = -8.0
 texture = ExtResource( 3 )
 expand = true
 stretch_mode = 6
 
 [node name="Button9" type="Button" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer"]
-margin_left = 640.0
-margin_right = 704.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 64, 64 )
+offset_left = 640.0
+offset_right = 704.0
+offset_bottom = 64.0
+custom_minimum_size = Vector2( 64, 64 )
 theme = ExtResource( 7 )
 
 [node name="TextureRect2" type="TextureRect" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer/Button9"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 8.0
-margin_top = 9.0
-margin_right = -8.0
-margin_bottom = -8.0
+offset_left = 8.0
+offset_top = 9.0
+offset_right = -8.0
+offset_bottom = -8.0
 texture = ExtResource( 1 )
 expand = true
 stretch_mode = 6
 
 [node name="Button10" type="Button" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer"]
-margin_left = 720.0
-margin_right = 784.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 64, 64 )
+offset_left = 720.0
+offset_right = 784.0
+offset_bottom = 64.0
+custom_minimum_size = Vector2( 64, 64 )
 theme = ExtResource( 7 )
 
 [node name="TextureRect2" type="TextureRect" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer/Button10"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 8.0
-margin_top = 9.0
-margin_right = -8.0
-margin_bottom = -8.0
+offset_left = 8.0
+offset_top = 9.0
+offset_right = -8.0
+offset_bottom = -8.0
 texture = ExtResource( 12 )
 expand = true
 stretch_mode = 6
 
-[node name="Hazards" type="Tabs" parent="CanvasLayer/LevelEditor/TabContainer"]
+[node name="Hazards" type="TabBar" parent="CanvasLayer/LevelEditor/TabContainer"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 32.0
-margin_right = -4.0
-margin_bottom = -4.0
+offset_left = 4.0
+offset_top = 32.0
+offset_right = -4.0
+offset_bottom = -4.0
 theme = ExtResource( 14 )
-tab_align = 0
+tab_alignment = 0
 
-[node name="Interactibles" type="Tabs" parent="CanvasLayer/LevelEditor/TabContainer"]
+[node name="Interactibles" type="TabBar" parent="CanvasLayer/LevelEditor/TabContainer"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 32.0
-margin_right = -4.0
-margin_bottom = -4.0
+offset_left = 4.0
+offset_top = 32.0
+offset_right = -4.0
+offset_bottom = -4.0
 theme = ExtResource( 14 )
-tab_align = 0
+tab_alignment = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/LevelEditor"]
 anchor_top = 0.755556
 anchor_right = 0.133333
 anchor_bottom = 1.0
-margin_right = 8.0
-rect_pivot_offset = Vector2( -720, -152 )
+offset_right = 8.0
+pivot_offset = Vector2( -720, -152 )
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
 [node name="Button" type="Button" parent="CanvasLayer/LevelEditor/VBoxContainer"]
-margin_top = 97.0
-margin_right = 263.0
-margin_bottom = 117.0
+offset_top = 97.0
+offset_right = 263.0
+offset_bottom = 117.0
 text = "BUILD"
 
 [node name="Button2" type="Button" parent="CanvasLayer/LevelEditor/VBoxContainer"]
-margin_top = 121.0
-margin_right = 263.0
-margin_bottom = 141.0
+offset_top = 121.0
+offset_right = 263.0
+offset_bottom = 141.0
 text = "EDIT"
 
 [node name="Button3" type="Button" parent="CanvasLayer/LevelEditor/VBoxContainer"]
-margin_top = 145.0
-margin_right = 263.0
-margin_bottom = 165.0
+offset_top = 145.0
+offset_right = 263.0
+offset_bottom = 165.0
 text = "DELETE"
 
 [node name="GridContainer" type="GridContainer" parent="CanvasLayer/LevelEditor"]
-margin_left = 1656.0
-margin_top = 816.0
-margin_right = 1920.0
-margin_bottom = 1080.0
+offset_left = 1656.0
+offset_top = 816.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 columns = 2
 
 [node name="Button" type="Button" parent="CanvasLayer/LevelEditor/GridContainer"]
-margin_right = 130.0
-margin_bottom = 130.0
-rect_min_size = Vector2( 130, 130 )
+offset_right = 130.0
+offset_bottom = 130.0
+custom_minimum_size = Vector2( 130, 130 )
 text = "DRAG"
 
 [node name="Button2" type="Button" parent="CanvasLayer/LevelEditor/GridContainer"]
-margin_left = 134.0
-margin_right = 264.0
-margin_bottom = 130.0
-rect_min_size = Vector2( 130, 130 )
+offset_left = 134.0
+offset_right = 264.0
+offset_bottom = 130.0
+custom_minimum_size = Vector2( 130, 130 )
 text = "ROTATE"
 
 [node name="Button3" type="Button" parent="CanvasLayer/LevelEditor/GridContainer"]
-margin_top = 134.0
-margin_right = 130.0
-margin_bottom = 264.0
-rect_min_size = Vector2( 130, 130 )
+offset_top = 134.0
+offset_right = 130.0
+offset_bottom = 264.0
+custom_minimum_size = Vector2( 130, 130 )
 text = "FREE MOVE"
 
 [node name="Button4" type="Button" parent="CanvasLayer/LevelEditor/GridContainer"]
-margin_left = 134.0
-margin_top = 134.0
-margin_right = 264.0
-margin_bottom = 264.0
-rect_min_size = Vector2( 130, 130 )
+offset_left = 134.0
+offset_top = 134.0
+offset_right = 264.0
+offset_bottom = 264.0
+custom_minimum_size = Vector2( 130, 130 )
 text = "RESET POSITION"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/LevelEditor"]
@@ -329,8 +329,8 @@ __meta__ = {
 }
 
 [node name="TextureButton" type="TextureButton" parent="CanvasLayer/LevelEditor/VBoxContainer2"]
-margin_right = 128.0
-margin_bottom = 128.0
+offset_right = 128.0
+offset_bottom = 128.0
 texture_normal = ExtResource( 15 )
 texture_pressed = ExtResource( 15 )
 texture_hover = ExtResource( 15 )
@@ -341,9 +341,9 @@ __meta__ = {
 }
 
 [node name="TextureButton2" type="TextureButton" parent="CanvasLayer/LevelEditor/VBoxContainer2"]
-margin_top = 132.0
-margin_right = 128.0
-margin_bottom = 260.0
+offset_top = 132.0
+offset_right = 128.0
+offset_bottom = 260.0
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 2 )
 texture_hover = ExtResource( 2 )
@@ -363,8 +363,8 @@ __meta__ = {
 }
 
 [node name="TextureButton" type="TextureButton" parent="CanvasLayer/LevelEditor/HBoxContainer"]
-margin_right = 128.0
-margin_bottom = 128.0
+offset_right = 128.0
+offset_bottom = 128.0
 texture_normal = ExtResource( 17 )
 texture_pressed = ExtResource( 17 )
 texture_hover = ExtResource( 17 )
@@ -375,9 +375,9 @@ __meta__ = {
 }
 
 [node name="TextureButton2" type="TextureButton" parent="CanvasLayer/LevelEditor/HBoxContainer"]
-margin_left = 132.0
-margin_right = 260.0
-margin_bottom = 128.0
+offset_left = 132.0
+offset_right = 260.0
+offset_bottom = 128.0
 texture_normal = ExtResource( 16 )
 texture_pressed = ExtResource( 16 )
 texture_hover = ExtResource( 16 )
@@ -389,7 +389,7 @@ __meta__ = {
 
 [node name="Background2" type="CanvasLayer" parent="."]
 layer = -50
-follow_viewport_enable = true
+follow_viewport_enabled = true
 follow_viewport_scale = 0.333
 
 [node name="Background" parent="Background2" instance=ExtResource( 6 )]

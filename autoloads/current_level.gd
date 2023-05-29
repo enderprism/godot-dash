@@ -11,7 +11,7 @@ var onetime_triggers_list: Array
 var music_volume: float = 1.0
 var sfx_volume: float = 1.0
 var level_time: float
-onready var player = get_node("/root/Scene/Player")
+@onready var player = get_node("/root/Scene/Player")
 
 func reset() -> void:
 	is_background_static = false

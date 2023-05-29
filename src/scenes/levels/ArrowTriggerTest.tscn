@@ -1,301 +1,292 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=20 format=3 uid="uid://b4sjtw5fym8oh"]
 
-[ext_resource path="res://src/scenes/levels/Level.gd" type="Script" id=1]
-[ext_resource path="res://src/actors/triggerTemplates/NormalTrigger.tscn" type="PackedScene" id=2]
-[ext_resource path="res://src/actors/solids/RegularBlock.tscn" type="PackedScene" id=3]
-[ext_resource path="res://src/actors/pads/BluePad.tscn" type="PackedScene" id=4]
-[ext_resource path="res://src/actors/portals/Teleportal.tscn" type="PackedScene" id=5]
-[ext_resource path="res://src/actors/portals/ExitTeleportal.tscn" type="PackedScene" id=6]
-[ext_resource path="res://src/actors/portals/GravityPortalB_0.tscn" type="PackedScene" id=7]
-[ext_resource path="res://src/actors/hazards/RegularSpike02_0.tscn" type="PackedScene" id=8]
-[ext_resource path="res://src/actors/solids/RegularPlatform.tscn" type="PackedScene" id=9]
-[ext_resource path="res://src/actors/solids/GridBlock07_0.tscn" type="PackedScene" id=10]
-[ext_resource path="res://src/actors/solids/GridBlock08_0.tscn" type="PackedScene" id=11]
-[ext_resource path="res://src/actors/pads/MagentaPad.tscn" type="PackedScene" id=12]
-[ext_resource path="res://src/actors/triggerTemplates/TouchTrigger.tscn" type="PackedScene" id=13]
-[ext_resource path="res://src/actors/portals/CubePortal.tscn" type="PackedScene" id=14]
-[ext_resource path="res://assets/audio/levels/Secret Song.mp3" type="AudioStream" id=15]
-[ext_resource path="res://src/actors/portals/SpiderPortal.tscn" type="PackedScene" id=16]
-[ext_resource path="res://src/actors/pads/YellowPad.tscn" type="PackedScene" id=17]
-[ext_resource path="res://src/actors/solids/GridBlock03_0.tscn" type="PackedScene" id=18]
-[ext_resource path="res://src/actors/solids/GridBlock02_0.tscn" type="PackedScene" id=19]
-[ext_resource path="res://src/actors/solids/GridBlock05_0.tscn" type="PackedScene" id=20]
+[ext_resource type="Script" path="res://src/scenes/levels/Level.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://dbkyre7gvfv3u" path="res://src/actors/triggerTemplates/NormalTrigger.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://bxplpbpu2knau" path="res://src/actors/solids/RegularBlock.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://ckc4j2aq75ita" path="res://src/actors/portals/Teleportal.tscn" id="5"]
+[ext_resource type="PackedScene" path="res://src/actors/portals/ExitTeleportal.tscn" id="6"]
+[ext_resource type="PackedScene" uid="uid://dq77y6dcq7at2" path="res://src/actors/portals/GravityPortalB_0.tscn" id="7"]
+[ext_resource type="PackedScene" uid="uid://vgcm503dvj0o" path="res://src/actors/hazards/RegularSpike02_0.tscn" id="8"]
+[ext_resource type="PackedScene" uid="uid://d3u6sxhgpsn3f" path="res://src/actors/solids/RegularPlatform.tscn" id="9"]
+[ext_resource type="PackedScene" uid="uid://dym8ti51314x2" path="res://src/actors/solids/GridBlock07_0.tscn" id="10"]
+[ext_resource type="PackedScene" uid="uid://bpcp868kw4e86" path="res://src/actors/solids/GridBlock08_0.tscn" id="11"]
+[ext_resource type="PackedScene" uid="uid://dgcgmbp7jgmfx" path="res://src/actors/pads/MagentaPad.tscn" id="12"]
+[ext_resource type="PackedScene" uid="uid://bkjqbcvtug1re" path="res://src/actors/triggerTemplates/TouchTrigger.tscn" id="13"]
+[ext_resource type="PackedScene" uid="uid://bcdsu1busb27d" path="res://src/actors/portals/CubePortal.tscn" id="14"]
+[ext_resource type="AudioStream" uid="uid://d3pdh4sqe1bkp" path="res://assets/audio/levels/Secret Song.mp3" id="15"]
+[ext_resource type="PackedScene" uid="uid://ilk2e18158ld" path="res://src/actors/portals/SpiderPortal.tscn" id="16"]
+[ext_resource type="PackedScene" uid="uid://cuf6s4hgpechc" path="res://src/actors/pads/YellowPad.tscn" id="17"]
+[ext_resource type="PackedScene" uid="uid://bxx1cktdj5lam" path="res://src/actors/solids/GridBlock03_0.tscn" id="18"]
+[ext_resource type="PackedScene" uid="uid://cxilp00jyidej" path="res://src/actors/solids/GridBlock02_0.tscn" id="19"]
+[ext_resource type="PackedScene" path="res://src/actors/solids/GridBlock05_0.tscn" id="20"]
 
 [node name="ArrowTriggerTest" type="Node2D"]
-script = ExtResource( 1 )
-level_music = ExtResource( 15 )
+script = ExtResource("1")
+level_music = ExtResource("15")
 music_start = 5.7
 
-[node name="NormalTrigger" parent="." instance=ExtResource( 2 )]
-position = Vector2( 549, 0 )
+[node name="NormalTrigger" parent="." instance=ExtResource("2")]
+position = Vector2(549, 0)
 target_path = "PLAYERCAMERA"
 duration = 0.2
 property = "static"
-value = [ "StaticCenter", Vector2( 1, 1 ) ]
+value = ["StaticCenter", Vector2(1, 1)]
 easing_type = 2
 easing_curve = 3
 
-[node name="NormalTrigger4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 183, 0 )
+[node name="NormalTrigger4" parent="." instance=ExtResource("2")]
+position = Vector2(183, 0)
 target_path = "PLAYERCAMERA"
 property = "static"
-value = [ "StaticCenter", Vector2( 1, 1 ) ]
+value = ["StaticCenter", Vector2(1, 1)]
 easing_type = 2
 easing_curve = 3
 exit_static = true
 
-[node name="StaticCenter" type="Position2D" parent="."]
-position = Vector2( 1525, -610 )
-__meta__ = {
-"_gizmo_extents_": 31.0
-}
+[node name="StaticCenter" type="Marker2D" parent="."]
+position = Vector2(1525, -610)
 
 [node name="Blocks" type="Node2D" parent="."]
-position = Vector2( 0, -122 )
-__meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
-}
+position = Vector2(0, -122)
 
-[node name="RegularBlock7" parent="Blocks" instance=ExtResource( 3 )]
-position = Vector2( 1159, -183 )
+[node name="RegularBlock7" parent="Blocks" instance=ExtResource("3")]
+position = Vector2(1159, -183)
 
-[node name="RegularBlock10" parent="Blocks" instance=ExtResource( 3 )]
-position = Vector2( 1159, -61 )
+[node name="RegularBlock10" parent="Blocks" instance=ExtResource("3")]
+position = Vector2(1159, -61)
 
-[node name="RegularBlock25" parent="Blocks" instance=ExtResource( 3 )]
-position = Vector2( 1159, 61 )
+[node name="RegularBlock25" parent="Blocks" instance=ExtResource("3")]
+position = Vector2(1159, 61)
 
-[node name="RegularBlock8" parent="Blocks" instance=ExtResource( 3 )]
-position = Vector2( 1281, -183 )
+[node name="RegularBlock8" parent="Blocks" instance=ExtResource("3")]
+position = Vector2(1281, -183)
 
-[node name="RegularBlock9" parent="Blocks" instance=ExtResource( 3 )]
-position = Vector2( 1403, -183 )
+[node name="RegularBlock9" parent="Blocks" instance=ExtResource("3")]
+position = Vector2(1403, -183)
 
-[node name="RegularBlock26" parent="Blocks" instance=ExtResource( 3 )]
-position = Vector2( 1403, -61 )
+[node name="RegularBlock26" parent="Blocks" instance=ExtResource("3")]
+position = Vector2(1403, -61)
 
-[node name="RegularBlock27" parent="Blocks" instance=ExtResource( 3 )]
-position = Vector2( 1403, 61 )
+[node name="RegularBlock27" parent="Blocks" instance=ExtResource("3")]
+position = Vector2(1403, 61)
 
-[node name="RegularBlock11" parent="Blocks" instance=ExtResource( 3 )]
-position = Vector2( 1525, 61 )
+[node name="RegularBlock11" parent="Blocks" instance=ExtResource("3")]
+position = Vector2(1525, 61)
 
-[node name="RegularBlock12" parent="Blocks" instance=ExtResource( 3 )]
-position = Vector2( 1647, 61 )
+[node name="RegularBlock12" parent="Blocks" instance=ExtResource("3")]
+position = Vector2(1647, 61)
 
-[node name="RegularBlock23" parent="Blocks" instance=ExtResource( 3 )]
-position = Vector2( 1769, 61 )
+[node name="RegularBlock23" parent="Blocks" instance=ExtResource("3")]
+position = Vector2(1769, 61)
 
-[node name="RegularBlock24" parent="Blocks" instance=ExtResource( 3 )]
-position = Vector2( 1891, 61 )
+[node name="RegularBlock24" parent="Blocks" instance=ExtResource("3")]
+position = Vector2(1891, 61)
 
-[node name="RegularBlock28" parent="Blocks" instance=ExtResource( 3 )]
-position = Vector2( 2013, 61 )
+[node name="RegularBlock28" parent="Blocks" instance=ExtResource("3")]
+position = Vector2(2013, 61)
 
-[node name="RegularSpike02_0" parent="Blocks" instance=ExtResource( 8 )]
-position = Vector2( 2135, -61 )
+[node name="RegularSpike02_0" parent="Blocks" instance=ExtResource("8")]
+position = Vector2(2135, -61)
 
-[node name="RegularBlock29" parent="Blocks" instance=ExtResource( 3 )]
-position = Vector2( 2135, 61 )
+[node name="RegularBlock29" parent="Blocks" instance=ExtResource("3")]
+position = Vector2(2135, 61)
 
-[node name="RegularBlock13" parent="Blocks" instance=ExtResource( 3 )]
-position = Vector2( 1891, -305 )
+[node name="RegularBlock13" parent="Blocks" instance=ExtResource("3")]
+position = Vector2(1891, -305)
 
-[node name="RegularBlock14" parent="Blocks" instance=ExtResource( 3 )]
-position = Vector2( 1891, -427 )
+[node name="RegularBlock14" parent="Blocks" instance=ExtResource("3")]
+position = Vector2(1891, -427)
 
-[node name="RegularBlock15" parent="Blocks" instance=ExtResource( 3 )]
-position = Vector2( 1891, -549 )
+[node name="RegularBlock15" parent="Blocks" instance=ExtResource("3")]
+position = Vector2(1891, -549)
 
-[node name="RegularBlock16" parent="Blocks" instance=ExtResource( 3 )]
-position = Vector2( 1891, -671 )
+[node name="RegularBlock16" parent="Blocks" instance=ExtResource("3")]
+position = Vector2(1891, -671)
 
-[node name="RegularBlock17" parent="Blocks" instance=ExtResource( 3 )]
-position = Vector2( 1891, -793 )
+[node name="RegularBlock17" parent="Blocks" instance=ExtResource("3")]
+position = Vector2(1891, -793)
 
-[node name="RegularBlock18" parent="Blocks" instance=ExtResource( 3 )]
-position = Vector2( 1769, -793 )
+[node name="RegularBlock18" parent="Blocks" instance=ExtResource("3")]
+position = Vector2(1769, -793)
 
-[node name="RegularBlock19" parent="Blocks" instance=ExtResource( 3 )]
-position = Vector2( 1647, -793 )
+[node name="RegularBlock19" parent="Blocks" instance=ExtResource("3")]
+position = Vector2(1647, -793)
 
-[node name="RegularBlock20" parent="Blocks" instance=ExtResource( 3 )]
-position = Vector2( 1525, -793 )
+[node name="RegularBlock20" parent="Blocks" instance=ExtResource("3")]
+position = Vector2(1525, -793)
 
-[node name="RegularBlock30" parent="Blocks" instance=ExtResource( 3 )]
-position = Vector2( 2379, -793 )
+[node name="RegularBlock30" parent="Blocks" instance=ExtResource("3")]
+position = Vector2(2379, -793)
 
-[node name="RegularBlock31" parent="Blocks" instance=ExtResource( 3 )]
-position = Vector2( 2257, -793 )
+[node name="RegularBlock31" parent="Blocks" instance=ExtResource("3")]
+position = Vector2(2257, -793)
 
-[node name="RegularBlock32" parent="Blocks" instance=ExtResource( 3 )]
-position = Vector2( 2135, -793 )
+[node name="RegularBlock32" parent="Blocks" instance=ExtResource("3")]
+position = Vector2(2135, -793)
 
-[node name="RegularBlock33" parent="Blocks" instance=ExtResource( 3 )]
-position = Vector2( 2013, -793 )
+[node name="RegularBlock33" parent="Blocks" instance=ExtResource("3")]
+position = Vector2(2013, -793)
 
-[node name="RegularBlock21" parent="Blocks" instance=ExtResource( 3 )]
-position = Vector2( 1403, -793 )
+[node name="RegularBlock21" parent="Blocks" instance=ExtResource("3")]
+position = Vector2(1403, -793)
 
-[node name="RegularBlock22" parent="Blocks" instance=ExtResource( 3 )]
-position = Vector2( 1281, -793 )
+[node name="RegularBlock22" parent="Blocks" instance=ExtResource("3")]
+position = Vector2(1281, -793)
 
 [node name="StructureExit" type="Node2D" parent="."]
-position = Vector2( 1647, -366 )
-__meta__ = {
-"_edit_group_": true
-}
+position = Vector2(1647, -366)
 
-[node name="RegularPlatform" parent="StructureExit" instance=ExtResource( 9 )]
-position = Vector2( -122, 61 )
+[node name="RegularPlatform" parent="StructureExit" instance=ExtResource("9")]
+position = Vector2(-122, 61)
 
-[node name="RegularPlatform2" parent="StructureExit" instance=ExtResource( 9 )]
-position = Vector2( 0, 61 )
+[node name="RegularPlatform2" parent="StructureExit" instance=ExtResource("9")]
+position = Vector2(0, 61)
 
-[node name="RegularPlatform3" parent="StructureExit" instance=ExtResource( 9 )]
-position = Vector2( 122, 61 )
+[node name="RegularPlatform3" parent="StructureExit" instance=ExtResource("9")]
+position = Vector2(122, 61)
 
-[node name="RegularSpike02_0" parent="StructureExit" instance=ExtResource( 8 )]
-position = Vector2( -122, -61 )
+[node name="RegularSpike02_0" parent="StructureExit" instance=ExtResource("8")]
+position = Vector2(-122, -61)
 
-[node name="RegularSpike02_1" parent="StructureExit" instance=ExtResource( 8 )]
-position = Vector2( 0, -61 )
+[node name="RegularSpike02_1" parent="StructureExit" instance=ExtResource("8")]
+position = Vector2(0, -61)
 
-[node name="RegularSpike02_2" parent="StructureExit" instance=ExtResource( 8 )]
-position = Vector2( 122, -61 )
+[node name="RegularSpike02_2" parent="StructureExit" instance=ExtResource("8")]
+position = Vector2(122, -61)
 
 [node name="BackWall" type="Node2D" parent="."]
-position = Vector2( 1159, -1037 )
-__meta__ = {
-"_edit_group_": true
-}
+position = Vector2(1159, -1037)
 
-[node name="GridBlock07_0" parent="BackWall" instance=ExtResource( 10 )]
-position = Vector2( 0, 122 )
+[node name="GridBlock07_0" parent="BackWall" instance=ExtResource("10")]
+position = Vector2(0, 122)
 rotation = 3.14159
 
-[node name="GridBlock08_0" parent="BackWall" instance=ExtResource( 11 )]
+[node name="GridBlock08_0" parent="BackWall" instance=ExtResource("11")]
 rotation = -3.14159
 
-[node name="GridBlock08_1" parent="BackWall" instance=ExtResource( 11 )]
-position = Vector2( 0, -122 )
+[node name="GridBlock08_1" parent="BackWall" instance=ExtResource("11")]
+position = Vector2(0, -122)
 rotation = -3.14159
 
-[node name="GridBlock08_2" parent="BackWall" instance=ExtResource( 11 )]
-position = Vector2( 0, -244 )
+[node name="GridBlock08_2" parent="BackWall" instance=ExtResource("11")]
+position = Vector2(0, -244)
 rotation = -3.14159
 
-[node name="GridBlock08_3" parent="BackWall" instance=ExtResource( 11 )]
-position = Vector2( 0, -366 )
+[node name="GridBlock08_3" parent="BackWall" instance=ExtResource("11")]
+position = Vector2(0, -366)
 rotation = -3.14159
 
 [node name="StartPlatform" type="Node2D" parent="."]
-position = Vector2( 488, -183 )
-__meta__ = {
-"_edit_group_": true
-}
+position = Vector2(488, -183)
 
-[node name="Teleportal" parent="StartPlatform" instance=ExtResource( 5 )]
-visible = false
-position = Vector2( -427, 122 )
+[node name="Teleportal" parent="StartPlatform" instance=ExtResource("5")]
+position = Vector2(-427, 122)
 
-[node name="ExitTeleportal" parent="StartPlatform/Teleportal" instance=ExtResource( 6 )]
-position = Vector2( 0, -488 )
+[node name="ExitTeleportal" parent="StartPlatform/Teleportal" instance=ExtResource("6")]
+position = Vector2(0, -488)
 
-[node name="RegularBlock" parent="StartPlatform" instance=ExtResource( 3 )]
-position = Vector2( -305, -122 )
+[node name="RegularBlock" parent="StartPlatform" instance=ExtResource("3")]
+position = Vector2(-305, -122)
 
-[node name="RegularBlock2" parent="StartPlatform" instance=ExtResource( 3 )]
-position = Vector2( -183, -122 )
+[node name="RegularBlock2" parent="StartPlatform" instance=ExtResource("3")]
+position = Vector2(-183, -122)
 
-[node name="RegularBlock3" parent="StartPlatform" instance=ExtResource( 3 )]
-position = Vector2( -61, -122 )
+[node name="RegularBlock3" parent="StartPlatform" instance=ExtResource("3")]
+position = Vector2(-61, -122)
 
-[node name="RegularBlock4" parent="StartPlatform" instance=ExtResource( 3 )]
-position = Vector2( 61, -122 )
+[node name="RegularBlock4" parent="StartPlatform" instance=ExtResource("3")]
+position = Vector2(61, -122)
 
-[node name="RegularBlock5" parent="StartPlatform" instance=ExtResource( 3 )]
-position = Vector2( 183, -122 )
+[node name="RegularBlock5" parent="StartPlatform" instance=ExtResource("3")]
+position = Vector2(183, -122)
 
-[node name="RegularBlock6" parent="StartPlatform" instance=ExtResource( 3 )]
-position = Vector2( 305, -122 )
+[node name="RegularBlock6" parent="StartPlatform" instance=ExtResource("3")]
+position = Vector2(305, -122)
 
-[node name="PinkPad" parent="StartPlatform" instance=ExtResource( 12 )]
-position = Vector2( 305, -244 )
+[node name="PinkPad" parent="StartPlatform" instance=ExtResource("12")]
+position = Vector2(305, -244)
 
-[node name="SpiderPortal_0" parent="StartPlatform" instance=ExtResource( 16 )]
-position = Vector2( -427, -305 )
+[node name="SpiderPortal_0" parent="StartPlatform" instance=ExtResource("16")]
+position = Vector2(-427, -305)
 
-[node name="TouchTrigger2" parent="." instance=ExtResource( 13 )]
-position = Vector2( 1403, -854 )
+[node name="TouchTrigger2" parent="." instance=ExtResource("13")]
+position = Vector2(1403, -854)
 target_path = "BackWall"
 duration = 0.5
 property = "position"
-value = [ Vector2( 1159, -549 ), Vector2( 0, 0 ) ]
+value = [Vector2(1159, -549), Vector2(0, 0)]
 easing_type = 1
 easing_curve = 9
 
-[node name="TouchTrigger6" parent="." instance=ExtResource( 13 )]
-position = Vector2( 1525, -854 )
+[node name="TouchTrigger6" parent="." instance=ExtResource("13")]
+position = Vector2(1525, -854)
 target_path = "MoveStructExit"
 property = "position"
-value = [ Vector2( 0, -240 ), Vector2( 0, 0 ) ]
+value = [Vector2(0, -240), Vector2(0, 0)]
 relative = true
 easing_curve = 9
 
-[node name="BluePad" parent="." instance=ExtResource( 4 )]
-visible = false
-position = Vector2( 1769, -793 )
-rotation = -1.57079
-reverse = true
-
-[node name="MoveStructExit" parent="." instance=ExtResource( 13 )]
-position = Vector2( 1281, -183 )
+[node name="MoveStructExit" parent="." instance=ExtResource("13")]
+position = Vector2(1281, -183)
 target_path = "StructureExit"
 duration = 0.5
 property = "position"
-value = [ Vector2( 1647, 122 ), Vector2( 0, 0 ) ]
+value = [Vector2(1647, 122), Vector2(0, 0)]
 easing_type = 2
 easing_curve = 3
 
-[node name="TouchTrigger3" parent="." instance=ExtResource( 13 )]
-position = Vector2( 1830, -793 )
+[node name="TouchTrigger3" parent="." instance=ExtResource("13")]
+position = Vector2(1830, -793)
 target_path = "PLAYER"
 property = "arrow_trigger_direction"
-value = [ Vector2( -1, 0 ), Vector2( 0, 0 ) ]
+value = [Vector2(-1, 0), Vector2(0, 0)]
 easing_type = 1
 
-[node name="TouchTrigger8" parent="." instance=ExtResource( 13 )]
-position = Vector2( 1281, -366 )
+[node name="TouchTrigger8" parent="." instance=ExtResource("13")]
+position = Vector2(1281, -366)
 target_path = "PLAYER"
 property = "_x_direction"
-value = [ 1, Vector2( 0, 0 ) ]
+value = [1, Vector2(0, 0)]
 easing_type = 1
 
-[node name="GravityPortalB_0" parent="TouchTrigger8" instance=ExtResource( 7 )]
-visible = false
-position = Vector2( 0, 61 )
+[node name="GravityPortalB_0" parent="TouchTrigger8" instance=ExtResource("7")]
+position = Vector2(0, 61)
 rotation = 1.57079
 
-[node name="TouchTrigger5" parent="." instance=ExtResource( 13 )]
-position = Vector2( 1830, -549 )
+[node name="TouchTrigger10" parent="." instance=ExtResource("13")]
+position = Vector2(1830, -793)
+rotation = -1.5708
+target_path = "PLAYER"
+property = "_x_direction"
+value = [-1, Vector2(0, 0)]
+easing_type = 1
+
+[node name="GravityPortalB_0" parent="TouchTrigger10" instance=ExtResource("7")]
+position = Vector2(-122, 244)
+rotation = 1.57079
+
+[node name="TouchTrigger9" parent="." instance=ExtResource("13")]
+position = Vector2(1281, -366)
+target_path = "PLAYER"
+property = "_x_direction"
+value = [1, Vector2(0, 0)]
+easing_type = 1
+
+[node name="GravityPortalB_0" parent="TouchTrigger9" instance=ExtResource("7")]
+position = Vector2(0, 61)
+rotation = 1.57079
+
+[node name="TouchTrigger5" parent="." instance=ExtResource("13")]
+position = Vector2(1830, -549)
 target_path = "BackWall"
 duration = 0.5
 property = "position"
-value = [ Vector2( 1159, -549 ), Vector2( 0, 0 ) ]
+value = [Vector2(1159, -549), Vector2(0, 0)]
 easing_type = 1
 easing_curve = 9
 
-[node name="TouchTrigger4" parent="." instance=ExtResource( 13 )]
-position = Vector2( 1281, -366 )
-target_path = "PLAYER"
-property = "arrow_trigger_direction"
-value = [ Vector2( 0, -1 ), Vector2( 0, 0 ) ]
-easing_type = 1
-
-[node name="ExitStatic" parent="." instance=ExtResource( 13 )]
-position = Vector2( 2135, -793 )
+[node name="ExitStatic" parent="." instance=ExtResource("13")]
+position = Vector2(2135, -793)
 target_path = "PLAYERCAMERA"
 duration = 0.5
 property = "static"
@@ -303,116 +294,112 @@ easing_type = 2
 easing_curve = 3
 exit_static = true
 
-[node name="YellowPad" parent="." instance=ExtResource( 17 )]
-position = Vector2( 2867, -61 )
+[node name="YellowPad" parent="." instance=ExtResource("17")]
+position = Vector2(2867, -61)
 
-[node name="CubePortal_0" parent="." instance=ExtResource( 14 )]
-position = Vector2( 2745, -183 )
+[node name="CubePortal_0" parent="." instance=ExtResource("14")]
+position = Vector2(2745, -183)
 
 [node name="Node2D" type="Node2D" parent="."]
-position = Vector2( 3416, 61 )
-__meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
-}
+position = Vector2(3416, 61)
 
-[node name="GridBlock02_0" parent="Node2D" instance=ExtResource( 19 )]
-position = Vector2( -183, -366 )
+[node name="GridBlock02_0" parent="Node2D" instance=ExtResource("19")]
+position = Vector2(-183, -366)
 
-[node name="GridBlock02_4" parent="Node2D" instance=ExtResource( 19 )]
-position = Vector2( -305, -244 )
+[node name="GridBlock02_4" parent="Node2D" instance=ExtResource("19")]
+position = Vector2(-305, -244)
 rotation = -1.57079
 
-[node name="GridBlock02_5" parent="Node2D" instance=ExtResource( 19 )]
-position = Vector2( -305, -122 )
+[node name="GridBlock02_5" parent="Node2D" instance=ExtResource("19")]
+position = Vector2(-305, -122)
 rotation = -1.57079
 
-[node name="GridBlock02_6" parent="Node2D" instance=ExtResource( 19 )]
-position = Vector2( 305, -244 )
+[node name="GridBlock02_6" parent="Node2D" instance=ExtResource("19")]
+position = Vector2(305, -244)
 rotation = 1.5708
 
-[node name="GridBlock02_7" parent="Node2D" instance=ExtResource( 19 )]
-position = Vector2( 305, -122 )
+[node name="GridBlock02_7" parent="Node2D" instance=ExtResource("19")]
+position = Vector2(305, -122)
 rotation = 1.5708
 
-[node name="GridBlock02_1" parent="Node2D" instance=ExtResource( 19 )]
-position = Vector2( -61, -366 )
+[node name="GridBlock02_1" parent="Node2D" instance=ExtResource("19")]
+position = Vector2(-61, -366)
 
-[node name="GridBlock02_2" parent="Node2D" instance=ExtResource( 19 )]
-position = Vector2( 61, -366 )
+[node name="GridBlock02_2" parent="Node2D" instance=ExtResource("19")]
+position = Vector2(61, -366)
 
-[node name="GridBlock02_3" parent="Node2D" instance=ExtResource( 19 )]
-position = Vector2( 183, -366 )
+[node name="GridBlock02_3" parent="Node2D" instance=ExtResource("19")]
+position = Vector2(183, -366)
 
-[node name="GridBlock03_0" parent="Node2D" instance=ExtResource( 18 )]
-position = Vector2( -305, -366 )
+[node name="GridBlock03_0" parent="Node2D" instance=ExtResource("18")]
+position = Vector2(-305, -366)
 
-[node name="GridBlock03_1" parent="Node2D" instance=ExtResource( 18 )]
-position = Vector2( 305, -366 )
+[node name="GridBlock03_1" parent="Node2D" instance=ExtResource("18")]
+position = Vector2(305, -366)
 rotation = 1.57079
 
-[node name="GridBlock05_0" parent="Node2D" instance=ExtResource( 20 )]
-position = Vector2( -183, -244 )
+[node name="GridBlock05_0" parent="Node2D" instance=ExtResource("20")]
+position = Vector2(-183, -244)
 
-[node name="GridBlock05_1" parent="Node2D" instance=ExtResource( 20 )]
-position = Vector2( -61, -244 )
+[node name="GridBlock05_1" parent="Node2D" instance=ExtResource("20")]
+position = Vector2(-61, -244)
 
-[node name="GridBlock05_2" parent="Node2D" instance=ExtResource( 20 )]
-position = Vector2( 61, -244 )
+[node name="GridBlock05_2" parent="Node2D" instance=ExtResource("20")]
+position = Vector2(61, -244)
 
-[node name="GridBlock05_3" parent="Node2D" instance=ExtResource( 20 )]
-position = Vector2( 183, -244 )
+[node name="GridBlock05_3" parent="Node2D" instance=ExtResource("20")]
+position = Vector2(183, -244)
 
-[node name="GridBlock05_4" parent="Node2D" instance=ExtResource( 20 )]
-position = Vector2( -183, -122 )
+[node name="GridBlock05_4" parent="Node2D" instance=ExtResource("20")]
+position = Vector2(-183, -122)
 
-[node name="GridBlock05_5" parent="Node2D" instance=ExtResource( 20 )]
-position = Vector2( -61, -122 )
+[node name="GridBlock05_5" parent="Node2D" instance=ExtResource("20")]
+position = Vector2(-61, -122)
 
-[node name="GridBlock05_6" parent="Node2D" instance=ExtResource( 20 )]
-position = Vector2( 61, -122 )
+[node name="GridBlock05_6" parent="Node2D" instance=ExtResource("20")]
+position = Vector2(61, -122)
 
-[node name="GridBlock05_7" parent="Node2D" instance=ExtResource( 20 )]
-position = Vector2( 183, -122 )
+[node name="GridBlock05_7" parent="Node2D" instance=ExtResource("20")]
+position = Vector2(183, -122)
 
-[node name="PinkPad" parent="." instance=ExtResource( 12 )]
-position = Vector2( 3721, -427 )
+[node name="PinkPad" parent="." instance=ExtResource("12")]
+position = Vector2(3721, -427)
 
-[node name="NormalTrigger2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 2623, -244 )
+[node name="NormalTrigger2" parent="." instance=ExtResource("2")]
+position = Vector2(2623, -244)
 target_path = "SONG"
 property = "seek"
-value = [ 13.8, Vector2( 0, 0 ) ]
+value = [13.8, Vector2(0, 0)]
 
-[node name="NormalTrigger3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 3721, -549 )
+[node name="NormalTrigger3" parent="." instance=ExtResource("2")]
+position = Vector2(3721, -549)
 target_path = "PLAYER"
 property = "time_scale"
-value = [ 0.2, Vector2( 0, 0 ) ]
+value = [0.2, Vector2(0, 0)]
 
-[node name="NormalTrigger6" parent="." instance=ExtResource( 2 )]
-position = Vector2( 3721, -671 )
+[node name="NormalTrigger6" parent="." instance=ExtResource("2")]
+position = Vector2(3721, -671)
 target_path = "PLAYERCAMERA"
 duration = 0.05
 property = "zoom"
-value = [ Vector2( 0.5, 0.5 ), Vector2( 0, 0 ) ]
+value = [Vector2(0.5, 0.5), Vector2(0, 0)]
 
-[node name="NormalTrigger8" parent="." instance=ExtResource( 2 )]
-position = Vector2( 3721, -793 )
+[node name="NormalTrigger8" parent="." instance=ExtResource("2")]
+position = Vector2(3721, -793)
 target_path = "PLAYERCAMERA"
 duration = 0.05
 property = "zoom"
-value = [ Vector2( 0.5, 0.5 ), Vector2( 0, 0 ) ]
+value = [Vector2(0.5, 0.5), Vector2(0, 0)]
 
-[node name="NormalTrigger5" parent="." instance=ExtResource( 2 )]
-position = Vector2( 4087, -549 )
+[node name="NormalTrigger5" parent="." instance=ExtResource("2")]
+position = Vector2(4087, -549)
 target_path = "PLAYER"
 property = "time_scale"
-value = [ 1.0, Vector2( 0, 0 ) ]
+value = [1.0, Vector2(0, 0)]
 
-[node name="NormalTrigger7" parent="." instance=ExtResource( 2 )]
-position = Vector2( 4087, -671 )
+[node name="NormalTrigger7" parent="." instance=ExtResource("2")]
+position = Vector2(4087, -671)
 target_path = "PLAYERCAMERA"
 duration = 0.2
 property = "zoom"
-value = [ Vector2( 0.75, 0.75 ), Vector2( 0, 0 ) ]
+value = [Vector2(0.75, 0.75), Vector2(0, 0)]

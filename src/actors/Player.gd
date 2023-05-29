@@ -1,14 +1,14 @@
 extends Actor
 
-export (float, 0.01, 4.00) var time_scale = 1.00
-export var gamemode: String = "cube"
+@export_range (0.01, 4.00, 0.01) var time_scale: float = 1.00
+@export var gamemode: String = "cube"
 var is_platformer: bool
-export var mini: bool = false
+@export var mini: bool = false
 signal spider_jumped(distance)
 signal started_dashing
 signal dead
 
-onready var player_icon: = $Icon
+@onready var player_icon: = $Icon
 
 var _debug_time: = 0.0
 var _is_small_hitbox_colliding: = false
@@ -72,9 +72,9 @@ func _ready() -> void:
 	$Camera2D.limit_right = 10000000
 	if is_platformer:
 		$Camera2D.offset.x = 0
-		$Camera2D.drag_margin_h_enabled = false
-		$Camera2D.drag_margin_v_enabled = false
-		$Camera2D.smoothing_enabled = true
+		$Camera2D.drag_horizontal_enabled = false
+		$Camera2D.drag_vertical_enabled = false
+		$Camera2D.position_smoothing_enabled = true
 	_velocity = Vector2.ZERO
 	direction = Vector2.ZERO
 	_is_hazard_colliding = false
@@ -93,11 +93,11 @@ func _physics_process(delta: float) -> void:
 
 	if is_platformer:
 		$Camera2D.offset.x = 0
-		$Camera2D.drag_margin_h_enabled = false
-		$Camera2D.drag_margin_v_enabled = false
-		$Camera2D.smoothing_enabled = true
+		$Camera2D.drag_horizontal_enabled = false
+		$Camera2D.drag_vertical_enabled = false
+		$Camera2D.position_smoothing_enabled = true
 	else:
-		$Camera2D.smoothing_enabled = false
+		$Camera2D.position_smoothing_enabled = false
 
 	global_rotation_degrees = 0.0
 
@@ -116,7 +116,10 @@ func _physics_process(delta: float) -> void:
 	else: # cube
 		_press_or_hold = Input.is_action_pressed("jump")
 		_holdable_gamemode = true
-		_can_fly = is_on_floor() || is_on_wall() || is_on_ceiling()
+		if arrow_trigger_direction == Vector2(0.0, -1.0):
+			_can_fly = is_on_floor() || is_on_ceiling()
+		elif arrow_trigger_direction == Vector2(-1.0, 0.0):
+			_can_fly = is_on_wall()
 	var is_jump_interrupted: bool = Input.is_action_just_released("jump") and _velocity.y < 0.0
 	
 	direction = get_direction(_press_or_hold)
@@ -159,8 +162,8 @@ func _physics_process(delta: float) -> void:
 
 	if (Input.is_action_just_pressed("jump") && !_is_dead && gamemode == "spider" && (is_on_floor() || is_on_wall() || is_on_ceiling()) ) && \
 		!(_is_pink_orb_colliding || _is_yellow_orb_colliding || _is_red_orb_colliding || \
-		 _is_blue_orb_colliding || _is_green_orb_colliding || _is_green_dash_orb_colliding || \
-		 _is_black_orb_colliding || _is_spider_orb_colliding || _is_toggle_orb_colliding):
+		_is_blue_orb_colliding || _is_green_orb_colliding || _is_green_dash_orb_colliding || \
+		_is_black_orb_colliding || _is_spider_orb_colliding || _is_toggle_orb_colliding):
 		do_spider_jump()
 
 	if _is_spider_pad_colliding && !_is_dead:
@@ -179,19 +182,19 @@ func _physics_process(delta: float) -> void:
 		# Reset the camera offset if in Arrow Trigger
 		if arrow_trigger_direction == Vector2(-1.0, 0.0) && !$AnimationPlayer.is_playing() && $Camera2D.offset.x != 0.0:
 			if $Camera2D.offset.x == -200:
-				$AnimationPlayer.play("Camera go to center from left edge")
+				$AnimationPlayer.play("Camera3D go to center from left edge")
 			elif $Camera2D.offset.x == 200:
-				$AnimationPlayer.play("Camera go to center from right edge")
+				$AnimationPlayer.play("Camera3D go to center from right edge")
 		# Put the camera back in place when getting out of Arrow Trigger
 		if arrow_trigger_direction == Vector2(0.0, -1.0) && !$AnimationPlayer.is_playing() && $Camera2D.offset.x == 0.0:
 			if _x_direction == 1.0:
-				$AnimationPlayer.play("Camera go from center to left edge")
+				$AnimationPlayer.play("Camera3D go from center to left edge")
 			elif _x_direction == -1.0:
-				$AnimationPlayer.play("Camera go from center to right edge")
+				$AnimationPlayer.play("Camera3D go from center to right edge")
 	
 	
 	if _is_reversed == true && (Input.is_action_just_pressed("jump") && (_is_pink_orb_colliding || _is_yellow_orb_colliding || \
-		 _is_red_orb_colliding || _is_blue_orb_colliding || _is_green_orb_colliding || _is_green_dash_orb_colliding || \
+		_is_red_orb_colliding || _is_blue_orb_colliding || _is_green_orb_colliding || _is_green_dash_orb_colliding || \
 		_is_black_orb_colliding || _is_spider_orb_colliding)):
 		_x_direction *= -1
 		camera_opposite_edge()
@@ -200,8 +203,8 @@ func _physics_process(delta: float) -> void:
 		_is_blue_pad_colliding or (Input.is_action_just_pressed("jump") && \
 		(((is_on_floor() || is_on_ceiling()) && gamemode == "ball") || \
 		(gamemode == "swingcopter" && !(_is_pink_orb_colliding || _is_yellow_orb_colliding || _is_red_orb_colliding || \
-		 _is_blue_orb_colliding || _is_green_orb_colliding || _is_green_dash_orb_colliding || \
-	 	_is_black_orb_colliding || _is_spider_orb_colliding || _is_toggle_orb_colliding)))):
+		_is_blue_orb_colliding || _is_green_orb_colliding || _is_green_dash_orb_colliding || \
+		_is_black_orb_colliding || _is_spider_orb_colliding || _is_toggle_orb_colliding)))):
 		if (Input.is_action_just_pressed("jump") \
 			&& (is_on_floor() || is_on_ceiling()) && gamemode == "ball"):
 			_velocity.y *= -1
@@ -255,10 +258,12 @@ func _physics_process(delta: float) -> void:
 
 	if !level_ended:
 		changeSpriteOnGamemode()
-		_velocity.y = move_and_slide(_velocity, UP_DIRECTION, true).y
+		set_velocity(_velocity)
+		set_floor_constant_speed_enabled(true)
+		set_up_direction(UP_DIRECTION)
+		move_and_slide()
 	else:
 		$PlayerGroundParticles.hide()
-		$PlayerDashParticles.hide()
 		$DashFire.hide()
 	
 func get_direction(_press_or_hold: bool) -> Vector2:
@@ -269,7 +274,7 @@ func get_direction(_press_or_hold: bool) -> Vector2:
 		if ((_press_or_hold and _can_fly) || \
 		(Input.is_action_pressed("jump") && _has_let_go_of_orb && \
 			(_is_pink_orb_colliding || _is_yellow_orb_colliding || _is_red_orb_colliding || \
-			 _is_blue_orb_colliding || _is_green_dash_orb_colliding || _is_black_orb_colliding))):
+			_is_blue_orb_colliding || _is_green_dash_orb_colliding || _is_black_orb_colliding))):
 			_jump_direction = UP_DIRECTION.y
 			_orb_jumped = true
 			_has_let_go_of_orb = false
@@ -318,8 +323,13 @@ func calculate_move_velocity(
 	
 	if arrow_trigger_direction == Vector2(0.0, -1.0):
 		_out_vertical = linear_velocity.y
+		if !is_equal_approx(get_floor_angle(UP_DIRECTION), deg_to_rad(90.0)):
+			_out_vertical += sqrt(pow(625*_speed_multiplier, 2) + pow(1100*_speed_multiplier, 2)) * sin(get_floor_angle(UP_DIRECTION)) * -1
 	elif arrow_trigger_direction == Vector2(-1.0, 0.0):
 		_out_vertical = linear_velocity.x
+#		if !is_equal_approx(get_floor_angle(UP_DIRECTION), deg_to_rad(0.0)):
+#			_out_vertical = sqrt(pow(625*_speed_multiplier, 2) + pow(1100*_speed_multiplier, 2)) * sin(get_floor_angle(UP_DIRECTION))
+	
 	_out_horizontal = speed.x * direction.x * _speed_multiplier
 	if _is_dashing:
 		gravityMod = 0
@@ -363,6 +373,8 @@ func calculate_move_velocity(
 				else: _out_vertical = 0.0
 			elif (!gamemode == "spider" || !_is_spider_pad_colliding) && !_in_jblock:
 				_out_vertical = speed.y * direction.y * gravityMod
+	if direction.y == -UP_DIRECTION.y && _can_fly:
+		_out_vertical = 0.0
 	if direction.y == UP_DIRECTION.y * -1 && gamemode == "wave":
 		_out_vertical = sqrt(pow(625*_speed_multiplier, 2) + pow(1100*_speed_multiplier, 2)) * sin(PI/6) * UP_DIRECTION.y * -1 if !mini else sqrt(pow(625*_speed_multiplier, 2) + pow(1100*_speed_multiplier, 2)) * sin(PI/4+PI/8) * UP_DIRECTION.y * -1
 #	if Input.is_action_pressed("jump") && _has_let_go_of_orb && _is_black_orb_colliding:
@@ -381,24 +393,22 @@ func calculate_move_velocity(
 	if _out_vertical > -max_speed.y: _out_vertical = -max_speed.y
 	
 	if arrow_trigger_direction == Vector2(0.0, -1.0):
-		$PlayerDashParticles.rotation_degrees = 0.0
 		$SpiderSprites.rotation_degrees = 0.0
 		out.x = _out_horizontal
 		out.y = _out_vertical
 		if !is_static:
-			$Camera2D.drag_margin_v_enabled = true
-			$Camera2D.drag_margin_h_enabled = false
+			$Camera2D.drag_vertical_enabled = true
+			$Camera2D.drag_horizontal_enabled = false
 	elif arrow_trigger_direction == Vector2(-1.0, 0.0):
 		out.y = -_out_horizontal
 		out.x = _out_vertical
-		$PlayerDashParticles.rotation_degrees = -90.0
 		$SpiderSprites.rotation_degrees = -90.0
 		if !is_static:
-			$Camera2D.drag_margin_v_enabled = false
-			$Camera2D.drag_margin_h_enabled = true
+			$Camera2D.drag_vertical_enabled = false
+			$Camera2D.drag_horizontal_enabled = true
 	if is_static:
-		$Camera2D.drag_margin_v_enabled = false
-		$Camera2D.drag_margin_h_enabled = false
+		$Camera2D.drag_vertical_enabled = false
+		$Camera2D.drag_horizontal_enabled = false
 	return out
 
 var arrow_trigger_sprite_rotation_offset = 0
@@ -417,7 +427,11 @@ func rotate_sprite(delta, direction):
 		arrow_trigger_sprite_rotation_offset = -90
 	
 	if _is_dashing:
-		$DashFire.rotation = _dash_orb_rotation * _icon_direction
+		$DashFire.rotation = _dash_orb_rotation
+		$PlayerDashParticles.rotation = _dash_orb_rotation
+		$DashFire.flip_h = $Icon.flip_h
+		$DashFire.offset.x = -90 * _icon_direction
+		$DashFire.play("default")
 	
 	if gamemode == "cube" || gamemode == "ball":
 		if !_is_dashing:
@@ -431,6 +445,8 @@ func rotate_sprite(delta, direction):
 				player_icon.rotation_degrees = (sprite_rotation_used_axis * delta * 2 * _icon_direction) + arrow_trigger_sprite_rotation_offset
 			elif is_platformer && gamemode == "swingcopter":
 				player_icon.rotation_degrees = (sprite_rotation_used_axis * delta * 2 * _icon_direction) + arrow_trigger_sprite_rotation_offset
+			elif is_platformer && gamemode == "ship":
+				player_icon.rotation_degrees = 0.0 if arrow_trigger_direction == Vector2(0.0, -1.0) else -90.0
 			if !is_platformer:
 				player_icon.rotation_degrees = clamp(player_icon.rotation_degrees, -45.0 + arrow_trigger_sprite_rotation_offset, 45.0 + arrow_trigger_sprite_rotation_offset)
 			else:
@@ -578,6 +594,7 @@ func do_spider_jump():
 	if "BackgroundKillZone" in str($SpiderSprites/SpiderRaycast.get_collider()):
 		$Camera2D.global_position.y = -4750
 		$DeathParticles.global_position.y = -4750
+		$AnimationPlayer.play("DeathAnimation")
 	if !_spider_orb_opposite_gravity:
 		$SpiderSprites.scale.y *= -1
 
@@ -673,14 +690,14 @@ func camera_opposite_edge():
 	if !is_static && !_is_dead && !is_platformer:
 		if arrow_trigger_direction == Vector2(0.0, -1.0):
 			if _x_direction < 0:
-				$AnimationPlayer.current_animation = "Camera go to left edge"
+				$AnimationPlayer.current_animation = "Camera3D go to left edge"
 			else:
-				$AnimationPlayer.current_animation = "Camera go to right edge"
+				$AnimationPlayer.current_animation = "Camera3D go to right edge"
 		elif arrow_trigger_direction == Vector2(-1.0, 0.0):
 			if _x_direction < 0:
-				$AnimationPlayer.current_animation = "Camera go to top edge"
+				$AnimationPlayer.current_animation = "Camera3D go to top edge"
 			else:
-				$AnimationPlayer.current_animation = "Camera go to bottom edge"
+				$AnimationPlayer.current_animation = "Camera3D go to bottom edge"
 
 func set_platformer(platformer: bool) -> void:
 	is_platformer = platformer
@@ -882,4 +899,3 @@ func _on_NormalSizePortal_area_entered() -> void:
 
 func _on_BlockOverlap_body_entered(body: Node) -> void:
 	_is_small_hitbox_colliding = true
-	print(body)

@@ -1,7 +1,7 @@
 extends Control
 
 var scene_to_go: String = "null"
-onready var player_camera = get_node("/root/Scene/Player/Camera2D")
+@onready var player_camera = get_node("/root/Scene/Player/Camera2D")
 const base_position = Vector2(127.0, 1091)
 
 func _physics_process(delta: float) -> void:
@@ -22,42 +22,30 @@ func _unpause_game():
 #	rect_position = base_position
 	get_tree().paused = false
 
-
-func _on_Restart_button_down() -> void:
-	$AnimationPlayer.play("RestartButtonClick")
-
 func _on_Restart_button_up() -> void:
 	if $Menu/Buttons/Restart.is_hovered():
 		CurrentLevel.reset()
 		CurrentLevel.reset_lvl_time()
 		get_tree().reload_current_scene()
 		get_tree().paused = false
-	$AnimationPlayer.play_backwards("RestartButtonClick")
-
-func _on_ContinuePlaying_button_down() -> void:
-	$AnimationPlayer.play("ContinueButtonClick")
 
 func _on_ContinuePlaying_button_up() -> void:
 	if $Menu/Buttons/ContinuePlaying.is_hovered():
 		_unpause_game()
-	$AnimationPlayer.play_backwards("ContinueButtonClick")
 
-func _on_GoBackToMenu_button_down() -> void:
-	$AnimationPlayer.play("BackToMenuClick")
 
 func _on_GoBackToMenu_button_up() -> void:
 	scene_to_go = "res://src/scenes/LevelSelector.tscn"
-	$AnimationPlayer.play_backwards("BackToMenuClick")
 	if $Menu/Buttons/GoBackToMenu.is_hovered():
 		get_tree().paused = false
 		get_node("/root/Scene/LevelMusic").stop()
 		$FadeScreen.show()
 		$FadeScreen.fade_in()
 		$QuitSound.play()
-		yield(get_tree().create_timer(0.3),"timeout")
+		await get_tree().create_timer(0.3).timeout
 		$QuitSound.stop()
 
 func _on_FadeScreen_fade_finished() -> void:
 	if !scene_to_go == "null":
-		get_tree().change_scene(scene_to_go)
+		get_tree().change_scene_to_file(scene_to_go)
 	$FadeScreen.hide()

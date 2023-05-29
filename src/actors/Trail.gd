@@ -1,11 +1,11 @@
 extends Line2D
 
-export var length: float
-export var wave_trail: bool
-export var enabled: bool = true
+@export var length: float
+@export var wave_trail: bool
+@export var enabled: bool = true
 var point_pos: Vector2
-onready var player_icon = get_node("../Player/Icon")
-onready var player = get_node("../Player")
+@onready var player_icon = get_node("../Player/Icon")
+@onready var player = get_node("../Player")
 
 func _ready() -> void:
 	clear_points()

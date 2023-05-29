@@ -4,7 +4,7 @@
 [ext_resource path="res://src/scenes/PauseManager.gd" type="Script" id=3]
 
 [node name="PauseManager" type="Node2D"]
-pause_mode = 2
+process_mode = 2
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true,
@@ -12,4 +12,4 @@ __meta__ = {
 }
 
 [node name="BackgroundMusic" parent="." instance=ExtResource( 2 )]
-pause_mode = 1
+process_mode = 1

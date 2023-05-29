@@ -1,19 +1,27 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=3 uid="uid://6a4v36pj1syq"]
 
-[ext_resource path="res://src/actors/portals/BallPortal.gd" type="Script" id=1]
-[ext_resource path="res://assets/levelTextures/interactible/Portals/Gamemode Portals/BallPortal.webp" type="Texture" id=2]
+[ext_resource type="Script" path="res://src/actors/portals/BallPortal.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://dq67a6vhmn3t7" path="res://assets/levelTextures/interactible/Portals/portal_07_front_001.png" id="3_0yu1f"]
+[ext_resource type="Texture2D" uid="uid://bv1kti6fue5ii" path="res://assets/levelTextures/interactible/Portals/portal_07_back_001.png" id="4_l8pmp"]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 93, 168 )
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(186, 336)
 
 [node name="BallPortal_0" type="Area2D"]
 collision_layer = 4
-script = ExtResource( 1 )
-
-[node name="BallPortal" type="Sprite" parent="."]
-texture = ExtResource( 2 )
+script = ExtResource("1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+shape = SubResource("1")
+
+[node name="Portal07Front001" type="Sprite2D" parent="."]
+z_index = 5
+position = Vector2(24, 0)
+texture = ExtResource("3_0yu1f")
+
+[node name="Portal07Back001" type="Sprite2D" parent="."]
+z_index = -5
+position = Vector2(-44, -1)
+texture = ExtResource("4_l8pmp")
 
 [connection signal="area_entered" from="." to="." method="_on_BallPortal_0_area_entered"]

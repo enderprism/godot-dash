@@ -1,19 +1,25 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=3 uid="uid://eph5plxfmf0u"]
 
-[ext_resource path="res://src/actors/portals/SwingcopterPortal.gd" type="Script" id=1]
-[ext_resource path="res://assets/levelTextures/interactible/Portals/Gamemode Portals/SwingcopterPortal.webp" type="Texture" id=2]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 93, 168 )
+[ext_resource type="Script" path="res://src/actors/portals/SwingcopterPortal.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://dbgxk5fofcpgf" path="res://assets/levelTextures/interactible/Portals/portal_18_front_001.png" id="3_0rfwh"]
+[ext_resource type="Shape2D" uid="uid://cdsohmm0mpifa" path="res://src/actors/portals/GamemodePortalCollisionShape.tres" id="3_tafo1"]
+[ext_resource type="Texture2D" uid="uid://de4wyymp4naa1" path="res://assets/levelTextures/interactible/Portals/portal_18_back_001.png" id="4_mdrvg"]
 
 [node name="SwingcopterPortal_0" type="Area2D"]
 collision_layer = 4
-script = ExtResource( 1 )
-
-[node name="SwingcopterPortal" type="Sprite" parent="."]
-texture = ExtResource( 2 )
+script = ExtResource("1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+shape = ExtResource("3_tafo1")
+
+[node name="Portal18Front001" type="Sprite2D" parent="."]
+z_index = 5
+position = Vector2(25, 1)
+texture = ExtResource("3_0rfwh")
+
+[node name="Portal18Back001" type="Sprite2D" parent="."]
+z_index = -5
+position = Vector2(-42, 0)
+texture = ExtResource("4_mdrvg")
 
 [connection signal="area_entered" from="." to="." method="_on_SwingcopterPortal_area_entered"]

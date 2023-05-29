@@ -5,8 +5,8 @@ var scene_to_go: String = "null"
 func _ready() -> void:
 	CurrentLevel.current_lvl_selector_page = 0.0
 	CurrentLevel.scene_to_go = "null"
-	rect_pivot_offset.x = rect_size.x / 2
-	rect_pivot_offset.y = rect_size.y / 2
+	pivot_offset.x = size.x / 2
+	pivot_offset.y = size.y / 2
 	if !MenuLoop.is_playing_menuloop(): MenuLoop.play_menuloop()
 	$FadeScreen.show()
 	$FadeScreen.fade_out()
@@ -33,7 +33,7 @@ func _on_LevelSelector_button_up() -> void:
 
 func _on_FadeScreen_fade_finished() -> void:
 	if !scene_to_go == "null":
-		get_tree().change_scene(scene_to_go)
+		get_tree().change_scene_to_file(scene_to_go)
 
 
 func _on_CloseGame_button_up() -> void:

@@ -2,7 +2,7 @@ extends CollisionShape2D
 
 class_name SolidHitbox
 
-onready var player = get_node("/root/Scene/Player")
+@onready var player = get_node("/root/Scene/Player")
 
 func _ready() -> void:
 	one_way_collision = true
