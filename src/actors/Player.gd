@@ -373,7 +373,12 @@ func calculate_move_velocity(
 				else: _out_vertical = 0.0
 			elif (!gamemode == "spider" || !_is_spider_pad_colliding) && !_in_jblock:
 				_out_vertical = speed.y * direction.y * gravityMod
-	if direction.y == -UP_DIRECTION.y && _can_fly:
+	var _is_player_onground: bool # doesn't depend on gameplay direction
+	if arrow_trigger_direction == Vector2(0.0, -1.0):
+			_is_player_onground = is_on_floor() || is_on_ceiling()
+	elif arrow_trigger_direction == Vector2(-1.0, 0.0):
+			_is_player_onground = is_on_wall()
+	if direction.y == -UP_DIRECTION.y && _is_player_onground:
 		_out_vertical = 0.0
 	if direction.y == UP_DIRECTION.y * -1 && gamemode == "wave":
 		_out_vertical = sqrt(pow(625*_speed_multiplier, 2) + pow(1100*_speed_multiplier, 2)) * sin(PI/6) * UP_DIRECTION.y * -1 if !mini else sqrt(pow(625*_speed_multiplier, 2) + pow(1100*_speed_multiplier, 2)) * sin(PI/4+PI/8) * UP_DIRECTION.y * -1
@@ -587,7 +592,6 @@ func do_spider_jump():
 			UP_DIRECTION.y *= -1
 			_velocity.x *= -1
 			_jump_direction = UP_DIRECTION.y * -1
-			_in_jblock = true
 		emit_signal("spider_jumped", abs(arrival_coordinates - old_pos.x))
 		if mini && UP_DIRECTION.y > 0 && _is_spider_orb_colliding:
 			position.x -= 30

@@ -68,5 +68,4 @@ func _on_Player_spider_jumped(distance) -> void:
 				$AnimatedSprite2D.flip_v = true
 		position = Vector2(player.position.x - y_offset,
 		player.get_node("Hitbox").global_position.y)
-		player._in_jblock = true
 		player._jump_direction = 0

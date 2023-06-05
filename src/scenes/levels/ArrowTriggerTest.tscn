@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dbkyre7gvfv3u" path="res://src/actors/triggerTemplates/NormalTrigger.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://bxplpbpu2knau" path="res://src/actors/solids/RegularBlock.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://ckc4j2aq75ita" path="res://src/actors/portals/Teleportal.tscn" id="5"]
-[ext_resource type="PackedScene" path="res://src/actors/portals/ExitTeleportal.tscn" id="6"]
+[ext_resource type="PackedScene" uid="uid://b5yat7bvhg5il" path="res://src/actors/portals/ExitTeleportal.tscn" id="6"]
 [ext_resource type="PackedScene" uid="uid://dq77y6dcq7at2" path="res://src/actors/portals/GravityPortalB_0.tscn" id="7"]
 [ext_resource type="PackedScene" uid="uid://vgcm503dvj0o" path="res://src/actors/hazards/RegularSpike02_0.tscn" id="8"]
 [ext_resource type="PackedScene" uid="uid://d3u6sxhgpsn3f" path="res://src/actors/solids/RegularPlatform.tscn" id="9"]
@@ -250,8 +250,14 @@ value = [1, Vector2(0, 0)]
 easing_type = 1
 
 [node name="GravityPortalB_0" parent="TouchTrigger8" instance=ExtResource("7")]
-position = Vector2(0, 61)
 rotation = 1.57079
+
+[node name="TouchTrigger9" parent="." instance=ExtResource("13")]
+position = Vector2(1281, -367)
+target_path = "PLAYER"
+property = "arrow_trigger_direction"
+value = [Vector2(0, -1), Vector2(0, 0)]
+easing_type = 1
 
 [node name="TouchTrigger10" parent="." instance=ExtResource("13")]
 position = Vector2(1830, -793)
@@ -262,18 +268,6 @@ value = [-1, Vector2(0, 0)]
 easing_type = 1
 
 [node name="GravityPortalB_0" parent="TouchTrigger10" instance=ExtResource("7")]
-position = Vector2(-122, 244)
-rotation = 1.57079
-
-[node name="TouchTrigger9" parent="." instance=ExtResource("13")]
-position = Vector2(1281, -366)
-target_path = "PLAYER"
-property = "_x_direction"
-value = [1, Vector2(0, 0)]
-easing_type = 1
-
-[node name="GravityPortalB_0" parent="TouchTrigger9" instance=ExtResource("7")]
-position = Vector2(0, 61)
 rotation = 1.57079
 
 [node name="TouchTrigger5" parent="." instance=ExtResource("13")]
@@ -377,19 +371,12 @@ target_path = "PLAYER"
 property = "time_scale"
 value = [0.2, Vector2(0, 0)]
 
-[node name="NormalTrigger6" parent="." instance=ExtResource("2")]
+[node name="NormalTrigger8" parent="." instance=ExtResource("2")]
 position = Vector2(3721, -671)
 target_path = "PLAYERCAMERA"
 duration = 0.05
 property = "zoom"
-value = [Vector2(0.5, 0.5), Vector2(0, 0)]
-
-[node name="NormalTrigger8" parent="." instance=ExtResource("2")]
-position = Vector2(3721, -793)
-target_path = "PLAYERCAMERA"
-duration = 0.05
-property = "zoom"
-value = [Vector2(0.5, 0.5), Vector2(0, 0)]
+value = [Vector2(2, 2), Vector2(0, 0)]
 
 [node name="NormalTrigger5" parent="." instance=ExtResource("2")]
 position = Vector2(4087, -549)
@@ -402,4 +389,4 @@ position = Vector2(4087, -671)
 target_path = "PLAYERCAMERA"
 duration = 0.2
 property = "zoom"
-value = [Vector2(0.75, 0.75), Vector2(0, 0)]
+value = [Vector2(1.333, 1.333), Vector2(0, 0)]

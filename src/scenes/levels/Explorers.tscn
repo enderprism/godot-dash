@@ -28,7 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://cuf6s4hgpechc" path="res://src/actors/pads/YellowPad.tscn" id="26"]
 [ext_resource type="PackedScene" uid="uid://dajjtafcmospi" path="res://src/actors/orbs/GreenDashOrb.tscn" id="27"]
 [ext_resource type="Texture2D" uid="uid://c2ntyv1gs55b4" path="res://assets/levelTextures/solid/Blocks/GridBlocks/GridBlock08.webp" id="28"]
-[ext_resource type="PackedScene" path="res://src/actors/portals/ExitTeleportal.tscn" id="29"]
+[ext_resource type="PackedScene" uid="uid://b5yat7bvhg5il" path="res://src/actors/portals/ExitTeleportal.tscn" id="29"]
 [ext_resource type="PackedScene" uid="uid://ckc4j2aq75ita" path="res://src/actors/portals/Teleportal.tscn" id="30"]
 [ext_resource type="PackedScene" uid="uid://cn4w623pkayg7" path="res://src/actors/orbs/MagentaDashOrb.tscn" id="31"]
 [ext_resource type="PackedScene" uid="uid://dgcgmbp7jgmfx" path="res://src/actors/pads/MagentaPad.tscn" id="32"]
@@ -116,20 +116,24 @@ easing_curve = 1
 position = Vector2(366, 0)
 
 [node name="YellowPad" parent="Objects" instance=ExtResource("26")]
+visible = false
 position = Vector2(6770.99, -848.497)
 scale = Vector2(4.5, 1)
 
 [node name="GravityPortalA_0" parent="Objects" instance=ExtResource("16")]
+visible = false
 position = Vector2(6771, -793)
 rotation = 1.57079
 scale = Vector2(1, 1.5)
 
 [node name="YellowPad2" parent="Objects" instance=ExtResource("26")]
+visible = false
 position = Vector2(8052, -364)
 rotation = 3.14159
 scale = Vector2(4.5, 4)
 
 [node name="GravityPortalB_0" parent="Objects" instance=ExtResource("15")]
+visible = false
 position = Vector2(8052, -549)
 rotation = -1.5708
 scale = Vector2(1, 1.5)

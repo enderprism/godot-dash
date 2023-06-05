@@ -1,3 +1,10 @@
+/home/isaac/Code/Godot/Godot4/godot-dash/exports/macOS
+/home/isaac/Code/Godot/Godot4/godot-dash/exports/Windows
+/home/isaac/Code/Godot/Godot4/godot-dash/exports/Linux
+/home/isaac/Code/Godot/Godot4/godot-dash/exports/Android
+res://
+/home/isaac/.android/
+/home/isaac/Android/Sdk
 res://src/actors/portals
 res://src/actors/solids
 res://src/actors/pads
