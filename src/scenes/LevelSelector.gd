@@ -37,9 +37,9 @@ func _on_Left_pressed() -> void:
 	if _pos_tween: _pos_tween.kill()
 	_pos_tween = create_tween()
 	_levels.position = new_pos # snaps in case the tween hasn't finished animating
-	new_pos = Vector2(int(_levels.position.x+selection_width), _levels.position.y)
-	if new_pos.x >= selection_width:
-		new_pos.x = -selection_width * (_levels.get_child_count() - 1)
+	new_pos = Vector2(int(_levels.position.x+get_window().get_size().x), 0.0)
+	if new_pos.x >= get_window().get_size().x:
+		new_pos.x = -get_window().get_size().x * (_levels.get_child_count() - 1)
 	_pos_tween.tween_property(_levels, "position", new_pos, 0.25).set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
 	CurrentLevel.set_current_page(new_pos.x)
 
@@ -47,7 +47,7 @@ func _on_Right_pressed() -> void:
 	if _pos_tween: _pos_tween.kill()
 	_pos_tween = create_tween()
 	_levels.position = new_pos # snaps in case the tween hasn't finished animating
-	new_pos = Vector2(int(_levels.position.x-selection_width) % int(_levels.size.x), _levels.position.y)
+	new_pos = Vector2(int(_levels.position.x-get_window().get_size().x) % int(_levels.size.x), 0.0)
 	_pos_tween.tween_property(_levels, "position", new_pos, 0.25).set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
 	_pos_tween.play()
 	CurrentLevel.set_current_page(new_pos.x)

@@ -90,7 +90,7 @@ func _physics_process(delta: float) -> void:
 		_has_let_go_of_orb = true
 		_orb_jumped = false
 
-
+	smooth_rot_speed = 1000*delta
 	if is_platformer:
 		$Camera2D.offset.x = 0
 		$Camera2D.drag_horizontal_enabled = false
@@ -174,7 +174,6 @@ func _physics_process(delta: float) -> void:
 
 	if Input.is_action_pressed("jump") && _is_spider_orb_colliding && _has_let_go_of_orb && !_is_dead:
 		do_spider_jump()
-		_in_jblock = true
 		_orb_jumped = true
 		
 	
@@ -237,7 +236,8 @@ func _physics_process(delta: float) -> void:
 			rotate_sprite(delta, direction)
 		else:
 			if "Slope" in str($AreaDetection.get_overlapping_bodies()): player_icon.rotation = floor_angle
-			else: player_icon.rotation_degrees = round(round(player_icon.rotation_degrees / 90.0) * 90.0)
+			elif player_icon.rotation_degrees != round(round(player_icon.rotation_degrees / 90.0) * 90.0):
+				player_icon.rotation_degrees = move_toward(player_icon.rotation_degrees, round(round(player_icon.rotation_degrees / 90.0) * 90.0), smooth_rot_speed)
 	else:
 		if gamemode == "ball":
 			rotate_sprite(delta, direction)
@@ -333,7 +333,10 @@ func calculate_move_velocity(
 	_out_horizontal = speed.x * direction.x * _speed_multiplier
 	if _is_dashing:
 		gravityMod = 0
-		_out_vertical += (gravity * get_physics_process_delta_time()) * gravityMod + dash_offset
+		if _x_direction > 0:
+			_out_vertical += dash_offset + (gravity * get_physics_process_delta_time()) * gravityMod
+		elif _x_direction < 0:
+			_out_vertical -= dash_offset + (gravity * get_physics_process_delta_time()) * gravityMod
 	elif gamemode == "ship" || gamemode == "ufo" || gamemode == "swingcopter":
 		gravityMod = 0.75
 		_out_vertical += (gravity * get_physics_process_delta_time()) * gravityMod + dash_offset
@@ -378,7 +381,7 @@ func calculate_move_velocity(
 			_is_player_onground = is_on_floor() || is_on_ceiling()
 	elif arrow_trigger_direction == Vector2(-1.0, 0.0):
 			_is_player_onground = is_on_wall()
-	if direction.y == -UP_DIRECTION.y && _is_player_onground:
+	if direction.y == -UP_DIRECTION.y && _is_player_onground && !_is_dashing:
 		_out_vertical = 0.0
 	if direction.y == UP_DIRECTION.y * -1 && gamemode == "wave":
 		_out_vertical = sqrt(pow(625*_speed_multiplier, 2) + pow(1100*_speed_multiplier, 2)) * sin(PI/6) * UP_DIRECTION.y * -1 if !mini else sqrt(pow(625*_speed_multiplier, 2) + pow(1100*_speed_multiplier, 2)) * sin(PI/4+PI/8) * UP_DIRECTION.y * -1
@@ -398,7 +401,7 @@ func calculate_move_velocity(
 	if _out_vertical > -max_speed.y: _out_vertical = -max_speed.y
 	
 	if arrow_trigger_direction == Vector2(0.0, -1.0):
-		$SpiderSprites.rotation_degrees = 0.0
+		$SpiderSprites.rotation = move_toward($SpiderSprites.rotation, 0.0, smooth_rot_speed)
 		out.x = _out_horizontal
 		out.y = _out_vertical
 		if !is_static:
@@ -407,7 +410,7 @@ func calculate_move_velocity(
 	elif arrow_trigger_direction == Vector2(-1.0, 0.0):
 		out.y = -_out_horizontal
 		out.x = _out_vertical
-		$SpiderSprites.rotation_degrees = -90.0
+		$SpiderSprites.rotation = move_toward($SpiderSprites.rotation, -90.0, smooth_rot_speed)
 		if !is_static:
 			$Camera2D.drag_vertical_enabled = false
 			$Camera2D.drag_horizontal_enabled = true
@@ -419,7 +422,9 @@ func calculate_move_velocity(
 var arrow_trigger_sprite_rotation_offset = 0
 var sprite_rotation_used_axis: float
 var vel_horizontal_axis: float
-var wave_angle: float = 45.0
+var _wave_size_angle: float = 45.0
+var _wave_target_angle: float
+var smooth_rot_speed: float = 1000*0.016667
 
 func rotate_sprite(delta, direction):
 	if arrow_trigger_direction == Vector2(0.0, -1.0):
@@ -447,60 +452,80 @@ func rotate_sprite(delta, direction):
 		if !_is_dashing:
 			# player_icon.rotation_degrees += delta * 200 * direction.x * sign(gravity) # UP
 			if (gamemode == "ship" || gamemode == "swingcopter") && !is_platformer:
-				player_icon.rotation_degrees = (sprite_rotation_used_axis * delta * 2 * _icon_direction) + arrow_trigger_sprite_rotation_offset
+				player_icon.rotation_degrees = move_toward(player_icon.rotation_degrees, (sprite_rotation_used_axis * delta * 2 * _icon_direction) + arrow_trigger_sprite_rotation_offset, smooth_rot_speed)
+#				player_icon.rotation_degrees = (sprite_rotation_used_axis * delta * 2 * _icon_direction) + arrow_trigger_sprite_rotation_offset
 			elif is_platformer && gamemode == "swingcopter":
-				player_icon.rotation_degrees = (sprite_rotation_used_axis * delta * 2 * _icon_direction) + arrow_trigger_sprite_rotation_offset
+				player_icon.rotation_degrees = move_toward(player_icon.rotation_degrees, (sprite_rotation_used_axis * delta * 2 * _icon_direction) + arrow_trigger_sprite_rotation_offset, smooth_rot_speed)
+#				player_icon.rotation_degrees = (sprite_rotation_used_axis * delta * 2 * _icon_direction) + arrow_trigger_sprite_rotation_offset
 			elif is_platformer && gamemode == "ship":
-				player_icon.rotation_degrees = 0.0 if arrow_trigger_direction == Vector2(0.0, -1.0) else -90.0
+				if arrow_trigger_direction == Vector2(0.0, -1.0):
+					player_icon.rotation_degrees = move_toward(player_icon.rotation_degrees, 0.0, smooth_rot_speed)
+#					player_icon.rotation_degrees = 0.0
+				else:
+					if player_icon.rotation_degrees != -90.0: player_icon.rotation_degrees = move_toward(player_icon.rotation_degrees, -90.0, smooth_rot_speed)
 			if !is_platformer:
 				player_icon.rotation_degrees = clamp(player_icon.rotation_degrees, -45.0 + arrow_trigger_sprite_rotation_offset, 45.0 + arrow_trigger_sprite_rotation_offset)
 			else:
 				player_icon.rotation_degrees = clamp(player_icon.rotation_degrees, -90.0 + arrow_trigger_sprite_rotation_offset, 90.0 + arrow_trigger_sprite_rotation_offset)
 			if is_on_floor() || is_on_ceiling() || is_on_wall():
 				if "Slope" in str($AreaDetection.get_overlapping_bodies()):
-					if UP_DIRECTION.y < 0: player_icon.rotation = floor_angle
-					else: player_icon.rotation = floor_angle - 2*PI
-				else: player_icon.rotation_degrees = arrow_trigger_sprite_rotation_offset
-		else:
-			player_icon.rotation = _dash_orb_rotation
+					if UP_DIRECTION.y < 0: player_icon.rotation = move_toward(player_icon.rotation, floor_angle, smooth_rot_speed)
+					elif player_icon.rotation != floor_angle - 2*PI: player_icon.rotation = move_toward(player_icon.rotation, floor_angle - 2*PI, smooth_rot_speed)
+				elif player_icon.rotation_degrees != arrow_trigger_sprite_rotation_offset: player_icon.rotation_degrees = move_toward(player_icon.rotation, arrow_trigger_sprite_rotation_offset, smooth_rot_speed)
+		elif player_icon.rotation != _dash_orb_rotation:
+			player_icon.rotation = move_toward(player_icon.rotation, _dash_orb_rotation, smooth_rot_speed)
+
 	if gamemode == "wave":
 		if !_is_dashing:
 			if !mini:
-				wave_angle = 45.0
+				_wave_size_angle = 45.0
 			else:
-				wave_angle = 60.0
+				_wave_size_angle = 60.0
 			if direction == Vector2(1.0, 1.0):
-				player_icon.rotation_degrees = wave_angle + arrow_trigger_sprite_rotation_offset
+				_wave_target_angle = _wave_size_angle + arrow_trigger_sprite_rotation_offset
 			elif direction == Vector2(1.0, -1.0):
-				player_icon.rotation_degrees = -wave_angle + arrow_trigger_sprite_rotation_offset
+				_wave_target_angle = -_wave_size_angle + arrow_trigger_sprite_rotation_offset
 			elif direction == Vector2(-1.0, 1.0):
-				player_icon.rotation_degrees = 180.0 - wave_angle + arrow_trigger_sprite_rotation_offset
+				_wave_target_angle = 180.0 - _wave_size_angle + arrow_trigger_sprite_rotation_offset
 			elif direction == Vector2(-1.0, -1.0):
-				player_icon.rotation_degrees = 180.0 + wave_angle + arrow_trigger_sprite_rotation_offset
+				_wave_target_angle = 180.0 + _wave_size_angle + arrow_trigger_sprite_rotation_offset
+			
+			# change rotation instanlly if the wave is horizontal and flips side because it looks weird otherwise
 			elif direction == Vector2(1.0, 0.0):
-				player_icon.rotation_degrees = 0.0 + arrow_trigger_sprite_rotation_offset
+				_wave_target_angle = 0.0 + arrow_trigger_sprite_rotation_offset
+#				player_icon.rotation_degrees = _wave_target_angle
 			elif direction == Vector2(-1.0, 0.0):
-				player_icon.rotation_degrees = 180.0 + arrow_trigger_sprite_rotation_offset
+				_wave_target_angle = 180.0 + arrow_trigger_sprite_rotation_offset
+#				player_icon.rotation_degrees = _wave_target_angle
+			
 			elif direction == Vector2(0.0, 1.0):
-				player_icon.rotation_degrees = 90.0 + arrow_trigger_sprite_rotation_offset
+				_wave_target_angle = 90.0 + arrow_trigger_sprite_rotation_offset
 			elif direction == Vector2(0.0, -1.0):
-				player_icon.rotation_degrees = -90.0 + arrow_trigger_sprite_rotation_offset
+				_wave_target_angle = -90.0 + arrow_trigger_sprite_rotation_offset
+			if _wave_target_angle - player_icon.rotation_degrees > 180.0:
+				_wave_target_angle -= 360.0
+			elif _wave_target_angle - player_icon.rotation_degrees < -180.0:
+				# add or remove 360° if the angle is too big to prevent weird rotations
+				_wave_target_angle += 360.0
+			player_icon.rotation_degrees = move_toward(player_icon.rotation_degrees, _wave_target_angle, smooth_rot_speed)
+			if direction == Vector2(0.0, 0.0):
+				player_icon.rotation_degrees = fmod(player_icon.rotation_degrees, 360.0)
 		else:
-			player_icon.rotation = _dash_orb_rotation * _icon_direction
+			player_icon.rotation = move_toward(player_icon.rotation, _dash_orb_rotation * _icon_direction, smooth_rot_speed)
 			$DashFire.rotation = _dash_orb_rotation * _icon_direction
 	if gamemode == "ufo" || gamemode == "spider":
 		$SpiderSprites.scale.x = -2
 		if !_is_dashing:
 			if "Slope" in str($AreaDetection.get_overlapping_bodies()):
-				player_icon.rotation = floor_angle
-				$SpiderSprites.rotation = floor_angle
+				player_icon.rotation_degrees = move_toward(player_icon.rotation_degrees, floor_angle, smooth_rot_speed)
+				$SpiderSprites.rotation = move_toward($SpiderSprites.rotation, floor_angle, smooth_rot_speed)
 			else:
-				player_icon.rotation_degrees = 0.0
+				player_icon.rotation_degrees = move_toward(player_icon.rotation_degrees, 0.0, smooth_rot_speed)
 				if arrow_trigger_direction == Vector2(0.0, -1.0):
-					$SpiderSprites.rotation_degrees = 0.0
+					$SpiderSprites.rotation = move_toward($SpiderSprites.rotation, 0.0, smooth_rot_speed)
 		else:
-			player_icon.rotation = _dash_orb_rotation
-			$SpiderSprites.rotation = _dash_orb_rotation
+			player_icon.rotation_degrees = move_toward(player_icon.rotation_degrees, _dash_orb_rotation, smooth_rot_speed)
+			$SpiderSprites.rotation = move_toward($SpiderSprites.rotation, _dash_orb_rotation, smooth_rot_speed)
 
 func player_dies():
 	$PlayerGroundParticles.hide()

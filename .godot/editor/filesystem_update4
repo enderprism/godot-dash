@@ -1,14 +1,2 @@
-res://src/scenes/levels/Explorers.tscn
-res://src/scenes/uiElements/GuiElementsTheme.tres
-res://src/actors/portals/GamemodePortalCollisionShape.tres
-res://src/actors/orbs/OrbCollisionShape.tres
-res://src/actors/solids/BlockCollisionShape.tres
-res://src/actors/pads/PadCollisionShape.tres
-res://src/actors/portals/GravityPortalB_0.tscn
-res://src/scenes/levels/ArrowTriggerTest.tscn
 res://src/scenes/GameScene.tscn
-res://src/actors/portals/WavePortal.tscn
-res://src/actors/portals/SwingcopterPortal.tscn
-res://src/actors/portals/BallPortal.tscn
-res://src/actors/Player.gd
-res://src/actors/SpiderDash.gd
+res://src/scenes/uiElements/GuiElementsTheme.tres

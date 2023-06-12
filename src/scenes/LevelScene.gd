@@ -63,4 +63,4 @@ func _physics_process(delta: float) -> void:
 #		$Levels.get_child(0).queue_free()
 #		var instanciated_level = load(CurrentLevel.current_level_path).instantiate()
 #		$Levels.add_child(instanciated_level)
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), -(50-CurrentLevel.music_volume*50))
+#	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), -(50-CurrentLevel.music_volume*50))
