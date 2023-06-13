@@ -11,6 +11,7 @@ script = ExtResource("2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = ExtResource("3_0nrqe")
+debug_color = Color(0.0117647, 0.45098, 0, 0.419608)
 
 [node name="Portal17Front001" type="Sprite2D" parent="."]
 z_index = 5

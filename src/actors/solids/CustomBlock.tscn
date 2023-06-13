@@ -15,4 +15,5 @@ script = ExtResource("3")
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 shape = ExtResource("2_7cavp")
 one_way_collision = true
+debug_color = Color(0, 0.266667, 0.905882, 0.419608)
 script = ExtResource("1")

@@ -12,8 +12,8 @@ collision_layer = 4
 script = ExtResource("2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("1")
+debug_color = Color(0.0117647, 0.45098, 0, 0.419608)
 
 [node name="Portal02Back001" type="Sprite2D" parent="."]
 z_index = -2

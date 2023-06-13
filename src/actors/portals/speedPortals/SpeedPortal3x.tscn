@@ -15,5 +15,6 @@ texture = ExtResource("2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("1")
+debug_color = Color(0.0117647, 0.45098, 0, 0.419608)
 
 [connection signal="area_entered" from="." to="." method="_on_SpeedPortal3x_area_entered"]

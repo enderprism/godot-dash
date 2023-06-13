@@ -17,4 +17,5 @@ texture = ExtResource("1")
 position = Vector2(0, -30.5)
 shape = SubResource("1")
 one_way_collision = true
+debug_color = Color(0, 0.266667, 0.905882, 0.419608)
 script = ExtResource("2")
