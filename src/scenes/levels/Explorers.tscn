@@ -117,18 +117,18 @@ position = Vector2(366, 0)
 
 [node name="YellowPad" parent="Objects" instance=ExtResource("26")]
 visible = false
-position = Vector2(6770.99, -848.497)
+position = Vector2(6771, -909)
 scale = Vector2(4.5, 1)
 
 [node name="GravityPortalA_0" parent="Objects" instance=ExtResource("16")]
 visible = false
-position = Vector2(6771, -793)
+position = Vector2(6771.01, -792.503)
 rotation = 1.57079
 scale = Vector2(1, 1.5)
 
 [node name="YellowPad2" parent="Objects" instance=ExtResource("26")]
 visible = false
-position = Vector2(8052, -364)
+position = Vector2(8052, -303)
 rotation = 3.14159
 scale = Vector2(4.5, 4)
 
@@ -1023,6 +1023,14 @@ rotation = -1.57079
 position = Vector2(366, -183)
 rotation = 1.57079
 
+[node name="GridBlock02_12" parent="LargePlatformTop" instance=ExtResource("5")]
+position = Vector2(-366, -305)
+rotation = -1.57079
+
+[node name="GridBlock02_13" parent="LargePlatformTop" instance=ExtResource("5")]
+position = Vector2(366, -305)
+rotation = 1.57079
+
 [node name="GridBlock03_1" parent="LargePlatformTop" instance=ExtResource("6")]
 position = Vector2(366, 183)
 rotation = -3.14159
@@ -1272,6 +1280,11 @@ z_index = 1
 position = Vector2(0, -793)
 texture = ExtResource("28")
 
+[node name="GridBlock14" type="Sprite2D" parent="Pipe"]
+z_index = 1
+position = Vector2(0, -915)
+texture = ExtResource("28")
+
 [node name="Pipe2" type="Node2D" parent="."]
 position = Vector2(12200, -732)
 
@@ -1349,6 +1362,11 @@ z_index = 1
 position = Vector2(0, -793)
 texture = ExtResource("28")
 
+[node name="GridBlock14" type="Sprite2D" parent="Pipe2"]
+z_index = 1
+position = Vector2(0, -915)
+texture = ExtResource("28")
+
 [node name="Pipe3" type="Node2D" parent="."]
 position = Vector2(13542, -732)
 
@@ -1424,6 +1442,11 @@ rotation = -1.57079
 [node name="GridBlock13" type="Sprite2D" parent="Pipe3"]
 z_index = 1
 position = Vector2(0, -793)
+texture = ExtResource("28")
+
+[node name="GridBlock14" type="Sprite2D" parent="Pipe3"]
+z_index = 1
+position = Vector2(0, -915)
 texture = ExtResource("28")
 
 [node name="Pipe4" type="Node2D" parent="."]
@@ -1528,6 +1551,11 @@ z_index = 1
 position = Vector2(0, -793)
 texture = ExtResource("28")
 
+[node name="GridBlock14" type="Sprite2D" parent="Pipe4"]
+z_index = 1
+position = Vector2(0, -915)
+texture = ExtResource("28")
+
 [node name="Pipe5" type="Node2D" parent="."]
 position = Vector2(14762, -732)
 
@@ -1603,6 +1631,11 @@ rotation = -1.57079
 [node name="GridBlock13" type="Sprite2D" parent="Pipe5"]
 z_index = 1
 position = Vector2(0, -793)
+texture = ExtResource("28")
+
+[node name="GridBlock14" type="Sprite2D" parent="Pipe5"]
+z_index = 1
+position = Vector2(0, -915)
 texture = ExtResource("28")
 
 [node name="ToggleOrb" parent="." instance=ExtResource("17")]
@@ -1874,6 +1907,9 @@ rotation = 1.57078
 
 [node name="JBlock" parent="." instance=ExtResource("34")]
 position = Vector2(1769, 0)
+
+[node name="JBlock5" parent="." instance=ExtResource("34")]
+position = Vector2(2379, -671)
 
 [node name="SBlock" parent="." instance=ExtResource("35")]
 position = Vector2(15982, -732)

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d16litd8jx2uv" path="res://src/actors/portals/MiniSizePortal.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://dbkyre7gvfv3u" path="res://src/actors/triggerTemplates/NormalTrigger.tscn" id="4"]
 [ext_resource type="PackedScene" uid="uid://d4ipbnnfns6tq" path="res://src/actors/portals/GravityPortalA_0.tscn" id="5"]
-[ext_resource type="PackedScene" path="res://src/actors/portals/ExitTeleportal.tscn" id="6"]
+[ext_resource type="PackedScene" uid="uid://b5yat7bvhg5il" path="res://src/actors/portals/ExitTeleportal.tscn" id="6"]
 [ext_resource type="PackedScene" uid="uid://bkjqbcvtug1re" path="res://src/actors/triggerTemplates/TouchTrigger.tscn" id="7"]
 [ext_resource type="PackedScene" uid="uid://ilk2e18158ld" path="res://src/actors/portals/SpiderPortal.tscn" id="8"]
 [ext_resource type="PackedScene" uid="uid://ckc4j2aq75ita" path="res://src/actors/portals/Teleportal.tscn" id="9"]
@@ -98,10 +98,10 @@ value = [Vector2(0, -1), Vector2(0, 0)]
 one_time = true
 
 [node name="SpiderPortal_0" parent="." instance=ExtResource("8")]
-position = Vector2(122, 427)
+position = Vector2(122, 61)
 
 [node name="MiniSizePortal" parent="." instance=ExtResource("3")]
-position = Vector2(488, 61)
+position = Vector2(488, 244)
 
 [node name="Teleportal4" parent="." instance=ExtResource("9")]
 visible = false

@@ -86,6 +86,9 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 #	snap_vector = Vector2(UP_DIRECTION.x, UP_DIRECTION.y * -1)
 
+	if Input.is_action_just_pressed("jump") && _in_jblock:
+		_in_jblock = false
+	
 	if _orb_jumped && Input.is_action_just_released("jump") && !(is_on_floor() && is_on_ceiling() && is_on_wall()):
 		_has_let_go_of_orb = true
 		_orb_jumped = false
@@ -401,7 +404,8 @@ func calculate_move_velocity(
 	if _out_vertical > -max_speed.y: _out_vertical = -max_speed.y
 	
 	if arrow_trigger_direction == Vector2(0.0, -1.0):
-		$SpiderSprites.rotation = move_toward($SpiderSprites.rotation, 0.0, smooth_rot_speed)
+		if $SpiderSprites.rotation_degrees != 0.0:
+			$SpiderSprites.rotation_degrees = move_toward($SpiderSprites.rotation_degrees, 0.0, smooth_rot_speed)
 		out.x = _out_horizontal
 		out.y = _out_vertical
 		if !is_static:
@@ -410,7 +414,8 @@ func calculate_move_velocity(
 	elif arrow_trigger_direction == Vector2(-1.0, 0.0):
 		out.y = -_out_horizontal
 		out.x = _out_vertical
-		$SpiderSprites.rotation = move_toward($SpiderSprites.rotation, -90.0, smooth_rot_speed)
+		if $SpiderSprites.rotation_degrees != 90.0:
+			$SpiderSprites.rotation_degrees = move_toward($SpiderSprites.rotation_degrees, -90.0, smooth_rot_speed)
 		if !is_static:
 			$Camera2D.drag_vertical_enabled = false
 			$Camera2D.drag_horizontal_enabled = true
@@ -516,14 +521,14 @@ func rotate_sprite(delta, direction):
 	if gamemode == "ufo" || gamemode == "spider":
 		$SpiderSprites.scale.x = -2
 		if !_is_dashing:
-			if "Slope" in str($AreaDetection.get_overlapping_bodies()):
+			if "Slope" in str($AreaDetection.get_overlapping_bodies()) && player_icon.rotation_degrees != floor_angle:
 				player_icon.rotation_degrees = move_toward(player_icon.rotation_degrees, floor_angle, smooth_rot_speed)
 				$SpiderSprites.rotation = move_toward($SpiderSprites.rotation, floor_angle, smooth_rot_speed)
-			else:
+			elif $SpiderSprites.rotation != 0.0:
 				player_icon.rotation_degrees = move_toward(player_icon.rotation_degrees, 0.0, smooth_rot_speed)
-				if arrow_trigger_direction == Vector2(0.0, -1.0):
+				if arrow_trigger_direction == Vector2(0.0, -1.0) && $SpiderSprites.rotation != 0.0:
 					$SpiderSprites.rotation = move_toward($SpiderSprites.rotation, 0.0, smooth_rot_speed)
-		else:
+		elif player_icon.rotation_degrees != _dash_orb_rotation:
 			player_icon.rotation_degrees = move_toward(player_icon.rotation_degrees, _dash_orb_rotation, smooth_rot_speed)
 			$SpiderSprites.rotation = move_toward($SpiderSprites.rotation, _dash_orb_rotation, smooth_rot_speed)
 
@@ -582,6 +587,7 @@ var _spider_immunity_timer: int
 
 func do_spider_jump():
 	_spider_immunity_timer = 10
+	_in_jblock = true
 	if arrow_trigger_direction == Vector2(0.0, -1.0):
 		var collision_point: float = $SpiderSprites/SpiderRaycast.get_collision_point().y
 		var arrival_coordinates: float
