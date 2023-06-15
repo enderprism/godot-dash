@@ -512,7 +512,12 @@ func rotate_sprite(delta, direction):
 			elif _wave_target_angle - player_icon.rotation_degrees < -180.0:
 				# add or remove 360° if the angle is too big to prevent weird rotations
 				_wave_target_angle += 360.0
-			player_icon.rotation_degrees = move_toward(player_icon.rotation_degrees, _wave_target_angle, smooth_rot_speed)
+			if arrow_trigger_direction == Vector2(0.0, -1.0) && (is_on_floor() || is_on_ceiling()):
+				_wave_target_angle = 0.0
+			elif arrow_trigger_direction == Vector2(-1.0, 0.0) && is_on_wall():
+				_wave_target_angle = -90.0
+			if player_icon.rotation_degrees != _wave_target_angle:
+				player_icon.rotation_degrees = move_toward(player_icon.rotation_degrees, _wave_target_angle, smooth_rot_speed)
 			if direction == Vector2(0.0, 0.0):
 				player_icon.rotation_degrees = fmod(player_icon.rotation_degrees, 360.0)
 		else:

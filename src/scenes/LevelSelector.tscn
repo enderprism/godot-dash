@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bckf4m2s4iseg"]
+[gd_scene load_steps=20 format=3 uid="uid://bckf4m2s4iseg"]
 
 [ext_resource type="Script" path="res://src/scenes/PosTween.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://cqslxljwyr3r6" path="res://src/scenes/uiElements/FadeScreen.tscn" id="2"]
@@ -8,13 +8,14 @@
 [ext_resource type="AudioStream" uid="uid://b3uxk765865bb" path="res://assets/audio/soundEffects/playSound_01.ogg" id="7"]
 [ext_resource type="Texture2D" uid="uid://dk5kimpd38gpe" path="res://assets/guiTextures/navArrowBtn_001.png" id="9"]
 [ext_resource type="Texture2D" uid="uid://vjdv6gigo66x" path="res://assets/guiTextures/navArrowBtn_001_left.png" id="10"]
+[ext_resource type="PackedScene" uid="uid://coiuaso2vrnja" path="res://src/scenes/levels/AmazingLevel.tscn" id="10_gpoiw"]
 [ext_resource type="Script" path="res://src/scenes/uiElements/clickable_button.gd" id="11"]
 [ext_resource type="PackedScene" uid="uid://dp3w8v0xmgvxa" path="res://src/scenes/LevelTab.tscn" id="12"]
 [ext_resource type="PackedScene" uid="uid://bjtuor3y3wb6r" path="res://src/scenes/levels/Level2.tscn" id="13"]
 [ext_resource type="PackedScene" uid="uid://c7pobxgoke05j" path="res://src/scenes/levels/SpiderTests.tscn" id="14"]
 [ext_resource type="PackedScene" uid="uid://cmfl8nfwxqblk" path="res://src/scenes/levels/Explorers.tscn" id="15"]
 [ext_resource type="PackedScene" uid="uid://b4sjtw5fym8oh" path="res://src/scenes/levels/ArrowTriggerTest.tscn" id="16"]
-[ext_resource type="PackedScene" path="res://src/scenes/levels/TestLevel.tscn" id="17"]
+[ext_resource type="PackedScene" uid="uid://d0uvbrpqy6inw" path="res://src/scenes/levels/TestLevel.tscn" id="17"]
 [ext_resource type="PackedScene" uid="uid://bwvugkrl57uoj" path="res://src/scenes/levels/Level1.tscn" id="18"]
 [ext_resource type="PackedScene" path="res://src/scenes/levels/SlopeDemo.tscn" id="19"]
 [ext_resource type="PackedScene" uid="uid://bmxo5ubrxke67" path="res://src/scenes/levels/Trigger Test.tscn" id="20"]
@@ -75,6 +76,10 @@ used_level = ExtResource("17")
 [node name="SpiderTests" parent="Levels" instance=ExtResource("12")]
 layout_mode = 2
 used_level = ExtResource("14")
+
+[node name="My Amazing Level" parent="Levels" instance=ExtResource("12")]
+layout_mode = 2
+used_level = ExtResource("10_gpoiw")
 
 [node name="GoBackButton" type="Button" parent="."]
 layout_mode = 0
