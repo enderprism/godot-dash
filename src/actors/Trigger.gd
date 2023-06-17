@@ -27,9 +27,9 @@ SPECIAL TARGET PATHS:
 	GROUND: /root/Scene/Ground
 	BACKGROUND: /root/Scene/Background
 Value: the end value of the trigger. If it's a position, it can be a global position or an offset.
-Offset: decides wether the target coordinates should offset the position or set it.
+Relative: decides wether the target value should be added to the start value or replace it.
 Example:
-	offset Vector2(2, 1): moves 2 pixels to the right and 1 pixel down
+	relative Vector2(2, 1): moves 2 pixels to the right and 1 pixel down
 	normal Vector2(61, 61): moves to 61, 61
 Easing type and curve: the shape of the (imaginary) Bézier curve representing the easing of the action.
 Possible types: 
@@ -40,7 +40,7 @@ Possible curves:
 	TRANS_BACK = 10
 
 IF YOU WANT TO DO A CAMERA STATIC:
-	Camera3D static is possible if you put PLAYERCAMERA as the target and 'static' as the property.
+	Camera2D static is possible if you put PLAYERCAMERA as the target and 'static' as the property.
 	It will then require 2 arguments in Value:
 		First: the object as its path. It will get its global_position.
 		Second: the active axis as a Vector2, with 0 as inactive and 1 as active.
@@ -54,15 +54,15 @@ SONG TRIGGER:
 	value as a float to the wanted song position.
 """
 @export var target_path: String
-@export var duration: float
 @export var property: String
+@export var duration: float
 @export var value: Array = [Vector2.ZERO, Vector2.ZERO]
 @export var relative: bool
 @export_enum ("Ease In", "Ease Out", "Ease In-Out", "Ease Out-In", "Constant") var easing_type: int
 @export_enum ("Linear", "Sine", "Quint", "Quart", "Quad", "Expo", "Elastic", "Cubic", "Circ", "Bounce", "Back") var easing_curve: int
 @export var exit_static: bool
 @export var one_time: bool
-@export var show: bool
+#@export var show: bool
 
 var is_static: bool
 var static_pos
@@ -216,14 +216,15 @@ func do_exit_static(camera):
 	CurrentLevel.set_if_camera_static(false, false)
 
 func toggle_off(_toggled_group):
-	_toggled_group.global_position.y = 500
-	_toggled_group.scale = Vector2(0.0, 0.0)
+#	_toggled_group.global_position.y = 500
+#	_toggled_group.scale = Vector2(0.0, 0.0)
+	_toggled_group.process_mode = 4 # = Mode: Disabled
+	_toggled_group.hide()
 
 func toggle_on(_toggled_group):
-	_toggled_group.global_position.x = global_position.x
-	_toggled_group.global_position.y = global_position.y
-	if show: _toggled_group.visible = true
-	_toggled_group.scale = Vector2(1.0, 1.0)
+	_toggled_group.process_mode = 0 # = Mode: Inherit
+	_toggled_group.show()
+#	if show: _toggled_group.show()
 
 func _ready() -> void:
 	set_monitorable(true)

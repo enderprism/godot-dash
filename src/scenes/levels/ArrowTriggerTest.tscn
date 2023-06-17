@@ -28,8 +28,8 @@ music_start = 5.7
 [node name="NormalTrigger" parent="." instance=ExtResource("2")]
 position = Vector2(549, 0)
 target_path = "PLAYERCAMERA"
-duration = 0.2
 property = "static"
+duration = 0.2
 value = ["StaticCenter", Vector2(1, 1)]
 easing_type = 2
 easing_curve = 3
@@ -212,8 +212,8 @@ position = Vector2(-427, -305)
 [node name="TouchTrigger2" parent="." instance=ExtResource("13")]
 position = Vector2(1403, -854)
 target_path = "BackWall"
-duration = 0.5
 property = "position"
+duration = 0.5
 value = [Vector2(1159, -549), Vector2(0, 0)]
 easing_type = 1
 easing_curve = 9
@@ -229,8 +229,8 @@ easing_curve = 9
 [node name="MoveStructExit" parent="." instance=ExtResource("13")]
 position = Vector2(1281, -183)
 target_path = "StructureExit"
-duration = 0.5
 property = "position"
+duration = 0.5
 value = [Vector2(1647, 122), Vector2(0, 0)]
 easing_type = 2
 easing_curve = 3
@@ -273,8 +273,8 @@ rotation = 1.57079
 [node name="TouchTrigger5" parent="." instance=ExtResource("13")]
 position = Vector2(1830, -549)
 target_path = "BackWall"
-duration = 0.5
 property = "position"
+duration = 0.5
 value = [Vector2(1159, -549), Vector2(0, 0)]
 easing_type = 1
 easing_curve = 9
@@ -282,8 +282,8 @@ easing_curve = 9
 [node name="ExitStatic" parent="." instance=ExtResource("13")]
 position = Vector2(2135, -793)
 target_path = "PLAYERCAMERA"
-duration = 0.5
 property = "static"
+duration = 0.5
 easing_type = 2
 easing_curve = 3
 exit_static = true
@@ -374,8 +374,8 @@ value = [0.2, Vector2(0, 0)]
 [node name="NormalTrigger8" parent="." instance=ExtResource("2")]
 position = Vector2(3721, -671)
 target_path = "PLAYERCAMERA"
-duration = 0.05
 property = "zoom"
+duration = 0.05
 value = [Vector2(2, 2), Vector2(0, 0)]
 
 [node name="NormalTrigger5" parent="." instance=ExtResource("2")]
@@ -387,6 +387,6 @@ value = [1.0, Vector2(0, 0)]
 [node name="NormalTrigger7" parent="." instance=ExtResource("2")]
 position = Vector2(4087, -671)
 target_path = "PLAYERCAMERA"
-duration = 0.2
 property = "zoom"
+duration = 0.2
 value = [Vector2(1.333, 1.333), Vector2(0, 0)]

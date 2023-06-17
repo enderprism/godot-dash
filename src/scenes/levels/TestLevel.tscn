@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://d0uvbrpqy6inw"]
+[gd_scene load_steps=26 format=3 uid="uid://d0uvbrpqy6inw"]
 
 [ext_resource type="Script" path="res://src/scenes/levels/Level.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://dbkyre7gvfv3u" path="res://src/actors/triggerTemplates/NormalTrigger.tscn" id="2"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://ckc4j2aq75ita" path="res://src/actors/portals/Teleportal.tscn" id="22"]
 [ext_resource type="PackedScene" uid="uid://dq77y6dcq7at2" path="res://src/actors/portals/GravityPortalB_0.tscn" id="23"]
 [ext_resource type="PackedScene" uid="uid://bcdsu1busb27d" path="res://src/actors/portals/CubePortal.tscn" id="24"]
+[ext_resource type="Theme" uid="uid://ctsh3cgr6x55w" path="res://src/scenes/uiElements/Pusab_Font.tres" id="25_5ny1r"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1")
@@ -102,8 +103,8 @@ value = [Vector2(0, -1), Vector2(0, 0)]
 position = Vector2(2440, -2745)
 scale = Vector2(2, 2)
 target_path = "PLAYERCAMERA"
-duration = 0.5
 property = "rotation_degrees"
+duration = 0.5
 value = [0.0, Vector2(0, 0)]
 easing_type = 2
 easing_curve = 3
@@ -112,8 +113,8 @@ easing_curve = 3
 position = Vector2(1525, -244)
 rotation = -3.14159
 target_path = "PLAYERCAMERA"
-duration = 0.5
 property = "rotation_degrees"
+duration = 0.5
 value = [-90.0, Vector2(0, 0)]
 easing_type = 2
 easing_curve = 3
@@ -199,7 +200,7 @@ rotation = -1.57079
 position = Vector2(-304.992, 3477)
 
 [node name="LevelEnd" parent="." instance=ExtResource("18")]
-position = Vector2(7015, -671)
+position = Vector2(9516, -671)
 
 [node name="RegularBlock5" parent="." instance=ExtResource("4")]
 position = Vector2(4392, -549)
@@ -213,3 +214,92 @@ position = Vector2(4026, -61)
 
 [node name="SpiderOrb3" parent="." instance=ExtResource("15")]
 position = Vector2(4697, -427)
+
+[node name="SusGroup" type="Node2D" parent="."]
+position = Vector2(6527, -183)
+metadata/_edit_group_ = true
+
+[node name="RegularBlock6" parent="SusGroup" instance=ExtResource("4")]
+position = Vector2(0, -244)
+
+[node name="RegularBlock7" parent="SusGroup" instance=ExtResource("4")]
+position = Vector2(244, -244)
+
+[node name="RegularBlock8" parent="SusGroup" instance=ExtResource("4")]
+position = Vector2(244, -366)
+
+[node name="RegularBlock9" parent="SusGroup" instance=ExtResource("4")]
+position = Vector2(0, -366)
+
+[node name="RegularBlock10" parent="SusGroup" instance=ExtResource("4")]
+position = Vector2(122, -366)
+
+[node name="RegularBlock11" parent="SusGroup" instance=ExtResource("4")]
+position = Vector2(244, -488)
+
+[node name="RegularBlock12" parent="SusGroup" instance=ExtResource("4")]
+position = Vector2(0, -488)
+
+[node name="RegularBlock13" parent="SusGroup" instance=ExtResource("4")]
+position = Vector2(122, -488)
+
+[node name="RegularBlock14" parent="SusGroup" instance=ExtResource("4")]
+position = Vector2(-122, -488)
+
+[node name="RegularBlock15" parent="SusGroup" instance=ExtResource("4")]
+position = Vector2(-122, -610)
+
+[node name="RegularBlock16" parent="SusGroup" instance=ExtResource("4")]
+position = Vector2(0, -610)
+
+[node name="RegularBlock17" parent="SusGroup" instance=ExtResource("4")]
+position = Vector2(0, -732)
+
+[node name="RegularBlock18" parent="SusGroup" instance=ExtResource("4")]
+position = Vector2(122, -732)
+
+[node name="RegularBlock19" parent="SusGroup" instance=ExtResource("4")]
+position = Vector2(244, -732)
+
+[node name="NormalTrigger2" parent="." instance=ExtResource("2")]
+position = Vector2(5917, -427)
+target_path = "SusGroup"
+property = "toggle"
+value = [true, Vector2(0, 0)]
+
+[node name="NormalTrigger3" parent="." instance=ExtResource("2")]
+position = Vector2(5429, -427)
+target_path = "SusGroup"
+property = "toggle"
+value = [false, Vector2(0, 0)]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 5246.0
+offset_top = -122.0
+offset_right = 5612.0
+offset_bottom = 7.0
+theme = ExtResource("25_5ny1r")
+text = "Disable
+↓"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 5734.0
+offset_top = -122.0
+offset_right = 6100.0
+offset_bottom = 7.0
+theme = ExtResource("25_5ny1r")
+text = "Enable
+↓"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Teleportal2" parent="." instance=ExtResource("22")]
+position = Vector2(5429, -671)
+rotation = -1.57079
+x_only = true
+
+[node name="ExitTeleportal" parent="Teleportal2" instance=ExtResource("21")]
+position = Vector2(0.00158691, 732)
+rotation = 1.57079

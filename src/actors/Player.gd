@@ -381,7 +381,7 @@ func calculate_move_velocity(
 				_out_vertical = speed.y * direction.y * gravityMod
 	var _is_player_onground: bool # doesn't depend on gameplay direction
 	if arrow_trigger_direction == Vector2(0.0, -1.0):
-			_is_player_onground = is_on_floor() || is_on_ceiling()
+			_is_player_onground = is_on_floor()
 	elif arrow_trigger_direction == Vector2(-1.0, 0.0):
 			_is_player_onground = is_on_wall()
 	if direction.y == -UP_DIRECTION.y && _is_player_onground && !_is_dashing:
@@ -513,9 +513,15 @@ func rotate_sprite(delta, direction):
 				# add or remove 360° if the angle is too big to prevent weird rotations
 				_wave_target_angle += 360.0
 			if arrow_trigger_direction == Vector2(0.0, -1.0) && (is_on_floor() || is_on_ceiling()):
-				_wave_target_angle = 0.0
+				if direction.x == 1:
+					_wave_target_angle = 0.0
+				elif direction.x == -1:
+					_wave_target_angle = 180.0
 			elif arrow_trigger_direction == Vector2(-1.0, 0.0) && is_on_wall():
-				_wave_target_angle = -90.0
+				if direction.x == 1:
+					_wave_target_angle = -90.0
+				elif direction.x == -1:
+					_wave_target_angle = 90.0
 			if player_icon.rotation_degrees != _wave_target_angle:
 				player_icon.rotation_degrees = move_toward(player_icon.rotation_degrees, _wave_target_angle, smooth_rot_speed)
 			if direction == Vector2(0.0, 0.0):
