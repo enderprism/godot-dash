@@ -2,8 +2,7 @@ extends Node
 
 var current_level: String
 var current_level_scene: PackedScene
-var is_camera_static: bool
-var is_background_static: bool
+var is_camera_static: Vector2
 var scene_to_go: String = "null"
 var current_lvl_selector_page: float
 var static_triggers_list: Array
@@ -14,8 +13,7 @@ var level_time: float
 @onready var player = get_node("/root/Scene/Player")
 
 func reset() -> void:
-	is_background_static = false
-	is_camera_static = false
+	is_camera_static = Vector2.ZERO
 	static_triggers_list.clear()
 
 func reset_lvl_time():
@@ -34,8 +32,7 @@ func set_scene_to_go(scene):
 func set_current_level(level):
 	current_level = level
 
-func set_if_camera_static(bg_static: bool, cam_static: bool):
-	is_background_static = bg_static
+func set_if_camera_static(cam_static: Vector2):
 	is_camera_static = cam_static
 
 func set_current_page(page):

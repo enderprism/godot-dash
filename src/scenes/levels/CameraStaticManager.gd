@@ -2,7 +2,7 @@ extends Tween
 
 class_name CameraStaticManager
 
-@onready var player_camera = get_node("/root/Scene/Player/Camera2D")
+@onready var player_camera = get_node("/root/Scene/PlayerCamera")
 @onready var player = get_node("/root/Scene/Player")
 var camera_base_offset: Vector2 = Vector2(200.0, -225.0)
 var is_static: bool

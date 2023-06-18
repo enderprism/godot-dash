@@ -12,7 +12,7 @@ func _ready() -> void:
 	
 
 func _physics_process(delta: float) -> void:
-	if enabled:
+	if enabled || get_tree().is_debugging_collisions_hint():
 		global_position = Vector2.ZERO
 		global_rotation = 0
 		point_pos = player_icon.global_position

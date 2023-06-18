@@ -1,24 +1,22 @@
-[gd_scene load_steps=8 format=3 uid="uid://bmxo5ubrxke67"]
+[gd_scene load_steps=9 format=3 uid="uid://bmxo5ubrxke67"]
 
-[ext_resource type="PackedScene" uid="uid://bosjyq31vr5m5" path="res://src/actors/portals/speedPortals/SpeedPortal0-5x.tscn" id="1"]
 [ext_resource type="Script" path="res://src/scenes/levels/Level.gd" id="2"]
 [ext_resource type="PackedScene" uid="uid://dbkyre7gvfv3u" path="res://src/actors/triggerTemplates/NormalTrigger.tscn" id="3"]
 [ext_resource type="FontFile" path="res://src/scenes/fonts/pusab_75.tres" id="4"]
 [ext_resource type="PackedScene" uid="uid://cpu3hhlplmkfd" path="res://src/actors/solids/GridBlock01_0.tscn" id="5"]
 [ext_resource type="PackedScene" uid="uid://dmu6wd4jf6fp6" path="res://src/actors/portals/ShipPortal.tscn" id="6"]
+[ext_resource type="PackedScene" uid="uid://blo2kpegqec5d" path="res://src/actors/portals/speedPortals/SpeedPortal4x.tscn" id="7_iilx2"]
 [ext_resource type="PackedScene" uid="uid://djjhgc2ht6lss" path="res://src/scenes/LevelEnd.tscn" id="8"]
+[ext_resource type="PackedScene" uid="uid://co3lug2jbyovj" path="res://src/actors/portals/speedPortals/SpeedPortal1x.tscn" id="8_bqcrs"]
 
 [node name="Trigger Test" type="Node2D"]
 script = ExtResource("2")
 
-[node name="SpeedPortal0-5x_0" parent="." instance=ExtResource("1")]
-position = Vector2(427, -183)
-
 [node name="Move Trigger" parent="." instance=ExtResource("3")]
 position = Vector2(1037, 0)
 target_path = "PLAYERCAMERA"
-duration = 1.0
 property = "zoom"
+duration = 1.0
 value = [Vector2(1.25, 1.25), Vector2(0, 0)]
 easing_type = 2
 easing_curve = 3
@@ -26,8 +24,8 @@ easing_curve = 3
 [node name="Move Trigger3" parent="." instance=ExtResource("3")]
 position = Vector2(10797, 0)
 target_path = "PLAYERCAMERA"
-duration = 1.0
 property = "zoom"
+duration = 1.0
 value = [Vector2(1.25, 0.75), Vector2(0, 0)]
 easing_type = 2
 easing_curve = 3
@@ -119,3 +117,9 @@ position = Vector2(61, -183)
 
 [node name="LevelEnd" parent="." instance=ExtResource("8")]
 position = Vector2(11590, -488)
+
+[node name="SpeedPortal4x_0" parent="." instance=ExtResource("7_iilx2")]
+position = Vector2(305, 61)
+
+[node name="SpeedPortal1x_0" parent="." instance=ExtResource("8_bqcrs")]
+position = Vector2(10431, -183)

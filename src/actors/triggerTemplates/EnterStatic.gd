@@ -6,7 +6,7 @@ TARGET PATH IS USELESS
 
 
 func _on_NormalTrigger_area_entered(area: Area2D) -> void:
-	enter_static(get_node("/root/Scene/Player/Camera2D"))
+	enter_static(get_node("/root/Scene/PlayerCamera"))
 
 func _on_trigger_area_entered(area: Area2D) -> void:
 	pass

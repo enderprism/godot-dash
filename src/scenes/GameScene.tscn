@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://cq05d6ewu5mre"]
+[gd_scene load_steps=54 format=3 uid="uid://cq05d6ewu5mre"]
 
 [ext_resource type="PackedScene" uid="uid://t4l1br5nnw6u" path="res://src/actors/Player.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://dn0ix4b441bgr" path="res://src/scenes/PauseMenu.tscn" id="6"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cxo7yccpv2qiq" path="res://assets/playerTextures/spiderDash/spiderDash_008.png" id="19"]
 [ext_resource type="Texture2D" uid="uid://chhejqjmb3f2x" path="res://assets/playerTextures/spiderDash/spiderDash_003.png" id="20"]
 [ext_resource type="Script" path="res://src/actors/SpiderDash.gd" id="21"]
+[ext_resource type="Script" path="res://src/scenes/PlayerCamera.gd" id="24_fqphc"]
 [ext_resource type="Texture2D" uid="uid://bg0qdld4usyiv" path="res://assets/playerTextures/deathEffect/playerExplosion_13_001.png" id="25_1gqjc"]
 [ext_resource type="Texture2D" uid="uid://def5tjsg1751w" path="res://assets/playerTextures/dashBoom/playerDash2_boom2_008.png" id="26"]
 [ext_resource type="Texture2D" uid="uid://ydy8yaewhg8q" path="res://assets/playerTextures/deathEffect/playerExplosion_13_002.png" id="26_n8oxx"]
@@ -198,6 +199,7 @@ follow_viewport_scale = 0.333
 [node name="Background" parent="Background2" instance=ExtResource("9")]
 position = Vector2(1, 489)
 scale = Vector2(3, 3)
+metadata/_edit_lock_ = true
 
 [node name="Levels" type="Node2D" parent="."]
 position = Vector2(0, 488)
@@ -243,7 +245,6 @@ wave_trail = true
 
 [node name="DebugTrail" type="Line2D" parent="."]
 process_priority = 5
-visible = false
 position = Vector2(0, 455)
 points = PackedVector2Array(0, 1)
 width = 2.0
@@ -261,6 +262,20 @@ enabled = false
 [node name="Player" parent="." instance=ExtResource("1")]
 position = Vector2(0, 488)
 scale = Vector2(0.5, 0.5)
+
+[node name="PlayerCamera" type="Camera2D" parent="."]
+z_index = 51
+position = Vector2(0, 200)
+scale = Vector2(5, 5)
+offset = Vector2(300, 0)
+ignore_rotation = false
+zoom = Vector2(1.25, 1.25)
+drag_left_margin = 0.4
+drag_top_margin = 0.4
+drag_right_margin = 0.4
+drag_bottom_margin = 0.4
+editor_draw_limits = true
+script = ExtResource("24_fqphc")
 
 [node name="Ground" parent="." instance=ExtResource("7")]
 z_index = 50

@@ -65,15 +65,6 @@ music_start = 0.25
 level_end_time = 36.316
 time_based_percentage = true
 
-[node name="ExitStatic" parent="." instance=ExtResource("11")]
-position = Vector2(61, 61)
-target_path = "PLAYERCAMERA"
-property = "static"
-value = ["StaticYPos", Vector2(0, 1)]
-easing_type = 2
-easing_curve = 1
-exit_static = true
-
 [node name="SpikeChain1Trigger" parent="." instance=ExtResource("11")]
 position = Vector2(427, 122)
 target_path = "Objects/SpikeChains"
@@ -1901,6 +1892,14 @@ rotation = -1.5708
 position = Vector2(122, -122)
 rotation = 1.57078
 
+[node name="GridBlock02_7" parent="Node2D" instance=ExtResource("5")]
+position = Vector2(-122, -244)
+rotation = -1.5708
+
+[node name="GridBlock02_8" parent="Node2D" instance=ExtResource("5")]
+position = Vector2(122, -244)
+rotation = 1.57078
+
 [node name="GridBlock02_4" parent="Node2D" instance=ExtResource("5")]
 position = Vector2(122, 122)
 rotation = 1.57078
@@ -2106,7 +2105,6 @@ duration = 0.5
 value = ["", Vector2(0, 1)]
 easing_type = 2
 easing_curve = 1
-exit_static = true
 
 [node name="EnterStatic" parent="." instance=ExtResource("11")]
 position = Vector2(19703, 122)
@@ -2116,17 +2114,6 @@ duration = 1.0
 value = ["EnterCrossStaticPos", Vector2(0, 1)]
 easing_type = 2
 easing_curve = 1
-
-[node name="ExitStatic2" parent="." instance=ExtResource("11")]
-position = Vector2(22143, 1098)
-target_path = "PLAYERCAMERA"
-property = "static"
-duration = 0.1
-value = ["", Vector2(1, 1)]
-easing_type = 2
-easing_curve = 3
-exit_static = true
-one_time = true
 
 [node name="EnterStatic2" parent="." instance=ExtResource("11")]
 position = Vector2(22326, 1098)
@@ -7875,7 +7862,6 @@ duration = 0.5
 value = ["", Vector2(0, 0)]
 easing_type = 2
 easing_curve = 3
-exit_static = true
 
 [node name="JBlock4" parent="." instance=ExtResource("34")]
 visible = false
@@ -9504,7 +9490,6 @@ property = "static"
 duration = 0.5
 easing_type = 2
 easing_curve = 1
-exit_static = true
 
 [node name="NormalSizePortal2" parent="." instance=ExtResource("20")]
 visible = false

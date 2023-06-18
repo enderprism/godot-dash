@@ -2,7 +2,7 @@ extends AnimationPlayer
 
 class_name TriggerManager
 
-@onready var player_camera = get_node("/root/Scene/Player/Camera2D")
+@onready var player_camera = get_node("/root/Scene/PlayerCamera")
 @onready var player = get_node("/root/Scene/Player")
 @onready var scene = get_node("/root/Scene")
 @onready var background = get_node("/root/Scene/Background")

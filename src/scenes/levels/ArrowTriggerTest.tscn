@@ -25,8 +25,8 @@ script = ExtResource("1")
 level_music = ExtResource("15")
 music_start = 5.7
 
-[node name="NormalTrigger" parent="." instance=ExtResource("2")]
-position = Vector2(549, 0)
+[node name="EnterStatic" parent="." instance=ExtResource("2")]
+position = Vector2(549, -854)
 target_path = "PLAYERCAMERA"
 property = "static"
 duration = 0.2
@@ -35,13 +35,12 @@ easing_type = 2
 easing_curve = 3
 
 [node name="NormalTrigger4" parent="." instance=ExtResource("2")]
-position = Vector2(183, 0)
+position = Vector2(61, -854)
 target_path = "PLAYERCAMERA"
 property = "static"
 value = ["StaticCenter", Vector2(1, 1)]
 easing_type = 2
 easing_curve = 3
-exit_static = true
 
 [node name="StaticCenter" type="Marker2D" parent="."]
 position = Vector2(1525, -610)
@@ -227,7 +226,7 @@ relative = true
 easing_curve = 9
 
 [node name="MoveStructExit" parent="." instance=ExtResource("13")]
-position = Vector2(1281, -183)
+position = Vector2(1281, -122)
 target_path = "StructureExit"
 property = "position"
 duration = 0.5
@@ -250,6 +249,7 @@ value = [1, Vector2(0, 0)]
 easing_type = 1
 
 [node name="GravityPortalB_0" parent="TouchTrigger8" instance=ExtResource("7")]
+visible = false
 rotation = 1.57079
 
 [node name="TouchTrigger9" parent="." instance=ExtResource("13")]
@@ -268,6 +268,7 @@ value = [-1, Vector2(0, 0)]
 easing_type = 1
 
 [node name="GravityPortalB_0" parent="TouchTrigger10" instance=ExtResource("7")]
+visible = false
 rotation = 1.57079
 
 [node name="TouchTrigger5" parent="." instance=ExtResource("13")]
@@ -286,7 +287,7 @@ property = "static"
 duration = 0.5
 easing_type = 2
 easing_curve = 3
-exit_static = true
+_is_exit_static = true
 
 [node name="YellowPad" parent="." instance=ExtResource("17")]
 position = Vector2(2867, -61)

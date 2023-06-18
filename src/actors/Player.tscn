@@ -1090,130 +1090,34 @@ graph_offset = Vector2(-309, -85)
 [sub_resource type="Animation" id="68"]
 resource_name = "Camera3D go from center to left edge"
 length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera2D:offset")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(-2, 1),
-"update": 0,
-"values": [Vector2(0, -225), Vector2(200, -225)]
-}
 
 [sub_resource type="Animation" id="67"]
 resource_name = "Camera3D go from center to right edge"
 length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera2D:offset")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(-2, 1),
-"update": 0,
-"values": [Vector2(0, -225), Vector2(-200, -225)]
-}
 
 [sub_resource type="Animation" id="70"]
 resource_name = "Camera3D go to bottom edge"
 length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera2D:offset")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(-2, 1),
-"update": 0,
-"values": [Vector2(0, 225), Vector2(0, -225)]
-}
 
 [sub_resource type="Animation" id="65"]
 resource_name = "Camera3D go to center from left edge"
 length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera2D:offset")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(-2, 1),
-"update": 0,
-"values": [Vector2(-200, -225), Vector2(0, -225)]
-}
 
 [sub_resource type="Animation" id="66"]
 resource_name = "Camera3D go to center from right edge"
 length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera2D:offset")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(-2, 1),
-"update": 0,
-"values": [Vector2(200, -225), Vector2(0, -225)]
-}
 
 [sub_resource type="Animation" id="7"]
 resource_name = "Camera3D go to left edge"
 length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera2D:offset")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(-2, 1),
-"update": 0,
-"values": [Vector2(200, -225), Vector2(-200, -225)]
-}
 
 [sub_resource type="Animation" id="8"]
 resource_name = "Camera3D go to right edge"
 length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera2D:offset")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(-2, 1),
-"update": 0,
-"values": [Vector2(-200, -225), Vector2(200, -225)]
-}
 
 [sub_resource type="Animation" id="69"]
 resource_name = "Camera3D go to top edge"
 length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera2D:offset")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(-2, 1),
-"update": 0,
-"values": [Vector2(0, -225), Vector2(0, 225)]
-}
 
 [sub_resource type="Animation" id="64"]
 tracks/0/type = "value"
@@ -1307,18 +1211,6 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Camera2D:offset")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(200, -225)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0t436"]
@@ -1503,19 +1395,5 @@ libraries = {
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -6)
-offset = Vector2(200, -225)
-ignore_rotation = false
-zoom = Vector2(1.25, 1.25)
-position_smoothing_speed = 9.0
-drag_vertical_enabled = true
-drag_left_margin = 0.4
-drag_top_margin = 1.0
-drag_right_margin = 0.4
-drag_bottom_margin = 0.0
-editor_draw_limits = true
-editor_draw_drag_margin = true
 
 [connection signal="body_entered" from="BlockOverlap" to="." method="_on_BlockOverlap_body_entered"]

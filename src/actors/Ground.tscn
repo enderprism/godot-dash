@@ -43,12 +43,12 @@ scale = Vector2(1.5, 1.5)
 shape = SubResource("1")
 
 [node name="OverflowCheckRight" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(2464, -2515)
-scale = Vector2(9.59999, 309.7)
+position = Vector2(3070, -2515)
+scale = Vector2(70.2, 309.7)
 
 [node name="OverflowCheckLeft" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(-1568, -2515)
-scale = Vector2(9.59999, 309.7)
+position = Vector2(-2157, -2515)
+scale = Vector2(68.5, 309.7)
 
 [connection signal="screen_entered" from="OverflowCheckRight" to="." method="_on_ground_overflow_right"]
 [connection signal="screen_entered" from="OverflowCheckLeft" to="." method="_on_ground_overflow_left"]
