@@ -1,7 +1,7 @@
 extends Control
 
 var scene_to_go: String = "null"
-@onready var player_camera = get_node("/root/Scene/Player/Camera2D")
+@onready var player_camera = get_node("/root/Scene/PlayerCamera")
 const base_position = Vector2(127.0, 1091)
 
 func _physics_process(delta: float) -> void:

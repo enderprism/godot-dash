@@ -9,6 +9,7 @@ signal started_dashing
 signal dead
 
 @onready var player_icon: = $Icon
+@onready var player_camera = get_node("/root/Scene/PlayerCamera")
 
 var _debug_time: = 0.0
 var _is_small_hitbox_colliding: = false
@@ -69,12 +70,12 @@ var _can_fly = false
 var floor_angle: float = get_floor_angle()
 
 func _ready() -> void:
-	$Camera2D.limit_right = 10000000
+	player_camera.limit_right = 10000000
 	if is_platformer:
-		$Camera2D.offset.x = 0
-		$Camera2D.drag_horizontal_enabled = false
-		$Camera2D.drag_vertical_enabled = false
-		$Camera2D.position_smoothing_enabled = true
+		player_camera.offset.x = 0
+		player_camera.drag_horizontal_enabled = false
+		player_camera.drag_vertical_enabled = false
+		player_camera.position_smoothing_enabled = true
 	_velocity = Vector2.ZERO
 	direction = Vector2.ZERO
 	_is_hazard_colliding = false
@@ -94,13 +95,13 @@ func _physics_process(delta: float) -> void:
 		_orb_jumped = false
 
 	smooth_rot_speed = 1000*delta
-	if is_platformer:
-		$Camera2D.offset.x = 0
-		$Camera2D.drag_horizontal_enabled = false
-		$Camera2D.drag_vertical_enabled = false
-		$Camera2D.position_smoothing_enabled = true
-	else:
-		$Camera2D.position_smoothing_enabled = false
+#	if is_platformer:
+#		player_camera.offset.x = 0
+#		player_camera.drag_horizontal_enabled = false
+#		player_camera.drag_vertical_enabled = false
+#		player_camera.position_smoothing_enabled = true
+#	else:
+#		player_camera.position_smoothing_enabled = false
 
 	global_rotation_degrees = 0.0
 
@@ -180,19 +181,19 @@ func _physics_process(delta: float) -> void:
 		_orb_jumped = true
 		
 	
-	if !is_static && !is_platformer:
-		# Reset the camera offset if in Arrow Trigger
-		if arrow_trigger_direction == Vector2(-1.0, 0.0) && !$AnimationPlayer.is_playing() && $Camera2D.offset.x != 0.0:
-			if $Camera2D.offset.x == -200:
-				$AnimationPlayer.play("Camera3D go to center from left edge")
-			elif $Camera2D.offset.x == 200:
-				$AnimationPlayer.play("Camera3D go to center from right edge")
-		# Put the camera back in place when getting out of Arrow Trigger
-		if arrow_trigger_direction == Vector2(0.0, -1.0) && !$AnimationPlayer.is_playing() && $Camera2D.offset.x == 0.0:
-			if _x_direction == 1.0:
-				$AnimationPlayer.play("Camera3D go from center to left edge")
-			elif _x_direction == -1.0:
-				$AnimationPlayer.play("Camera3D go from center to right edge")
+#	if !is_static && !is_platformer:
+#		# Reset the camera offset if in Arrow Trigger
+#		if arrow_trigger_direction == Vector2(-1.0, 0.0) && !$AnimationPlayer.is_playing() && player_camera.offset.x != 0.0:
+#			if player_camera.offset.x == -200:
+#				$AnimationPlayer.play("Camera3D go to center from left edge")
+#			elif player_camera.offset.x == 200:
+#				$AnimationPlayer.play("Camera3D go to center from right edge")
+#		# Put the camera back in place when getting out of Arrow Trigger
+#		if arrow_trigger_direction == Vector2(0.0, -1.0) && !$AnimationPlayer.is_playing() && player_camera.offset.x == 0.0:
+#			if _x_direction == 1.0:
+#				$AnimationPlayer.play("Camera3D go from center to left edge")
+#			elif _x_direction == -1.0:
+#				$AnimationPlayer.play("Camera3D go from center to right edge")
 	
 	
 	if _is_reversed == true && (Input.is_action_just_pressed("jump") && (_is_pink_orb_colliding || _is_yellow_orb_colliding || \
@@ -341,11 +342,14 @@ func calculate_move_velocity(
 		elif _x_direction < 0:
 			_out_vertical -= dash_offset + (gravity * get_physics_process_delta_time()) * gravityMod
 	elif gamemode == "ship" || gamemode == "ufo" || gamemode == "swingcopter":
-		gravityMod = 0.75
+		max_speed.y = -800.0
+		gravityMod = 0.6
 		_out_vertical += (gravity * get_physics_process_delta_time()) * gravityMod + dash_offset
 	elif gamemode == "wave":
+		max_speed.y = -1500.0
 		gravityMod = 0 # stops normal gravity so custom one can be used
 	else:
+		max_speed.y = -1500.0
 		gravityMod = 1
 		_out_vertical += gravity * get_physics_process_delta_time() + dash_offset
 	if direction.y == UP_DIRECTION.y:
@@ -400,28 +404,16 @@ func calculate_move_velocity(
 #		_is_green_orb_jumping = false
 	if is_jump_interrupted && !holdable_gamemode && !(gamemode == "ball" || gamemode == "spider"):
 		_out_vertical = 0.0
-	if _out_vertical < max_speed.y: _out_vertical = max_speed.y
-	if _out_vertical > -max_speed.y: _out_vertical = -max_speed.y
+	_out_vertical = clampf(_out_vertical, max_speed.y, -max_speed.y)
 	
 	if arrow_trigger_direction == Vector2(0.0, -1.0):
-		if $SpiderSprites.rotation_degrees != 0.0:
-			$SpiderSprites.rotation_degrees = move_toward($SpiderSprites.rotation_degrees, 0.0, smooth_rot_speed)
+		$SpiderSprites.rotation_degrees = 0.0
 		out.x = _out_horizontal
 		out.y = _out_vertical
-		if !is_static:
-			$Camera2D.drag_vertical_enabled = true
-			$Camera2D.drag_horizontal_enabled = false
 	elif arrow_trigger_direction == Vector2(-1.0, 0.0):
 		out.y = -_out_horizontal
 		out.x = _out_vertical
-		if $SpiderSprites.rotation_degrees != 90.0:
-			$SpiderSprites.rotation_degrees = move_toward($SpiderSprites.rotation_degrees, -90.0, smooth_rot_speed)
-		if !is_static:
-			$Camera2D.drag_vertical_enabled = false
-			$Camera2D.drag_horizontal_enabled = true
-	if is_static:
-		$Camera2D.drag_vertical_enabled = false
-		$Camera2D.drag_horizontal_enabled = false
+		$SpiderSprites.rotation_degrees = -90.0
 	return out
 
 var arrow_trigger_sprite_rotation_offset = 0
@@ -457,7 +449,7 @@ func rotate_sprite(delta, direction):
 		if !_is_dashing:
 			# player_icon.rotation_degrees += delta * 200 * direction.x * sign(gravity) # UP
 			if (gamemode == "ship" || gamemode == "swingcopter") && !is_platformer:
-				player_icon.rotation_degrees = move_toward(player_icon.rotation_degrees, (sprite_rotation_used_axis * delta * 2 * _icon_direction) + arrow_trigger_sprite_rotation_offset, smooth_rot_speed)
+				player_icon.rotation_degrees = move_toward(player_icon.rotation_degrees, (sprite_rotation_used_axis * delta * 4 * _icon_direction) + arrow_trigger_sprite_rotation_offset, smooth_rot_speed/6)
 #				player_icon.rotation_degrees = (sprite_rotation_used_axis * delta * 2 * _icon_direction) + arrow_trigger_sprite_rotation_offset
 			elif is_platformer && gamemode == "swingcopter":
 				player_icon.rotation_degrees = move_toward(player_icon.rotation_degrees, (sprite_rotation_used_axis * delta * 2 * _icon_direction) + arrow_trigger_sprite_rotation_offset, smooth_rot_speed)
@@ -468,10 +460,10 @@ func rotate_sprite(delta, direction):
 #					player_icon.rotation_degrees = 0.0
 				else:
 					if player_icon.rotation_degrees != -90.0: player_icon.rotation_degrees = move_toward(player_icon.rotation_degrees, -90.0, smooth_rot_speed)
-			if !is_platformer:
-				player_icon.rotation_degrees = clamp(player_icon.rotation_degrees, -45.0 + arrow_trigger_sprite_rotation_offset, 45.0 + arrow_trigger_sprite_rotation_offset)
-			else:
-				player_icon.rotation_degrees = clamp(player_icon.rotation_degrees, -90.0 + arrow_trigger_sprite_rotation_offset, 90.0 + arrow_trigger_sprite_rotation_offset)
+#			if !is_platformer:
+#				player_icon.rotation_degrees = clamp(player_icon.rotation_degrees, -45.0 + arrow_trigger_sprite_rotation_offset, 45.0 + arrow_trigger_sprite_rotation_offset)
+#			else:
+#				player_icon.rotation_degrees = clamp(player_icon.rotation_degrees, -90.0 + arrow_trigger_sprite_rotation_offset, 90.0 + arrow_trigger_sprite_rotation_offset)
 			if is_on_floor() || is_on_ceiling() || is_on_wall():
 				if "Slope" in str($AreaDetection.get_overlapping_bodies()):
 					if UP_DIRECTION.y < 0: player_icon.rotation = move_toward(player_icon.rotation, floor_angle, smooth_rot_speed)
@@ -638,7 +630,7 @@ func do_spider_jump():
 		if mini && UP_DIRECTION.y > 0 && _is_spider_orb_colliding:
 			position.x -= 30
 	if "BackgroundKillZone" in str($SpiderSprites/SpiderRaycast.get_collider()):
-		$Camera2D.global_position.y = -4750
+		player_camera.global_position.y = -4750
 		$DeathParticles.global_position.y = -4750
 		$AnimationPlayer.play("DeathAnimation")
 	if !_spider_orb_opposite_gravity:

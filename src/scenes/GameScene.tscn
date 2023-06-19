@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://cq05d6ewu5mre"]
+[gd_scene load_steps=55 format=3 uid="uid://cq05d6ewu5mre"]
 
 [ext_resource type="PackedScene" uid="uid://t4l1br5nnw6u" path="res://src/actors/Player.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://dn0ix4b441bgr" path="res://src/scenes/PauseMenu.tscn" id="6"]
@@ -15,7 +15,9 @@
 [ext_resource type="Texture2D" uid="uid://cxo7yccpv2qiq" path="res://assets/playerTextures/spiderDash/spiderDash_008.png" id="19"]
 [ext_resource type="Texture2D" uid="uid://chhejqjmb3f2x" path="res://assets/playerTextures/spiderDash/spiderDash_003.png" id="20"]
 [ext_resource type="Script" path="res://src/actors/SpiderDash.gd" id="21"]
+[ext_resource type="Script" path="res://src/scenes/PlayerCamera.gd" id="24_fqphc"]
 [ext_resource type="Texture2D" uid="uid://bg0qdld4usyiv" path="res://assets/playerTextures/deathEffect/playerExplosion_13_001.png" id="25_1gqjc"]
+[ext_resource type="Script" path="res://src/scenes/GroundManager.gd" id="25_gkh4k"]
 [ext_resource type="Texture2D" uid="uid://def5tjsg1751w" path="res://assets/playerTextures/dashBoom/playerDash2_boom2_008.png" id="26"]
 [ext_resource type="Texture2D" uid="uid://ydy8yaewhg8q" path="res://assets/playerTextures/deathEffect/playerExplosion_13_002.png" id="26_n8oxx"]
 [ext_resource type="Texture2D" uid="uid://5pedp7aw0x6d" path="res://assets/playerTextures/dashBoom/playerDash2_boom2_006.png" id="27"]
@@ -130,6 +132,9 @@ colors = PackedColorArray(0, 1, 1, 0, 0, 1, 1, 1)
 offsets = PackedFloat32Array(0, 0.152091)
 colors = PackedColorArray(0, 1, 1, 0, 0, 1, 0, 1)
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_qarbj"]
+blend_mode = 1
+
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_am3qv"]
 blend_mode = 1
 
@@ -180,9 +185,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="CanvasItemMaterial" id="9"]
-blend_mode = 1
-
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(6144, 22)
 
@@ -198,6 +200,7 @@ follow_viewport_scale = 0.333
 [node name="Background" parent="Background2" instance=ExtResource("9")]
 position = Vector2(1, 489)
 scale = Vector2(3, 3)
+metadata/_edit_lock_ = true
 
 [node name="Levels" type="Node2D" parent="."]
 position = Vector2(0, 488)
@@ -243,7 +246,6 @@ wave_trail = true
 
 [node name="DebugTrail" type="Line2D" parent="."]
 process_priority = 5
-visible = false
 position = Vector2(0, 455)
 points = PackedVector2Array(0, 1)
 width = 2.0
@@ -262,10 +264,55 @@ enabled = false
 position = Vector2(0, 488)
 scale = Vector2(0.5, 0.5)
 
-[node name="Ground" parent="." instance=ExtResource("7")]
-z_index = 50
+[node name="PlayerCamera" type="Camera2D" parent="."]
+z_index = 51
+position = Vector2(0, 200)
+scale = Vector2(5, 5)
+offset = Vector2(300, 0)
+ignore_rotation = false
+zoom = Vector2(1.25, 1.25)
+drag_left_margin = 0.4
+drag_top_margin = 0.4
+drag_right_margin = 0.4
+drag_bottom_margin = 0.4
+editor_draw_limits = true
+script = ExtResource("24_fqphc")
+
+[node name="GroundManager" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+follow_viewport_enabled = true
+script = ExtResource("25_gkh4k")
+
+[node name="Ground_Bottom" type="Node2D" parent="GroundManager"]
 position = Vector2(3.05176e-05, 488)
 scale = Vector2(1.5, 1.5)
+metadata/_edit_group_ = true
+
+[node name="Ground_Bottom_OBJ" parent="GroundManager/Ground_Bottom" instance=ExtResource("7")]
+
+[node name="Line_Bottom" type="Sprite2D" parent="GroundManager/Ground_Bottom"]
+z_index = 1
+material = SubResource("CanvasItemMaterial_qarbj")
+position = Vector2(-2.03451e-05, 1)
+scale = Vector2(0.333333, 0.333333)
+texture = ExtResource("49")
+script = ExtResource("50")
+
+[node name="Ground_Top" type="Node2D" parent="GroundManager"]
+position = Vector2(1404, -5500)
+rotation = -3.14159
+scale = Vector2(1.5, 1.5)
+metadata/_edit_group_ = true
+
+[node name="Ground_Top_OBJ" parent="GroundManager/Ground_Top" instance=ExtResource("7")]
+
+[node name="Line_Top" type="Sprite2D" parent="GroundManager/Ground_Top"]
+z_index = 1
+material = SubResource("CanvasItemMaterial_qarbj")
+position = Vector2(0, 1.00146)
+scale = Vector2(0.333333, 0.333333)
+texture = ExtResource("49")
+script = ExtResource("50")
 
 [node name="DeathEffect" type="AnimatedSprite2D" parent="."]
 z_index = 51
@@ -275,14 +322,6 @@ sprite_frames = SubResource("SpriteFrames_400i3")
 frame = 12
 frame_progress = 1.0
 script = ExtResource("37_50b76")
-
-[node name="Line" type="Sprite2D" parent="."]
-z_index = 50
-material = SubResource("9")
-position = Vector2(366, 489)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("49")
-script = ExtResource("50")
 
 [node name="LevelMusic" type="AudioStreamPlayer" parent="."]
 autoplay = true
@@ -306,6 +345,26 @@ visible = false
 custom_minimum_size = Vector2(1920, 1080)
 
 [node name="GUI" parent="." instance=ExtResource("52")]
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+position = Vector2(1586, -91)
+scale = Vector2(0.5, 0.5)
+
+[node name="Marker2D6" type="Marker2D" parent="."]
+position = Vector2(1586, -335.5)
+scale = Vector2(0.5, 0.5)
+
+[node name="Marker2D3" type="Marker2D" parent="."]
+position = Vector2(244, 458)
+scale = Vector2(0.5, 0.5)
+
+[node name="Marker2D5" type="Marker2D" parent="."]
+position = Vector2(244, 305)
+scale = Vector2(0.5, 0.5)
+
+[node name="Marker2D4" type="Marker2D" parent="."]
+position = Vector2(244, 183)
+scale = Vector2(0.5, 0.5)
 
 [connection signal="dead" from="Player" to="DeathEffect" method="_on_player_dead"]
 [connection signal="spider_jumped" from="Player" to="SpiderDash" method="_on_Player_spider_jumped"]

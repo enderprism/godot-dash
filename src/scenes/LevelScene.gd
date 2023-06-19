@@ -39,9 +39,11 @@ func disable_level(node):
 #			$LevelMusic.play($Levels.get_node(level).music_start)
 
 func enable_selected_level() -> void:
-	var instanciated_level = CurrentLevel.current_level_scene.instantiate()
+	var packed_level = ResourceLoader.load(CurrentLevel.current_level_scene.resource_path, "", 0)
+	var instanciated_level = packed_level.instantiate()
 	$Levels.add_child(instanciated_level)
 	var _level = $Levels.get_child(0)
+	_level.scale = Vector2(0.5, 0.5)
 	$Player.is_platformer = _level.platformer
 	$LevelMusic.set_stream(_level.level_music)
 	$LevelMusic.play(_level.music_start)
