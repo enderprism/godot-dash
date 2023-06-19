@@ -2097,15 +2097,6 @@ easing_type = 1
 easing_curve = 5
 one_time = true
 
-[node name="ExitStatic4" parent="." instance=ExtResource("11")]
-position = Vector2(19581, 122)
-target_path = "PLAYERCAMERA"
-property = "static"
-duration = 0.5
-value = ["", Vector2(0, 1)]
-easing_type = 2
-easing_curve = 1
-
 [node name="EnterStatic" parent="." instance=ExtResource("11")]
 position = Vector2(19703, 122)
 target_path = "PLAYERCAMERA"
@@ -4827,6 +4818,7 @@ rotation = 6.28318
 [node name="Background" type="Node2D" parent="SpiderStructure"]
 position = Vector2(21594, -3294)
 metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="GridBlock05_205" parent="SpiderStructure/Background" instance=ExtResource("7")]
 position = Vector2(-305, 2623)

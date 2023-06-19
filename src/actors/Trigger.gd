@@ -70,7 +70,7 @@ var static_pos
 @onready var player = get_node("/root/Scene/Player")
 
 func _on_trigger_area_entered(area: Area2D) -> void:
-	var target: Object
+	var target
 	if (target_path != "" and property != "") || property == "random":
 		if target_path != "":
 			if "/root/Scene/" in target_path:
@@ -80,9 +80,15 @@ func _on_trigger_area_entered(area: Area2D) -> void:
 			elif target_path == "PLAYERCAMERA":
 				target = player_camera
 			elif target_path == "GROUND":
-				target = get_node("/root/Scene/Ground")
+				target = [
+					get_node("/root/Scene/GroundManager/Ground_Bottom/Ground_Bottom_OBJ"),
+					get_node("/root/Scene/GroundManager/Ground_Top/Ground_Top_OBJ")
+				]
 			elif target_path == "LINE":
-				target = get_node("/root/Scene/Line")
+				target = [
+					get_node("/root/Scene/GroundManager/Ground_Bottom/Line_Bottom"),
+					get_node("/root/Scene/GroundManager/Ground_Top/Line_Top")
+				]
 			elif target_path == "BACKGROUND":
 				target = get_node("/root/Scene/Background")
 			elif target_path == "SONG":
@@ -90,7 +96,34 @@ func _on_trigger_area_entered(area: Area2D) -> void:
 			else:
 				target = get_node("../"+target_path)
 		var trigger_tween = get_tree().create_tween().set_parallel()
-		if target_path == "PLAYERCAMERA" && property == "static":
+		if target_path == "GROUND" || target_path == "LINE":
+			if !relative:
+				trigger_tween.parallel().tween_property(
+					target[0],
+					property,
+					value[0],
+					duration
+				).set_trans(easing_curve).set_ease(easing_type)
+				trigger_tween.parallel().tween_property(
+					target[1],
+					property,
+					value[0],
+					duration
+				).set_trans(easing_curve).set_ease(easing_type)
+			else:
+				trigger_tween.parallel().tween_property(
+					target[0],
+					property,
+					value[0],
+					duration
+				).as_relative().set_trans(easing_curve).set_ease(easing_type)
+				trigger_tween.parallel().tween_property(
+					target[1],
+					property,
+					value[0],
+					duration
+				).as_relative().set_trans(easing_curve).set_ease(easing_type)
+		elif target_path == "PLAYERCAMERA" && property == "static":
 			if _is_exit_static:
 				exit_static(target)
 			else:

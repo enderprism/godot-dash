@@ -1,6 +1,10 @@
+Marker2D
+ShapeCast2D
+VisibleOnScreenNotifier2D
+Node2D
+CanvasLayer
 GPUParticles2D
 Label
-Node2D
 Level
 TextureButton
 AnimatedSprite2D

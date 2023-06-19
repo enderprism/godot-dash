@@ -11,7 +11,6 @@ func _ready() -> void:
 	_levels.position.x = CurrentLevel.current_lvl_selector_page
 	if !MenuLoop.is_playing_menuloop(): MenuLoop.play_menuloop()
 #	$"Level Menu/Play Level/VBoxContainer/Label".text = selected_level
-	$FadeScreen.show()
 	$FadeScreen.fade_out()
 
 func _physics_process(delta: float) -> void:

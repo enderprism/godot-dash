@@ -1,4 +1,4 @@
-res://src/scenes/LevelEnd.tscn
+res://src/scenes/levels/Explorers.tscn
 res://src/scenes/uiElements/GuiElementsTheme.tres
 res://src/actors/solids/BlockCollisionShape.tres
 res://src/actors/portals/GamemodePortalCollisionShape.tres
@@ -6,9 +6,19 @@ res://src/actors/pads/PadCollisionShape.tres
 res://src/actors/orbs/OrbCollisionShape.tres
 res://src/scenes/GameScene.tscn
 res://src/scenes/levels/AmazingLevel.tscn
-res://src/scenes/levels/TestLevel.tscn
-res://src/scenes/levels/Explorers.tscn
-res://src/actors/Player.tscn
-res://src/scenes/levels/ArrowTriggerTest.tscn
+res://src/scenes/LevelEnd.tscn
 res://src/scenes/levels/Trigger Test.tscn
+res://src/actors/portals/WavePortal.tscn
+res://src/actors/Trigger.gd
+res://src/actors/portals/ShipPortal.gd
+res://src/scenes/GroundManager.gd
+res://src/scenes/levels/Level.gd
+res://src/scenes/LevelScene.gd
 res://src/scenes/PlayerCamera.gd
+res://src/actors/portals/WavePortal.gd
+res://src/actors/portals/CubePortal.gd
+res://src/actors/portals/BallPortal.gd
+res://src/actors/portals/RobotPortal.gd
+res://src/actors/portals/SpiderPortal.gd
+res://src/actors/portals/SwingcopterPortal.gd
+res://src/actors/portals/UFOPortal.gd

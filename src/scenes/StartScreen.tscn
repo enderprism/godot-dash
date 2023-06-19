@@ -1,17 +1,22 @@
-[gd_scene load_steps=14 format=3 uid="uid://btmi5gjs2alpd"]
+[gd_scene load_steps=17 format=3 uid="uid://btmi5gjs2alpd"]
 
 [ext_resource type="Texture2D" uid="uid://b7rfypudxffo7" path="res://assets/guiTextures/Logo.png" id="1"]
 [ext_resource type="Texture2D" uid="uid://bt4tarego7tv4" path="res://assets/guiTextures/levelSelectorButton.png" id="2"]
 [ext_resource type="Texture2D" uid="uid://nl3t02xj34r0" path="res://assets/guiTextures/iconSelectorButton.png" id="3"]
 [ext_resource type="Texture2D" uid="uid://twpw8xcb1ccf" path="res://assets/guiTextures/levelCreateButton.png" id="4"]
 [ext_resource type="PackedScene" path="res://src/actors/Background.tscn" id="5"]
+[ext_resource type="Texture2D" uid="uid://bek1af8w6bfm3" path="res://assets/levelTextures/ground/floorLine_001.png" id="5_hk06f"]
 [ext_resource type="PackedScene" uid="uid://cdaengsb8lyil" path="res://src/actors/Ground.tscn" id="6"]
+[ext_resource type="Script" path="res://src/scenes/Line.gd" id="6_op6mj"]
 [ext_resource type="Script" path="res://src/scenes/uiElements/clickable_button.gd" id="7"]
 [ext_resource type="Script" path="res://src/scenes/StartScreen.gd" id="8"]
 [ext_resource type="PackedScene" uid="uid://cqslxljwyr3r6" path="res://src/scenes/uiElements/FadeScreen.tscn" id="9"]
 [ext_resource type="Theme" uid="uid://egspkbwxefg2" path="res://src/scenes/uiElements/GuiElementsTheme.tres" id="10"]
 [ext_resource type="Texture2D" uid="uid://d2ww8cbkcr2in" path="res://assets/guiTextures/GJ_closeBtn_001.png" id="11"]
 [ext_resource type="FontFile" uid="uid://3d5l6qp0iyr" path="res://assets/fonts/PUSAB___.otf" id="12"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_u25f8"]
+blend_mode = 1
 
 [sub_resource type="FontFile" id="13"]
 fallbacks = Array[Font]([ExtResource("12")])
@@ -57,11 +62,23 @@ script = ExtResource("8")
 position = Vector2(303, 1052)
 script = null
 
-[node name="Ground" parent="." instance=ExtResource("6")]
-position = Vector2(551, 901)
+[node name="Ground_Bottom" type="Node2D" parent="."]
+position = Vector2(960, 900)
+scale = Vector2(1.5, 1.5)
+metadata/_edit_group_ = true
+
+[node name="Ground_Bottom_OBJ" parent="Ground_Bottom" instance=ExtResource("6")]
+
+[node name="Line_Bottom" type="Sprite2D" parent="Ground_Bottom"]
+material = SubResource("CanvasItemMaterial_u25f8")
+position = Vector2(-2.03451e-05, 1)
+scale = Vector2(0.333333, 0.333333)
+texture = ExtResource("5_hk06f")
+script = ExtResource("6_op6mj")
 
 [node name="Menu" type="VBoxContainer" parent="."]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -70,6 +87,9 @@ offset_left = -823.5
 offset_top = -457.5
 offset_right = 823.5
 offset_bottom = 457.5
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
 
 [node name="TextureRect" type="TextureRect" parent="Menu"]
 custom_minimum_size = Vector2(0, 425)

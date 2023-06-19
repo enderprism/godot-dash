@@ -44,6 +44,7 @@ scale_curve = SubResource("CurveTexture_02syj")
 color = Color(0.796078, 0.552941, 1, 1)
 
 [node name="LevelEnd" type="Area2D"]
+z_index = 2
 collision_layer = 128
 script = ExtResource("2")
 
