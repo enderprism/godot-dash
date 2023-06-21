@@ -21,3 +21,6 @@ exports/
 
 # IDE directories
 .vscode/
+
+# Godot 4+
+.godot
