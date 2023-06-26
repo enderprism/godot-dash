@@ -45,7 +45,7 @@ IF YOU WANT TO DO A CAMERA STATIC:
 	It will then require 2 arguments in Value:
 		First: the object as its path. It will get its global_position.
 		Second: the active axis as a Vector2, with 0 as inactive and 1 as active.
-			For example, Vector2(0, 1) sets Y as active and X as inactive.
+			For example, Vector2(0, 1) sets X as inactive and Y as active.
 			Vector2(1, 1) sets both.
 	You can exit static with setting 'exitStatic' to true.
 	It will not require any Value.
