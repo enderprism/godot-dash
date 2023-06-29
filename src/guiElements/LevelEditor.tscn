@@ -1,290 +1,259 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=18 format=3 uid="uid://dibxmr264na8c"]
 
-[ext_resource path="res://assets/levelTextures/solid/Blocks/GridBlocks/GridBlock08.webp" type="Texture2D" id=1]
-[ext_resource path="res://assets/guiTextures/EditorPlayPlayer.png" type="Texture2D" id=2]
-[ext_resource path="res://assets/levelTextures/solid/Blocks/GridBlocks/GridBlock07.webp" type="Texture2D" id=3]
-[ext_resource path="res://src/actors/Ground.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/levelTextures/solid/Blocks/GridBlocks/GridBlock06.webp" type="Texture2D" id=5]
-[ext_resource path="res://src/actors/Background.tscn" type="PackedScene" id=6]
-[ext_resource path="res://src/scenes/uiElements/EditorPanelTheme.tres" type="Theme" id=7]
-[ext_resource path="res://assets/levelTextures/solid/Blocks/GridBlocks/GridBlock03.webp" type="Texture2D" id=8]
-[ext_resource path="res://assets/levelTextures/solid/Blocks/RegularPlatform01.webp" type="Texture2D" id=9]
-[ext_resource path="res://assets/levelTextures/solid/Blocks/GridBlocks/GridBlock02.webp" type="Texture2D" id=10]
-[ext_resource path="res://assets/levelTextures/solid/Blocks/GridBlocks/GridBlock01.webp" type="Texture2D" id=11]
-[ext_resource path="res://assets/levelTextures/solid/Blocks/RegularBlock01.webp" type="Texture2D" id=12]
-[ext_resource path="res://assets/levelTextures/solid/Blocks/GridBlocks/GridBlock04.webp" type="Texture2D" id=13]
-[ext_resource path="res://src/scenes/uiElements/GuiElementsTheme.tres" type="Theme" id=14]
-[ext_resource path="res://assets/guiTextures/EditorPlayMusic.png" type="Texture2D" id=15]
-[ext_resource path="res://assets/guiTextures/EditorRedo.png" type="Texture2D" id=16]
-[ext_resource path="res://assets/guiTextures/EditorUndo.png" type="Texture2D" id=17]
+[ext_resource type="Texture2D" uid="uid://c2ntyv1gs55b4" path="res://assets/levelTextures/solid/Blocks/GridBlocks/GridBlock08.webp" id="1"]
+[ext_resource type="Texture2D" uid="uid://cm64hcfvammvf" path="res://assets/guiTextures/EditorPlayPlayer.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://4vjmu5rdkwyn" path="res://assets/levelTextures/solid/Blocks/GridBlocks/GridBlock07.webp" id="3"]
+[ext_resource type="PackedScene" uid="uid://cdaengsb8lyil" path="res://src/actors/Ground.tscn" id="4"]
+[ext_resource type="Texture2D" uid="uid://oohiwo5sdt2w" path="res://assets/levelTextures/solid/Blocks/GridBlocks/GridBlock06.webp" id="5"]
+[ext_resource type="PackedScene" path="res://src/actors/Background.tscn" id="6"]
+[ext_resource type="Theme" uid="uid://b55qgnf8bav5w" path="res://src/scenes/uiElements/EditorPanelTheme.tres" id="7"]
+[ext_resource type="Texture2D" uid="uid://bajdmmu5ou4vb" path="res://assets/levelTextures/solid/Blocks/GridBlocks/GridBlock03.webp" id="8"]
+[ext_resource type="Texture2D" uid="uid://dh6byyvv1avbt" path="res://assets/levelTextures/solid/Blocks/RegularPlatform01.webp" id="9"]
+[ext_resource type="Texture2D" uid="uid://cehfy2jcvgyri" path="res://assets/levelTextures/solid/Blocks/GridBlocks/GridBlock02.webp" id="10"]
+[ext_resource type="Texture2D" uid="uid://cjhatxjcxxb53" path="res://assets/levelTextures/solid/Blocks/GridBlocks/GridBlock01.webp" id="11"]
+[ext_resource type="Texture2D" uid="uid://bg3ngced8utra" path="res://assets/levelTextures/solid/Blocks/RegularBlock01.webp" id="12"]
+[ext_resource type="Texture2D" uid="uid://oygfj6tjfkpd" path="res://assets/levelTextures/solid/Blocks/GridBlocks/GridBlock04.webp" id="13"]
+[ext_resource type="Theme" uid="uid://egspkbwxefg2" path="res://src/scenes/uiElements/GuiElementsTheme.tres" id="14"]
+[ext_resource type="Texture2D" uid="uid://c6o8vp2exxe2w" path="res://assets/guiTextures/EditorPlayMusic.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://dvv24ljq6lsgs" path="res://assets/guiTextures/EditorRedo.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://do2piwxyqhgdp" path="res://assets/guiTextures/EditorUndo.png" id="17"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="LevelEditor" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="TabContainer" type="TabContainer" parent="CanvasLayer/LevelEditor"]
+layout_mode = 0
 anchor_top = 0.711111
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 14 )
-__meta__ = {
-"_edit_use_anchors_": true
-}
+theme = ExtResource("14")
 
 [node name="Blocks" type="TabBar" parent="CanvasLayer/LevelEditor/TabContainer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 264.0
-offset_top = 65.0
-offset_right = -264.0
-offset_bottom = -16.0
-theme = ExtResource( 14 )
-tab_alignment = 0
+layout_mode = 2
+theme = ExtResource("14")
 
 [node name="GridContainer" type="GridContainer" parent="CanvasLayer/LevelEditor/TabContainer/Blocks"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 7 )
+theme = ExtResource("7")
 columns = 15
 
 [node name="Button" type="Button" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer"]
-offset_right = 64.0
-offset_bottom = 64.0
-custom_minimum_size = Vector2( 64, 64 )
-theme = ExtResource( 7 )
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme = ExtResource("7")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer/Button"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 8.0
 offset_top = 8.0
 offset_right = -8.0
 offset_bottom = -8.0
-theme = ExtResource( 7 )
-texture = ExtResource( 12 )
-expand = true
+theme = ExtResource("7")
+texture = ExtResource("12")
+expand_mode = 1
 stretch_mode = 6
 
 [node name="Button2" type="Button" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer"]
-offset_left = 80.0
-offset_right = 144.0
-offset_bottom = 64.0
-custom_minimum_size = Vector2( 64, 64 )
-theme = ExtResource( 7 )
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme = ExtResource("7")
 
 [node name="TextureRect2" type="TextureRect" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer/Button2"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 8.0
 offset_top = 9.0
 offset_right = -8.0
 offset_bottom = -8.0
-texture = ExtResource( 9 )
-expand = true
+texture = ExtResource("9")
+expand_mode = 1
 stretch_mode = 6
 
 [node name="Button3" type="Button" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer"]
-offset_left = 160.0
-offset_right = 224.0
-offset_bottom = 64.0
-custom_minimum_size = Vector2( 64, 64 )
-theme = ExtResource( 7 )
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme = ExtResource("7")
 
 [node name="TextureRect2" type="TextureRect" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer/Button3"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 8.0
 offset_top = 9.0
 offset_right = -8.0
 offset_bottom = -8.0
-texture = ExtResource( 11 )
-expand = true
+texture = ExtResource("11")
+expand_mode = 1
 stretch_mode = 6
 
 [node name="Button4" type="Button" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer"]
-offset_left = 240.0
-offset_right = 304.0
-offset_bottom = 64.0
-custom_minimum_size = Vector2( 64, 64 )
-theme = ExtResource( 7 )
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme = ExtResource("7")
 
 [node name="TextureRect2" type="TextureRect" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer/Button4"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 8.0
 offset_top = 9.0
 offset_right = -8.0
 offset_bottom = -8.0
-texture = ExtResource( 10 )
-expand = true
+texture = ExtResource("10")
+expand_mode = 1
 stretch_mode = 6
 
 [node name="Button5" type="Button" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer"]
-offset_left = 320.0
-offset_right = 384.0
-offset_bottom = 64.0
-custom_minimum_size = Vector2( 64, 64 )
-theme = ExtResource( 7 )
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme = ExtResource("7")
 
 [node name="TextureRect2" type="TextureRect" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer/Button5"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 8.0
 offset_top = 9.0
 offset_right = -8.0
 offset_bottom = -8.0
-texture = ExtResource( 8 )
-expand = true
+texture = ExtResource("8")
+expand_mode = 1
 stretch_mode = 6
 
 [node name="Button6" type="Button" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer"]
-offset_left = 400.0
-offset_right = 464.0
-offset_bottom = 64.0
-custom_minimum_size = Vector2( 64, 64 )
-theme = ExtResource( 7 )
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme = ExtResource("7")
 
 [node name="TextureRect2" type="TextureRect" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer/Button6"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 8.0
 offset_top = 9.0
 offset_right = -8.0
 offset_bottom = -8.0
-texture = ExtResource( 13 )
-expand = true
+texture = ExtResource("13")
+expand_mode = 1
 stretch_mode = 6
 
 [node name="Button7" type="Button" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer"]
-offset_left = 480.0
-offset_right = 544.0
-offset_bottom = 64.0
-custom_minimum_size = Vector2( 64, 64 )
-theme = ExtResource( 7 )
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme = ExtResource("7")
 
 [node name="TextureRect2" type="TextureRect" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer/Button7"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 8.0
 offset_top = 9.0
 offset_right = -8.0
 offset_bottom = -8.0
-texture = ExtResource( 5 )
-expand = true
+texture = ExtResource("5")
+expand_mode = 1
 stretch_mode = 6
 
 [node name="Button8" type="Button" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer"]
-offset_left = 560.0
-offset_right = 624.0
-offset_bottom = 64.0
-custom_minimum_size = Vector2( 64, 64 )
-theme = ExtResource( 7 )
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme = ExtResource("7")
 
 [node name="TextureRect2" type="TextureRect" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer/Button8"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 8.0
 offset_top = 9.0
 offset_right = -8.0
 offset_bottom = -8.0
-texture = ExtResource( 3 )
-expand = true
+texture = ExtResource("3")
+expand_mode = 1
 stretch_mode = 6
 
 [node name="Button9" type="Button" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer"]
-offset_left = 640.0
-offset_right = 704.0
-offset_bottom = 64.0
-custom_minimum_size = Vector2( 64, 64 )
-theme = ExtResource( 7 )
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme = ExtResource("7")
 
 [node name="TextureRect2" type="TextureRect" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer/Button9"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 8.0
 offset_top = 9.0
 offset_right = -8.0
 offset_bottom = -8.0
-texture = ExtResource( 1 )
-expand = true
+texture = ExtResource("1")
+expand_mode = 1
 stretch_mode = 6
 
 [node name="Button10" type="Button" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer"]
-offset_left = 720.0
-offset_right = 784.0
-offset_bottom = 64.0
-custom_minimum_size = Vector2( 64, 64 )
-theme = ExtResource( 7 )
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme = ExtResource("7")
 
 [node name="TextureRect2" type="TextureRect" parent="CanvasLayer/LevelEditor/TabContainer/Blocks/GridContainer/Button10"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 8.0
 offset_top = 9.0
 offset_right = -8.0
 offset_bottom = -8.0
-texture = ExtResource( 12 )
-expand = true
+texture = ExtResource("12")
+expand_mode = 1
 stretch_mode = 6
 
 [node name="Hazards" type="TabBar" parent="CanvasLayer/LevelEditor/TabContainer"]
 visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 4.0
-offset_top = 32.0
-offset_right = -4.0
-offset_bottom = -4.0
-theme = ExtResource( 14 )
-tab_alignment = 0
+layout_mode = 2
+theme = ExtResource("14")
 
 [node name="Interactibles" type="TabBar" parent="CanvasLayer/LevelEditor/TabContainer"]
 visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 4.0
-offset_top = 32.0
-offset_right = -4.0
-offset_bottom = -4.0
-theme = ExtResource( 14 )
-tab_alignment = 0
+layout_mode = 2
+theme = ExtResource("14")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/LevelEditor"]
+layout_mode = 0
 anchor_top = 0.755556
 anchor_right = 0.133333
 anchor_bottom = 1.0
 offset_right = 8.0
-pivot_offset = Vector2( -720, -152 )
+pivot_offset = Vector2(-720, -152)
 alignment = 1
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
 [node name="Button" type="Button" parent="CanvasLayer/LevelEditor/VBoxContainer"]
-offset_top = 97.0
-offset_right = 263.0
-offset_bottom = 117.0
+layout_mode = 2
 text = "BUILD"
 
 [node name="Button2" type="Button" parent="CanvasLayer/LevelEditor/VBoxContainer"]
-offset_top = 121.0
-offset_right = 263.0
-offset_bottom = 141.0
+layout_mode = 2
 text = "EDIT"
 
 [node name="Button3" type="Button" parent="CanvasLayer/LevelEditor/VBoxContainer"]
-offset_top = 145.0
-offset_right = 263.0
-offset_bottom = 165.0
+layout_mode = 2
 text = "DELETE"
 
 [node name="GridContainer" type="GridContainer" parent="CanvasLayer/LevelEditor"]
+layout_mode = 0
 offset_left = 1656.0
 offset_top = 816.0
 offset_right = 1920.0
@@ -292,121 +261,209 @@ offset_bottom = 1080.0
 columns = 2
 
 [node name="Button" type="Button" parent="CanvasLayer/LevelEditor/GridContainer"]
-offset_right = 130.0
-offset_bottom = 130.0
-custom_minimum_size = Vector2( 130, 130 )
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
 text = "DRAG"
 
 [node name="Button2" type="Button" parent="CanvasLayer/LevelEditor/GridContainer"]
-offset_left = 134.0
-offset_right = 264.0
-offset_bottom = 130.0
-custom_minimum_size = Vector2( 130, 130 )
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
 text = "ROTATE"
 
 [node name="Button3" type="Button" parent="CanvasLayer/LevelEditor/GridContainer"]
-offset_top = 134.0
-offset_right = 130.0
-offset_bottom = 264.0
-custom_minimum_size = Vector2( 130, 130 )
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
 text = "FREE MOVE"
 
 [node name="Button4" type="Button" parent="CanvasLayer/LevelEditor/GridContainer"]
-offset_left = 134.0
-offset_top = 134.0
-offset_right = 264.0
-offset_bottom = 264.0
-custom_minimum_size = Vector2( 130, 130 )
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
 text = "RESET POSITION"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/LevelEditor"]
+layout_mode = 0
 anchor_left = 0.00833333
 anchor_top = 0.133333
 anchor_right = 0.075
 anchor_bottom = 0.503704
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
 [node name="TextureButton" type="TextureButton" parent="CanvasLayer/LevelEditor/VBoxContainer2"]
-offset_right = 128.0
-offset_bottom = 128.0
-texture_normal = ExtResource( 15 )
-texture_pressed = ExtResource( 15 )
-texture_hover = ExtResource( 15 )
-texture_disabled = ExtResource( 15 )
-texture_focused = ExtResource( 15 )
-__meta__ = {
-"_edit_use_anchors_": true
-}
+layout_mode = 2
+texture_normal = ExtResource("15")
+texture_pressed = ExtResource("15")
+texture_hover = ExtResource("15")
+texture_disabled = ExtResource("15")
+texture_focused = ExtResource("15")
 
 [node name="TextureButton2" type="TextureButton" parent="CanvasLayer/LevelEditor/VBoxContainer2"]
-offset_top = 132.0
-offset_right = 128.0
-offset_bottom = 260.0
-texture_normal = ExtResource( 2 )
-texture_pressed = ExtResource( 2 )
-texture_hover = ExtResource( 2 )
-texture_disabled = ExtResource( 2 )
-texture_focused = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": true
-}
+layout_mode = 2
+texture_normal = ExtResource("2")
+texture_pressed = ExtResource("2")
+texture_hover = ExtResource("2")
+texture_disabled = ExtResource("2")
+texture_focused = ExtResource("2")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/LevelEditor"]
+layout_mode = 0
 anchor_left = 0.00833333
 anchor_top = 0.0148148
 anchor_right = 0.241667
 anchor_bottom = 0.133333
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
 [node name="TextureButton" type="TextureButton" parent="CanvasLayer/LevelEditor/HBoxContainer"]
-offset_right = 128.0
-offset_bottom = 128.0
-texture_normal = ExtResource( 17 )
-texture_pressed = ExtResource( 17 )
-texture_hover = ExtResource( 17 )
-texture_disabled = ExtResource( 17 )
-texture_focused = ExtResource( 17 )
-__meta__ = {
-"_edit_use_anchors_": true
-}
+layout_mode = 2
+texture_normal = ExtResource("17")
+texture_pressed = ExtResource("17")
+texture_hover = ExtResource("17")
+texture_disabled = ExtResource("17")
+texture_focused = ExtResource("17")
 
 [node name="TextureButton2" type="TextureButton" parent="CanvasLayer/LevelEditor/HBoxContainer"]
-offset_left = 132.0
-offset_right = 260.0
-offset_bottom = 128.0
-texture_normal = ExtResource( 16 )
-texture_pressed = ExtResource( 16 )
-texture_hover = ExtResource( 16 )
-texture_disabled = ExtResource( 16 )
-texture_focused = ExtResource( 16 )
-__meta__ = {
-"_edit_use_anchors_": true
-}
+layout_mode = 2
+texture_normal = ExtResource("16")
+texture_pressed = ExtResource("16")
+texture_hover = ExtResource("16")
+texture_disabled = ExtResource("16")
+texture_focused = ExtResource("16")
+
+[node name="GraphEdit" type="GraphEdit" parent="CanvasLayer"]
+offset_left = 244.0
+offset_top = 61.0
+offset_right = 1464.0
+offset_bottom = 732.0
+scroll_offset = Vector2(-40, -40)
+
+[node name="GraphNode" type="GraphNode" parent="CanvasLayer/GraphEdit"]
+layout_mode = 0
+offset_left = 601.0
+offset_top = 150.0
+offset_right = 963.0
+offset_bottom = 351.0
+mouse_filter = 1
+title = "Trigger"
+position_offset = Vector2(561, 110)
+show_close = true
+resizable = true
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+slot/1/left_enabled = false
+slot/1/left_type = 0
+slot/1/left_color = Color(1, 1, 1, 1)
+slot/1/left_icon = null
+slot/1/right_enabled = false
+slot/1/right_type = 0
+slot/1/right_color = Color(1, 1, 1, 1)
+slot/1/right_icon = null
+slot/1/draw_stylebox = true
+
+[node name="Button" type="Button" parent="CanvasLayer/GraphEdit/GraphNode"]
+layout_mode = 2
+text = "button"
+
+[node name="TextEdit" type="TextEdit" parent="CanvasLayer/GraphEdit/GraphNode"]
+layout_mode = 2
+size_flags_vertical = 3
+placeholder_text = "text edit
+"
+
+[node name="GraphNode2" type="GraphNode" parent="CanvasLayer/GraphEdit"]
+layout_mode = 0
+offset_left = 163.0
+offset_top = 303.0
+offset_right = 525.0
+offset_bottom = 504.0
+mouse_filter = 1
+title = "Object"
+position_offset = Vector2(123, 263)
+show_close = true
+resizable = true
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+slot/1/left_enabled = false
+slot/1/left_type = 0
+slot/1/left_color = Color(1, 1, 1, 1)
+slot/1/left_icon = null
+slot/1/right_enabled = false
+slot/1/right_type = 0
+slot/1/right_color = Color(1, 1, 1, 1)
+slot/1/right_icon = null
+slot/1/draw_stylebox = true
+slot/2/left_enabled = false
+slot/2/left_type = 0
+slot/2/left_color = Color(1, 1, 1, 1)
+slot/2/left_icon = null
+slot/2/right_enabled = false
+slot/2/right_type = 0
+slot/2/right_color = Color(1, 1, 1, 1)
+slot/2/right_icon = null
+slot/2/draw_stylebox = true
+slot/3/left_enabled = false
+slot/3/left_type = 0
+slot/3/left_color = Color(1, 1, 1, 1)
+slot/3/left_icon = null
+slot/3/right_enabled = false
+slot/3/right_type = 0
+slot/3/right_color = Color(1, 1, 1, 1)
+slot/3/right_icon = null
+slot/3/draw_stylebox = true
+
+[node name="Label" type="Label" parent="CanvasLayer/GraphEdit/GraphNode2"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Position"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/GraphEdit/GraphNode2"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Rotation (degrees)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="CanvasLayer/GraphEdit/GraphNode2"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Scale"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="CanvasLayer/GraphEdit/GraphNode2"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Color"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Background2" type="CanvasLayer" parent="."]
 layer = -50
 follow_viewport_enabled = true
 follow_viewport_scale = 0.333
 
-[node name="Background" parent="Background2" instance=ExtResource( 6 )]
-position = Vector2( 1, 489 )
-scale = Vector2( 3, 3 )
-__meta__ = {
-"_edit_lock_": true
-}
+[node name="Background" parent="Background2" instance=ExtResource("6")]
+position = Vector2(1, 489)
+scale = Vector2(3, 3)
+metadata/_edit_lock_ = true
 
-[node name="Ground" parent="." instance=ExtResource( 4 )]
-position = Vector2( 3.05176e-05, 488 )
-scale = Vector2( 1.5, 1.5 )
+[node name="Ground" parent="." instance=ExtResource("4")]
 z_index = 50
-__meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
-}
+position = Vector2(3.05176e-05, 488)
+scale = Vector2(1.5, 1.5)
+metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 968, 144 )
+position = Vector2(968, 144)

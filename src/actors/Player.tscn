@@ -126,8 +126,11 @@ gradient = SubResource("9")
 
 [sub_resource type="ParticleProcessMaterial" id="13"]
 direction = Vector3(-1, 0, 0)
-spread = 0.0
-gravity = Vector3(0, 0, 0)
+gravity = Vector3(0, 98, 0)
+initial_velocity_min = 250.0
+initial_velocity_max = 250.0
+linear_accel_min = -450.0
+linear_accel_max = -450.0
 scale_min = 0.25
 scale_max = 0.25
 scale_curve = SubResource("12")
@@ -1264,11 +1267,11 @@ lifetime = 0.5
 one_shot = true
 explosiveness = 1.0
 randomness = 1.0
+metadata/_edit_lock_ = true
 
 [node name="PlayerGroundParticles" type="GPUParticles2D" parent="."]
 z_index = -50
 position = Vector2(0, -66)
-emitting = false
 amount = 25
 process_material = SubResource("13")
 texture = ExtResource("3")
@@ -1277,6 +1280,7 @@ script = ExtResource("6")
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(0, -66)
 texture = ExtResource("17_njb3s")
+metadata/_edit_lock_ = true
 
 [node name="AreaDetection" type="Area2D" parent="."]
 visible = false
@@ -1290,10 +1294,14 @@ shape = SubResource("1")
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 position = Vector2(0, -66)
 shape = SubResource("1")
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="BlockOverlap" type="Area2D" parent="."]
 modulate = Color(0, 0, 0, 1)
 collision_mask = 8
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="HitboxBlockOverlap" type="CollisionShape2D" parent="BlockOverlap"]
 position = Vector2(0, -66)
@@ -1302,6 +1310,8 @@ shape = SubResource("82")
 [node name="SpiderSprites" type="Node2D" parent="."]
 position = Vector2(0, -66)
 scale = Vector2(2, 2)
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="SpiderRaycast" type="RayCast2D" parent="SpiderSprites"]
 target_position = Vector2(0, -12500)

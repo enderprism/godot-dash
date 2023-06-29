@@ -41,9 +41,9 @@ Here is a list of all the useful properties for triggers:
 
 * General Properties
   
-  * `position`: move triggers. Requires a `Vector2`.
+  * `position`: move triggers. Requires a `Vector2` or a `string`. Use a string to indicate a move target's position with an object. The object can be the player (using the `PLAYER` path). If the trigger is `relative`, it will act like a follow player x/y ; if it isn't, it will act like a `follow` trigger.
   
-  * `rotation`: rotate trigger. Requires a `float`.
+  * `rotation`: rotate trigger. Requires a `float` or a `string`. Use a string to copy the player's rotation (using the `PLAYER` path). If the trigger is `relative`, it will set its rotation to the player's with the rotation it had before the trigger ; if it isn't, it will just copy the icon's rotation.
   
   * `scale`: scale trigger. Requires a `Vector2` (for the scale x and scale y).
   

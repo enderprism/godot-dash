@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bmxo5ubrxke67"]
+[gd_scene load_steps=12 format=3 uid="uid://bmxo5ubrxke67"]
 
 [ext_resource type="Script" path="res://src/scenes/levels/Level.gd" id="2"]
 [ext_resource type="AudioStream" uid="uid://veor71ev3ce3" path="res://assets/audio/levels/Amp It Up.mp3" id="2_qbeca"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://d3u6sxhgpsn3f" path="res://src/actors/solids/RegularPlatform.tscn" id="8_btapo"]
 [ext_resource type="PackedScene" uid="uid://bcdsu1busb27d" path="res://src/actors/portals/CubePortal.tscn" id="8_ccsqb"]
 [ext_resource type="PackedScene" uid="uid://dgcgmbp7jgmfx" path="res://src/actors/pads/MagentaPad.tscn" id="9_yj8hb"]
+[ext_resource type="Theme" uid="uid://ctsh3cgr6x55w" path="res://src/scenes/uiElements/Pusab_Font.tres" id="11_e42io"]
 
 [node name="Trigger Test" type="Node2D"]
 script = ExtResource("2")
@@ -57,11 +58,11 @@ position = Vector2(4636, -610)
 position = Vector2(6161, -549)
 
 [node name="GridBlock01_4" parent="." instance=ExtResource("5")]
-position = Vector2(6161, -793)
+position = Vector2(6161, -732)
 
 [node name="GridBlock01_5" parent="." instance=ExtResource("5")]
-visible = false
-position = Vector2(7503, -793)
+modulate = Color(1, 1, 1, 0.5)
+position = Vector2(7503, -732)
 
 [node name="ShipPortal_1" parent="." instance=ExtResource("6")]
 position = Vector2(1891, 488)
@@ -128,6 +129,7 @@ relative = true
 position = Vector2(5551, -549)
 target_path = "GridBlock01_4"
 property = "position"
+duration = 0.5
 value = ["GridBlock01_5", Vector2(1, 1)]
 
 [node name="NormalTrigger7" parent="." instance=ExtResource("3")]
@@ -158,7 +160,7 @@ easing_curve = 5
 _is_exit_static = true
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(2867, -427)
+position = Vector2(2899, -427)
 gizmo_extents = 61.0
 
 [node name="Marker2D2" type="Marker2D" parent="."]
@@ -216,3 +218,53 @@ rotation = 1.57079
 
 [node name="CubePortal_0" parent="." instance=ExtResource("8_ccsqb")]
 position = Vector2(3843, -1037)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 6100.0
+offset_top = -976.0
+offset_right = 7564.0
+offset_bottom = -793.0
+theme = ExtResource("11_e42io")
+text = "move to object"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 5673.0
+offset_top = -427.0
+offset_right = 6595.0
+offset_bottom = -244.0
+theme = ExtResource("11_e42io")
+text = "follow player x & y
+follow player rotation"
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 2379.0
+offset_top = -854.0
+offset_right = 3416.0
+offset_bottom = -671.0
+theme = ExtResource("11_e42io")
+text = "Better camera controls"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="."]
+offset_left = 3599.0
+offset_top = -854.0
+offset_right = 4636.0
+offset_bottom = -671.0
+theme = ExtResource("11_e42io")
+text = "move to player"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 1525.0
+offset_top = -427.0
+offset_right = 2135.0
+offset_bottom = -244.0
+theme = ExtResource("11_e42io")
+text = "move trigger"
+horizontal_alignment = 2
+vertical_alignment = 1
