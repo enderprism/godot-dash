@@ -2,12 +2,12 @@ extends Node2D
 
 @onready var player = get_node("../Player")
 
-func _physics_process(delta: float) -> void:
+#func _physics_process(delta: float) -> void:
 #	if player.arrow_trigger_direction == Vector2(0.0, -1.0):
 #		rotation_degrees = 0.0
 #	elif player.arrow_trigger_direction == Vector2(-1.0, 0.0):
 #		rotation_degrees = -90.0
-	pass
+#	pass
 
 func _on_Player_spider_jumped(distance) -> void:
 	$AnimatedSprite2D.frame = 0

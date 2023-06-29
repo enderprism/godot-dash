@@ -1,0 +1,123 @@
+[gd_scene load_steps=11 format=3 uid="uid://coiuaso2vrnja"]
+
+[ext_resource type="Script" path="res://src/scenes/levels/Level.gd" id="1_eo8id"]
+[ext_resource type="AudioStream" uid="uid://lcjr3u35x24n" path="res://assets/audio/levels/Get Dat.mp3" id="2_pwlhg"]
+[ext_resource type="PackedScene" uid="uid://bxplpbpu2knau" path="res://src/actors/solids/RegularBlock.tscn" id="3_5p0lr"]
+[ext_resource type="PackedScene" uid="uid://bpcp868kw4e86" path="res://src/actors/solids/GridBlock08_0.tscn" id="4_qn0wr"]
+[ext_resource type="PackedScene" uid="uid://nypsu5e1ijpx" path="res://src/actors/hazards/ThornPit06_0.tscn" id="5_8auus"]
+[ext_resource type="PackedScene" uid="uid://dkjhyi8lcisg" path="res://src/actors/portals/WavePortal.tscn" id="6_0f14c"]
+[ext_resource type="PackedScene" uid="uid://68ihkklsihfd" path="res://src/actors/portals/speedPortals/SpeedPortal2x.tscn" id="7_e717s"]
+[ext_resource type="PackedScene" uid="uid://bwh562j7qst6y" path="res://src/actors/hazards/RegularSpike01_0.tscn" id="8_rc2mv"]
+[ext_resource type="PackedScene" path="res://src/actors/hazards/RegularSawbladeA.tscn" id="9_ttluj"]
+[ext_resource type="PackedScene" uid="uid://dgcgmbp7jgmfx" path="res://src/actors/pads/MagentaPad.tscn" id="10_ykppy"]
+
+[node name="AmazingLevel" type="Node2D"]
+script = ExtResource("1_eo8id")
+level_music = ExtResource("2_pwlhg")
+
+[node name="RegularBlock" parent="." instance=ExtResource("3_5p0lr")]
+position = Vector2(671, -61)
+
+[node name="RegularBlock2" parent="." instance=ExtResource("3_5p0lr")]
+position = Vector2(1159, -183)
+
+[node name="GridBlock08_1" parent="." instance=ExtResource("4_qn0wr")]
+position = Vector2(1159, -61)
+
+[node name="ThornPit06_0" parent="." instance=ExtResource("5_8auus")]
+position = Vector2(793, -61)
+
+[node name="ThornPit06_7" parent="." instance=ExtResource("5_8auus")]
+position = Vector2(915, -61)
+
+[node name="ThornPit06_8" parent="." instance=ExtResource("5_8auus")]
+position = Vector2(1281, -61)
+
+[node name="ThornPit06_1" parent="." instance=ExtResource("5_8auus")]
+position = Vector2(1037, -61)
+
+[node name="RegularBlock3" parent="." instance=ExtResource("3_5p0lr")]
+position = Vector2(1647, -305)
+
+[node name="GridBlock08_2" parent="." instance=ExtResource("4_qn0wr")]
+position = Vector2(1647, -183)
+
+[node name="GridBlock08_3" parent="." instance=ExtResource("4_qn0wr")]
+position = Vector2(1647, -61)
+
+[node name="RegularBlock4" parent="." instance=ExtResource("3_5p0lr")]
+position = Vector2(2135, -305)
+
+[node name="GridBlock08_4" parent="." instance=ExtResource("4_qn0wr")]
+position = Vector2(2135, -183)
+
+[node name="GridBlock08_5" parent="." instance=ExtResource("4_qn0wr")]
+position = Vector2(2135, -61)
+
+[node name="ThornPit06_2" parent="." instance=ExtResource("5_8auus")]
+position = Vector2(1403, -61)
+
+[node name="ThornPit06_3" parent="." instance=ExtResource("5_8auus")]
+position = Vector2(1525, -61)
+
+[node name="ThornPit06_4" parent="." instance=ExtResource("5_8auus")]
+position = Vector2(1769, -61)
+
+[node name="ThornPit06_5" parent="." instance=ExtResource("5_8auus")]
+position = Vector2(1891, -61)
+
+[node name="ThornPit06_6" parent="." instance=ExtResource("5_8auus")]
+position = Vector2(2013, -61)
+
+[node name="WavePortal_0" parent="." instance=ExtResource("6_0f14c")]
+position = Vector2(1830, -549)
+freefly = false
+
+[node name="SpeedPortal2x_0" parent="." instance=ExtResource("7_e717s")]
+position = Vector2(1830, -549)
+
+[node name="RegularSpike01_0" parent="." instance=ExtResource("8_rc2mv")]
+position = Vector2(2135, -427)
+
+[node name="RegularBlock5" parent="." instance=ExtResource("3_5p0lr")]
+position = Vector2(2135, -1037)
+rotation = -3.14159
+
+[node name="GridBlock08_6" parent="." instance=ExtResource("4_qn0wr")]
+position = Vector2(2135, -1281)
+rotation = -3.14159
+
+[node name="GridBlock08_7" parent="." instance=ExtResource("4_qn0wr")]
+position = Vector2(2135, -1159)
+rotation = -3.14159
+
+[node name="RegularSpike01_1" parent="." instance=ExtResource("8_rc2mv")]
+position = Vector2(2135, -915)
+rotation = -3.14159
+
+[node name="RegularSawbladeA" parent="." instance=ExtResource("9_ttluj")]
+position = Vector2(2623, -183)
+saw_rotation = 30.0
+
+[node name="RegularSawbladeA2" parent="." instance=ExtResource("9_ttluj")]
+position = Vector2(2501, -1220)
+saw_rotation = 30.0
+
+[node name="RegularSawbladeA3" parent="." instance=ExtResource("9_ttluj")]
+position = Vector2(3416, -244)
+saw_rotation = 30.0
+
+[node name="RegularSawbladeA4" parent="." instance=ExtResource("9_ttluj")]
+position = Vector2(3172, -1220)
+saw_rotation = 30.0
+
+[node name="RegularSawbladeA5" parent="." instance=ExtResource("9_ttluj")]
+position = Vector2(4026, -1403)
+saw_rotation = 30.0
+
+[node name="RegularSawbladeA6" parent="." instance=ExtResource("9_ttluj")]
+position = Vector2(4392, -183)
+saw_rotation = 30.0
+
+[node name="PinkPad" parent="." instance=ExtResource("10_ykppy")]
+position = Vector2(1647, -427)

@@ -1976,15 +1976,12 @@ duration = 0.5
 value = [Color(0, 0, 0, 1), Vector2(0, 0)]
 easing_type = 1
 easing_curve = 5
-one_time = true
 
 [node name="HideBackground" parent="." instance=ExtResource("11")]
 position = Vector2(12993, 1647)
 target_path = "SpiderStructure/Background"
 property = "modulate"
 value = [Color(0, 0, 0, 0), Vector2(0, 0)]
-easing_type = 1
-easing_curve = 5
 
 [node name="DisableStruct2" parent="." instance=ExtResource("11")]
 position = Vector2(61, 1403)
@@ -2114,7 +2111,6 @@ duration = 0.5
 value = ["CrossStaticPos", Vector2(1, 1)]
 easing_type = 2
 easing_curve = 1
-one_time = true
 
 [node name="SpiderPortal_0" parent="." instance=ExtResource("40")]
 visible = false
@@ -4817,8 +4813,8 @@ rotation = 6.28318
 
 [node name="Background" type="Node2D" parent="SpiderStructure"]
 position = Vector2(21594, -3294)
-metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="GridBlock05_205" parent="SpiderStructure/Background" instance=ExtResource("7")]
 position = Vector2(-305, 2623)
@@ -7351,6 +7347,7 @@ easing_curve = 3
 
 [node name="HBlocks" type="StaticBody2D" parent="CrossStructure5"]
 position = Vector2(-915, 122)
+collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CrossStructure5/HBlocks"]
 shape = SubResource("1")

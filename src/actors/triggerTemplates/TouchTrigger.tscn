@@ -20,4 +20,4 @@ debug_color = Color(0.560784, 0, 0.701961, 0.419608)
 scale = Vector2(1.4, 1.4)
 texture = ExtResource("2")
 
-[connection signal="area_entered" from="." to="." method="_on_trigger_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_trigger_body_entered"]

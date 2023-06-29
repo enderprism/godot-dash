@@ -65,12 +65,21 @@ SONG TRIGGER:
 @export var one_time: bool
 #@export var show: bool
 
+var interpolatedWeight: float
+var initialValue
 var static_pos
+var isInterpolating: bool = false
+var target
+var pos_offset: Vector2
+var rot_offset: float
 @onready var player_camera = get_node("/root/Scene/PlayerCamera")
 @onready var player = get_node("/root/Scene/Player")
 
-func _on_trigger_area_entered(area: Area2D) -> void:
-	var target
+func _on_trigger_body_entered(_body: Node2D) -> void:
+	var trigger_tween = get_tree().create_tween()
+	trigger_tween.finished.connect(_stop_interpolating)	
+	isInterpolating = true
+	trigger_tween.tween_property(self, "interpolatedWeight", 1.0, duration).from(0.0).set_ease(easing_type).set_trans(easing_curve)
 	if (target_path != "" and property != "") || property == "random":
 		if target_path != "":
 			if "/root/Scene/" in target_path:
@@ -95,40 +104,38 @@ func _on_trigger_area_entered(area: Area2D) -> void:
 				target = get_node("/root/Scene/LevelMusic")
 			else:
 				target = get_node("../"+target_path)
-		var trigger_tween = get_tree().create_tween().set_parallel()
+		
 		if target_path == "GROUND" || target_path == "LINE":
-			if !relative:
-				trigger_tween.parallel().tween_property(
-					target[0],
-					property,
-					value[0],
-					duration
-				).set_trans(easing_curve).set_ease(easing_type)
-				trigger_tween.parallel().tween_property(
-					target[1],
-					property,
-					value[0],
-					duration
-				).set_trans(easing_curve).set_ease(easing_type)
-			else:
-				trigger_tween.parallel().tween_property(
-					target[0],
-					property,
-					value[0],
-					duration
-				).as_relative().set_trans(easing_curve).set_ease(easing_type)
-				trigger_tween.parallel().tween_property(
-					target[1],
-					property,
-					value[0],
-					duration
-				).as_relative().set_trans(easing_curve).set_ease(easing_type)
+			initialValue = [target[0].get(property), target[1].get(property)]
 		elif target_path == "PLAYERCAMERA" && property == "static":
-			if _is_exit_static:
-				exit_static(target)
-			else:
-				enter_static(target)
+			initialValue = [
+				player_camera.position,
+				player_camera.offset
+			]
+			if typeof(value[0]) == TYPE_STRING:
+				value[0] = get_node("../"+value[0]).global_position
+		elif property == "position" && typeof(value[0]) == TYPE_STRING:
+			initialValue = target.get("global_position")
+		elif property == "follow":
+			initialValue = target.get("global_position")
 		elif property == "toggle":
+			isInterpolating = false
+		else:
+			initialValue = target.get(property)
+		
+		if relative:
+			if !typeof(value[0]) == TYPE_STRING:
+				value[0] += initialValue
+			else:
+				if value[0] == "PLAYER":
+					if property == "position":
+						pos_offset = initialValue - player.position
+					elif property == "rotation_degrees":
+						rot_offset = initialValue - player.get_node("Icon").rotation_degrees
+				else:
+					pos_offset = initialValue - get_node("../"+value[0]).global_position
+		
+		if property == "toggle":
 			if value[0] == true:
 				toggle_on(target)
 			if value[0] == false:
@@ -147,77 +154,90 @@ func _on_trigger_area_entered(area: Area2D) -> void:
 						toggle_off(random_target)
 		elif target_path == "SONG" && property == "seek":
 			target.seek(value[0])
-		else:
-			if relative:
-				trigger_tween.tween_property(
-					target,
-					property,
-					value[0],
-					duration
-				).as_relative().set_trans(easing_curve).set_ease(easing_type)
-				trigger_tween.play()
-			else:
-				trigger_tween.tween_property(
-					target,
-					property,
-					value[0],
-					duration
-				).set_trans(easing_curve).set_ease(easing_type)
-				trigger_tween.play()
-	if one_time:
-		self.process_mode = 4
 
-func enter_static(camera):
-	CurrentLevel.set_if_camera_static(value[1])
-	var trigger_tween = get_tree().create_tween().set_parallel()
-	var end_pos: Vector2 = get_node("../"+value[0]).global_position
-	if value[1].x == 1:
-		trigger_tween.tween_property(
-			camera,
-			"offset:x",
-			0.0,
-			duration
-		).set_trans(easing_curve).set_ease(easing_type)
-		trigger_tween.tween_property(
-			camera,
-			"position:x",
-			end_pos.x,
-			duration
-		).set_trans(easing_curve).set_ease(easing_type)
-	if value[1].y == 1:
-		trigger_tween.parallel().tween_property(
-			camera,
-			"position:y",
-			end_pos.y,
-			duration
-		).set_trans(easing_curve).set_ease(easing_type)
-	trigger_tween.play()
-#
-func exit_static(camera):
-	var trigger_tween = get_tree().create_tween().set_parallel()
-	var end_pos: Vector2 = Vector2(
-			camera.x_final_pos + player.speed.x * player._speed_multiplier * (duration+0.5),
-			camera.y_final_pos
-		)
-	var end_offset: Vector2 = Vector2(camera.x_final_offset, camera.y_final_offset)
-	trigger_tween.tween_property(
-		camera,
-		"offset",
-		end_offset,
-		duration
-	).set_trans(easing_curve).set_ease(easing_type)
-	trigger_tween.tween_property(
-		camera,
-		"position",
-		end_pos,
-		duration
-	).set_trans(easing_curve).set_ease(easing_type)
-	trigger_tween.play()
-	await trigger_tween.finished
-	CurrentLevel.set_if_camera_static(Vector2.ZERO)
-	camera.horizontal_lerp_weight = 0.0
-	await get_tree().create_timer(0.25).timeout
-	camera.horizontal_lerp_weight = 0.5
+func _stop_interpolating() -> void:
+	if _is_exit_static:
+		CurrentLevel.is_camera_static = Vector2(0.0, 0.0)
+	isInterpolating = false
+	if one_time:
+		set_process_mode(PROCESS_MODE_DISABLED)
+
+func _physics_process(_delta: float) -> void:
+	if get_tree().is_debugging_collisions_hint() || Engine.is_editor_hint():
+		# Code to execute when in editor.
+		$TriggerIcon.show()
+		_set_trigger_icon()
+	else:
+		$TriggerIcon.hide()
+	if isInterpolating:
+		if duration <= _delta:
+			interpolatedWeight = 1.0
+		if target_path == "GROUND" || target_path == "LINE":
+			target[0].set(property, lerp(initialValue[0], value[0], interpolatedWeight))
+			target[1].set(property, lerp(initialValue[1], value[0], interpolatedWeight))
+		elif target_path == "PLAYERCAMERA" && property == "static":
+			if !_is_exit_static:
+				CurrentLevel.is_camera_static = value[1]
+				if value[1].x == 1.0:
+					player_camera.position.x = lerpf(
+						initialValue[0].x,
+						value[0].x,
+						interpolatedWeight
+					)
+					player_camera.offset.x = lerpf(
+						initialValue[1].x,
+						0.0,
+						interpolatedWeight
+					)
+				if value[1].y == 1.0:
+					player_camera.position.y = lerpf(
+						initialValue[0].y,
+						clampf(value[0].y, player_camera.MIN_HEIGHT, player_camera.MAX_HEIGHT),
+						interpolatedWeight
+					)
+					player_camera.offset.y = lerpf(
+						initialValue[1].y,
+						0.0,
+						interpolatedWeight
+					)
+			else:
+				player_camera.position = lerp(
+					initialValue[0],
+					Vector2(player_camera.x_final_pos, player_camera.y_final_pos),
+					interpolatedWeight
+				)
+				player_camera.offset = lerp(
+					initialValue[1],
+					Vector2(player_camera.x_final_offset, player_camera.y_final_offset),
+					interpolatedWeight
+				)
+		elif property == "position" && typeof(value[0]) == TYPE_STRING:
+			var end_pos: Vector2
+			if value[0] == "PLAYER":
+				end_pos = player.position
+			else:
+				end_pos = get_node("../"+value[0]).global_position
+			if relative:
+				if value[1].x == 1.0:
+					target.global_position.x = end_pos.x + pos_offset.x
+				if value[1].y == 1.0:
+					target.global_position.y = end_pos.y + pos_offset.y
+			else:
+				if value[1].x == 1.0:
+					target.global_position.x = lerpf(initialValue.x, end_pos.x, interpolatedWeight)
+				if value[1].y == 1.0:
+					target.global_position.y = lerpf(initialValue.y, end_pos.y, interpolatedWeight)
+		elif property == "rotation_degrees" && typeof(value[0]) == TYPE_STRING && value[0] == "PLAYER":
+			var end_rot: float = player.get_node("Icon").rotation_degrees
+			if relative:
+				target.global_rotation_degrees = end_rot + rot_offset
+			else:
+				target.global_rotation_degrees = end_rot
+		elif !(target_path == "SONG" || property == "toggle" || property == "random"):
+			if typeof(initialValue) == TYPE_FLOAT:
+				target.set(property, lerpf(initialValue, value[0], interpolatedWeight))
+			else:
+				target.set(property, lerp(initialValue, value[0], interpolatedWeight))
 
 func toggle_off(_toggled_group):
 	_toggled_group.process_mode = 4 # = Mode: Disabled
@@ -229,7 +249,9 @@ func toggle_on(_toggled_group):
 #	if show: _toggled_group.show()
 
 func _ready() -> void:
+	CurrentLevel.is_camera_static = Vector2.ZERO
 	set_monitorable(true)
+	if !Engine.is_editor_hint(): hide()
 
 func _set_trigger_icon() -> void:
 	$TriggerIcon.global_rotation = 0.0
@@ -270,20 +292,3 @@ func _set_trigger_icon() -> void:
 		$TriggerIcon.texture = load("res://assets/levelTextures/triggers/edit_eTimeWarpBtn_001.png")
 	elif property == "":
 		$TriggerIcon.texture = load("res://assets/levelTextures/triggers/edit_eEmptyBtn_001.png")
-
-func _physics_process(_delta: float) -> void:
-	if get_tree().is_debugging_collisions_hint() || Engine.is_editor_hint():
-		# Code to execute when in editor.
-		$TriggerIcon.show()
-		_set_trigger_icon()
-	else:
-		$TriggerIcon.hide()
-#	if len(CurrentLevel.onetime_triggers_list) >= 1:
-#		get_node(CurrentLevel.onetime_triggers_list[0]).set_monitorable(false)
-#		get_node(CurrentLevel.onetime_triggers_list[0]).set_monitoring(false)
-#		CurrentLevel.onetime_triggers_list.remove_at(0)
-#	if CurrentLevel.is_camera_static && property == "static" && !_is_exit_static && len(CurrentLevel.static_triggers_list) > 0:
-#		if get_node(CurrentLevel.static_triggers_list[0]).value[1].x == 1.0:
-#			player_camera.global_position.x = get_node("../"+str(get_node(CurrentLevel.static_triggers_list[0]).value[0])).global_position.x
-#		if get_node(CurrentLevel.static_triggers_list[0]).value[1].y== 1.0:
-#			player_camera.global_position.y = get_node("../"+str(get_node(CurrentLevel.static_triggers_list[0]).value[0])).global_position.y

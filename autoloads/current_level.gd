@@ -32,9 +32,6 @@ func set_scene_to_go(scene):
 func set_current_level(level):
 	current_level = level
 
-func set_if_camera_static(cam_static: Vector2):
-	is_camera_static = cam_static
-
 func set_current_page(page):
 	current_lvl_selector_page = page
 

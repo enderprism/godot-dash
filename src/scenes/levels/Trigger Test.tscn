@@ -1,25 +1,20 @@
-[gd_scene load_steps=9 format=3 uid="uid://bmxo5ubrxke67"]
+[gd_scene load_steps=11 format=3 uid="uid://bmxo5ubrxke67"]
 
 [ext_resource type="Script" path="res://src/scenes/levels/Level.gd" id="2"]
+[ext_resource type="AudioStream" uid="uid://veor71ev3ce3" path="res://assets/audio/levels/Amp It Up.mp3" id="2_qbeca"]
 [ext_resource type="PackedScene" uid="uid://dbkyre7gvfv3u" path="res://src/actors/triggerTemplates/NormalTrigger.tscn" id="3"]
 [ext_resource type="FontFile" path="res://src/scenes/fonts/pusab_75.tres" id="4"]
 [ext_resource type="PackedScene" uid="uid://cpu3hhlplmkfd" path="res://src/actors/solids/GridBlock01_0.tscn" id="5"]
 [ext_resource type="PackedScene" uid="uid://dmu6wd4jf6fp6" path="res://src/actors/portals/ShipPortal.tscn" id="6"]
 [ext_resource type="PackedScene" uid="uid://djjhgc2ht6lss" path="res://src/scenes/LevelEnd.tscn" id="8"]
-[ext_resource type="PackedScene" uid="uid://co3lug2jbyovj" path="res://src/actors/portals/speedPortals/SpeedPortal1x.tscn" id="8_bqcrs"]
+[ext_resource type="PackedScene" uid="uid://d3u6sxhgpsn3f" path="res://src/actors/solids/RegularPlatform.tscn" id="8_btapo"]
 [ext_resource type="PackedScene" uid="uid://bcdsu1busb27d" path="res://src/actors/portals/CubePortal.tscn" id="8_ccsqb"]
+[ext_resource type="PackedScene" uid="uid://dgcgmbp7jgmfx" path="res://src/actors/pads/MagentaPad.tscn" id="9_yj8hb"]
 
 [node name="Trigger Test" type="Node2D"]
 script = ExtResource("2")
-
-[node name="Move Trigger3" parent="." instance=ExtResource("3")]
-position = Vector2(10797, 0)
-target_path = "PLAYERCAMERA"
-property = "zoom"
-duration = 1.0
-value = [Vector2(1.25, 0.75), Vector2(0, 0)]
-easing_type = 2
-easing_curve = 3
+level_music = ExtResource("2_qbeca")
+metadata/_edit_lock_ = true
 
 [node name="Move Trigger2" type="Label" parent="."]
 offset_left = 732.0
@@ -46,32 +41,8 @@ offset_bottom = -563.0
 theme_override_fonts/font = ExtResource("4")
 text = "Camera3D Rotate Trigger"
 
-[node name="Alpha Trigger2" type="Label" parent="."]
-offset_left = 5185.0
-offset_top = -610.0
-offset_right = 5795.0
-offset_bottom = -549.0
-theme_override_fonts/font = ExtResource("4")
-text = "Color Reset"
-
-[node name="Move + Scale + Rotate + Alpha2" type="Label" parent="."]
-offset_left = 6893.0
-offset_top = -610.0
-offset_right = 8235.0
-offset_bottom = -549.0
-theme_override_fonts/font = ExtResource("4")
-text = "Move + Scale + Rotate + Alpha"
-
-[node name="pulsecolor trigger2" type="Label" parent="."]
-offset_left = 9150.0
-offset_top = -610.0
-offset_right = 10004.0
-offset_bottom = -549.0
-theme_override_fonts/font = ExtResource("4")
-text = "Pulse/Color trigger"
-
 [node name="GridBlock01_0" parent="." instance=ExtResource("5")]
-position = Vector2(1525, -305)
+position = Vector2(2257, -305)
 
 [node name="GridBlock01_6" parent="." instance=ExtResource("5")]
 position = Vector2(1037, -183)
@@ -79,47 +50,169 @@ position = Vector2(1037, -183)
 [node name="GridBlock01_7" parent="." instance=ExtResource("5")]
 position = Vector2(488, -61)
 
-[node name="GridBlock01_1" parent="." instance=ExtResource("5")]
-position = Vector2(3965, -915)
-
-[node name="GridBlock01_8" parent="." instance=ExtResource("5")]
-position = Vector2(4087, -915)
-
-[node name="GridBlock01_9" parent="." instance=ExtResource("5")]
-position = Vector2(4209, -915)
-
-[node name="GridBlock01_10" parent="." instance=ExtResource("5")]
-position = Vector2(4331, -915)
-
 [node name="GridBlock01_2" parent="." instance=ExtResource("5")]
-position = Vector2(4575, -549)
+position = Vector2(4636, -610)
 
 [node name="GridBlock01_3" parent="." instance=ExtResource("5")]
 position = Vector2(6161, -549)
 
 [node name="GridBlock01_4" parent="." instance=ExtResource("5")]
-position = Vector2(8357, -549)
+position = Vector2(6161, -793)
 
 [node name="GridBlock01_5" parent="." instance=ExtResource("5")]
-position = Vector2(10431, -549)
-
-[node name="ShipPortal_0" parent="." instance=ExtResource("6")]
-position = Vector2(2623, -1159)
-freefly = false
-
-[node name="ShipPortal_2" parent="." instance=ExtResource("6")]
-position = Vector2(5185, -122)
-rotation = 1.57079
+visible = false
+position = Vector2(7503, -793)
 
 [node name="ShipPortal_1" parent="." instance=ExtResource("6")]
-position = Vector2(1769, -183)
+position = Vector2(1891, 488)
 freefly = false
 
 [node name="LevelEnd" parent="." instance=ExtResource("8")]
-position = Vector2(11590, -488)
+position = Vector2(11895, -549)
 
-[node name="SpeedPortal1x_0" parent="." instance=ExtResource("8_bqcrs")]
-position = Vector2(10431, -183)
+[node name="NormalTrigger" parent="." instance=ExtResource("3")]
+position = Vector2(1342, 122)
+rotation = 3.14159
+target_path = "PLAYERCAMERA"
+property = "static"
+duration = 1.0
+value = ["Marker2D", Vector2(1, 1)]
+easing_type = 1
+easing_curve = 9
+
+[node name="NormalTrigger3" parent="." instance=ExtResource("3")]
+position = Vector2(1037, -366)
+target_path = "GridBlock01_0"
+property = "position"
+duration = 1.0
+value = [Vector2(2257, -854), Vector2(0, 0)]
+easing_type = 2
+easing_curve = 3
+
+[node name="NormalTrigger4" parent="." instance=ExtResource("3")]
+position = Vector2(3660, -366)
+target_path = "CubePortal_0"
+property = "position"
+duration = 1.0
+value = ["PLAYER", Vector2(1, 1)]
+easing_type = 2
+easing_curve = 3
+
+[node name="NormalTrigger6" parent="." instance=ExtResource("3")]
+position = Vector2(4270, -244)
+target_path = "CubePortal_0"
+property = "modulate"
+duration = 0.5
+value = [Color(1, 1, 1, 0), Vector2(1, 1)]
+easing_type = 2
+easing_curve = 3
+
+[node name="NormalTrigger5" parent="." instance=ExtResource("3")]
+position = Vector2(4087, -366)
+target_path = "GridBlock01_2"
+property = "position"
+duration = 1.0
+value = ["PLAYER", Vector2(1, 1)]
+relative = true
+easing_type = 2
+
+[node name="NormalTrigger9" parent="." instance=ExtResource("3")]
+position = Vector2(5551, -427)
+target_path = "GridBlock01_3"
+property = "position"
+duration = 5.0
+value = ["PLAYER", Vector2(1, 1)]
+relative = true
+
+[node name="NormalTrigger10" parent="." instance=ExtResource("3")]
+position = Vector2(5551, -549)
+target_path = "GridBlock01_4"
+property = "position"
+value = ["GridBlock01_5", Vector2(1, 1)]
+
+[node name="NormalTrigger7" parent="." instance=ExtResource("3")]
+position = Vector2(5307, -366)
+target_path = "Node2D"
+property = "position"
+duration = 5.0
+value = ["PLAYER", Vector2(1, 0)]
+relative = true
+easing_type = 1
+easing_curve = 10
+
+[node name="NormalTrigger8" parent="." instance=ExtResource("3")]
+position = Vector2(5551, -305)
+target_path = "GridBlock01_3"
+property = "rotation_degrees"
+duration = 5.0
+value = ["PLAYER", null]
+
+[node name="NormalTrigger2" parent="." instance=ExtResource("3")]
+position = Vector2(3233, -366)
+target_path = "PLAYERCAMERA"
+property = "static"
+duration = 1.0
+value = ["Marker2D", Vector2(1, 1)]
+easing_type = 2
+easing_curve = 5
+_is_exit_static = true
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(2867, -427)
+gizmo_extents = 61.0
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+position = Vector2(5429, -1159)
+gizmo_extents = 61.0
+
+[node name="PinkPad" parent="." instance=ExtResource("9_yj8hb")]
+position = Vector2(3050, -61)
+rotation = -1.57079
+reverse = true
+
+[node name="PinkPad2" parent="." instance=ExtResource("9_yj8hb")]
+position = Vector2(2745, -244)
+rotation = 1.57079
+reverse = true
+
+[node name="PinkPad3" parent="." instance=ExtResource("9_yj8hb")]
+position = Vector2(3050, -427)
+rotation = -1.57079
+reverse = true
+
+[node name="PinkPad4" parent="." instance=ExtResource("9_yj8hb")]
+position = Vector2(2745, -610)
+rotation = 1.57079
+reverse = true
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(5307, -244)
+metadata/_edit_group_ = true
+
+[node name="GridBlock01_11" parent="Node2D" instance=ExtResource("5")]
+position = Vector2(0, 183)
+
+[node name="GridBlock01_12" parent="Node2D" instance=ExtResource("5")]
+position = Vector2(122, 183)
+
+[node name="GridBlock01_2" parent="Node2D" instance=ExtResource("5")]
+position = Vector2(-122, 183)
+
+[node name="RegularPlatform" parent="." instance=ExtResource("8_btapo")]
+position = Vector2(3172, -61)
+rotation = -1.57079
+
+[node name="RegularPlatform2" parent="." instance=ExtResource("8_btapo")]
+position = Vector2(3172, -427)
+rotation = -1.57079
+
+[node name="RegularPlatform3" parent="." instance=ExtResource("8_btapo")]
+position = Vector2(2623, -244)
+rotation = 1.57079
+
+[node name="RegularPlatform4" parent="." instance=ExtResource("8_btapo")]
+position = Vector2(2623, -610)
+rotation = 1.57079
 
 [node name="CubePortal_0" parent="." instance=ExtResource("8_ccsqb")]
-position = Vector2(3965, -1159)
+position = Vector2(3843, -1037)

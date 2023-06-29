@@ -6,7 +6,7 @@ extends StaticBody2D
 @export var base_color: Color = Color("ffffff")
 @export var detail_color: Color = Color("ffffff")
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	$Base.texture = base_texture
 	$Detail.texture = detail_texture
 	$Base.modulate = base_color

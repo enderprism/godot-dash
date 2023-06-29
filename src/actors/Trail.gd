@@ -11,7 +11,7 @@ func _ready() -> void:
 	clear_points()
 	
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if enabled || get_tree().is_debugging_collisions_hint():
 		global_position = Vector2.ZERO
 		global_rotation = 0

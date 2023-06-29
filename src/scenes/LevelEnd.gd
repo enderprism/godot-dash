@@ -6,7 +6,7 @@ extends Area2D
 @onready var player_camera = get_node("/root/Scene/PlayerCamera")
 @onready var level_song = get_node("/root/Scene/LevelMusic")
 
-func _on_player_entered(body: PhysicsBody2D) -> void:
+func _on_player_entered(_body: PhysicsBody2D) -> void:
 	# TODO Replace with animation
 	player._x_direction = 0
 	var player_tween = get_tree().create_tween().set_parallel()
@@ -25,7 +25,7 @@ func _on_player_entered(body: PhysicsBody2D) -> void:
 	await player_tween.finished
 	$endSound.play()
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	player_camera.limit_right = global_position.x - player_camera.offset.x
 	global_position.y = player_camera.get_screen_center_position().y
 	scale.y = 1/player_camera.zoom.y

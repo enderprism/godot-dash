@@ -18,7 +18,7 @@ func _pause_game():
 
 func _unpause_game():
 	hide()
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED_HIDDEN)
 #	rect_position = base_position
 	get_tree().paused = false
 

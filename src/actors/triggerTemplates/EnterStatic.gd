@@ -29,6 +29,6 @@ func enter_static(camera):
 		duration
 	).set_trans(easing_curve).set_ease(easing_type)
 	trigger_tween.play()
-	CurrentLevel.set_if_camera_static(true)
+#	CurrentLevel.set_if_camera_static(true)
 	await trigger_tween.finished
-	is_static = true
+#	is_static = true

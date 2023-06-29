@@ -34,14 +34,6 @@ value = ["StaticCenter", Vector2(1, 1)]
 easing_type = 2
 easing_curve = 3
 
-[node name="NormalTrigger4" parent="." instance=ExtResource("2")]
-position = Vector2(61, -854)
-target_path = "PLAYERCAMERA"
-property = "static"
-value = ["StaticCenter", Vector2(1, 1)]
-easing_type = 2
-easing_curve = 3
-
 [node name="StaticCenter" type="Marker2D" parent="."]
 position = Vector2(1525, -610)
 
@@ -229,9 +221,8 @@ easing_curve = 9
 position = Vector2(1281, -122)
 target_path = "StructureExit"
 property = "position"
-duration = 0.5
+duration = 0.2
 value = [Vector2(1647, 122), Vector2(0, 0)]
-easing_type = 2
 easing_curve = 3
 
 [node name="TouchTrigger3" parent="." instance=ExtResource("13")]

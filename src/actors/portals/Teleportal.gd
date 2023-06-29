@@ -6,7 +6,7 @@ extends Area2D
 @export var one_time: bool = false
 var teleported: bool = false
 
-func _on_Teleportal_area_entered(area: Area2D) -> void:
+func _on_Teleportal_area_entered(_area: Area2D) -> void:
 	if y_only:
 		player.global_position.y = get_node("ExitTeleportal").get_global_position().y
 	elif x_only:

@@ -71,12 +71,13 @@ var floor_angle: float = get_floor_angle()
 
 func _ready() -> void:
 	player_camera.limit_right = 10000000
+
 	if is_platformer:
 		player_camera.offset.x = 0
 		player_camera.drag_horizontal_enabled = false
 		player_camera.drag_vertical_enabled = false
 		player_camera.position_smoothing_enabled = true
-	_velocity = Vector2.ZERO
+	velocity = Vector2.ZERO
 	direction = Vector2.ZERO
 	_is_hazard_colliding = false
 	UP_DIRECTION.y = -1.0
@@ -124,7 +125,7 @@ func _physics_process(delta: float) -> void:
 			_can_fly = is_on_floor() || is_on_ceiling()
 		elif arrow_trigger_direction == Vector2(-1.0, 0.0):
 			_can_fly = is_on_wall()
-	var is_jump_interrupted: bool = Input.is_action_just_released("jump") and _velocity.y < 0.0
+	var is_jump_interrupted: bool = Input.is_action_just_released("jump") and velocity.y < 0.0
 	
 	direction = get_direction(_press_or_hold)
 
@@ -172,7 +173,7 @@ func _physics_process(delta: float) -> void:
 
 	if _is_spider_pad_colliding && !_is_dead:
 		do_spider_jump()
-		_velocity.y = 0
+		velocity.y = 0
 		_jump_direction = UP_DIRECTION.y * -1
 		_is_spider_pad_colliding = false
 
@@ -210,7 +211,7 @@ func _physics_process(delta: float) -> void:
 		_is_black_orb_colliding || _is_spider_orb_colliding || _is_toggle_orb_colliding)))):
 		if (Input.is_action_just_pressed("jump") \
 			&& (is_on_floor() || is_on_ceiling()) && gamemode == "ball"):
-			_velocity.y *= -1
+			velocity.y *= -1
 		_is_blue_pad_colliding = false # reverts blue pad/orb
 		_is_blue_orb_colliding = false
 		_is_green_orb_colliding = false
@@ -229,10 +230,10 @@ func _physics_process(delta: float) -> void:
 			_dash_orb_y_offset = sqrt(pow(speed.x * _speed_multiplier, 2) + pow(speed.y * gravityMod, 2)) * sin(_dash_orb_rotation - PI/2)
 		gravity = 0
 	if (Input.is_action_pressed("jump") && _is_dashing):
-		_velocity.y = 0
+		velocity.y = 0
 	if _is_dashing && Input.is_action_just_released("jump"):
 		stopDashing()
-	_velocity = calculate_move_velocity(_velocity, direction, speed, _holdable_gamemode, gamemode, _is_dashing, is_jump_interrupted, _dash_orb_y_offset)
+	velocity = calculate_move_velocity(velocity, direction, speed, _holdable_gamemode, gamemode, _is_dashing, is_jump_interrupted, _dash_orb_y_offset)
 	
 	# Sprite Rotation
 	if gamemode == "cube":
@@ -262,7 +263,7 @@ func _physics_process(delta: float) -> void:
 
 	if !level_ended:
 		changeSpriteOnGamemode()
-		set_velocity(_velocity)
+		set_velocity(velocity)
 		set_floor_constant_speed_enabled(true)
 		set_up_direction(UP_DIRECTION)
 		move_and_slide()
@@ -327,13 +328,9 @@ func calculate_move_velocity(
 	
 	if arrow_trigger_direction == Vector2(0.0, -1.0):
 		_out_vertical = linear_velocity.y
-		if !is_equal_approx(get_floor_angle(UP_DIRECTION), deg_to_rad(90.0)):
-			_out_vertical += sqrt(pow(625*_speed_multiplier, 2) + pow(1100*_speed_multiplier, 2)) * sin(get_floor_angle(UP_DIRECTION)) * -1
 	elif arrow_trigger_direction == Vector2(-1.0, 0.0):
 		_out_vertical = linear_velocity.x
-#		if !is_equal_approx(get_floor_angle(UP_DIRECTION), deg_to_rad(0.0)):
-#			_out_vertical = sqrt(pow(625*_speed_multiplier, 2) + pow(1100*_speed_multiplier, 2)) * sin(get_floor_angle(UP_DIRECTION))
-	
+
 	_out_horizontal = speed.x * direction.x * _speed_multiplier
 	if _is_dashing:
 		gravityMod = 0
@@ -406,6 +403,16 @@ func calculate_move_velocity(
 		_out_vertical = 0.0
 	_out_vertical = clampf(_out_vertical, max_speed.y, -max_speed.y)
 	
+#	if arrow_trigger_direction == Vector2(0.0, -1.0):
+#		var slope_glide_offset: float = sqrt(pow(speed.x*_speed_multiplier, 2) + pow(speed.y*_speed_multiplier, 2)) * sin(get_floor_angle(UP_DIRECTION)) * -1
+#		slope_glide_offset -= 50
+#		print(rad_to_deg(get_floor_angle(UP_DIRECTION)), ", ", slope_glide_offset)
+#		if get_floor_angle(UP_DIRECTION) != 0.0 && (is_on_floor() || is_on_ceiling()):
+#			_out_vertical += slope_glide_offset * sign(get_floor_angle(UP_DIRECTION))
+#	elif arrow_trigger_direction == Vector2(-1.0, 0.0):
+#		if !is_equal_approx(get_floor_angle(UP_DIRECTION), deg_to_rad(-90.0)):
+#			_out_vertical = sqrt(pow(625*_speed_multiplier, 2) + pow(1100*_speed_multiplier, 2)) * sin(get_floor_angle(UP_DIRECTION))
+	
 	if arrow_trigger_direction == Vector2(0.0, -1.0):
 		$SpiderSprites.rotation_degrees = 0.0
 		out.x = _out_horizontal
@@ -425,12 +432,12 @@ var smooth_rot_speed: float = 1000*0.016667
 
 func rotate_sprite(delta, direction):
 	if arrow_trigger_direction == Vector2(0.0, -1.0):
-		sprite_rotation_used_axis = _velocity.y
-		vel_horizontal_axis = _velocity.x
+		sprite_rotation_used_axis = velocity.y
+		vel_horizontal_axis = velocity.x
 		arrow_trigger_sprite_rotation_offset = 0
 	elif arrow_trigger_direction == Vector2(-1.0, 0.0):
-		sprite_rotation_used_axis = _velocity.x
-		vel_horizontal_axis = _velocity.y
+		sprite_rotation_used_axis = velocity.x
+		vel_horizontal_axis = velocity.y
 		arrow_trigger_sprite_rotation_offset = -90
 	
 	if _is_dashing:
@@ -541,7 +548,7 @@ func player_dies():
 	_is_dead = true
 	_is_dashing = false
 	gravity = 0
-	_velocity = Vector2(0.0, 0.0)
+	velocity = Vector2(0.0, 0.0)
 	UP_DIRECTION.y = -1
 	CurrentLevel.reset()
 	get_node("/root/Scene/LevelMusic").playing = false
@@ -572,17 +579,17 @@ func _spider_manage_states():
 	elif (is_on_floor() || is_on_ceiling() || is_on_wall()) && direction.x != 0 && _speed_multiplier == 1.849: # speed 4
 		_spider_state_machine.travel("walkSpeed4")
 	elif UP_DIRECTION.y < 0: # normal gravity
-		if !(is_on_floor() || is_on_ceiling() || is_on_wall()) && _velocity.y < 0 && !_is_dashing:
+		if !(is_on_floor() || is_on_ceiling() || is_on_wall()) && velocity.y < 0 && !_is_dashing:
 			_spider_state_machine.travel("jump")
 			_is_spider_jumping = true
-		elif (!(is_on_floor() || is_on_ceiling() || is_on_wall()) && _velocity.y > 0) || _is_dashing:
+		elif (!(is_on_floor() || is_on_ceiling() || is_on_wall()) && velocity.y > 0) || _is_dashing:
 			_spider_state_machine.travel("fall loop")
 			_is_spider_jumping = false
 	elif UP_DIRECTION.y > 0: # inverted gravity
-		if !(is_on_floor() || is_on_ceiling() || is_on_wall()) && _velocity.y > 0 && !_is_dashing:
+		if !(is_on_floor() || is_on_ceiling() || is_on_wall()) && velocity.y > 0 && !_is_dashing:
 			_spider_state_machine.travel("jump")
 			_is_spider_jumping = true
-		elif (!(is_on_floor() || is_on_ceiling() || is_on_wall()) && _velocity.y < 0) || _is_dashing:
+		elif (!(is_on_floor() || is_on_ceiling() || is_on_wall()) && velocity.y < 0) || _is_dashing:
 			_spider_state_machine.travel("fall loop")
 			_is_spider_jumping = false
 
@@ -605,7 +612,7 @@ func do_spider_jump():
 		if not _spider_orb_opposite_gravity:
 			gravity *= -1
 			UP_DIRECTION.y *= -1
-			_velocity.y = 0
+			velocity.y = 0
 			_jump_direction = UP_DIRECTION.y * -1
 		emit_signal("spider_jumped", abs(arrival_coordinates - old_pos.y))
 		if mini && UP_DIRECTION.y > 0 && _is_spider_orb_colliding:
@@ -624,7 +631,7 @@ func do_spider_jump():
 		if not _spider_orb_opposite_gravity:
 			gravity *= -1
 			UP_DIRECTION.y *= -1
-			_velocity.x *= -1
+			velocity.x *= -1
 			_jump_direction = UP_DIRECTION.y * -1
 		emit_signal("spider_jumped", abs(arrival_coordinates - old_pos.x))
 		if mini && UP_DIRECTION.y > 0 && _is_spider_orb_colliding:
