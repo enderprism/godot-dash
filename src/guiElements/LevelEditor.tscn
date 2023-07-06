@@ -326,22 +326,40 @@ texture_hover = ExtResource("16")
 texture_disabled = ExtResource("16")
 texture_focused = ExtResource("16")
 
-[node name="GraphEdit" type="GraphEdit" parent="CanvasLayer"]
-offset_left = 244.0
-offset_top = 61.0
-offset_right = 1464.0
-offset_bottom = 732.0
-scroll_offset = Vector2(-40, -40)
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="GraphNode" type="GraphNode" parent="CanvasLayer/GraphEdit"]
+[node name="TabContainer" type="TabContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -577.0
+offset_top = -477.0
+offset_right = 577.0
+offset_bottom = 234.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Trigger Editor" type="GraphEdit" parent="CanvasLayer/Control/TabContainer"]
+layout_mode = 2
+
+[node name="GraphNode" type="GraphNode" parent="CanvasLayer/Control/TabContainer/Trigger Editor"]
 layout_mode = 0
-offset_left = 601.0
-offset_top = 150.0
-offset_right = 963.0
-offset_bottom = 351.0
+offset_left = 574.0
+offset_top = 181.0
+offset_right = 936.0
+offset_bottom = 382.0
 mouse_filter = 1
 title = "Trigger"
-position_offset = Vector2(561, 110)
+position_offset = Vector2(574, 181)
 show_close = true
 resizable = true
 slot/0/left_enabled = false
@@ -363,25 +381,29 @@ slot/1/right_color = Color(1, 1, 1, 1)
 slot/1/right_icon = null
 slot/1/draw_stylebox = true
 
-[node name="Button" type="Button" parent="CanvasLayer/GraphEdit/GraphNode"]
+[node name="MenuButton" type="MenuButton" parent="CanvasLayer/Control/TabContainer/Trigger Editor/GraphNode"]
 layout_mode = 2
-text = "button"
+text = "Add/Replace"
+item_count = 2
+popup/item_0/text = "Add"
+popup/item_0/id = 0
+popup/item_1/text = "Replace"
+popup/item_1/id = 1
 
-[node name="TextEdit" type="TextEdit" parent="CanvasLayer/GraphEdit/GraphNode"]
+[node name="TextEdit" type="TextEdit" parent="CanvasLayer/Control/TabContainer/Trigger Editor/GraphNode"]
 layout_mode = 2
 size_flags_vertical = 3
-placeholder_text = "text edit
-"
+placeholder_text = "Final Value"
 
-[node name="GraphNode2" type="GraphNode" parent="CanvasLayer/GraphEdit"]
+[node name="GraphNode2" type="GraphNode" parent="CanvasLayer/Control/TabContainer/Trigger Editor"]
 layout_mode = 0
-offset_left = 163.0
-offset_top = 303.0
-offset_right = 525.0
-offset_bottom = 504.0
+offset_left = 142.0
+offset_top = 301.0
+offset_right = 504.0
+offset_bottom = 502.0
 mouse_filter = 1
 title = "Object"
-position_offset = Vector2(123, 263)
+position_offset = Vector2(142, 301)
 show_close = true
 resizable = true
 slot/0/left_enabled = false
@@ -421,28 +443,28 @@ slot/3/right_color = Color(1, 1, 1, 1)
 slot/3/right_icon = null
 slot/3/draw_stylebox = true
 
-[node name="Label" type="Label" parent="CanvasLayer/GraphEdit/GraphNode2"]
+[node name="Label" type="Label" parent="CanvasLayer/Control/TabContainer/Trigger Editor/GraphNode2"]
 layout_mode = 2
 size_flags_vertical = 3
 text = "Position"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="CanvasLayer/GraphEdit/GraphNode2"]
+[node name="Label2" type="Label" parent="CanvasLayer/Control/TabContainer/Trigger Editor/GraphNode2"]
 layout_mode = 2
 size_flags_vertical = 3
 text = "Rotation (degrees)"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label3" type="Label" parent="CanvasLayer/GraphEdit/GraphNode2"]
+[node name="Label3" type="Label" parent="CanvasLayer/Control/TabContainer/Trigger Editor/GraphNode2"]
 layout_mode = 2
 size_flags_vertical = 3
 text = "Scale"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label4" type="Label" parent="CanvasLayer/GraphEdit/GraphNode2"]
+[node name="Label4" type="Label" parent="CanvasLayer/Control/TabContainer/Trigger Editor/GraphNode2"]
 layout_mode = 2
 size_flags_vertical = 3
 text = "Color"
