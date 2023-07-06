@@ -198,9 +198,8 @@ follow_viewport_enabled = true
 follow_viewport_scale = 0.333
 
 [node name="Background" parent="Background2" instance=ExtResource("9")]
-position = Vector2(1, 489)
+position = Vector2(1, 642.153)
 scale = Vector2(3, 3)
-metadata/_edit_lock_ = true
 
 [node name="Levels" type="Node2D" parent="."]
 position = Vector2(0, 488)
@@ -258,7 +257,6 @@ round_precision = 16
 antialiased = true
 script = ExtResource("51")
 length = 150.0
-enabled = false
 
 [node name="PlayerCamera" type="Camera2D" parent="."]
 unique_name_in_owner = true

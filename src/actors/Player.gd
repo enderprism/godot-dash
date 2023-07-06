@@ -61,6 +61,7 @@ var _is_green_orb_jumping: bool = false
 var _is_yellow_gravity_portal_colliding: bool = false
 var _is_blue_gravity_portal_colliding: bool = false
 
+var _robot_timer: float
 var _jump_direction = 0.0
 var _x_direction = 1
 var _icon_direction = 1
@@ -68,6 +69,8 @@ var _press_or_hold: bool = false
 var _holdable_gamemode: = false
 var _can_fly = false
 var floor_angle: float = get_floor_angle()
+var _is_player_onground: bool # doesn't depend on gameplay direction
+
 
 func _ready() -> void:
 	player_camera.limit_right = 10000000
@@ -88,6 +91,11 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 #	snap_vector = Vector2(UP_DIRECTION.x, UP_DIRECTION.y * -1)
 
+	if arrow_trigger_direction == Vector2(0.0, -1.0):
+		_is_player_onground = is_on_floor()
+	elif arrow_trigger_direction == Vector2(-1.0, 0.0):
+		_is_player_onground = is_on_wall()
+
 	if Input.is_action_just_pressed("jump") && _in_jblock:
 		_in_jblock = false
 	
@@ -106,7 +114,7 @@ func _physics_process(delta: float) -> void:
 
 	global_rotation_degrees = 0.0
 
-	if gamemode == "robot" || gamemode == "ball" || gamemode == "spider":
+	if gamemode == "ball" || gamemode == "spider":
 		_press_or_hold = Input.is_action_just_pressed("jump")
 		_holdable_gamemode = false
 		_can_fly = is_on_floor() || is_on_wall() || is_on_ceiling()
@@ -118,13 +126,14 @@ func _physics_process(delta: float) -> void:
 		_press_or_hold = Input.is_action_just_pressed("jump")
 		_can_fly = true
 		_holdable_gamemode = true
+	elif gamemode == "robot":
+		_press_or_hold = Input.is_action_pressed("jump")
+		_can_fly = true
+		_holdable_gamemode = false
 	else: # cube
 		_press_or_hold = Input.is_action_pressed("jump")
 		_holdable_gamemode = true
-		if arrow_trigger_direction == Vector2(0.0, -1.0):
-			_can_fly = is_on_floor() || is_on_ceiling()
-		elif arrow_trigger_direction == Vector2(-1.0, 0.0):
-			_can_fly = is_on_wall()
+		_can_fly = _is_player_onground
 	var is_jump_interrupted: bool = Input.is_action_just_released("jump") and velocity.y < 0.0
 	
 	direction = get_direction(_press_or_hold)
@@ -180,7 +189,13 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("jump") && _is_spider_orb_colliding && _has_let_go_of_orb && !_is_dead:
 		do_spider_jump()
 		_orb_jumped = true
-		
+	
+
+	
+	if Input.is_action_just_pressed("jump") && gamemode == "robot" && _is_player_onground:
+		_robot_timer = 0.25 / delta
+	if _robot_timer > 0:
+		_robot_timer -= 1
 	
 #	if !is_static && !is_platformer:
 #		# Reset the camera offset if in Arrow Trigger
@@ -292,6 +307,8 @@ func get_direction(_press_or_hold: bool) -> Vector2:
 		else:
 			_jump_direction = UP_DIRECTION.y * -1 # contains black orb
 	
+
+	
 	if is_platformer:
 		_x_direction = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 		if Input.is_action_pressed("move_left") || Input.is_action_pressed("move_right"):
@@ -373,18 +390,16 @@ func calculate_move_velocity(
 			_out_vertical = speed.y * UP_DIRECTION.y * -1.25
 		elif gamemode == "ship" || gamemode == "swingcopter":
 			_out_vertical = speed.y * direction.y * 0.05 * gravityMod
+		elif gamemode == "robot":
+			if _robot_timer > 0:
+				_out_vertical = sqrt(pow(625*_speed_multiplier, 2) + pow(1100*_speed_multiplier, 2)) * sin(PI/6) * UP_DIRECTION.y
 		else:
 			if gamemode == "wave":
 				if !is_wave_dashing:
 					_out_vertical = sqrt(pow(625*_speed_multiplier, 2) + pow(1100*_speed_multiplier, 2)) * sin(PI/6) * UP_DIRECTION.y if !mini else sqrt(pow(625*_speed_multiplier, 2) + pow(1100*_speed_multiplier, 2)) * sin(PI/4+PI/8) * UP_DIRECTION.y
 				else: _out_vertical = 0.0
-			elif (!gamemode == "spider" || !_is_spider_pad_colliding) && !_in_jblock:
+			elif (!gamemode == "spider" || !_is_spider_pad_colliding) && !_in_jblock: # CUBE
 				_out_vertical = speed.y * direction.y * gravityMod
-	var _is_player_onground: bool # doesn't depend on gameplay direction
-	if arrow_trigger_direction == Vector2(0.0, -1.0):
-			_is_player_onground = is_on_floor()
-	elif arrow_trigger_direction == Vector2(-1.0, 0.0):
-			_is_player_onground = is_on_wall()
 	if direction.y == -UP_DIRECTION.y && _is_player_onground && !_is_dashing:
 		_out_vertical = 0.0
 	if direction.y == UP_DIRECTION.y * -1 && gamemode == "wave":
@@ -399,8 +414,8 @@ func calculate_move_velocity(
 #		_out_vertical = speed.y * direction.y * gravityMod * -1.1
 #		_is_green_orb_colliding = false
 #		_is_green_orb_jumping = false
-	if is_jump_interrupted && !holdable_gamemode && !(gamemode == "ball" || gamemode == "spider"):
-		_out_vertical = 0.0
+#	if is_jump_interrupted && !holdable_gamemode && !(gamemode == "ball" || gamemode == "spider"):
+#		_out_vertical = 0.0
 	_out_vertical = clampf(_out_vertical, max_speed.y, -max_speed.y)
 	
 #	if arrow_trigger_direction == Vector2(0.0, -1.0):
@@ -651,6 +666,7 @@ func stopDashing():
 	gravity = gravityBackup if !gamemode == "ship" else shipGravityDirection * UP_DIRECTION.y * -1
 
 var cube_texture = preload("res://assets/playerTextures/cube.png")
+var robot_texture = preload("res://assets/playerTextures/robot_placeholder.png")
 var ship_texture = preload("res://assets/playerTextures/ship.png")
 var jetpack_texture = preload("res://assets/playerTextures/jetpack.png")
 var ufo_texture = preload("res://assets/playerTextures/ufo.png")
@@ -702,8 +718,8 @@ func changeSpriteOnGamemode() -> void:
 		$Hitbox.scale = Vector2(0.5, 0.5)
 		$AreaDetection.scale = Vector2(0.5, 0.5)
 	elif gamemode == "robot":
-		$Icon.set_texture(cube_texture)
-		$Icon.offset = Vector2(0.0, 0.0)
+		$Icon.set_texture(robot_texture)
+		$Icon.offset = Vector2(0.0, -20.0)
 		$Icon.scale = Vector2(1.0, 1.0)
 		$Hitbox.scale = Vector2(1.0, 1.0)
 		$AreaDetection.scale = Vector2(1.05, 1.05)

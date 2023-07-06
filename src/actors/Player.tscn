@@ -1,4 +1,4 @@
-[gd_scene load_steps=103 format=3 uid="uid://t4l1br5nnw6u"]
+[gd_scene load_steps=120 format=3 uid="uid://t4l1br5nnw6u"]
 
 [ext_resource type="Script" path="res://src/actors/Player.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://ciwetdl2j77bf" path="res://assets/particles/particle_00_001.png" id="3"]
@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://dvsb63irwcyx7" path="res://assets/playerTextures/spiderParts/Leg2_Glow.png" id="15"]
 [ext_resource type="Texture2D" uid="uid://d0yt0nrohpp2" path="res://assets/playerTextures/spiderParts/Leg2.png" id="16"]
 [ext_resource type="Texture2D" uid="uid://b87yfxupngkxq" path="res://assets/playerTextures/spiderParts/Leg3.png" id="17"]
-[ext_resource type="Texture2D" uid="uid://cgpdqjb052gis" path="res://assets/playerTextures/cube.png" id="17_njb3s"]
+[ext_resource type="Texture2D" uid="uid://clxqhjqig6lbj" path="res://assets/playerTextures/robot_placeholder.png" id="17_kd05l"]
 [ext_resource type="Texture2D" uid="uid://cju1m8somc2wc" path="res://assets/playerTextures/dashFire/playerDash2_006.png" id="18"]
 [ext_resource type="Texture2D" uid="uid://38j67l06eylb" path="res://assets/playerTextures/dashFire/playerDash2_012.png" id="19"]
 [ext_resource type="Texture2D" uid="uid://cck34rk0rymyb" path="res://assets/playerTextures/dashFire/playerDash2_009.png" id="20"]
@@ -27,7 +27,21 @@
 [ext_resource type="Texture2D" uid="uid://bjov6onh8b5sp" path="res://assets/playerTextures/dashFire/playerDash2_003.png" id="26"]
 [ext_resource type="Texture2D" uid="uid://3rdef6l8ljui" path="res://assets/playerTextures/dashFire/playerDash2_002.png" id="27"]
 [ext_resource type="Texture2D" uid="uid://3xkvuy4dryq4" path="res://assets/playerTextures/dashFire/playerDash2_007.png" id="28"]
+[ext_resource type="Texture2D" uid="uid://cbvboy0d0skcd" path="res://assets/playerTextures/robotParts/robot-back-leg.png" id="28_7wyc2"]
+[ext_resource type="Texture2D" uid="uid://bm4c53vuyth5p" path="res://assets/playerTextures/robotParts/robot-front-leg.png" id="28_64fsm"]
+[ext_resource type="Texture2D" uid="uid://c2r5up83c51ke" path="res://assets/playerTextures/robotParts/robot-left-foot.png" id="28_140q2"]
+[ext_resource type="Texture2D" uid="uid://jboom3c8c0gl" path="res://assets/playerTextures/robotParts/robot-head.png" id="28_kdsox"]
+[ext_resource type="Texture2D" uid="uid://d11cmpwogitld" path="res://assets/playerTextures/robotParts/robot-front-leg-glow.png" id="28_lqygn"]
 [ext_resource type="Texture2D" uid="uid://pcqax8kcjhg1" path="res://assets/playerTextures/dashFire/playerDash2_005.png" id="29"]
+[ext_resource type="Texture2D" uid="uid://dpx5euvqr6fuy" path="res://assets/playerTextures/robotParts/robot-head-glow.png" id="29_a425x"]
+[ext_resource type="Texture2D" uid="uid://8xg1fog7vct2" path="res://assets/playerTextures/robotParts/robot-back-leg-glow.png" id="29_b7alm"]
+[ext_resource type="Texture2D" uid="uid://cfekvpxrv6iux" path="res://assets/playerTextures/robotParts/robot-left-foot-glow.png" id="29_ccigk"]
+[ext_resource type="Texture2D" uid="uid://os1e1ttemntt" path="res://assets/playerTextures/robotParts/robot-front-foot-glow.png" id="29_ir740"]
+[ext_resource type="Texture2D" uid="uid://dscofgurfxg5e" path="res://assets/playerTextures/robotParts/robot-front-foot.png" id="30_6mwcy"]
+[ext_resource type="Texture2D" uid="uid://jwaevo601cgy" path="res://assets/playerTextures/robotParts/robot-back-connector-glow.png" id="30_518md"]
+[ext_resource type="Texture2D" uid="uid://d4fq1dxk1306e" path="res://assets/playerTextures/robotParts/robot-back-connector.png" id="31_fga5i"]
+[ext_resource type="Texture2D" uid="uid://c1axlgievy5if" path="res://assets/playerTextures/robotParts/robot-front-connector.png" id="32_78bd4"]
+[ext_resource type="Texture2D" uid="uid://bh2ng401kmo5g" path="res://assets/playerTextures/robotParts/robot-front-connector-glow.png" id="33_bqwp2"]
 
 [sub_resource type="Curve" id="11"]
 _data = [Vector2(0.125628, 1), 0.0, 0.0, 0, 0, Vector2(0.361809, 0), 0.0, 0.0, 0, 0]
@@ -1090,6 +1104,164 @@ graph_offset = Vector2(-309, -85)
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="18"]
 
+[sub_resource type="Animation" id="Animation_4ijcw"]
+resource_name = "run"
+loop_mode = 1
+step = 0.02
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("front-foot:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(2.75, 21), Vector2(-6.75, 21), Vector2(-28, 13), Vector2(-29.65, 11.8), Vector2(-22, 18), Vector2(2, 17.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("front-foot:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 1.06216, 1.46642, -0.519574]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("front-leg:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-8, 15.5), Vector2(-11.5, 15.5), Vector2(-20.5, 2.5), Vector2(-19.4375, 2.625), Vector2(-13, 13.5), Vector2(-7.93452, 13.6548), Vector2(-9.40179, 11.4821)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("front-leg:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.298526, 1.80596, 2.06346, 1.8344, 1.39622, 0.160503]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("front-connector:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-10.25, 1.25)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("front-connector:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.278363, 1.17327, 1.5948, -1.54144, -1.54144]
+}
+
+[sub_resource type="Animation" id="Animation_1onlg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("front-foot:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.75, 21)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("front-foot:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("front-leg:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-8, 15.5)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("front-leg:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("front-connector:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-12.75, 3.25)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("front-connector:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_47nt3"]
+_data = {
+"RESET": SubResource("Animation_1onlg"),
+"run": SubResource("Animation_4ijcw")
+}
+
 [sub_resource type="Animation" id="68"]
 resource_name = "Camera3D go from center to left edge"
 length = 0.2
@@ -1246,8 +1418,10 @@ amount = 25
 process_material = SubResource("14")
 texture = ExtResource("3")
 script = ExtResource("5")
+metadata/_edit_lock_ = true
 
 [node name="DashFire" type="AnimatedSprite2D" parent="."]
+visible = false
 modulate = Color(0, 1, 1, 1)
 material = SubResource("5")
 position = Vector2(-7.62939e-06, -66)
@@ -1270,16 +1444,19 @@ randomness = 1.0
 metadata/_edit_lock_ = true
 
 [node name="PlayerGroundParticles" type="GPUParticles2D" parent="."]
+visible = false
 z_index = -50
 position = Vector2(0, -66)
 amount = 25
 process_material = SubResource("13")
 texture = ExtResource("3")
 script = ExtResource("6")
+metadata/_edit_lock_ = true
 
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(0, -66)
-texture = ExtResource("17_njb3s")
+texture = ExtResource("17_kd05l")
+offset = Vector2(0, -20)
 metadata/_edit_lock_ = true
 
 [node name="AreaDetection" type="Area2D" parent="."]
@@ -1292,10 +1469,11 @@ collision_mask = 14
 shape = SubResource("1")
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
+visible = false
+z_index = 5
 position = Vector2(0, -66)
 shape = SubResource("1")
 metadata/_edit_lock_ = true
-metadata/_edit_group_ = true
 
 [node name="BlockOverlap" type="Area2D" parent="."]
 modulate = Color(0, 0, 0, 1)
@@ -1308,6 +1486,7 @@ position = Vector2(0, -66)
 shape = SubResource("82")
 
 [node name="SpiderSprites" type="Node2D" parent="."]
+visible = false
 position = Vector2(0, -66)
 scale = Vector2(2, 2)
 metadata/_edit_lock_ = true
@@ -1319,7 +1498,7 @@ collision_mask = 42
 collide_with_areas = true
 
 [node name="Leg3" type="Marker2D" parent="SpiderSprites"]
-position = Vector2(8.5, 16.5)
+position = Vector2(-3.65463, 16.0432)
 
 [node name="Leg3" type="Sprite2D" parent="SpiderSprites/Leg3"]
 z_index = 2
@@ -1330,7 +1509,8 @@ z_index = 1
 texture = ExtResource("8")
 
 [node name="Leg4" type="Marker2D" parent="SpiderSprites"]
-position = Vector2(28, 16.5)
+position = Vector2(20.5161, 11.9498)
+rotation = 0.261799
 
 [node name="Leg4" type="Sprite2D" parent="SpiderSprites/Leg4"]
 z_index = 2
@@ -1342,7 +1522,8 @@ z_index = 1
 texture = ExtResource("14")
 
 [node name="Head" type="Marker2D" parent="SpiderSprites"]
-position = Vector2(0, -6)
+position = Vector2(0, -7.53093)
+rotation = -0.0400796
 
 [node name="Head" type="Sprite2D" parent="SpiderSprites/Head"]
 z_index = 2
@@ -1354,7 +1535,8 @@ position = Vector2(0, 7)
 texture = ExtResource("9")
 
 [node name="Leg1" type="Marker2D" parent="SpiderSprites"]
-position = Vector2(-24.5, 14)
+position = Vector2(-31.3093, 16.6205)
+rotation = 0.133843
 
 [node name="Leg1" type="Sprite2D" parent="SpiderSprites/Leg1"]
 z_index = 2
@@ -1366,7 +1548,8 @@ z_index = 1
 texture = ExtResource("11")
 
 [node name="Leg2" type="Marker2D" parent="SpiderSprites"]
-position = Vector2(-7.5, 15)
+position = Vector2(14.4027, 13.8273)
+rotation = 0.0432494
 
 [node name="Leg2" type="Sprite2D" parent="SpiderSprites/Leg2"]
 z_index = 2
@@ -1397,6 +1580,116 @@ parameters/walkSpeed1/TimeScale/scale = 3.0
 parameters/walkSpeed2/TimeScale/scale = 3.5
 parameters/walkSpeed3/TimeScale/scale = 4.0
 parameters/walkSpeed4/TimeScale/scale = 4.5
+
+[node name="RobotSprites" type="Node2D" parent="."]
+position = Vector2(0, -66)
+scale = Vector2(2, 2)
+metadata/_edit_lock_ = true
+
+[node name="back-leg" type="Marker2D" parent="RobotSprites"]
+position = Vector2(-16.5, 12)
+scale = Vector2(0.5, 0.5)
+metadata/_edit_group_ = true
+
+[node name="Robot-back-leg" type="Sprite2D" parent="RobotSprites/back-leg"]
+z_index = 2
+texture = ExtResource("28_7wyc2")
+
+[node name="Robot-back-leg-glow" type="Sprite2D" parent="RobotSprites/back-leg"]
+z_index = 1
+position = Vector2(0, 0.5)
+texture = ExtResource("29_b7alm")
+
+[node name="back-connector" type="Marker2D" parent="RobotSprites"]
+position = Vector2(-15.5, 0.5)
+scale = Vector2(0.5, 0.5)
+metadata/_edit_group_ = true
+
+[node name="Robot-back-connector-glow" type="Sprite2D" parent="RobotSprites/back-connector"]
+z_index = 1
+position = Vector2(0, 1)
+texture = ExtResource("30_518md")
+
+[node name="Robot-back-connector" type="Sprite2D" parent="RobotSprites/back-connector"]
+z_index = 2
+texture = ExtResource("31_fga5i")
+
+[node name="left-foot" type="Marker2D" parent="RobotSprites"]
+position = Vector2(-7, 21)
+scale = Vector2(0.5, 0.5)
+metadata/_edit_group_ = true
+
+[node name="Robot-left-foot" type="Sprite2D" parent="RobotSprites/left-foot"]
+z_index = 2
+position = Vector2(-0.5, 0)
+texture = ExtResource("28_140q2")
+
+[node name="Robot-left-foot-glow" type="Sprite2D" parent="RobotSprites/left-foot"]
+z_index = 1
+texture = ExtResource("29_ccigk")
+
+[node name="head" type="Marker2D" parent="RobotSprites"]
+position = Vector2(3, -17.5)
+scale = Vector2(0.5, 0.5)
+metadata/_edit_group_ = true
+
+[node name="Robot-head" type="Sprite2D" parent="RobotSprites/head"]
+z_index = 2
+texture = ExtResource("28_kdsox")
+
+[node name="Robot-head-glow" type="Sprite2D" parent="RobotSprites/head"]
+z_index = 1
+texture = ExtResource("29_a425x")
+
+[node name="front-leg" type="Marker2D" parent="RobotSprites"]
+position = Vector2(-8, 15.5)
+scale = Vector2(0.5, 0.5)
+metadata/_edit_group_ = true
+
+[node name="Robot-front-leg-glow" type="Sprite2D" parent="RobotSprites/front-leg"]
+z_index = 1
+texture = ExtResource("28_lqygn")
+
+[node name="Robot-front-leg" type="Sprite2D" parent="RobotSprites/front-leg"]
+z_index = 2
+texture = ExtResource("28_64fsm")
+
+[node name="front-foot" type="Marker2D" parent="RobotSprites"]
+position = Vector2(2.75, 21)
+metadata/_edit_group_ = true
+
+[node name="Robot-front-foot-glow" type="Sprite2D" parent="RobotSprites/front-foot"]
+z_index = 1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("29_ir740")
+
+[node name="Robot-front-foot" type="Sprite2D" parent="RobotSprites/front-foot"]
+z_index = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("30_6mwcy")
+
+[node name="front-connector" type="Marker2D" parent="RobotSprites"]
+position = Vector2(-12.75, 3.25)
+metadata/_edit_group_ = true
+
+[node name="Robot-front-connector" type="Sprite2D" parent="RobotSprites/front-connector"]
+z_index = 2
+position = Vector2(-2, 2.5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("32_78bd4")
+
+[node name="Robot-front-connector-glow" type="Sprite2D" parent="RobotSprites/front-connector"]
+z_index = 1
+position = Vector2(-2, 2)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("33_bqwp2")
+
+[node name="RobotAnimator" type="AnimationPlayer" parent="RobotSprites"]
+libraries = {
+"": SubResource("AnimationLibrary_47nt3")
+}
+
+[node name="RobotAnimationTree" type="AnimationTree" parent="RobotSprites"]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
