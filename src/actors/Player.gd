@@ -34,33 +34,18 @@ var level_ended: bool = false
 # Gameplay elements collisions
 # Pads
 var _pad_checker: int
-var _is_pink_pad_colliding: bool = false
-var _is_yellow_pad_colliding: bool = false
-var _is_red_pad_colliding: bool = false
-var _is_blue_pad_colliding: bool = false
-var _is_spider_pad_colliding: bool = false
 
 # Orbs
 var _has_let_go_of_orb: bool = false
 var _orb_jumped: bool = false
 var _orb_checker: int
-var _is_pink_orb_colliding: bool = false
-var _is_yellow_orb_colliding: bool = false
-var _is_red_orb_colliding: bool = false
-var _is_blue_orb_colliding: bool = false
-var _is_green_orb_colliding: bool = false
-var _is_black_orb_colliding: bool = false
 var _is_toggle_orb_colliding: bool = false
-var _is_green_dash_orb_colliding: bool = false
-var _is_magenta_dash_orb_colliding: bool = false
-var _is_spider_orb_colliding: bool = false
 var _dash_orb_rotation = 0.0
 var _dash_orb_y_offset = 0.0
 var _spider_orb_opposite_gravity: bool = false
 var _is_green_orb_jumping: bool = false
 
 # Portals
-var _portal_checker: int
 var _is_yellow_gravity_portal_colliding: bool = false
 var _is_blue_gravity_portal_colliding: bool = false
 
@@ -141,7 +126,7 @@ func _physics_process(delta: float) -> void:
 	
 	direction = get_direction(_press_or_hold)
 
-	if Input.is_action_pressed("jump") && _is_green_orb_colliding && _has_let_go_of_orb:
+	if Input.is_action_pressed("jump") && _orb_checker & GDInteractible.Orb.ORB_GREEN && _has_let_go_of_orb:
 		_is_green_orb_jumping = true
 
 	if gamemode == "spider":
@@ -177,19 +162,16 @@ func _physics_process(delta: float) -> void:
 		if (slope_object.scale.x >= 1 && UP_DIRECTION.y < 0) || (slope_object.scale.x <= -1 && UP_DIRECTION.y > 0):
 			floor_angle = abs(get_floor_angle()) * -1
 
-	if (Input.is_action_just_pressed("jump") && !_is_dead && gamemode == "spider" && (is_on_floor() || is_on_wall() || is_on_ceiling()) ) && \
-		!(_is_pink_orb_colliding || _is_yellow_orb_colliding || _is_red_orb_colliding || \
-		_is_blue_orb_colliding || _is_green_orb_colliding || _is_green_dash_orb_colliding || \
-		_is_black_orb_colliding || _is_spider_orb_colliding || _is_toggle_orb_colliding):
+	if Input.is_action_just_pressed("jump") && !_is_dead && gamemode == "spider" && _is_player_onground && _orb_checker == 0:
 		do_spider_jump()
 
-	if _is_spider_pad_colliding && !_is_dead:
+	if _pad_checker & GDInteractible.Pad.PAD_SPIDER && !_is_dead:
 		do_spider_jump()
 		velocity.y = 0
 		_jump_direction = UP_DIRECTION.y * -1
-		_is_spider_pad_colliding = false
+		_pad_checker &= ~GDInteractible.Pad.PAD_SPIDER
 
-	if Input.is_action_pressed("jump") && _is_spider_orb_colliding && _has_let_go_of_orb && !_is_dead:
+	if Input.is_action_pressed("jump") && _orb_checker & GDInteractible.Orb.ORB_SPIDER && _has_let_go_of_orb && !_is_dead:
 		do_spider_jump()
 		_orb_jumped = true
 	
@@ -215,30 +197,26 @@ func _physics_process(delta: float) -> void:
 #				$AnimationPlayer.play("Camera3D go from center to right edge")
 	
 	
-	if _is_reversed == true && (Input.is_action_just_pressed("jump") && (_is_pink_orb_colliding || _is_yellow_orb_colliding || \
-		_is_red_orb_colliding || _is_blue_orb_colliding || _is_green_orb_colliding || _is_green_dash_orb_colliding || \
-		_is_black_orb_colliding || _is_spider_orb_colliding)):
+	if _is_reversed == true && (Input.is_action_just_pressed("jump") && _orb_checker != 0):
 		_x_direction *= -1
-		camera_opposite_edge()
-	if (Input.is_action_just_pressed("jump") && (_is_blue_orb_colliding || \
-		_is_green_orb_colliding || _is_magenta_dash_orb_colliding)) or \
-		_is_blue_pad_colliding or (Input.is_action_just_pressed("jump") && \
+	if (Input.is_action_just_pressed("jump") && (_orb_checker & GDInteractible.Orb.ORB_BLUE || \
+		_orb_checker & GDInteractible.Orb.ORB_GREEN || _orb_checker & GDInteractible.Orb.ORB_DASH_MAGENTA)) or \
+		_pad_checker & GDInteractible.Pad.PAD_BLUE or (Input.is_action_just_pressed("jump") && \
 		(((is_on_floor() || is_on_ceiling()) && gamemode == "ball") || \
-		(gamemode == "swingcopter" && !(_is_pink_orb_colliding || _is_yellow_orb_colliding || _is_red_orb_colliding || \
-		_is_blue_orb_colliding || _is_green_orb_colliding || _is_green_dash_orb_colliding || \
-		_is_black_orb_colliding || _is_spider_orb_colliding || _is_toggle_orb_colliding)))):
+		(gamemode == "swingcopter" && _orb_checker == 0))):
 		if (Input.is_action_just_pressed("jump") \
 			&& (is_on_floor() || is_on_ceiling()) && gamemode == "ball"):
 			velocity.y *= -1
-		_is_blue_pad_colliding = false # reverts blue pad/orb
-		_is_blue_orb_colliding = false
-		_is_green_orb_colliding = false
+		_pad_checker &= ~GDInteractible.Pad.PAD_BLUE # reverts blue pad/orb
+		_orb_checker &= ~GDInteractible.Orb.ORB_BLUE
+		_orb_checker &= ~GDInteractible.Orb.ORB_GREEN
 		$SpiderSprites.scale.y *= -1
 		gravity *= -1
 		if gamemode != "swingcopter":
 			UP_DIRECTION.y *= -1
-	if (Input.is_action_just_pressed("jump") && (_is_green_dash_orb_colliding || _is_magenta_dash_orb_colliding)):
+	if (Input.is_action_just_pressed("jump") && (_orb_checker & GDInteractible.Orb.ORB_DASH_GREEN || _orb_checker & GDInteractible.Orb.ORB_DASH_MAGENTA)):
 		_is_dashing = true
+		_orb_checker & GDInteractible.Orb.ORB_DASH_GREEN
 		emit_signal("started_dashing")
 		$DashFire.show()
 		gravityBackup = gravity
@@ -294,26 +272,22 @@ func get_direction(_press_or_hold: bool) -> Vector2:
 	# _can_fly is true for flying gamemodes and is equal to is_on_ground for other gamemodes
 	# for the cube, this means (Input.is_action_pressed("jump") || is_on_ground())
 	if !(is_platformer && gamemode == "wave"):
-		if ((_press_or_hold and _can_fly) || \
-		(Input.is_action_pressed("jump") && _has_let_go_of_orb && \
-			(_is_pink_orb_colliding || _is_yellow_orb_colliding || _is_red_orb_colliding || \
-			_is_blue_orb_colliding || _is_green_dash_orb_colliding || _is_black_orb_colliding))):
+		if (_press_or_hold and _can_fly) || \
+		(Input.is_action_pressed("jump") && _has_let_go_of_orb && _orb_checker != 0):
 			_jump_direction = UP_DIRECTION.y
 			_orb_jumped = true
 			_has_let_go_of_orb = false
-		elif _is_pink_pad_colliding || _is_yellow_pad_colliding || _is_red_pad_colliding || _is_blue_pad_colliding: #and is_on_floor()
+		elif _pad_checker != 0: #and is_on_floor()
 			_jump_direction = UP_DIRECTION.y
-		elif Input.is_action_pressed("jump") && _is_green_orb_colliding && _has_let_go_of_orb:
+		elif Input.is_action_pressed("jump") && _orb_checker & GDInteractible.Orb.ORB_GREEN && _has_let_go_of_orb:
 			_jump_direction = -UP_DIRECTION.y
-		elif Input.is_action_pressed("jump") && _has_let_go_of_orb && _is_spider_orb_colliding:
+		elif Input.is_action_pressed("jump") && _has_let_go_of_orb && _orb_checker & GDInteractible.Orb.ORB_SPIDER:
 			_jump_direction = UP_DIRECTION.y * -1
 		else:
 			_jump_direction = UP_DIRECTION.y * -1 # contains black orb
 	
-
-	
 	if is_platformer:
-		_x_direction = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
+		_x_direction = Input.get_action_strength("move_right") - Input.get_action_strength("move_left") if _speed_multiplier != 0.0 else 0.0
 		if Input.is_action_pressed("move_left") || Input.is_action_pressed("move_right"):
 			_icon_direction = _x_direction
 		if gamemode == "wave" && Input.is_action_pressed("jump"):
@@ -370,26 +344,26 @@ func calculate_move_velocity(
 		gravityMod = 1
 		_out_vertical += gravity * get_physics_process_delta_time() + dash_offset
 	if direction.y == UP_DIRECTION.y:
-		if _is_pink_pad_colliding || _is_pink_orb_colliding:
+		if _pad_checker & GDInteractible.Pad.PAD_PINK || _orb_checker & GDInteractible.Orb.ORB_PINK:
 			_out_vertical = speed.y * direction.y * 0.8 * gravityMod
-			_is_pink_pad_colliding = false # reverts pink pad/orb
-			_is_pink_orb_colliding = false
-		elif _is_red_pad_colliding || _is_red_orb_colliding:
+			_pad_checker &= ~GDInteractible.Pad.PAD_PINK # reverts pink pad/orb
+			_orb_checker &= ~GDInteractible.Orb.ORB_PINK
+		elif _pad_checker & GDInteractible.Pad.PAD_RED || _orb_checker & GDInteractible.Orb.ORB_RED:
 			_out_vertical = speed.y * direction.y * 2.25 * gravityMod
-			_is_red_pad_colliding = false # reverts red pad/orb
-			_is_red_orb_colliding = false
-		elif _is_green_orb_colliding:
+			_pad_checker &= ~GDInteractible.Pad.PAD_RED # reverts red pad/orb
+			_orb_checker &= ~GDInteractible.Orb.ORB_RED
+		elif _orb_checker & GDInteractible.Orb.ORB_GREEN:
 			_out_vertical = speed.y * direction.y * gravityMod
-			_is_green_orb_colliding = false # reverts red pad/orb
-		elif _is_yellow_pad_colliding:
+			_orb_checker &= ~GDInteractible.Orb.ORB_GREEN # reverts red pad/orb
+		elif _pad_checker & GDInteractible.Pad.PAD_YELLOW:
 			_out_vertical = speed.y * direction.y * gravityMod * 1.35
-			_is_yellow_pad_colliding = false # reverts yellow pad
-		elif _is_yellow_orb_colliding:
+			_pad_checker &= ~GDInteractible.Pad.PAD_YELLOW # reverts yellow pad
+		elif _orb_checker & GDInteractible.Orb.ORB_YELLOW:
 			_out_vertical = speed.y * direction.y * gravityMod * 1.1
-			_is_yellow_orb_colliding = false # reverts yellow orb
+			_orb_checker &= ~GDInteractible.Orb.ORB_YELLOW # reverts yellow orb
 		elif _is_toggle_orb_colliding:
 			_out_vertical = 0.0
-		elif _is_black_orb_colliding:
+		elif _orb_checker & GDInteractible.Orb.ORB_BLACK:
 			_out_vertical = speed.y * UP_DIRECTION.y * -1.25
 		elif gamemode == "ship" || gamemode == "swingcopter":
 			_out_vertical = speed.y * direction.y * 0.05 * gravityMod
@@ -401,36 +375,18 @@ func calculate_move_velocity(
 				if !is_wave_dashing:
 					_out_vertical = sqrt(pow(625*_speed_multiplier, 2) + pow(1100*_speed_multiplier, 2)) * sin(PI/6) * UP_DIRECTION.y if !mini else sqrt(pow(625*_speed_multiplier, 2) + pow(1100*_speed_multiplier, 2)) * sin(PI/4+PI/8) * UP_DIRECTION.y
 				else: _out_vertical = 0.0
-			elif (!gamemode == "spider" || !_is_spider_pad_colliding) && !_in_jblock: # CUBE
+			elif (!gamemode == "spider" || !_pad_checker & GDInteractible.Pad.PAD_SPIDER) && !_in_jblock: # CUBE
 				_out_vertical = speed.y * direction.y * gravityMod
 	if direction.y == -UP_DIRECTION.y && _is_player_onground && !_is_dashing:
 		_out_vertical = 0.0
 	if direction.y == UP_DIRECTION.y * -1 && gamemode == "wave":
 		_out_vertical = sqrt(pow(625*_speed_multiplier, 2) + pow(1100*_speed_multiplier, 2)) * sin(PI/6) * UP_DIRECTION.y * -1 if !mini else sqrt(pow(625*_speed_multiplier, 2) + pow(1100*_speed_multiplier, 2)) * sin(PI/4+PI/8) * UP_DIRECTION.y * -1
-#	if Input.is_action_pressed("jump") && _has_let_go_of_orb && _is_black_orb_colliding:
-#		_out_vertical = speed.y * UP_DIRECTION.y * -1.25
 	if direction.y == 0.0 && gamemode == "wave" && is_platformer:
 		_out_vertical = 0.0
-	if Input.is_action_pressed("jump") && _has_let_go_of_orb && (_is_blue_orb_colliding || _is_blue_pad_colliding):
+	if Input.is_action_pressed("jump") && _has_let_go_of_orb && (_orb_checker & GDInteractible.Orb.ORB_BLUE || _pad_checker & GDInteractible.Pad.PAD_BLUE):
 		_out_vertical = speed.y * UP_DIRECTION.y * 1.25
-#	if _is_green_orb_jumping:
-#		_out_vertical = speed.y * direction.y * gravityMod * -1.1
-#		_is_green_orb_colliding = false
-#		_is_green_orb_jumping = false
-#	if is_jump_interrupted && !holdable_gamemode && !(gamemode == "ball" || gamemode == "spider"):
-#		_out_vertical = 0.0
 	_out_vertical = clampf(_out_vertical, max_speed.y, -max_speed.y)
-	
-#	if arrow_trigger_direction == Vector2(0.0, -1.0):
-#		var slope_glide_offset: float = sqrt(pow(speed.x*_speed_multiplier, 2) + pow(speed.y*_speed_multiplier, 2)) * sin(get_floor_angle(UP_DIRECTION)) * -1
-#		slope_glide_offset -= 50
-#		print(rad_to_deg(get_floor_angle(UP_DIRECTION)), ", ", slope_glide_offset)
-#		if get_floor_angle(UP_DIRECTION) != 0.0 && (is_on_floor() || is_on_ceiling()):
-#			_out_vertical += slope_glide_offset * sign(get_floor_angle(UP_DIRECTION))
-#	elif arrow_trigger_direction == Vector2(-1.0, 0.0):
-#		if !is_equal_approx(get_floor_angle(UP_DIRECTION), deg_to_rad(-90.0)):
-#			_out_vertical = sqrt(pow(625*_speed_multiplier, 2) + pow(1100*_speed_multiplier, 2)) * sin(get_floor_angle(UP_DIRECTION))
-	
+
 	if arrow_trigger_direction == Vector2(0.0, -1.0):
 		$SpiderSprites.rotation_degrees = 0.0
 		out.x = _out_horizontal
@@ -633,7 +589,7 @@ func do_spider_jump():
 			velocity.y = 0
 			_jump_direction = UP_DIRECTION.y * -1
 		emit_signal("spider_jumped", abs(arrival_coordinates - old_pos.y))
-		if mini && UP_DIRECTION.y > 0 && _is_spider_orb_colliding:
+		if mini && UP_DIRECTION.y > 0 && _orb_checker & GDInteractible.Orb.ORB_SPIDER:
 			position.y -= 30
 	elif arrow_trigger_direction == Vector2(-1.0, 0.0):
 		var collision_point: float = $SpiderSprites/SpiderRaycast.get_collision_point().x
@@ -652,7 +608,7 @@ func do_spider_jump():
 			velocity.x *= -1
 			_jump_direction = UP_DIRECTION.y * -1
 		emit_signal("spider_jumped", abs(arrival_coordinates - old_pos.x))
-		if mini && UP_DIRECTION.y > 0 && _is_spider_orb_colliding:
+		if mini && UP_DIRECTION.y > 0 && _orb_checker & GDInteractible.Orb.ORB_SPIDER:
 			position.x -= 30
 	if "BackgroundKillZone" in str($SpiderSprites/SpiderRaycast.get_collider()):
 		player_camera.global_position.y = -4750
@@ -750,19 +706,6 @@ func changeSpriteOnGamemode() -> void:
 		player_icon.flip_h = false
 		player_icon.flip_v = false
 
-func camera_opposite_edge():
-	if !is_static && !_is_dead && !is_platformer:
-		if arrow_trigger_direction == Vector2(0.0, -1.0):
-			if _x_direction < 0:
-				$AnimationPlayer.current_animation = "Camera3D go to left edge"
-			else:
-				$AnimationPlayer.current_animation = "Camera3D go to right edge"
-		elif arrow_trigger_direction == Vector2(-1.0, 0.0):
-			if _x_direction < 0:
-				$AnimationPlayer.current_animation = "Camera3D go to top edge"
-			else:
-				$AnimationPlayer.current_animation = "Camera3D go to bottom edge"
-
 func set_platformer(platformer: bool) -> void:
 	is_platformer = platformer
 
@@ -770,111 +713,11 @@ func set_platformer(platformer: bool) -> void:
 func _on_HazardsArea_body_entered() -> void:
 	_is_hazard_colliding = true
 
-func _on_PinkPad_area_entered(reverse) -> void:
-	if reverse:
-		_x_direction *= -1
-		camera_opposite_edge()
-	_is_pink_pad_colliding = true
-
-func _on_YellowPad_area_entered(reverse) -> void:
-	if reverse:
-		_x_direction *= -1
-		camera_opposite_edge()
-	_is_yellow_pad_colliding = true
-
-func _on_RedPad_area_entered(reverse) -> void:
-	if reverse:
-		_x_direction *= -1
-		camera_opposite_edge()
-	_is_red_pad_colliding = true
-
-func _on_BluePad_area_entered(reverse) -> void:
-	if reverse:
-		_x_direction *= -1
-		camera_opposite_edge()
-	_is_blue_pad_colliding = true
-
-func _on_SpiderPad_area_entered(reverse) -> void:
-	if reverse:
-		_x_direction *= -1
-		camera_opposite_edge()
-	_is_spider_pad_colliding = true
-
-func _on_PinkOrb_area_entered(_area: Area2D, reverse) -> void:
-	_is_reversed = reverse
-	_is_pink_orb_colliding = true
-
-func _on_YellowOrb_area_entered(_area: Area2D, reverse) -> void:
-	_is_reversed = reverse
-	_is_yellow_orb_colliding = true
-
-func _on_RedOrb_area_entered(_area: Area2D, reverse) -> void:
-	_is_reversed = reverse
-	_is_red_orb_colliding = true
-
-func _on_BlueOrb_area_entered(_area: Area2D, reverse) -> void:
-	_is_reversed = reverse
-	_is_blue_orb_colliding = true
-
-func _on_GreenOrb_area_entered(_area: Area2D, reverse) -> void:
-	_is_reversed = reverse
-	_is_green_orb_colliding = true
-
-func _on_BlackOrb_area_entered(_area: Area2D, reverse) -> void:
-	_is_reversed = reverse
-	_is_black_orb_colliding = true
-
-func _on_SpiderOrb_area_entered(reverse, opposite_gravity) -> void:
-	_is_reversed = reverse
-	_spider_orb_opposite_gravity = opposite_gravity
-	if opposite_gravity:
-		$SpiderSprites/SpiderRaycast.rotation_degrees = 180
-	_is_spider_orb_colliding = true
-
 func _on_ToggleOrb_area_entered(_area: Area2D) -> void:
 	_is_toggle_orb_colliding = true
 
-func _on_PinkOrb_area_exited(_area: Area2D) -> void:
-	_is_pink_orb_colliding = false
-
-func _on_YellowOrb_area_exited(_area: Area2D) -> void:
-	_is_yellow_orb_colliding = false
-
-func _on_RedOrb_area_exited(_area: Area2D) -> void:
-	_is_red_orb_colliding = false
-
-func _on_BlueOrb_area_exited(_area: Area2D) -> void:
-	_is_blue_orb_colliding = false
-
-func _on_GreenOrb_area_exited(_area: Area2D) -> void:
-	_is_green_orb_colliding = false
-
-func _on_BlackOrb_area_exited(_area: Area2D) -> void:
-	_is_black_orb_colliding = false
-
-func _on_SpiderOrb_area_exited() -> void:
-	_is_spider_orb_colliding = false
-	_spider_orb_opposite_gravity = false
-	$SpiderSprites/SpiderRaycast.rotation_degrees = 0
-
 func _on_ToggleOrb_area_exited() -> void:
 	_is_toggle_orb_colliding = false
-
-func _on_GreenDashOrb_area_entered(dash_orb_angle, reverse) -> void:
-	_is_reversed = reverse
-	_dash_orb_rotation = dash_orb_angle
-	_is_green_dash_orb_colliding = true
-
-func _on_GreenDashOrb_area_exited() -> void:
-	_is_green_dash_orb_colliding = false
-
-func _on_MagentaDashOrb_area_entered(dash_orb_angle, reverse) -> void:
-	_is_reversed = reverse
-	_dash_orb_rotation = dash_orb_angle
-	_is_magenta_dash_orb_colliding = true
-
-func _on_MagentaDashOrb_area_exited() -> void:
-	_is_magenta_dash_orb_colliding = false
 
 # Portals
 func _on_YellowGravityPortal_area_entered() -> void:
@@ -933,23 +776,6 @@ func _on_SwingcopterPortal_area_entered() -> void:
 	gamemode = "swingcopter"
 	player_icon.rotation_degrees = 0
 
-# On Speed Portals enter
-
-func _on_SpeedPortal1x_area_entered() -> void:
-	_speed_multiplier = 1.0
-
-func _on_SpeedPortal2x_area_entered() -> void:
-	_speed_multiplier = 1.243
-
-func _on_SpeedPortal3x_area_entered() -> void:
-	_speed_multiplier = 1.502
-
-func _on_SpeedPortal4x_area_entered() -> void:
-	_speed_multiplier = 1.849
-
-func _on_SpeedPortal05x_area_entered() -> void:
-	_speed_multiplier = 0.807
-
 # Size Portals
 func _on_MiniSizePortal_area_entered() -> void:
 	mini = true
@@ -961,5 +787,5 @@ func _on_NormalSizePortal_area_entered() -> void:
 		else: position.y += 15
 
 
-func _on_BlockOverlap_body_entered(body: Node) -> void:
+func _on_BlockOverlap_body_entered(_body: Node) -> void:
 	_is_small_hitbox_colliding = true

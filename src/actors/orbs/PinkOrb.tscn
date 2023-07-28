@@ -1,12 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://bmxqy8y4iprw5"]
 
 [ext_resource type="Texture2D" uid="uid://bg4kk5lwo8eyx" path="res://assets/levelTextures/interactible/Orbs/MagentaRing.webp" id="1"]
-[ext_resource type="Script" path="res://src/actors/orbs/PinkOrb.gd" id="2"]
+[ext_resource type="Script" path="res://src/actors/GDInteractible.gd" id="1_lvilq"]
 [ext_resource type="Shape2D" uid="uid://bfbu7403rdnnn" path="res://src/actors/orbs/OrbCollisionShape.tres" id="3_vaq2n"]
 
 [node name="PinkOrb" type="Area2D"]
 collision_layer = 4
-script = ExtResource("2")
+script = ExtResource("1_lvilq")
+"Orb Type" = 2
+"Pad Type" = 0
+"Gamemode Portal Type" = 0
+"Speed Portal Type" = 0
+"Is Multi Usage?" = false
+"Is Reverse?" = false
+"Is Opposite Gravity?" = false
 
 [node name="PinkRing" type="Sprite2D" parent="."]
 texture = ExtResource("1")

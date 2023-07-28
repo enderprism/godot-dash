@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b4jgm1iaarkci"]
 
-[ext_resource type="Script" path="res://src/actors/portals/speedPortals/SpeedPortal3x.gd" id="1"]
+[ext_resource type="Script" path="res://src/actors/GDInteractible.gd" id="1_gn6xb"]
 [ext_resource type="Texture2D" uid="uid://klj4wy852n26" path="res://assets/levelTextures/interactible/Portals/Speed Portals/SpeedPortalVF.webp" id="2"]
 
 [sub_resource type="RectangleShape2D" id="1"]
@@ -8,7 +8,14 @@ size = Vector2(292, 282)
 
 [node name="SpeedPortal3x_0" type="Area2D"]
 collision_layer = 4
-script = ExtResource("1")
+script = ExtResource("1_gn6xb")
+"Orb Type" = 0
+"Pad Type" = 0
+"Gamemode Portal Type" = 0
+"Speed Portal Type" = 3
+"Is Multi Usage?" = false
+"Is Reverse?" = false
+"Is Opposite Gravity?" = false
 
 [node name="SpeedPortal3x" type="Sprite2D" parent="."]
 texture = ExtResource("2")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://6a4v36pj1syq"]
 
-[ext_resource type="Script" path="res://src/actors/portals/BallPortal.gd" id="1"]
+[ext_resource type="Script" path="res://src/actors/GDInteractible.gd" id="1_si08c"]
 [ext_resource type="Texture2D" uid="uid://dq67a6vhmn3t7" path="res://assets/levelTextures/interactible/Portals/portal_07_front_001.png" id="3_0yu1f"]
 [ext_resource type="Texture2D" uid="uid://bv1kti6fue5ii" path="res://assets/levelTextures/interactible/Portals/portal_07_back_001.png" id="4_l8pmp"]
 
@@ -9,7 +9,17 @@ size = Vector2(186, 336)
 
 [node name="BallPortal_0" type="Area2D"]
 collision_layer = 4
-script = ExtResource("1")
+script = ExtResource("1_si08c")
+"Orb Type" = 0
+"Pad Type" = 0
+"Gamemode Portal Type" = 5
+"Speed Portal Type" = 0
+"Is Multi Usage?" = false
+"Is Reverse?" = false
+"Is Opposite Gravity?" = false
+"Is Freefly?" = false
+"Has Custom Ground Radius?" = false
+"Custom Ground Radius" = 6.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("1")

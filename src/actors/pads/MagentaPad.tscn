@@ -1,12 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://dgcgmbp7jgmfx"]
 
 [ext_resource type="Texture2D" uid="uid://dcrxbukpdlply" path="res://assets/levelTextures/interactible/Pads/MagentaPad.webp" id="1"]
-[ext_resource type="Script" path="res://src/actors/pads/MagentaPad.gd" id="2"]
+[ext_resource type="Script" path="res://src/actors/GDInteractible.gd" id="1_qwsbp"]
 [ext_resource type="Shape2D" uid="uid://k68hb4yqdkpp" path="res://src/actors/pads/PadCollisionShape.tres" id="3_ktl72"]
 
 [node name="PinkPad" type="Area2D"]
 collision_layer = 4
-script = ExtResource("2")
+script = ExtResource("1_qwsbp")
+"Orb Type" = 0
+"Pad Type" = 2
+"Gamemode Portal Type" = 0
+"Speed Portal Type" = 0
+"Is Multi Usage?" = false
+"Is Reverse?" = false
+"Is Opposite Gravity?" = false
 
 [node name="PinkPad" type="Sprite2D" parent="."]
 position = Vector2(0, 52)

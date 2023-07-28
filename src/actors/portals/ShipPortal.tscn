@@ -1,13 +1,22 @@
 [gd_scene load_steps=5 format=3 uid="uid://dmu6wd4jf6fp6"]
 
-[ext_resource type="Script" path="res://src/actors/portals/ShipPortal.gd" id="2"]
+[ext_resource type="Script" path="res://src/actors/GDInteractible.gd" id="1_vn3h3"]
 [ext_resource type="Shape2D" uid="uid://cdsohmm0mpifa" path="res://src/actors/portals/GamemodePortalCollisionShape.tres" id="3_0pejp"]
 [ext_resource type="Texture2D" uid="uid://7s2r07t7r1hv" path="res://assets/levelTextures/interactible/Portals/portal_04_front_001.png" id="3_xgbpe"]
 [ext_resource type="Texture2D" uid="uid://bwgl1i28g4x5u" path="res://assets/levelTextures/interactible/Portals/portal_04_back_001.png" id="4_4rorf"]
 
 [node name="ShipPortal_0" type="Area2D"]
 collision_layer = 4
-script = ExtResource("2")
+script = ExtResource("1_vn3h3")
+"Orb Type" = 0
+"Pad Type" = 0
+"Gamemode Portal Type" = 2
+"Speed Portal Type" = 0
+"Is Multi Usage?" = false
+"Is Reverse?" = false
+"Is Opposite Gravity?" = false
+"Is Freefly?" = false
+"Has Custom Ground Radius?" = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = ExtResource("3_0pejp")

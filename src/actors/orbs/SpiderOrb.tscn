@@ -1,12 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://8a3l8ksdetrt"]
 
 [ext_resource type="Texture2D" uid="uid://ry2jy8mn1yan" path="res://assets/levelTextures/interactible/Orbs/SpiderOrb.png" id="1"]
-[ext_resource type="Script" path="res://src/actors/orbs/SpiderOrb.gd" id="2"]
+[ext_resource type="Script" path="res://src/actors/GDInteractible.gd" id="1_u7hmc"]
 [ext_resource type="Shape2D" uid="uid://bfbu7403rdnnn" path="res://src/actors/orbs/OrbCollisionShape.tres" id="3_snkw8"]
 
 [node name="SpiderOrb" type="Area2D"]
 collision_layer = 4
-script = ExtResource("2")
+script = ExtResource("1_u7hmc")
+"Orb Type" = 7
+"Pad Type" = 0
+"Gamemode Portal Type" = 0
+"Speed Portal Type" = 0
+"Is Multi Usage?" = false
+"Is Reverse?" = false
+"Is Opposite Gravity?" = false
 
 [node name="SpiderRing" type="Sprite2D" parent="."]
 scale = Vector2(1.04286, 1.04286)

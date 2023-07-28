@@ -1,12 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://drnotb32xk1i4"]
 
 [ext_resource type="Texture2D" uid="uid://cr48j5n6o1uuv" path="res://assets/levelTextures/interactible/Orbs/CyanRing.webp" id="1"]
-[ext_resource type="Script" path="res://src/actors/orbs/BlueOrb.gd" id="2"]
+[ext_resource type="Script" path="res://src/actors/GDInteractible.gd" id="1_v8vyu"]
 [ext_resource type="Shape2D" uid="uid://bfbu7403rdnnn" path="res://src/actors/orbs/OrbCollisionShape.tres" id="3_6lg7e"]
 
 [node name="BlueOrb" type="Area2D"]
 collision_layer = 4
-script = ExtResource("2")
+script = ExtResource("1_v8vyu")
+"Orb Type" = 4
+"Pad Type" = 0
+"Gamemode Portal Type" = 0
+"Speed Portal Type" = 0
+"Is Multi Usage?" = false
+"Is Reverse?" = false
+"Is Opposite Gravity?" = false
 
 [node name="BlueRing" type="Sprite2D" parent="."]
 texture = ExtResource("1")

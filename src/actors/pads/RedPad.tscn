@@ -1,19 +1,27 @@
 [gd_scene load_steps=4 format=3 uid="uid://rua82y1kqvk"]
 
 [ext_resource type="Texture2D" uid="uid://ds7v2sh6x08be" path="res://assets/levelTextures/interactible/Pads/RedPad.webp" id="1"]
-[ext_resource type="Script" path="res://src/actors/pads/RedPad.gd" id="2"]
+[ext_resource type="Script" path="res://src/actors/GDInteractible.gd" id="1_iurom"]
 [ext_resource type="Shape2D" uid="uid://k68hb4yqdkpp" path="res://src/actors/pads/PadCollisionShape.tres" id="3_fjnoa"]
 
 [node name="RedPad" type="Area2D"]
 collision_layer = 4
-script = ExtResource("2")
+script = ExtResource("1_iurom")
+"Orb Type" = 0
+"Pad Type" = 3
+"Gamemode Portal Type" = 0
+"Speed Portal Type" = 0
+"Is Multi Usage?" = false
+"Is Reverse?" = false
+"Is Opposite Gravity?" = false
 
 [node name="RedPad" type="Sprite2D" parent="."]
 position = Vector2(0, 47.5)
 texture = ExtResource("1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 49.5)
+position = Vector2(0, 50.5)
+scale = Vector2(1.16, 1.16)
 shape = ExtResource("3_fjnoa")
 debug_color = Color(0.0117647, 0.45098, 0, 0.419608)
 

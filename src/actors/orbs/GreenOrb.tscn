@@ -1,12 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://dfn3ryjc7tali"]
 
 [ext_resource type="Texture2D" uid="uid://cunqhqorrgp6t" path="res://assets/levelTextures/interactible/Orbs/GreenRing.webp" id="1"]
-[ext_resource type="Script" path="res://src/actors/orbs/GreenOrb.gd" id="2"]
+[ext_resource type="Script" path="res://src/actors/GDInteractible.gd" id="1_ykqcs"]
 [ext_resource type="Shape2D" uid="uid://bfbu7403rdnnn" path="res://src/actors/orbs/OrbCollisionShape.tres" id="3_s4g61"]
 
 [node name="GreenOrb" type="Area2D"]
 collision_layer = 4
-script = ExtResource("2")
+script = ExtResource("1_ykqcs")
+"Orb Type" = 5
+"Pad Type" = 0
+"Gamemode Portal Type" = 0
+"Speed Portal Type" = 0
+"Is Multi Usage?" = false
+"Is Reverse?" = false
+"Is Opposite Gravity?" = false
 
 [node name="GreenRing" type="Sprite2D" parent="."]
 rotation = 1038.3

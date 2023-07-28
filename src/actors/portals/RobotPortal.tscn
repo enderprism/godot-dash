@@ -1,13 +1,22 @@
 [gd_scene load_steps=5 format=3 uid="uid://dma7554bxesk7"]
 
-[ext_resource type="Script" path="res://src/actors/portals/RobotPortal.gd" id="2"]
+[ext_resource type="Script" path="res://src/actors/GDInteractible.gd" id="1_palb2"]
 [ext_resource type="Texture2D" uid="uid://20ici0mucoef" path="res://assets/levelTextures/interactible/Portals/portal_14_front_001.png" id="3_8sekq"]
 [ext_resource type="Shape2D" uid="uid://cdsohmm0mpifa" path="res://src/actors/portals/GamemodePortalCollisionShape.tres" id="3_hter8"]
 [ext_resource type="Texture2D" uid="uid://cyc7a2q2a4o22" path="res://assets/levelTextures/interactible/Portals/portal_14_back_001.png" id="4_0r8rn"]
 
 [node name="RobotPortal_0" type="Area2D"]
 collision_layer = 4
-script = ExtResource("2")
+script = ExtResource("1_palb2")
+"Orb Type" = 0
+"Pad Type" = 0
+"Gamemode Portal Type" = 6
+"Speed Portal Type" = 0
+"Is Multi Usage?" = false
+"Is Reverse?" = false
+"Is Opposite Gravity?" = false
+"Is Freefly?" = false
+"Has Custom Ground Radius?" = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = ExtResource("3_hter8")

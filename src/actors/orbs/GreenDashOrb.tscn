@@ -1,12 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://dajjtafcmospi"]
 
 [ext_resource type="Texture2D" uid="uid://dfd6rakpsmpha" path="res://assets/levelTextures/interactible/Orbs/GreenPointer.webp" id="1"]
-[ext_resource type="Script" path="res://src/actors/orbs/GreenDashOrb.gd" id="2"]
+[ext_resource type="Script" path="res://src/actors/GDInteractible.gd" id="1_4voeb"]
 [ext_resource type="Shape2D" uid="uid://bfbu7403rdnnn" path="res://src/actors/orbs/OrbCollisionShape.tres" id="3_rdmac"]
 
 [node name="GreenDashOrb" type="Area2D"]
 collision_layer = 4
-script = ExtResource("2")
+script = ExtResource("1_4voeb")
+"Orb Type" = 8
+"Pad Type" = 0
+"Gamemode Portal Type" = 0
+"Speed Portal Type" = 0
+"Is Multi Usage?" = false
+"Is Reverse?" = false
+"Is Opposite Gravity?" = false
 
 [node name="GreenDashRing" type="Sprite2D" parent="."]
 texture = ExtResource("1")
