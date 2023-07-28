@@ -205,6 +205,8 @@ func _set(property: StringName, value: Variant) -> bool:
 		is_spider_orb_opp_gravity_val = value
 	elif property == "Is Freefly?":
 		is_freefly_val = value
+	elif property == "Is Multi Usage?":
+		is_multi_usage_val = value
 	elif property == "Has Custom Ground Radius?":
 		has_custom_ground_radius_val = value
 		if has_custom_ground_radius_val:
@@ -246,7 +248,7 @@ func _set(property: StringName, value: Variant) -> bool:
 			orb_usage = PROPERTY_USAGE_NO_EDITOR
 			pad_usage = PROPERTY_USAGE_NO_EDITOR
 			gmportal_usage = PROPERTY_USAGE_NO_EDITOR
-	else: property = value
+	else: return false
 	
 	if orb_type_val == Orb.ORB_DISABLED && pad_type_val == Pad.PAD_DISABLED && gmportal_type_val == GMPortal.GMPORTAL_DISABLED && spportal_type_val == SPPortal.SPPORTAL_DISABLED:
 		orb_usage = PROPERTY_USAGE_DEFAULT

@@ -71,10 +71,12 @@ position = Vector2(2013, -61)
 
 [node name="WavePortal_0" parent="." instance=ExtResource("6_0f14c")]
 position = Vector2(1830, -549)
-freefly = false
 
 [node name="SpeedPortal2x_0" parent="." instance=ExtResource("7_e717s")]
 position = Vector2(1830, -549)
+"Is Freefly?" = false
+"Has Custom Ground Radius?" = false
+"Custom Ground Radius" = 0.0
 
 [node name="RegularSpike01_0" parent="." instance=ExtResource("8_rc2mv")]
 position = Vector2(2135, -427)
@@ -121,3 +123,6 @@ saw_rotation = 30.0
 
 [node name="PinkPad" parent="." instance=ExtResource("10_ykppy")]
 position = Vector2(1647, -427)
+"Is Freefly?" = false
+"Has Custom Ground Radius?" = false
+"Custom Ground Radius" = 0.0

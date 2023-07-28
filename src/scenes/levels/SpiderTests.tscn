@@ -98,7 +98,8 @@ value = [Vector2(0, -1), Vector2(0, 0)]
 one_time = true
 
 [node name="SpiderPortal_0" parent="." instance=ExtResource("8")]
-position = Vector2(122, 61)
+position = Vector2(122, -122)
+"Is Freefly?" = true
 
 [node name="MiniSizePortal" parent="." instance=ExtResource("3")]
 position = Vector2(488, 244)
