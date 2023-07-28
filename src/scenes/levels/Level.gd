@@ -5,7 +5,7 @@ class_name Level
 @export var music_start: float
 @export var level_end_time: float
 @export var time_based_percentage: bool
-@export var platformer: bool
+@export var platformer: bool 
 
 func _ready() -> void:
 #	scale = Vector2(0.5, 0.5)

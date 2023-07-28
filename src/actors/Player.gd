@@ -33,6 +33,7 @@ var level_ended: bool = false
 
 # Gameplay elements collisions
 # Pads
+var _pad_checker: int
 var _is_pink_pad_colliding: bool = false
 var _is_yellow_pad_colliding: bool = false
 var _is_red_pad_colliding: bool = false
@@ -42,6 +43,7 @@ var _is_spider_pad_colliding: bool = false
 # Orbs
 var _has_let_go_of_orb: bool = false
 var _orb_jumped: bool = false
+var _orb_checker: int
 var _is_pink_orb_colliding: bool = false
 var _is_yellow_orb_colliding: bool = false
 var _is_red_orb_colliding: bool = false
@@ -58,6 +60,7 @@ var _spider_orb_opposite_gravity: bool = false
 var _is_green_orb_jumping: bool = false
 
 # Portals
+var _portal_checker: int
 var _is_yellow_gravity_portal_colliding: bool = false
 var _is_blue_gravity_portal_colliding: bool = false
 

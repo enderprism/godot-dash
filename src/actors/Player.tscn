@@ -1,4 +1,4 @@
-[gd_scene load_steps=120 format=3 uid="uid://t4l1br5nnw6u"]
+[gd_scene load_steps=119 format=3 uid="uid://t4l1br5nnw6u"]
 
 [ext_resource type="Script" path="res://src/actors/Player.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://ciwetdl2j77bf" path="res://assets/particles/particle_00_001.png" id="3"]
@@ -1102,7 +1102,80 @@ states/walkSpeed4/position = Vector2(78, 232)
 transitions = ["walkSpeed1", "walkSpeed0-5", SubResource("42"), "walkSpeed1", "walkSpeed2", SubResource("43"), "walkSpeed1", "walkSpeed4", SubResource("44"), "walkSpeed1", "walkSpeed3", SubResource("45"), "walkSpeed0-5", "walkSpeed1", SubResource("51"), "walkSpeed4", "walkSpeed1", SubResource("52"), "walkSpeed3", "walkSpeed1", SubResource("53"), "walkSpeed2", "walkSpeed1", SubResource("54"), "fall loop", "jump", SubResource("61"), "jump", "fall loop", SubResource("62"), "walkSpeed1", "fall loop", SubResource("58"), "fall loop", "walkSpeed1", SubResource("59"), "walkSpeed1", "jump", SubResource("40"), "jump", "walkSpeed1", SubResource("60"), "idle", "walkSpeed1", SubResource("80"), "walkSpeed1", "idle", SubResource("81"), "Start", "walkSpeed1", SubResource("AnimationNodeStateMachineTransition_82ja6")]
 graph_offset = Vector2(-309, -85)
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id="18"]
+[sub_resource type="Animation" id="Animation_1onlg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("front-foot:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.75, 21)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("front-foot:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("front-leg:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-8, 15.5)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("front-leg:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("front-connector:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-12.75, 3.25)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("front-connector:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_4ijcw"]
 resource_name = "run"
@@ -1179,81 +1252,6 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 0.278363, 1.17327, 1.5948, -1.54144, -1.54144]
-}
-
-[sub_resource type="Animation" id="Animation_1onlg"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("front-foot:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(2.75, 21)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("front-foot:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("front-leg:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-8, 15.5)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("front-leg:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("front-connector:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-12.75, 3.25)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("front-connector:rotation")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_47nt3"]
@@ -1498,7 +1496,7 @@ collision_mask = 42
 collide_with_areas = true
 
 [node name="Leg3" type="Marker2D" parent="SpiderSprites"]
-position = Vector2(-3.65463, 16.0432)
+position = Vector2(8.5, 16.5)
 
 [node name="Leg3" type="Sprite2D" parent="SpiderSprites/Leg3"]
 z_index = 2
@@ -1509,8 +1507,7 @@ z_index = 1
 texture = ExtResource("8")
 
 [node name="Leg4" type="Marker2D" parent="SpiderSprites"]
-position = Vector2(20.5161, 11.9498)
-rotation = 0.261799
+position = Vector2(28, 16.5)
 
 [node name="Leg4" type="Sprite2D" parent="SpiderSprites/Leg4"]
 z_index = 2
@@ -1522,8 +1519,7 @@ z_index = 1
 texture = ExtResource("14")
 
 [node name="Head" type="Marker2D" parent="SpiderSprites"]
-position = Vector2(0, -7.53093)
-rotation = -0.0400796
+position = Vector2(0, -6)
 
 [node name="Head" type="Sprite2D" parent="SpiderSprites/Head"]
 z_index = 2
@@ -1535,8 +1531,7 @@ position = Vector2(0, 7)
 texture = ExtResource("9")
 
 [node name="Leg1" type="Marker2D" parent="SpiderSprites"]
-position = Vector2(-31.3093, 16.6205)
-rotation = 0.133843
+position = Vector2(-24.5, 14)
 
 [node name="Leg1" type="Sprite2D" parent="SpiderSprites/Leg1"]
 z_index = 2
@@ -1548,8 +1543,7 @@ z_index = 1
 texture = ExtResource("11")
 
 [node name="Leg2" type="Marker2D" parent="SpiderSprites"]
-position = Vector2(14.4027, 13.8273)
-rotation = 0.0432494
+position = Vector2(-7.5, 15)
 
 [node name="Leg2" type="Sprite2D" parent="SpiderSprites/Leg2"]
 z_index = 2
@@ -1571,7 +1565,6 @@ libraries = {
 tree_root = SubResource("17")
 anim_player = NodePath("../SpiderAnimator")
 active = true
-parameters/playback = SubResource("18")
 "parameters/fall loop/TimeScale/scale" = 3.33
 parameters/idle/TimeScale/scale = 0.75
 parameters/jump/TimeScale/scale = 3.0
@@ -1582,6 +1575,7 @@ parameters/walkSpeed3/TimeScale/scale = 4.0
 parameters/walkSpeed4/TimeScale/scale = 4.5
 
 [node name="RobotSprites" type="Node2D" parent="."]
+visible = false
 position = Vector2(0, -66)
 scale = Vector2(2, 2)
 metadata/_edit_lock_ = true

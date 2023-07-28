@@ -20,9 +20,6 @@ blend_mode = 1
 
 [sub_resource type="FontFile" id="13"]
 fallbacks = Array[Font]([ExtResource("12")])
-face_index = null
-embolden = null
-transform = null
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
