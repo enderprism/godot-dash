@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://src/actors/Ground.gd" id="1_dfttd"]
 
 [sub_resource type="RectangleShape2D" id="1"]
-size = Vector2(3072, 128)
+size = Vector2(3840, 128)
 
 [node name="Ground" type="StaticBody2D"]
 modulate = Color(0.290196, 0.266667, 1, 1)
@@ -18,9 +18,9 @@ scale = Vector2(1.5, 1.5)
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -1536.5
+offset_left = -1920.5
 offset_top = 51.0
-offset_right = 1536.5
+offset_right = 1919.5
 offset_bottom = 377.0
 grow_horizontal = 2
 size_flags_vertical = 2
@@ -32,27 +32,28 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("1")
 
 [node name="Ground3" type="Sprite2D" parent="GroundSprites"]
-position = Vector2(-1024, 64)
+position = Vector2(-1280, 64)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("1")
 
 [node name="Ground1" type="Sprite2D" parent="GroundSprites"]
-position = Vector2(1024, 64)
+position = Vector2(1280, 64)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 96)
 scale = Vector2(1.5, 1.5)
 shape = SubResource("1")
 
 [node name="OverflowCheckRight" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(2942, -2515)
+position = Vector2(3582, -2515)
 scale = Vector2(70.2, 309.7)
 
 [node name="OverflowCheckLeft" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(-2923, -2515)
-scale = Vector2(68.5, 309.7)
+position = Vector2(-3582, -2515)
+scale = Vector2(70.2, 309.7)
 
 [connection signal="screen_entered" from="OverflowCheckRight" to="." method="_on_ground_overflow_right"]
 [connection signal="screen_entered" from="OverflowCheckLeft" to="." method="_on_ground_overflow_left"]

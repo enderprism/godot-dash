@@ -2,7 +2,7 @@ extends Area2D
 
 class_name toggler
 
-@onready var _player: = get_node("/root/Scene/Player")
+@onready var _player
 @onready var _toggled_group: = get_node("ToggledGroup")
 @export var _enable: bool = false
 @export var _switch: bool = false
@@ -15,6 +15,10 @@ signal toggle_orb_exited
 signal toggle_orb_pressed
 
 func _ready() -> void:
+	if CurrentLevel.in_editor:
+		_player = get_node("/root/LevelEditor/GameScene/Player")
+	else:
+		_player = get_node("/root/Scene/Player")
 	connect("toggle_orb_entered", Callable(_player, "_on_ToggleOrb_area_entered"))
 	connect("toggle_orb_exited", Callable(_player, "_on_ToggleOrb_area_exited"))
 

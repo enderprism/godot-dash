@@ -23,6 +23,11 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
+	if CurrentLevel.in_editor:
+		if CurrentLevel.editor_active_camera == CurrentLevel.ActiveCamera.PLAYERCAMERA:
+			enabled = true
+		elif CurrentLevel.editor_active_camera == CurrentLevel.ActiveCamera.EDITORCAMERA:
+			enabled = false
 	if player.arrow_trigger_direction == Vector2(0.0, -1.0):
 		x_final_pos = lerp(position.x, player.position.x, horizontal_lerp_weight)
 		x_final_offset = lerp(offset.x, cam_offset.x * player._x_direction, 0.1)

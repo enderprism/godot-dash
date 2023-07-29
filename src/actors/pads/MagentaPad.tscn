@@ -14,6 +14,9 @@ script = ExtResource("1_qwsbp")
 "Is Multi Usage?" = false
 "Is Reverse?" = false
 "Is Opposite Gravity?" = false
+"Is Freefly?" = false
+"Has Custom Ground Radius?" = false
+"Custom Ground Radius" = 0.0
 
 [node name="PinkPad" type="Sprite2D" parent="."]
 position = Vector2(0, 52)
@@ -23,5 +26,3 @@ texture = ExtResource("1")
 position = Vector2(0, 52)
 shape = ExtResource("3_ktl72")
 debug_color = Color(0.0117647, 0.45098, 0, 0.419608)
-
-[connection signal="area_entered" from="." to="." method="_on_PinkPad_area_entered"]

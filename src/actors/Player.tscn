@@ -1442,7 +1442,6 @@ randomness = 1.0
 metadata/_edit_lock_ = true
 
 [node name="PlayerGroundParticles" type="GPUParticles2D" parent="."]
-visible = false
 z_index = -50
 position = Vector2(0, -66)
 amount = 25

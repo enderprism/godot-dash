@@ -23,10 +23,10 @@ Example:
 Duration: the duration of the action. If it is 0.0 the action is instant (and not tweened)
 Target: the path of the trigger's targetted object.
 SPECIAL TARGET PATHS:
-	PLAYERCAMERA: /root/Scene/PlayerCamera
-	PLAYER: /root/Scene/Player
-	GROUND: /root/Scene/Ground
-	BACKGROUND: /root/Scene/Background
+	PLAYERCAMERA: /root/Scene/PlayerCamera (in GameScene)
+	PLAYER: /root/Scene/Player (in GameScene)
+	GROUND: /root/Scene/Ground (in GameScene)
+	BACKGROUND: /root/Scene/Background (in GameScene)
 Value: the end value of the trigger. If it's a position, it can be a global position or an offset.
 Relative: decides wether the target value should be added to the start value or replace it.
 Example:
@@ -72,8 +72,8 @@ var isInterpolating: bool = false
 var target
 var pos_offset: Vector2
 var rot_offset: float
-@onready var player_camera = get_node("/root/Scene/PlayerCamera")
-@onready var player = get_node("/root/Scene/Player")
+@onready var player_camera
+@onready var player
 
 func _on_trigger_body_entered(_body: Node2D) -> void:
 	var trigger_tween = get_tree().create_tween()
@@ -85,7 +85,7 @@ func _on_trigger_body_entered(_body: Node2D) -> void:
 			if "/root/Scene/" in target_path:
 				target = get_node(target_path)
 			elif target_path == "PLAYER":
-				target = get_node("/root/Scene/Player")
+				target = player
 			elif target_path == "PLAYERCAMERA":
 				target = player_camera
 			elif target_path == "GROUND":
@@ -249,6 +249,12 @@ func toggle_on(_toggled_group):
 #	if show: _toggled_group.show()
 
 func _ready() -> void:
+	if CurrentLevel.in_editor:
+		player = get_node("/root/LevelEditor/GameScene/Player")
+		player_camera = get_node("/root/LevelEditor/GameScene/PlayerCamera")
+	else:
+		player = get_node("/root/Scene/Player")
+		player_camera = get_node("/root/Scene/PlayerCamera")
 	CurrentLevel.is_camera_static = Vector2.ZERO
 	set_monitorable(true)
 	if !Engine.is_editor_hint(): hide()

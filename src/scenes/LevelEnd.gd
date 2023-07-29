@@ -1,10 +1,24 @@
 extends Area2D
 
-@onready var player = get_node("/root/Scene/Player")
-@onready var player_icon = get_node("/root/Scene/Player/Icon")
-@onready var player_spider_sprites = get_node("/root/Scene/Player/SpiderSprites")
-@onready var player_camera = get_node("/root/Scene/PlayerCamera")
-@onready var level_song = get_node("/root/Scene/LevelMusic")
+@onready var player
+@onready var player_icon
+@onready var player_spider_sprites
+@onready var player_camera
+@onready var level_song
+
+func _ready() -> void:
+	if CurrentLevel.in_editor:
+		player = get_node("/root/LevelEditor/GameScene/Player")
+		player_icon = get_node("/root/LevelEditor/GameScene/Player/Icon")
+		player_spider_sprites = get_node("/root/LevelEditor/GameScene/Player/SpiderSprites")
+		player_camera = get_node("/root/LevelEditor/GameScene/PlayerCamera")
+		level_song = get_node("/root/LevelEditor/GameScene/LevelMusic")
+	else:
+		player = get_node("/root/Scene/Player")
+		player_icon = get_node("/root/Scene/Player/Icon")
+		player_spider_sprites = get_node("/root/Scene/Player/SpiderSprites")
+		player_camera = get_node("/root/Scene/PlayerCamera")
+		level_song = get_node("/root/Scene/LevelMusic")
 
 func _on_player_entered(_body: PhysicsBody2D) -> void:
 	# TODO Replace with animation
@@ -26,7 +40,8 @@ func _on_player_entered(_body: PhysicsBody2D) -> void:
 	$endSound.play()
 
 func _physics_process(_delta: float) -> void:
-	player_camera.limit_right = global_position.x - player_camera.offset.x
-	global_position.y = player_camera.get_screen_center_position().y
-	scale.y = 1/player_camera.zoom.y
-	scale.x = 1/player_camera.zoom.y
+	if player_camera:
+		player_camera.limit_right = global_position.x - player_camera.offset.x
+		global_position.y = player_camera.get_screen_center_position().y
+		scale.y = 1/player_camera.zoom.y
+		scale.x = 1/player_camera.zoom.y

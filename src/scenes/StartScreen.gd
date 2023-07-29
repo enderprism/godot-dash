@@ -39,3 +39,10 @@ func _on_FadeScreen_fade_finished() -> void:
 func _on_CloseGame_button_up() -> void:
 	if $CloseGame.is_hovered():
 		get_tree().quit()
+
+
+func _on_level_editor_pressed() -> void:
+	if $Menu/Buttons/LevelEditor.is_hovered():
+		$FadeScreen.show()
+		$FadeScreen.fade_in()
+	scene_to_go = "res://src/guiElements/LevelEditor.tscn"

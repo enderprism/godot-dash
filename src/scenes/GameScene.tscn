@@ -257,15 +257,17 @@ round_precision = 16
 antialiased = true
 script = ExtResource("51")
 length = 150.0
+enabled = false
 
 [node name="PlayerCamera" type="Camera2D" parent="."]
 unique_name_in_owner = true
+process_mode = 3
 z_index = 51
 position = Vector2(0, 225)
 scale = Vector2(5, 5)
 offset = Vector2(300, 0)
 ignore_rotation = false
-zoom = Vector2(1.5, 1.5)
+zoom = Vector2(1.6, 1.6)
 drag_left_margin = 0.4
 drag_top_margin = 0.4
 drag_right_margin = 0.4
@@ -274,6 +276,7 @@ editor_draw_limits = true
 script = ExtResource("24_fqphc")
 
 [node name="Player" parent="." instance=ExtResource("1")]
+unique_name_in_owner = true
 position = Vector2(0, 488)
 scale = Vector2(0.5, 0.5)
 
@@ -323,6 +326,7 @@ frame_progress = 1.0
 script = ExtResource("37_50b76")
 
 [node name="LevelMusic" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
 autoplay = true
 
 [node name="BackgroundKillZone" type="Area2D" parent="."]
@@ -343,7 +347,8 @@ layer = 75
 visible = false
 custom_minimum_size = Vector2(1920, 1080)
 
-[node name="GUI" parent="." instance=ExtResource("52")]
+[node name="TouchControlsGUI" parent="." instance=ExtResource("52")]
+layer = 5
 
 [connection signal="dead" from="Player" to="DeathEffect" method="_on_player_dead"]
 [connection signal="spider_jumped" from="Player" to="SpiderDash" method="_on_Player_spider_jumped"]

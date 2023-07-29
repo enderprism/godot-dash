@@ -9,7 +9,7 @@ signal started_dashing
 signal dead
 
 @onready var player_icon: = $Icon
-@onready var player_camera = get_node("/root/Scene/PlayerCamera")
+@onready var player_camera = get_node("../PlayerCamera")
 
 var _debug_time: = 0.0
 var _is_small_hitbox_colliding: = false
@@ -92,13 +92,6 @@ func _physics_process(delta: float) -> void:
 		_orb_jumped = false
 
 	smooth_rot_speed = 1000*delta
-#	if is_platformer:
-#		player_camera.offset.x = 0
-#		player_camera.drag_horizontal_enabled = false
-#		player_camera.drag_vertical_enabled = false
-#		player_camera.position_smoothing_enabled = true
-#	else:
-#		player_camera.position_smoothing_enabled = false
 
 	global_rotation_degrees = 0.0
 
@@ -124,7 +117,11 @@ func _physics_process(delta: float) -> void:
 		_can_fly = _is_player_onground
 	var is_jump_interrupted: bool = Input.is_action_just_released("jump") and velocity.y < 0.0
 	
-	direction = get_direction(_press_or_hold)
+	if CurrentLevel.in_editor:
+		if CurrentLevel.editor_is_playtesting == true:
+			direction = get_direction(_press_or_hold)
+		else: direction = Vector2(0.0, 0.0)
+	else: direction = get_direction(_press_or_hold)
 
 	if Input.is_action_pressed("jump") && _orb_checker & GDInteractible.Orb.ORB_GREEN && _has_let_go_of_orb:
 		_is_green_orb_jumping = true
@@ -181,21 +178,6 @@ func _physics_process(delta: float) -> void:
 		_robot_timer = 0.25 / delta
 	if _robot_timer > 0:
 		_robot_timer -= 1
-	
-#	if !is_static && !is_platformer:
-#		# Reset the camera offset if in Arrow Trigger
-#		if arrow_trigger_direction == Vector2(-1.0, 0.0) && !$AnimationPlayer.is_playing() && player_camera.offset.x != 0.0:
-#			if player_camera.offset.x == -200:
-#				$AnimationPlayer.play("Camera3D go to center from left edge")
-#			elif player_camera.offset.x == 200:
-#				$AnimationPlayer.play("Camera3D go to center from right edge")
-#		# Put the camera back in place when getting out of Arrow Trigger
-#		if arrow_trigger_direction == Vector2(0.0, -1.0) && !$AnimationPlayer.is_playing() && player_camera.offset.x == 0.0:
-#			if _x_direction == 1.0:
-#				$AnimationPlayer.play("Camera3D go from center to left edge")
-#			elif _x_direction == -1.0:
-#				$AnimationPlayer.play("Camera3D go from center to right edge")
-	
 	
 	if _is_reversed == true && (Input.is_action_just_pressed("jump") && _orb_checker != 0):
 		_x_direction *= -1
@@ -262,7 +244,10 @@ func _physics_process(delta: float) -> void:
 		set_velocity(velocity)
 		set_floor_constant_speed_enabled(true)
 		set_up_direction(UP_DIRECTION)
-		move_and_slide()
+		if CurrentLevel.in_editor:
+			if CurrentLevel.editor_is_playtesting:
+				move_and_slide()
+		else: move_and_slide()
 	else:
 		$PlayerGroundParticles.hide()
 		$DashFire.hide()
@@ -281,13 +266,15 @@ func get_direction(_press_or_hold: bool) -> Vector2:
 			_jump_direction = UP_DIRECTION.y
 		elif Input.is_action_pressed("jump") && _orb_checker & GDInteractible.Orb.ORB_GREEN && _has_let_go_of_orb:
 			_jump_direction = -UP_DIRECTION.y
-		elif Input.is_action_pressed("jump") && _has_let_go_of_orb && _orb_checker & GDInteractible.Orb.ORB_SPIDER:
+		elif Input.is_action_pressed("jump") && _has_let_go_of_orb && (_orb_checker & GDInteractible.Orb.ORB_SPIDER):
 			_jump_direction = UP_DIRECTION.y * -1
 		else:
 			_jump_direction = UP_DIRECTION.y * -1 # contains black orb
 	
 	if is_platformer:
-		_x_direction = Input.get_action_strength("move_right") - Input.get_action_strength("move_left") if _speed_multiplier != 0.0 else 0.0
+		if _speed_multiplier != 0.0:
+			_x_direction = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
+		else: _x_direction = 0.0
 		if Input.is_action_pressed("move_left") || Input.is_action_pressed("move_right"):
 			_icon_direction = _x_direction
 		if gamemode == "wave" && Input.is_action_pressed("jump"):
@@ -345,7 +332,7 @@ func calculate_move_velocity(
 		_out_vertical += gravity * get_physics_process_delta_time() + dash_offset
 	if direction.y == UP_DIRECTION.y:
 		if _pad_checker & GDInteractible.Pad.PAD_PINK || _orb_checker & GDInteractible.Orb.ORB_PINK:
-			_out_vertical = speed.y * direction.y * 0.8 * gravityMod
+			_out_vertical = speed.y * direction.y * 0.9 * gravityMod
 			_pad_checker &= ~GDInteractible.Pad.PAD_PINK # reverts pink pad/orb
 			_orb_checker &= ~GDInteractible.Orb.ORB_PINK
 		elif _pad_checker & GDInteractible.Pad.PAD_RED || _orb_checker & GDInteractible.Orb.ORB_RED:

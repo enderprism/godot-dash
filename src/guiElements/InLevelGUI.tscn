@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://xq5ud75oryb3"]
+[gd_scene load_steps=13 format=3 uid="uid://xq5ud75oryb3"]
 
 [ext_resource type="FontFile" uid="uid://3d5l6qp0iyr" path="res://assets/fonts/PUSAB___.otf" id="1"]
+[ext_resource type="Script" path="res://src/guiElements/InLevelGUI.gd" id="1_sdiuo"]
 [ext_resource type="Texture2D" uid="uid://cx84wm80vvquy" path="res://assets/empty.png" id="1_vxsfh"]
 [ext_resource type="Theme" uid="uid://ctsh3cgr6x55w" path="res://src/scenes/uiElements/Pusab_Font.tres" id="2"]
 [ext_resource type="Texture2D" uid="uid://g61d7algc38p" path="res://assets/guiTextures/platformerControls/PlatformerLeft.svg" id="4_4wteb"]
@@ -16,9 +17,6 @@ subpixel_positioning = 0
 msdf_pixel_range = 14
 msdf_size = 128
 fallbacks = Array[Font]([ExtResource("1")])
-face_index = null
-embolden = null
-transform = null
 cache/0/75/0/ascent = 0.0
 cache/0/75/0/descent = 0.0
 cache/0/75/0/underline_position = 0.0
@@ -44,8 +42,9 @@ cache/0/50/0/kerning_overrides/75/0 = Vector2(0, 0)
 cache/0/50/0/kerning_overrides/16/0 = Vector2(0, 0)
 cache/0/50/0/kerning_overrides/50/0 = Vector2(0, 0)
 
-[node name="GUI" type="CanvasLayer"]
+[node name="TouchControlsGUI" type="CanvasLayer"]
 layer = 50
+script = ExtResource("1_sdiuo")
 
 [node name="JumpButtonTouchscreen" type="TouchScreenButton" parent="."]
 position = Vector2(0, 155)

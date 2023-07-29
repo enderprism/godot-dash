@@ -71,7 +71,11 @@ func _ready() -> void:
 	connect("body_exited", Callable(self, "_on_player_exit"))
 
 func _on_player_enter(_body: Node2D):
-	var _player = get_node("/root/Scene/Player")
+	var _player
+	if CurrentLevel.in_editor:
+		_player = get_node("/root/LevelEditor/GameScene/Player")
+	else:
+		_player = get_node("/root/Scene/Player")
 	if orb_type_val != Orb.ORB_DISABLED:
 		_player._orb_checker |= orb_type_val
 		_player._is_reversed = is_reverse_val
@@ -138,11 +142,11 @@ func _set_ground_radius(gamemode: int) -> float:
 			GMPortal.GMPORTAL_WAVE:
 				return 61*5
 			GMPortal.GMPORTAL_BALL:
-				return 61*3
+				return 61*4
 			GMPortal.GMPORTAL_ROBOT:
 				return 61*5
 			GMPortal.GMPORTAL_SPIDER:
-				return 61*4
+				return 61*4.5
 			GMPortal.GMPORTAL_SWING:
 				return 61*5
 	return 61*5
@@ -168,7 +172,11 @@ func _set_gamemode(gamemode: int) -> String:
 	return ""
 
 func _on_player_exit(_body: Node2D):
-	var _player = get_node("/root/Scene/Player")
+	var _player
+	if CurrentLevel.in_editor:
+		_player = get_node("/root/LevelEditor/GameScene/Player")
+	else:
+		_player = get_node("/root/Scene/Player")
 	if orb_type_val != Orb.ORB_DISABLED:
 		_player._orb_checker &= ~orb_type_val
 		if orb_type_val == Orb.ORB_SPIDER:
@@ -255,7 +263,6 @@ func _set(property: StringName, value: Variant) -> bool:
 		pad_usage = PROPERTY_USAGE_DEFAULT
 		gmportal_usage = PROPERTY_USAGE_DEFAULT
 		spportal_usage = PROPERTY_USAGE_DEFAULT
-#	print(orb_type_val, ", ", orb_flags_val, ", ", pad_type_val, ", ", gmportal_type_val, ", ", spportal_type_val)
 	return true
 
 func _get(property: StringName):
@@ -355,6 +362,7 @@ func _get_property_list():
 		"name": "Has Custom Ground Radius?",
 		"type": TYPE_BOOL,
 		"usage": has_custom_ground_radius_usage, # See above assignment.
+		
 	})
 	
 	properties.append({

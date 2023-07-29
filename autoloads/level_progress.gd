@@ -15,9 +15,9 @@ func _physics_process(delta: float) -> void:
 			rounded_percentage = snapped(calculated_percentage, 1.0)
 			if !get_node("/root/Scene/Player")._is_dead:
 				if rounded_percentage >= 100.00:
-					get_node("/root/Scene/GUI/Percentage").text = "100%"
+					get_node("/root/Scene/TouchControlsGUI/Percentage").text = "100%"
 				else:
-					get_node("/root/Scene/GUI/Percentage").text = str(rounded_percentage) + "%"
+					get_node("/root/Scene/TouchControlsGUI/Percentage").text = str(rounded_percentage) + "%"
 		elif _current_level.has_node("LevelEnd/EndEdge"):
 			var _player_pos = get_node("/root/Scene/Player").global_position.x
 			var _level_end = _current_level.get_node("LevelEnd/EndEdge").global_position.x
@@ -25,10 +25,10 @@ func _physics_process(delta: float) -> void:
 			rounded_percentage = snapped(calculated_percentage, 1.0)
 			if !get_node("/root/Scene/Player")._is_dead:
 				if rounded_percentage >= 100.00:
-					get_node("/root/Scene/GUI/Percentage").text = "100%"
+					get_node("/root/Scene/TouchControlsGUI/Percentage").text = "100%"
 				else:
-					get_node("/root/Scene/GUI/Percentage").text = str(rounded_percentage) + "%"
+					get_node("/root/Scene/TouchControlsGUI/Percentage").text = str(rounded_percentage) + "%"
 		else:
-			get_node("/root/Scene/GUI/Percentage").text = "Infinite"
+			get_node("/root/Scene/TouchControlsGUI/Percentage").text = "Infinite"
 	else:
 		end_time = 0.0

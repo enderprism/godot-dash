@@ -1,12 +1,16 @@
 extends Area2D
 
-@onready var _player: = get_node("/root/Scene/Player")
+@onready var _player
 var _player_entered: bool = false
 @export var y_only: bool = false
 signal entered_tp_orb
 signal exited_tp_orb
 
 func _ready() -> void:
+	if CurrentLevel.in_editor:
+		_player = get_node("/root/LevelEditor/GameScene/Player")
+	else:
+		_player = get_node("/root/Scene/Player")
 	connect("entered_tp_orb", Callable(_player, "_on_ToggleOrb_area_entered"))
 	connect("exited_tp_orb", Callable(_player, "_on_ToggleOrb_area_exited"))
 

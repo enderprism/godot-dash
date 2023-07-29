@@ -123,6 +123,3 @@ saw_rotation = 30.0
 
 [node name="PinkPad" parent="." instance=ExtResource("10_ykppy")]
 position = Vector2(1647, -427)
-"Is Freefly?" = false
-"Has Custom Ground Radius?" = false
-"Custom Ground Radius" = 0.0

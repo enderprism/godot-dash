@@ -1,0 +1,58 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://cn7oykk37myu0"]
+
+[ext_resource type="FontFile" uid="uid://3d5l6qp0iyr" path="res://assets/fonts/PUSAB___.otf" id="1_5b7he"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1gu7q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7hdc1"]
+bg_color = Color(0.513726, 0.513726, 0.513726, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(1, 1, 1, 0.5)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="1"]
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(1, 1, 1, 0.5)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3vgbx"]
+bg_color = Color(0.513726, 0.513726, 0.670588, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(1, 1, 1, 0.5)
+shadow_size = 4
+
+[resource]
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/constants/outline_size = 6
+Button/font_sizes/font_size = 34
+Button/fonts/font = ExtResource("1_5b7he")
+Button/styles/focus = SubResource("StyleBoxEmpty_1gu7q")
+Button/styles/hover = SubResource("StyleBoxFlat_7hdc1")
+Button/styles/normal = SubResource("1")
+Button/styles/pressed = SubResource("StyleBoxFlat_3vgbx")
+GridContainer/constants/hseparation = 16
+GridContainer/constants/vseparation = 16

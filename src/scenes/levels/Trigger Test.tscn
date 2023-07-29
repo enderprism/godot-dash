@@ -66,7 +66,7 @@ position = Vector2(7503, -732)
 
 [node name="ShipPortal_1" parent="." instance=ExtResource("6")]
 position = Vector2(1891, 488)
-freefly = false
+"Custom Ground Radius" = 0.0
 
 [node name="LevelEnd" parent="." instance=ExtResource("8")]
 position = Vector2(11895, -549)
@@ -170,22 +170,25 @@ gizmo_extents = 61.0
 [node name="PinkPad" parent="." instance=ExtResource("9_yj8hb")]
 position = Vector2(3050, -61)
 rotation = -1.57079
-reverse = true
+"Is Reverse?" = true
+
+[node name="PinkPad5" parent="." instance=ExtResource("9_yj8hb")]
+position = Vector2(366, -61)
 
 [node name="PinkPad2" parent="." instance=ExtResource("9_yj8hb")]
 position = Vector2(2745, -244)
 rotation = 1.57079
-reverse = true
+"Is Reverse?" = true
 
 [node name="PinkPad3" parent="." instance=ExtResource("9_yj8hb")]
 position = Vector2(3050, -427)
 rotation = -1.57079
-reverse = true
+"Is Reverse?" = true
 
 [node name="PinkPad4" parent="." instance=ExtResource("9_yj8hb")]
 position = Vector2(2745, -610)
 rotation = 1.57079
-reverse = true
+"Is Reverse?" = true
 
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(5307, -244)

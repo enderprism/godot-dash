@@ -14,6 +14,9 @@ script = ExtResource("1_u7hmc")
 "Is Multi Usage?" = false
 "Is Reverse?" = false
 "Is Opposite Gravity?" = false
+"Is Freefly?" = false
+"Has Custom Ground Radius?" = false
+"Custom Ground Radius" = 0.0
 
 [node name="SpiderRing" type="Sprite2D" parent="."]
 scale = Vector2(1.04286, 1.04286)

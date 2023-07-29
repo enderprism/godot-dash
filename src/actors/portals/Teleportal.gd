@@ -1,6 +1,13 @@
 extends Area2D
 
-@onready var player: = get_node("/root/Scene/Player")
+@onready var player
+
+func _ready() -> void:
+	if CurrentLevel.in_editor:
+		player = get_node("/root/LevelEditor/GameScene/Player")
+	else:
+		player = get_node("/root/Scene/Player")
+
 @export var y_only: bool = false
 @export var x_only: bool = false
 @export var one_time: bool = false

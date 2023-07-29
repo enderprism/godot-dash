@@ -1,8 +1,14 @@
 extends Control
 
 var scene_to_go: String = "null"
-@onready var player_camera = get_node("/root/Scene/PlayerCamera")
+@onready var player_camera
 const base_position = Vector2(127.0, 1091)
+
+func _ready() -> void:
+	if CurrentLevel.in_editor:
+		player_camera = get_node("/root/LevelEditor/GameScene/PlayerCamera")
+	else:
+		player_camera = get_node("/root/Scene/PlayerCamera")
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause") && not get_tree().paused:
@@ -18,7 +24,8 @@ func _pause_game():
 
 func _unpause_game():
 	hide()
-	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED_HIDDEN)
+	if !CurrentLevel.in_editor:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED_HIDDEN)
 #	rect_position = base_position
 	get_tree().paused = false
 
@@ -35,10 +42,13 @@ func _on_ContinuePlaying_button_up() -> void:
 
 
 func _on_GoBackToMenu_button_up() -> void:
-	scene_to_go = "res://src/scenes/LevelSelector.tscn"
+	if CurrentLevel.in_editor:
+		scene_to_go = "res://src/scenes/StartScreen.tscn"
+	else:
+		scene_to_go = "res://src/scenes/LevelSelector.tscn"
 	if $Menu/Buttons/GoBackToMenu.is_hovered():
 		get_tree().paused = false
-		get_node("/root/Scene/LevelMusic").stop()
+		get_node("%LevelMusic").stop()
 		$FadeScreen.show()
 		$FadeScreen.fade_in()
 		$QuitSound.play()

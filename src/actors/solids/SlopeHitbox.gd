@@ -3,7 +3,7 @@ extends CollisionPolygon2D
 class_name SolidSlopeHitbox
 signal player_entered
 
-@onready var player = get_node("/root/Scene/Player")
+
 
 #func _physics_process(delta: float) -> void:
 #	if get_parent() in player.area_detection.get_overlapping_bodies() && \

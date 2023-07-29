@@ -12,6 +12,7 @@ collision_layer = 8
 [node name="RegularPlatform01" type="Sprite2D" parent="."]
 position = Vector2(0, -33)
 texture = ExtResource("1")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -30.5)
@@ -19,3 +20,4 @@ shape = SubResource("1")
 one_way_collision = true
 debug_color = Color(0, 0.266667, 0.905882, 0.419608)
 script = ExtResource("2")
+_shape_y = 61.0
