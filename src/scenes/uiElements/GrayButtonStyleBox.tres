@@ -1,0 +1,10 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://4wah53brrgfg"]
+
+[ext_resource type="Texture2D" uid="uid://cmyn8smf0unck" path="res://assets-svg/editorTextures/EditorButtonGray.svg" id="1_56ltb"]
+
+[resource]
+texture = ExtResource("1_56ltb")
+texture_margin_left = 21.0
+texture_margin_top = 21.0
+texture_margin_right = 21.0
+texture_margin_bottom = 21.0

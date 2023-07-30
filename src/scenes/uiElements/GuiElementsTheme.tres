@@ -1,8 +1,10 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://egspkbwxefg2"]
+[gd_resource type="Theme" load_steps=12 format=3 uid="uid://egspkbwxefg2"]
 
 [ext_resource type="FontFile" uid="uid://3d5l6qp0iyr" path="res://assets/fonts/PUSAB___.otf" id="1"]
+[ext_resource type="Texture2D" uid="uid://cme20t7cja3yf" path="res://assets-svg/editorTextures/EditorBlockPaletteTab.svg" id="2_gs8ql"]
+[ext_resource type="Texture2D" uid="uid://dvbf41rjdl0xq" path="res://assets-svg/editorTextures/EditorBlockPaletteTab-Selected.svg" id="3_tmfci"]
 
-[sub_resource type="StyleBoxEmpty" id="1"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cv1tn"]
 
 [sub_resource type="StyleBoxFlat" id="2"]
 bg_color = Color(1, 0, 0, 1)
@@ -39,10 +41,27 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v20sr"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5jfx7"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0i2ho"]
+texture = ExtResource("2_gs8ql")
+texture_margin_left = 9.0
+texture_margin_top = 43.0
+texture_margin_right = 9.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p4ujt"]
+texture = ExtResource("3_tmfci")
+texture_margin_left = 9.0
+texture_margin_top = 43.0
+texture_margin_right = 9.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_01bk5"]
+texture = ExtResource("2_gs8ql")
+texture_margin_left = 9.0
+texture_margin_top = 43.0
+texture_margin_right = 9.0
+modulate_color = Color(1, 1, 1, 0.75)
 
 [resource]
-Button/styles/focus = SubResource("1")
+Button/styles/focus = SubResource("StyleBoxEmpty_cv1tn")
 HSlider/styles/slider = SubResource("2")
 TabContainer/colors/font_outline_color = Color(0, 0, 0, 1)
 TabContainer/constants/outline_size = 10
@@ -50,4 +69,6 @@ TabContainer/font_sizes/font_size = 30
 TabContainer/fonts/font = SubResource("6")
 TabContainer/styles/panel = SubResource("StyleBoxFlat_w7x5b")
 TabContainer/styles/tab_bg = SubResource("StyleBoxEmpty_v20sr")
-TabContainer/styles/tab_fg = SubResource("StyleBoxEmpty_5jfx7")
+TabContainer/styles/tab_hovered = SubResource("StyleBoxTexture_0i2ho")
+TabContainer/styles/tab_selected = SubResource("StyleBoxTexture_p4ujt")
+TabContainer/styles/tab_unselected = SubResource("StyleBoxTexture_01bk5")

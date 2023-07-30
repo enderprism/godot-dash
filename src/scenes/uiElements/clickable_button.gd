@@ -4,6 +4,7 @@ extends BaseButton
 @export var _scene_to_go: String
 @export var _level_selector_button: bool = false
 @export var _selected_level: String
+@export var _block_palette_button: bool
 var _selected_level_scene: PackedScene
 
 func _ready() -> void:
@@ -13,6 +14,11 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	pivot_offset.x = size.x/2
 	pivot_offset.y = size.y/2
+	if _block_palette_button:
+		if is_pressed():
+			modulate = Color("808080")
+		else:
+			modulate = Color("ffffff")
 
 func _button_held() -> void:
 	var scale_tween = create_tween()

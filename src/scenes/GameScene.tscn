@@ -293,7 +293,8 @@ metadata/_edit_group_ = true
 [node name="Ground_Bottom_OBJ" parent="GroundManager/Ground_Bottom" instance=ExtResource("7")]
 
 [node name="Line_Bottom" type="Sprite2D" parent="GroundManager/Ground_Bottom"]
-z_index = 1
+process_mode = 3
+z_index = 2
 material = SubResource("CanvasItemMaterial_qarbj")
 position = Vector2(-2.03451e-05, 1)
 scale = Vector2(0.333333, 0.333333)
@@ -308,7 +309,8 @@ metadata/_edit_group_ = true
 
 [node name="Ground_Top_OBJ" parent="GroundManager/Ground_Top" instance=ExtResource("7")]
 
-[node name="Line_Top" type="Sprite2D" parent="GroundManager/Ground_Top" groups=["LINE"]]
+[node name="Line_Top" type="Sprite2D" parent="GroundManager/Ground_Top"]
+process_mode = 3
 z_index = 1
 material = SubResource("CanvasItemMaterial_qarbj")
 position = Vector2(0, 1.00146)
@@ -337,8 +339,11 @@ script = ExtResource("8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BackgroundKillZone"]
 shape = SubResource("1")
 
-[node name="Marker2D" type="Marker2D" parent="."]
+[node name="Marker2D2" type="Marker2D" parent="."]
 position = Vector2(-674, 0)
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, 1336)
 
 [node name="PauseLayer" type="CanvasLayer" parent="."]
 layer = 75

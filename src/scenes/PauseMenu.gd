@@ -1,20 +1,14 @@
 extends Control
 
 var scene_to_go: String = "null"
-@onready var player_camera
 const base_position = Vector2(127.0, 1091)
 
-func _ready() -> void:
-	if CurrentLevel.in_editor:
-		player_camera = get_node("/root/LevelEditor/GameScene/PlayerCamera")
-	else:
-		player_camera = get_node("/root/Scene/PlayerCamera")
-
 func _physics_process(delta: float) -> void:
-	if Input.is_action_just_pressed("pause") && not get_tree().paused:
-		_pause_game()
-	elif Input.is_action_just_pressed("pause") && get_tree().paused:
-		_unpause_game()
+	if !CurrentLevel.in_editor:
+		if Input.is_action_just_pressed("pause") && not get_tree().paused:
+			_pause_game()
+		elif Input.is_action_just_pressed("pause") && get_tree().paused:
+			_unpause_game()
 
 func _pause_game():
 	show()
@@ -47,8 +41,8 @@ func _on_GoBackToMenu_button_up() -> void:
 	else:
 		scene_to_go = "res://src/scenes/LevelSelector.tscn"
 	if $Menu/Buttons/GoBackToMenu.is_hovered():
-		get_tree().paused = false
 		get_node("%LevelMusic").stop()
+		get_tree().paused = false
 		$FadeScreen.show()
 		$FadeScreen.fade_in()
 		$QuitSound.play()

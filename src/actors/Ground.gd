@@ -7,7 +7,3 @@ func _on_ground_overflow_right() -> void:
 
 func _on_ground_overflow_left() -> void:
 	position.x -= _ground_width
-
-func _ready() -> void:
-	if CurrentLevel.in_editor:
-		$GroundSprites/ColorRect.hide()

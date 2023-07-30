@@ -1,0 +1,201 @@
+[gd_scene load_steps=9 format=3 uid="uid://jn4ekg153qn"]
+
+[ext_resource type="Script" path="res://src/guiElements/EditorPauseMenu.gd" id="2_283hp"]
+[ext_resource type="Theme" uid="uid://cn7oykk37myu0" path="res://src/scenes/uiElements/EditorGreenButtons.tres" id="2_p8mvn"]
+[ext_resource type="Theme" uid="uid://ctsh3cgr6x55w" path="res://src/scenes/uiElements/Pusab_Font.tres" id="3"]
+[ext_resource type="Theme" uid="uid://c7o4p8gk56qvd" path="res://src/scenes/uiElements/EditorGrayButtons.theme" id="3_hfisb"]
+[ext_resource type="PackedScene" uid="uid://cqslxljwyr3r6" path="res://src/scenes/uiElements/FadeScreen.tscn" id="8"]
+[ext_resource type="Script" path="res://src/scenes/uiElements/clickable_button.gd" id="8_uu60r"]
+[ext_resource type="AudioStream" uid="uid://bbqvf1ujobh0o" path="res://assets/audio/soundEffects/quitSound_01.ogg" id="11"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1dyfc"]
+
+[node name="PauseMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(960, 540)
+theme = ExtResource("3")
+script = ExtResource("2_283hp")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.6)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftSide" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="EditorOptions" type="VBoxContainer" parent="HBoxContainer/LeftSide"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+theme = ExtResource("3_hfisb")
+
+[node name="show_ground" type="CheckBox" parent="HBoxContainer/LeftSide/EditorOptions"]
+layout_mode = 2
+button_pressed = true
+text = "Show Ground"
+script = ExtResource("8_uu60r")
+
+[node name="show_grid" type="CheckBox" parent="HBoxContainer/LeftSide/EditorOptions"]
+layout_mode = 2
+button_pressed = true
+text = "Show Grid"
+script = ExtResource("8_uu60r")
+
+[node name="follow_player" type="CheckBox" parent="HBoxContainer/LeftSide/EditorOptions"]
+layout_mode = 2
+text = "Follow Player"
+script = ExtResource("8_uu60r")
+
+[node name="Center" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Center"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="resume" type="Button" parent="HBoxContainer/Center/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_p8mvn")
+theme_override_colors/font_color = Color(1, 1, 0.231373, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 0.231373, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 0.231373, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 0.231373, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 0.231373, 1)
+theme_override_font_sizes/font_size = 45
+text = "resume"
+script = ExtResource("8_uu60r")
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/Center/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1dyfc")
+
+[node name="save_and_play" type="Button" parent="HBoxContainer/Center/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_p8mvn")
+theme_override_colors/font_color = Color(1, 1, 0.231373, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 0.231373, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 0.231373, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 0.231373, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 0.231373, 1)
+theme_override_font_sizes/font_size = 45
+text = "save and play"
+script = ExtResource("8_uu60r")
+
+[node name="HSeparator2" type="HSeparator" parent="HBoxContainer/Center/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1dyfc")
+
+[node name="save_and_exit" type="Button" parent="HBoxContainer/Center/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_p8mvn")
+theme_override_colors/font_color = Color(1, 1, 0.231373, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 0.231373, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 0.231373, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 0.231373, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 0.231373, 1)
+theme_override_font_sizes/font_size = 45
+text = "save and exit"
+script = ExtResource("8_uu60r")
+
+[node name="HSeparator3" type="HSeparator" parent="HBoxContainer/Center/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1dyfc")
+
+[node name="save" type="Button" parent="HBoxContainer/Center/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_p8mvn")
+theme_override_colors/font_color = Color(1, 1, 0.231373, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 0.231373, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 0.231373, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 0.231373, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 0.231373, 1)
+theme_override_font_sizes/font_size = 45
+text = "save"
+script = ExtResource("8_uu60r")
+
+[node name="HSeparator4" type="HSeparator" parent="HBoxContainer/Center/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1dyfc")
+
+[node name="exit" type="Button" parent="HBoxContainer/Center/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_p8mvn")
+theme_override_colors/font_color = Color(1, 1, 0.231373, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 0.231373, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 0.231373, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 0.231373, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 0.231373, 1)
+theme_override_font_sizes/font_size = 45
+text = "exit"
+script = ExtResource("8_uu60r")
+
+[node name="RightSide" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="OptionButton" type="OptionButton" parent="HBoxContainer/RightSide"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -75.0
+offset_top = 61.0
+offset_right = -61.0
+offset_bottom = 81.0
+grow_horizontal = 0
+theme = ExtResource("3_hfisb")
+item_count = 4
+selected = 0
+popup/item_0/text = "Control Scheme"
+popup/item_0/id = 2
+popup/item_0/disabled = true
+popup/item_1/text = ""
+popup/item_1/id = 3
+popup/item_1/separator = true
+popup/item_2/text = "Geometry Dash"
+popup/item_2/id = 0
+popup/item_3/text = "Blender"
+popup/item_3/id = 1
+
+[node name="FadeScreen" parent="." instance=ExtResource("8")]
+layout_mode = 1
+
+[node name="QuitSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11")
+
+[connection signal="pressed" from="HBoxContainer/Center/VBoxContainer/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="HBoxContainer/Center/VBoxContainer/exit" to="." method="_on_exit_pressed"]
+[connection signal="item_selected" from="HBoxContainer/RightSide/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="fade_finished" from="FadeScreen" to="." method="_on_FadeScreen_fade_finished"]

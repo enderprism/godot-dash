@@ -1,7 +1,5 @@
-[gd_scene load_steps=14 format=3 uid="uid://dn0ix4b441bgr"]
+[gd_scene load_steps=12 format=3 uid="uid://dn0ix4b441bgr"]
 
-[ext_resource type="Texture2D" uid="uid://dreeldi1syfm7" path="res://assets/levelTextures/ground/ground-long.png" id="1"]
-[ext_resource type="Texture2D" uid="uid://c068eo4ul0lit" path="res://assets/levelTextures/background/background1-3.png" id="2"]
 [ext_resource type="Theme" uid="uid://ctsh3cgr6x55w" path="res://src/scenes/uiElements/Pusab_Font.tres" id="3"]
 [ext_resource type="Texture2D" uid="uid://c8pv7gaik45on" path="res://assets/guiTextures/Restart.png" id="4"]
 [ext_resource type="Texture2D" uid="uid://bl42tu2x7ynta" path="res://assets/guiTextures/ContinuePlaying.png" id="5"]
@@ -44,49 +42,6 @@ grow_vertical = 2
 pivot_offset = Vector2(960, 540)
 theme = ExtResource("3")
 script = ExtResource("10")
-
-[node name="BackgroundTexture" type="TextureRect" parent="."]
-visible = false
-modulate = Color(0, 0.6, 1, 1)
-layout_mode = 0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -162.0
-offset_top = -104.0
-offset_right = -960.0
-offset_bottom = -62.0
-texture = ExtResource("2")
-expand_mode = 1
-stretch_mode = 1
-
-[node name="BackgroundTexture2" type="TextureRect" parent="."]
-visible = false
-modulate = Color(0, 0.6, 1, 1)
-layout_mode = 0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 960.0
-offset_top = -104.0
-offset_right = 162.0
-offset_bottom = -62.0
-texture = ExtResource("2")
-expand_mode = 1
-stretch_mode = 1
-
-[node name="GroundTexture" type="TextureRect" parent="."]
-visible = false
-modulate = Color(0, 0.368627, 1, 1)
-layout_mode = 0
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -960.0
-offset_top = -103.0
-offset_right = 960.0
-offset_bottom = 137.0
-texture = ExtResource("1")
-expand_mode = 1
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0

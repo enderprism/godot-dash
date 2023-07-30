@@ -15,8 +15,8 @@ var editor_is_playtesting: bool
 var editor_camera_control_scheme: CameraControlScheme
 
 enum CameraControlScheme {
-	GEOMETRYDASH,
-	BLENDER,
+	GEOMETRYDASH = 0,
+	BLENDER = 1,
 }
 
 enum ActiveCamera {
