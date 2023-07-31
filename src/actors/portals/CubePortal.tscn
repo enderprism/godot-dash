@@ -32,5 +32,3 @@ texture = ExtResource("4_tua3n")
 z_index = -5
 position = Vector2(-43, -1)
 texture = ExtResource("4_goda4")
-
-[connection signal="area_entered" from="." to="." method="_on_CubePortal_0_area_entered"]

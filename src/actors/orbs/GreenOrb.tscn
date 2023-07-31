@@ -14,6 +14,9 @@ script = ExtResource("1_ykqcs")
 "Is Multi Usage?" = false
 "Is Reverse?" = false
 "Is Opposite Gravity?" = false
+"Is Freefly?" = false
+"Has Custom Ground Radius?" = false
+"Custom Ground Radius" = 0.0
 
 [node name="GreenRing" type="Sprite2D" parent="."]
 rotation = 1038.3
@@ -22,6 +25,3 @@ texture = ExtResource("1")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = ExtResource("3_s4g61")
 debug_color = Color(0.0117647, 0.45098, 0, 0.419608)
-
-[connection signal="area_entered" from="." to="." method="_on_GreenOrb_area_entered"]
-[connection signal="area_exited" from="." to="." method="_on_GreenOrb_area_exited"]

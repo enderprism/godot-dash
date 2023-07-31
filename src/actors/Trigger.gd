@@ -240,11 +240,11 @@ func _physics_process(_delta: float) -> void:
 				target.set(property, lerp(initialValue, value[0], interpolatedWeight))
 
 func toggle_off(_toggled_group):
-	_toggled_group.process_mode = 4 # = Mode: Disabled
+	_toggled_group.set_deferred("process_mode", PROCESS_MODE_DISABLED)
 	_toggled_group.hide()
 
 func toggle_on(_toggled_group):
-	_toggled_group.process_mode = 0 # = Mode: Inherit
+	_toggled_group.set_deferred("process_mode", PROCESS_MODE_INHERIT)
 	_toggled_group.show()
 #	if show: _toggled_group.show()
 

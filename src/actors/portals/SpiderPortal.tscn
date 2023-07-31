@@ -32,5 +32,3 @@ texture = ExtResource("3_eme7g")
 z_index = -5
 position = Vector2(-40, 0)
 texture = ExtResource("4_xb2ir")
-
-[connection signal="area_entered" from="." to="." method="_on_SpiderPortal_area_entered"]

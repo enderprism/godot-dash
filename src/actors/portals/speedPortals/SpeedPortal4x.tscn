@@ -16,6 +16,9 @@ script = ExtResource("1_37cwk")
 "Is Multi Usage?" = false
 "Is Reverse?" = false
 "Is Opposite Gravity?" = false
+"Is Freefly?" = false
+"Has Custom Ground Radius?" = false
+"Custom Ground Radius" = 0.0
 
 [node name="SpeedPortal4x" type="Sprite2D" parent="."]
 texture = ExtResource("2")
@@ -23,5 +26,3 @@ texture = ExtResource("2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("1")
 debug_color = Color(0.0117647, 0.45098, 0, 0.419608)
-
-[connection signal="area_entered" from="." to="." method="_on_SpeedPortal4x_area_entered"]

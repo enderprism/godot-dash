@@ -17,6 +17,7 @@ script = ExtResource("1_5fqfu")
 "Is Opposite Gravity?" = false
 "Is Freefly?" = false
 "Has Custom Ground Radius?" = false
+"Custom Ground Radius" = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = ExtResource("3_4qwdw")
@@ -31,5 +32,3 @@ texture = ExtResource("3_au2wi")
 z_index = -5
 position = Vector2(-43, -1)
 texture = ExtResource("4_h2bxc")
-
-[connection signal="area_entered" from="." to="." method="_on_UFOPortal_0_area_entered"]

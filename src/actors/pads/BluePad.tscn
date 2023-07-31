@@ -14,6 +14,9 @@ script = ExtResource("1_oqva2")
 "Is Multi Usage?" = false
 "Is Reverse?" = false
 "Is Opposite Gravity?" = false
+"Is Freefly?" = false
+"Has Custom Ground Radius?" = false
+"Custom Ground Radius" = 0.0
 
 [node name="BluePad" type="Sprite2D" parent="."]
 position = Vector2(0, 49.5)
@@ -23,5 +26,3 @@ texture = ExtResource("1")
 position = Vector2(0, 52.5)
 shape = ExtResource("3_mq2db")
 debug_color = Color(0.0117647, 0.45098, 0, 0.419608)
-
-[connection signal="area_entered" from="." to="." method="_on_BluePad_area_entered"]

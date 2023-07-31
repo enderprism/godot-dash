@@ -171,6 +171,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("jump") && _orb_checker & GDInteractible.Orb.ORB_SPIDER && _has_let_go_of_orb && !_is_dead:
 		do_spider_jump()
 		_orb_jumped = true
+		_has_let_go_of_orb = false
 	
 
 	
@@ -183,9 +184,8 @@ func _physics_process(delta: float) -> void:
 		_x_direction *= -1
 	if (Input.is_action_just_pressed("jump") && (_orb_checker & GDInteractible.Orb.ORB_BLUE || \
 		_orb_checker & GDInteractible.Orb.ORB_GREEN || _orb_checker & GDInteractible.Orb.ORB_DASH_MAGENTA)) or \
-		_pad_checker & GDInteractible.Pad.PAD_BLUE or (Input.is_action_just_pressed("jump") && \
-		(((is_on_floor() || is_on_ceiling()) && gamemode == "ball") || \
-		(gamemode == "swingcopter" && _orb_checker == 0))):
+		_pad_checker & GDInteractible.Pad.PAD_BLUE or \
+		(Input.is_action_just_pressed("jump") && ((_is_player_onground && gamemode == "ball") || (gamemode == "swingcopter" && _orb_checker == 0))):
 		if (Input.is_action_just_pressed("jump") \
 			&& (is_on_floor() || is_on_ceiling()) && gamemode == "ball"):
 			velocity.y *= -1
@@ -258,13 +258,14 @@ func get_direction(_press_or_hold: bool) -> Vector2:
 	# for the cube, this means (Input.is_action_pressed("jump") || is_on_ground())
 	if !(is_platformer && gamemode == "wave"):
 		if (_press_or_hold and _can_fly) || \
-		(Input.is_action_pressed("jump") && _has_let_go_of_orb && _orb_checker != 0):
+		(Input.is_action_pressed("jump") && _has_let_go_of_orb && _orb_checker != 0 && !_orb_checker & GDInteractible.Orb.ORB_SPIDER && !_orb_checker & GDInteractible.Orb.ORB_GREEN):
 			_jump_direction = UP_DIRECTION.y
 			_orb_jumped = true
 			_has_let_go_of_orb = false
+#			print(_orb_checker & GDInteractible.Orb.ORB_GREEN, ", ", _jump_direction, ", ", UP_DIRECTION.y)
 		elif _pad_checker != 0: #and is_on_floor()
 			_jump_direction = UP_DIRECTION.y
-		elif Input.is_action_pressed("jump") && _orb_checker & GDInteractible.Orb.ORB_GREEN && _has_let_go_of_orb:
+		elif Input.is_action_pressed("jump") && _orb_checker & GDInteractible.Orb.ORB_GREEN:
 			_jump_direction = -UP_DIRECTION.y
 		elif Input.is_action_pressed("jump") && _has_let_go_of_orb && (_orb_checker & GDInteractible.Orb.ORB_SPIDER):
 			_jump_direction = UP_DIRECTION.y * -1
@@ -306,7 +307,6 @@ func calculate_move_velocity(
 	var out: = linear_velocity
 	var _out_horizontal: float
 	var _out_vertical: float
-	
 	if arrow_trigger_direction == Vector2(0.0, -1.0):
 		_out_vertical = linear_velocity.y
 	elif arrow_trigger_direction == Vector2(-1.0, 0.0):
@@ -332,16 +332,17 @@ func calculate_move_velocity(
 		_out_vertical += gravity * get_physics_process_delta_time() + dash_offset
 	if direction.y == UP_DIRECTION.y:
 		if _pad_checker & GDInteractible.Pad.PAD_PINK || _orb_checker & GDInteractible.Orb.ORB_PINK:
-			_out_vertical = speed.y * direction.y * 0.9 * gravityMod
-			_pad_checker &= ~GDInteractible.Pad.PAD_PINK # reverts pink pad/orb
+			_out_vertical = speed.y * direction.y * 0.8 * gravityMod
+			_pad_checker &= ~GDInteractible.Pad.PAD_PINK
 			_orb_checker &= ~GDInteractible.Orb.ORB_PINK
 		elif _pad_checker & GDInteractible.Pad.PAD_RED || _orb_checker & GDInteractible.Orb.ORB_RED:
 			_out_vertical = speed.y * direction.y * 2.25 * gravityMod
-			_pad_checker &= ~GDInteractible.Pad.PAD_RED # reverts red pad/orb
+			_pad_checker &= ~GDInteractible.Pad.PAD_RED
 			_orb_checker &= ~GDInteractible.Orb.ORB_RED
 		elif _orb_checker & GDInteractible.Orb.ORB_GREEN:
+			print(true)
 			_out_vertical = speed.y * direction.y * gravityMod
-			_orb_checker &= ~GDInteractible.Orb.ORB_GREEN # reverts red pad/orb
+			_orb_checker &= ~GDInteractible.Orb.ORB_GREEN
 		elif _pad_checker & GDInteractible.Pad.PAD_YELLOW:
 			_out_vertical = speed.y * direction.y * gravityMod * 1.35
 			_pad_checker &= ~GDInteractible.Pad.PAD_YELLOW # reverts yellow pad
@@ -366,6 +367,8 @@ func calculate_move_velocity(
 				_out_vertical = speed.y * direction.y * gravityMod
 	if direction.y == -UP_DIRECTION.y && _is_player_onground && !_is_dashing:
 		_out_vertical = 0.0
+	
+
 	if direction.y == UP_DIRECTION.y * -1 && gamemode == "wave":
 		_out_vertical = sqrt(pow(625*_speed_multiplier, 2) + pow(1100*_speed_multiplier, 2)) * sin(PI/6) * UP_DIRECTION.y * -1 if !mini else sqrt(pow(625*_speed_multiplier, 2) + pow(1100*_speed_multiplier, 2)) * sin(PI/4+PI/8) * UP_DIRECTION.y * -1
 	if direction.y == 0.0 && gamemode == "wave" && is_platformer:
@@ -560,7 +563,7 @@ func do_spider_jump():
 	_spider_immunity_timer = 10
 	_in_jblock = true
 	if arrow_trigger_direction == Vector2(0.0, -1.0):
-		var collision_point: float = $SpiderSprites/SpiderRaycast.get_collision_point().y
+		var collision_point: float = $SpiderSprites/SpiderShapecast.get_collision_point(0).y
 		var arrival_coordinates: float
 		if UP_DIRECTION.y > 0: # inverted gravity
 			arrival_coordinates = collision_point
@@ -579,7 +582,7 @@ func do_spider_jump():
 		if mini && UP_DIRECTION.y > 0 && _orb_checker & GDInteractible.Orb.ORB_SPIDER:
 			position.y -= 30
 	elif arrow_trigger_direction == Vector2(-1.0, 0.0):
-		var collision_point: float = $SpiderSprites/SpiderRaycast.get_collision_point().x
+		var collision_point: float = $SpiderSprites/SpiderShapecast.get_collision_point(0).x
 		var arrival_coordinates: float
 		if UP_DIRECTION.y > 0: # inverted gravity
 			arrival_coordinates = (collision_point - $Icon.texture.get_height()/2)
@@ -597,7 +600,7 @@ func do_spider_jump():
 		emit_signal("spider_jumped", abs(arrival_coordinates - old_pos.x))
 		if mini && UP_DIRECTION.y > 0 && _orb_checker & GDInteractible.Orb.ORB_SPIDER:
 			position.x -= 30
-	if "BackgroundKillZone" in str($SpiderSprites/SpiderRaycast.get_collider()):
+	if "BackgroundKillZone" in str($SpiderSprites/SpiderShapecast.get_collider(0)):
 		player_camera.global_position.y = -4750
 		$DeathParticles.global_position.y = -4750
 		$AnimationPlayer.play("DeathAnimation")

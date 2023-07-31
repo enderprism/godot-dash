@@ -32,5 +32,3 @@ texture = ExtResource("3_8sekq")
 z_index = -5
 position = Vector2(-43.5, -1)
 texture = ExtResource("4_0r8rn")
-
-[connection signal="area_entered" from="." to="." method="_on_RobotPortal_area_entered"]

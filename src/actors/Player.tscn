@@ -1,4 +1,4 @@
-[gd_scene load_steps=119 format=3 uid="uid://t4l1br5nnw6u"]
+[gd_scene load_steps=120 format=3 uid="uid://t4l1br5nnw6u"]
 
 [ext_resource type="Script" path="res://src/actors/Player.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://ciwetdl2j77bf" path="res://assets/particles/particle_00_001.png" id="3"]
@@ -1102,6 +1102,9 @@ states/walkSpeed4/position = Vector2(78, 232)
 transitions = ["walkSpeed1", "walkSpeed0-5", SubResource("42"), "walkSpeed1", "walkSpeed2", SubResource("43"), "walkSpeed1", "walkSpeed4", SubResource("44"), "walkSpeed1", "walkSpeed3", SubResource("45"), "walkSpeed0-5", "walkSpeed1", SubResource("51"), "walkSpeed4", "walkSpeed1", SubResource("52"), "walkSpeed3", "walkSpeed1", SubResource("53"), "walkSpeed2", "walkSpeed1", SubResource("54"), "fall loop", "jump", SubResource("61"), "jump", "fall loop", SubResource("62"), "walkSpeed1", "fall loop", SubResource("58"), "fall loop", "walkSpeed1", SubResource("59"), "walkSpeed1", "jump", SubResource("40"), "jump", "walkSpeed1", SubResource("60"), "idle", "walkSpeed1", SubResource("80"), "walkSpeed1", "idle", SubResource("81"), "Start", "walkSpeed1", SubResource("AnimationNodeStateMachineTransition_82ja6")]
 graph_offset = Vector2(-309, -85)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uu43x"]
+size = Vector2(61, 61)
+
 [sub_resource type="Animation" id="Animation_1onlg"]
 length = 0.001
 tracks/0/type = "value"
@@ -1466,7 +1469,6 @@ collision_mask = 14
 shape = SubResource("1")
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
-visible = false
 z_index = 5
 position = Vector2(0, -66)
 shape = SubResource("1")
@@ -1483,16 +1485,10 @@ position = Vector2(0, -66)
 shape = SubResource("82")
 
 [node name="SpiderSprites" type="Node2D" parent="."]
-visible = false
 position = Vector2(0, -66)
 scale = Vector2(2, 2)
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
-
-[node name="SpiderRaycast" type="RayCast2D" parent="SpiderSprites"]
-target_position = Vector2(0, -12500)
-collision_mask = 42
-collide_with_areas = true
 
 [node name="Leg3" type="Marker2D" parent="SpiderSprites"]
 position = Vector2(8.5, 16.5)
@@ -1572,6 +1568,12 @@ parameters/walkSpeed1/TimeScale/scale = 3.0
 parameters/walkSpeed2/TimeScale/scale = 3.5
 parameters/walkSpeed3/TimeScale/scale = 4.0
 parameters/walkSpeed4/TimeScale/scale = 4.5
+
+[node name="SpiderShapecast" type="ShapeCast2D" parent="SpiderSprites"]
+shape = SubResource("RectangleShape2D_uu43x")
+target_position = Vector2(0, -4096)
+collision_mask = 42
+collide_with_areas = true
 
 [node name="RobotSprites" type="Node2D" parent="."]
 visible = false

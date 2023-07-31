@@ -34,5 +34,3 @@ texture = ExtResource("3_0yu1f")
 z_index = -5
 position = Vector2(-44, -1)
 texture = ExtResource("4_l8pmp")
-
-[connection signal="area_entered" from="." to="." method="_on_BallPortal_0_area_entered"]

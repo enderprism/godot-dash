@@ -14,6 +14,9 @@ script = ExtResource("1_38lps")
 "Is Multi Usage?" = false
 "Is Reverse?" = false
 "Is Opposite Gravity?" = false
+"Is Freefly?" = false
+"Has Custom Ground Radius?" = false
+"Custom Ground Radius" = 0.0
 
 [node name="YellowPad" type="Sprite2D" parent="."]
 position = Vector2(0, 53.5)
@@ -24,5 +27,3 @@ position = Vector2(0, 53.4)
 scale = Vector2(1, 0.85)
 shape = ExtResource("3_x1qwm")
 debug_color = Color(0.0117647, 0.45098, 0, 0.419608)
-
-[connection signal="area_entered" from="." to="." method="_on_YellowPad_area_entered"]

@@ -3,7 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://dh6byyvv1avbt" path="res://assets/levelTextures/solid/Blocks/RegularPlatform01.webp" id="1"]
 [ext_resource type="Script" path="res://src/actors/SolidHitbox.gd" id="2"]
 
-[sub_resource type="RectangleShape2D" id="1"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_445j7"]
+resource_local_to_scene = true
 size = Vector2(122, 61)
 
 [node name="RegularPlatform" type="StaticBody2D"]
@@ -16,7 +17,7 @@ metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -30.5)
-shape = SubResource("1")
+shape = SubResource("RectangleShape2D_445j7")
 one_way_collision = true
 debug_color = Color(0, 0.266667, 0.905882, 0.419608)
 script = ExtResource("2")

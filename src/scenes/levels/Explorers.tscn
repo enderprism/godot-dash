@@ -85,7 +85,7 @@ easing_curve = 9
 
 [node name="StaticYTrigger" parent="." instance=ExtResource("11")]
 position = Vector2(1342, 244)
-priority = 1.0
+priority = 1
 target_path = "PLAYERCAMERA"
 property = "static"
 duration = 1.0
@@ -95,7 +95,7 @@ easing_curve = 1
 
 [node name="DezoomTrigger" parent="." instance=ExtResource("11")]
 position = Vector2(1342, 122)
-priority = 1.0
+priority = 1
 target_path = "PLAYERCAMERA"
 property = "zoom"
 duration = 1.0
@@ -131,7 +131,7 @@ scale = Vector2(1, 1.5)
 
 [node name="SpiderOrb" parent="Objects" instance=ExtResource("4")]
 position = Vector2(1403, -305)
-opposite_gravity = true
+"Is Opposite Gravity?" = true
 
 [node name="SpiderOrb2" parent="Objects" instance=ExtResource("4")]
 position = Vector2(2013, -305)
@@ -482,7 +482,10 @@ position = Vector2(2745, -305)
 
 [node name="BlackOrb" parent="Objects" instance=ExtResource("18")]
 position = Vector2(4880, -1037)
-multi_usage = true
+"Is Multi Usage?" = false
+"Is Freefly?" = false
+"Has Custom Ground Radius?" = false
+"Custom Ground Radius" = 0.0
 
 [node name="NormalSizePortal" parent="Objects" instance=ExtResource("20")]
 visible = false
@@ -879,7 +882,7 @@ scale = Vector2(1.5, 1.5)
 
 [node name="SpiderOrb" parent="." instance=ExtResource("4")]
 position = Vector2(10065, -1037)
-opposite_gravity = true
+"Is Opposite Gravity?" = true
 
 [node name="SpiderOrb2" parent="." instance=ExtResource("4")]
 position = Vector2(10492, -671)
@@ -2115,6 +2118,7 @@ easing_curve = 1
 [node name="SpiderPortal_0" parent="." instance=ExtResource("40")]
 visible = false
 position = Vector2(22143, -976)
+"Is Freefly?" = true
 
 [node name="SpiderStructure" type="Node2D" parent="."]
 
@@ -6162,6 +6166,7 @@ position = Vector2(-427, 549)
 
 [node name="DoorHorizontalLeft" type="Node2D" parent="SpiderStructure"]
 position = Vector2(23180, -976)
+metadata/_edit_group_ = true
 
 [node name="GridBlock08_0" parent="SpiderStructure/DoorHorizontalLeft" instance=ExtResource("24")]
 position = Vector2(-61, 305)
@@ -6181,6 +6186,7 @@ rotation = -1.57079
 
 [node name="DoorHorizontalRight" type="Node2D" parent="SpiderStructure"]
 position = Vector2(23424, -976)
+metadata/_edit_group_ = true
 
 [node name="GridBlock08_0" parent="SpiderStructure/DoorHorizontalRight" instance=ExtResource("24")]
 position = Vector2(-61, 305)
@@ -6202,6 +6208,7 @@ rotation = -1.57079
 modulate = Color(1, 1, 1, 0)
 position = Vector2(23302, -1342)
 rotation = 1.57079
+metadata/_edit_group_ = true
 
 [node name="GridBlock08_0" parent="SpiderStructure/DoorVerticalTop" instance=ExtResource("24")]
 position = Vector2(-61, 305)
@@ -6223,6 +6230,7 @@ rotation = -1.57079
 modulate = Color(1, 1, 1, 0)
 position = Vector2(23302, -610)
 rotation = 1.57079
+metadata/_edit_group_ = true
 
 [node name="GridBlock08_0" parent="SpiderStructure/DoorVerticalBottom" instance=ExtResource("24")]
 position = Vector2(-61, 305)
@@ -6293,6 +6301,7 @@ position = Vector2(23302, -976)
 position = Vector2(17385, -488)
 
 [node name="CrossStructure1" type="Node2D" parent="."]
+visible = false
 position = Vector2(12749, 1647)
 
 [node name="TouchTrigger2" parent="CrossStructure1" instance=ExtResource("10")]
@@ -6328,7 +6337,7 @@ position = Vector2(11590, -2623)
 
 [node name="ExitTeleportal" parent="CrossStructure1/Teleportal" instance=ExtResource("29")]
 z_index = -1
-position = Vector2(-915, 915)
+position = Vector2(-976, 915)
 rotation = -1.57079
 
 [node name="RegularSpike01_1" parent="CrossStructure1" instance=ExtResource("2")]
@@ -6408,7 +6417,6 @@ rotation = 3.14159
 scale = Vector2(0.5, 0.5)
 
 [node name="CrossStructure2" type="Node2D" parent="."]
-visible = false
 position = Vector2(23424, -183)
 
 [node name="NormalTrigger2" parent="CrossStructure2" instance=ExtResource("11")]
@@ -6427,7 +6435,7 @@ rotation = -1.57081
 target_path = "../SpiderStructure/DoorHorizontalRight"
 property = "position"
 duration = 0.5
-value = [Vector2(23424, -976), Vector2(0, 0)]
+value = [Vector2(23668, -976), Vector2(0, 0)]
 easing_type = 1
 easing_curve = 3
 
@@ -6475,6 +6483,16 @@ easing_curve = 3
 position = Vector2(-122, 0)
 rotation = -1.57081
 target_path = "../SpiderStructure/DoorVerticalTop"
+property = "modulate"
+duration = 0.5
+value = [Color(1, 1, 1, 1), Vector2(0, 0)]
+easing_type = 1
+easing_curve = 3
+
+[node name="NormalTrigger9" parent="CrossStructure2" instance=ExtResource("11")]
+position = Vector2(-122, 0)
+rotation = -1.57081
+target_path = "../SpiderStructure/DoorVerticalBottom"
 property = "modulate"
 duration = 0.5
 value = [Color(1, 1, 1, 1), Vector2(0, 0)]
@@ -6612,16 +6630,6 @@ scale = Vector2(2, 2)
 visible = false
 position = Vector2(-244, -1647)
 rotation = -1.57079
-
-[node name="NormalTrigger9" parent="CrossStructure2" instance=ExtResource("11")]
-position = Vector2(-122, 0)
-rotation = -1.57081
-target_path = "../SpiderStructure/DoorVerticalBottom"
-property = "modulate"
-duration = 0.5
-value = [Color(1, 1, 1, 1), Vector2(0, 0)]
-easing_type = 1
-easing_curve = 3
 
 [node name="CrossStructure3" type="Node2D" parent="."]
 visible = false
@@ -6809,6 +6817,7 @@ rotation = 1.57079
 visible = false
 position = Vector2(854, -1098)
 rotation = -1.57079
+"Is Freefly?" = true
 
 [node name="GravityPortalA_0" parent="CrossStructure3" instance=ExtResource("16")]
 visible = false
@@ -6872,7 +6881,7 @@ rotation = -1.57081
 target_path = "../SpiderStructure/DoorHorizontalRight"
 property = "position"
 duration = 0.5
-value = [Vector2(23424, -976), Vector2(0, 0)]
+value = [Vector2(23668, -976), Vector2(0, 0)]
 easing_type = 1
 easing_curve = 3
 
@@ -7205,6 +7214,7 @@ rotation = 1.57079
 visible = false
 position = Vector2(122, 1723)
 rotation = 1.57079
+"Is Freefly?" = true
 
 [node name="Teleportal" parent="CrossStructure4" instance=ExtResource("30")]
 visible = false
@@ -7460,7 +7470,7 @@ rotation = -1.57081
 target_path = "../SpiderStructure/DoorHorizontalRight"
 property = "position"
 duration = 0.5
-value = [Vector2(23424, -976), Vector2(0, 0)]
+value = [Vector2(23668, -976), Vector2(0, 0)]
 easing_type = 1
 easing_curve = 3
 
@@ -7660,6 +7670,7 @@ rotation = 1.57079
 [node name="SpiderPortal_1" parent="CrossStructure6" instance=ExtResource("40")]
 visible = false
 position = Vector2(-976, 793)
+"Is Freefly?" = true
 
 [node name="CameraRotate2" parent="CrossStructure6" instance=ExtResource("11")]
 position = Vector2(0, 1342)
@@ -9393,6 +9404,7 @@ position = Vector2(1037, -2928)
 
 [node name="WavePortal_0" parent="OuterStructEnd" instance=ExtResource("42")]
 position = Vector2(1159, -3111)
+"Is Freefly?" = true
 
 [node name="GridBlock01_0" parent="OuterStructEnd" instance=ExtResource("8")]
 position = Vector2(-823.5, -1708)
@@ -9462,7 +9474,6 @@ scale = Vector2(0.8, 1)
 
 [node name="SpiderOrb5" parent="OuterStructEnd" instance=ExtResource("4")]
 position = Vector2(-366, -488)
-reverse = true
 
 [node name="ArrowTrigger↓" parent="." instance=ExtResource("10")]
 position = Vector2(27206, -1647)

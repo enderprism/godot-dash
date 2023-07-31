@@ -32,5 +32,3 @@ texture = ExtResource("4_qcis4")
 z_index = -5
 position = Vector2(-43, -1)
 texture = ExtResource("5_5orjn")
-
-[connection signal="area_entered" from="." to="." method="_on_WavePortal_0_area_entered"]

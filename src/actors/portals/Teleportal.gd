@@ -21,8 +21,8 @@ func _on_Teleportal_area_entered(_area: Area2D) -> void:
 	else:
 		player.global_position = get_node("ExitTeleportal").get_global_position()
 	teleported = true
-	monitorable = false
-	$CollisionShape2D.disabled = true
+	set_deferred("monitorable", false)
+	set_deferred("$CollisionShape2D.disabled", true)
 	
 func _physics_process(_delta: float) -> void:
 	if one_time && teleported:

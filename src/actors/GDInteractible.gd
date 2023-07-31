@@ -81,7 +81,7 @@ func _on_player_enter(_body: Node2D):
 		_player._is_reversed = is_reverse_val
 		if orb_type_val == Orb.ORB_SPIDER:
 			_player._spider_orb_opposite_gravity = is_spider_orb_opp_gravity_val
-			if is_spider_orb_opp_gravity_val: _player.get_node("SpiderSprites/SpiderRaycast").rotation_degrees = 180
+			if is_spider_orb_opp_gravity_val: _player.get_node("SpiderSprites/SpiderShapecast").rotation_degrees = 180
 		if orb_type_val == Orb.ORB_DASH_GREEN || orb_type_val == Orb.ORB_DASH_MAGENTA:
 			_player._dash_orb_rotation = rotation
 	elif pad_type_val != Pad.PAD_DISABLED:
@@ -109,8 +109,6 @@ func _on_player_enter(_body: Node2D):
 		)
 	elif spportal_type_val != SPPortal.SPPORTAL_DISABLED:
 		_player._speed_multiplier = _set_speed(spportal_type_val)
-	if !is_multi_usage_val:
-		set_process_mode(PROCESS_MODE_DISABLED)
 
 func _set_speed(speed: int) -> float:
 	match speed:
@@ -181,9 +179,11 @@ func _on_player_exit(_body: Node2D):
 		_player._orb_checker &= ~orb_type_val
 		if orb_type_val == Orb.ORB_SPIDER:
 			_player._spider_orb_opposite_gravity = false
-			_player.get_node("SpiderSprites/SpiderRaycast").rotation_degrees = 0
+			_player.get_node("SpiderSprites/SpiderShapecast").rotation_degrees = 0
 	elif pad_type_val != Pad.PAD_DISABLED:
 		_player._pad_checker &= ~pad_type_val
+	if !is_multi_usage_val:
+		set_deferred("process_mode", PROCESS_MODE_DISABLED)
 
 ########################
 # FANCY INSPECTOR CODE #
