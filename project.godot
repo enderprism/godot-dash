@@ -49,7 +49,6 @@ window/size/height=1080
 window/size/fullscreen=true
 window/size/test_width=1920
 window/size/test_height=1080
-window/vsync/vsync_via_compositor=true
 
 [gui]
 

@@ -33,7 +33,9 @@ func _on_Player_spider_jumped(distance) -> void:
 			y_offset = 60.0
 			rotation_degrees = 180
 			$AnimatedSprite2D.flip_v = false
-		position = Vector2(player.position.x * player._icon_direction,
+		if player._x_direction < 0:
+			$AnimatedSprite2D.flip_v = true
+		position = Vector2(player.position.x,
 		player.position.y - y_offset)
 	elif player.arrow_trigger_direction == Vector2(-1.0, 0.0):
 		var y_offset: float

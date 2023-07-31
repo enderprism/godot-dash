@@ -199,6 +199,7 @@ position = Vector2(305, -244)
 
 [node name="SpiderPortal_0" parent="StartPlatform" instance=ExtResource("16")]
 position = Vector2(-427, -305)
+"Is Freefly?" = true
 
 [node name="TouchTrigger2" parent="." instance=ExtResource("13")]
 position = Vector2(1403, -854)
@@ -226,7 +227,7 @@ value = [Vector2(1647, 122), Vector2(0, 0)]
 easing_curve = 3
 
 [node name="TouchTrigger3" parent="." instance=ExtResource("13")]
-position = Vector2(1830, -793)
+position = Vector2(1769, -793)
 target_path = "PLAYER"
 property = "arrow_trigger_direction"
 value = [Vector2(-1, 0), Vector2(0, 0)]
@@ -251,7 +252,7 @@ value = [Vector2(0, -1), Vector2(0, 0)]
 easing_type = 1
 
 [node name="TouchTrigger10" parent="." instance=ExtResource("13")]
-position = Vector2(1830, -793)
+position = Vector2(1769, -793)
 rotation = -1.5708
 target_path = "PLAYER"
 property = "_x_direction"

@@ -66,16 +66,24 @@ var gmportal_type_idx: int
 var spportal_type_idx: int
 var ground_radius: float
 
-func _ready() -> void:
-	connect("body_entered", Callable(self, "_on_player_enter"))
-	connect("body_exited", Callable(self, "_on_player_exit"))
+var is_player_in_interactible: bool
 
-func _on_player_enter(_body: Node2D):
-	var _player
+var _player
+
+func _process(delta: float) -> void:
+	var _player_used_orb: bool = is_player_in_interactible && Input.is_action_pressed("jump") && _player._has_let_go_of_orb
+	if orb_type_val != Orb.ORB_DISABLED && !is_multi_usage_val && _player_used_orb:
+		set_deferred("process_mode", PROCESS_MODE_DISABLED)
+
+func _ready() -> void:
 	if CurrentLevel.in_editor:
 		_player = get_node("/root/LevelEditor/GameScene/Player")
 	else:
 		_player = get_node("/root/Scene/Player")
+	connect("body_entered", Callable(self, "_on_player_enter"))
+	connect("body_exited", Callable(self, "_on_player_exit"))
+
+func _on_player_enter(_body: Node2D):
 	if orb_type_val != Orb.ORB_DISABLED:
 		_player._orb_checker |= orb_type_val
 		_player._is_reversed = is_reverse_val
@@ -109,6 +117,7 @@ func _on_player_enter(_body: Node2D):
 		)
 	elif spportal_type_val != SPPortal.SPPORTAL_DISABLED:
 		_player._speed_multiplier = _set_speed(spportal_type_val)
+	if orb_type_val == Orb.ORB_DISABLED: set_deferred("process_mode", PROCESS_MODE_DISABLED)
 
 func _set_speed(speed: int) -> float:
 	match speed:
@@ -170,11 +179,6 @@ func _set_gamemode(gamemode: int) -> String:
 	return ""
 
 func _on_player_exit(_body: Node2D):
-	var _player
-	if CurrentLevel.in_editor:
-		_player = get_node("/root/LevelEditor/GameScene/Player")
-	else:
-		_player = get_node("/root/Scene/Player")
 	if orb_type_val != Orb.ORB_DISABLED:
 		_player._orb_checker &= ~orb_type_val
 		if orb_type_val == Orb.ORB_SPIDER:
@@ -182,8 +186,6 @@ func _on_player_exit(_body: Node2D):
 			_player.get_node("SpiderSprites/SpiderShapecast").rotation_degrees = 0
 	elif pad_type_val != Pad.PAD_DISABLED:
 		_player._pad_checker &= ~pad_type_val
-	if !is_multi_usage_val:
-		set_deferred("process_mode", PROCESS_MODE_DISABLED)
 
 ########################
 # FANCY INSPECTOR CODE #

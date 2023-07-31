@@ -34,7 +34,8 @@ func reset_lvl_time():
 func _physics_process(delta: float) -> void:
 	if has_node("/root/Scene"):
 		level_time += 0.016667
-		Engine.time_scale = get_node("/root/Scene/Player").time_scale
+		Engine.set_time_scale(get_node("/root/Scene/Player").time_scale)
+		print("time scalelelele ", Engine.time_scale)
 	if in_editor && editor_is_playtesting:
 		level_time += 0.016667
 		Engine.time_scale = get_node("/root/LevelEditor/GameScene/Player").time_scale
