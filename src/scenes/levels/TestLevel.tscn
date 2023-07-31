@@ -49,21 +49,33 @@ value = [false, PackedVector2Array(0, 20, 10, 50, 50, 85, 85, 100)]
 
 [node name="RedOrb" parent="Random/RandomGroups/Node2D" instance=ExtResource("20")]
 position = Vector2(-610, -244)
+"Is Freefly?" = false
+"Has Custom Ground Radius?" = false
+"Custom Ground Radius" = 0.0
 
 [node name="Node2D2" type="Node2D" parent="Random/RandomGroups"]
 
 [node name="RedOrb2" parent="Random/RandomGroups/Node2D2" instance=ExtResource("20")]
 position = Vector2(-305, -244)
+"Is Freefly?" = false
+"Has Custom Ground Radius?" = false
+"Custom Ground Radius" = 0.0
 
 [node name="Node2D3" type="Node2D" parent="Random/RandomGroups"]
 
 [node name="RedOrb3" parent="Random/RandomGroups/Node2D3" instance=ExtResource("20")]
 position = Vector2(0, -244)
+"Is Freefly?" = false
+"Has Custom Ground Radius?" = false
+"Custom Ground Radius" = 0.0
 
 [node name="Node2D4" type="Node2D" parent="Random/RandomGroups"]
 
 [node name="RedOrb4" parent="Random/RandomGroups/Node2D4" instance=ExtResource("20")]
 position = Vector2(244, -244)
+"Is Freefly?" = false
+"Has Custom Ground Radius?" = false
+"Custom Ground Radius" = 0.0
 
 [node name="RegularBlock" parent="." instance=ExtResource("4")]
 position = Vector2(2379, -1220)
@@ -123,13 +135,17 @@ easing_curve = 3
 position = Vector2(1281, -549)
 rotation = -1.57079
 scale = Vector2(5, 1)
-reverse = true
+"Is Freefly?" = false
+"Has Custom Ground Radius?" = false
+"Custom Ground Radius" = 0.0
 
 [node name="YellowPad3" parent="." instance=ExtResource("13")]
 position = Vector2(-1342, -488)
 rotation = -4.71238
 scale = Vector2(5, 5)
-reverse = true
+"Is Freefly?" = false
+"Has Custom Ground Radius?" = false
+"Custom Ground Radius" = 0.0
 
 [node name="MiniSizePortal" parent="." instance=ExtResource("8")]
 position = Vector2(-1464, -915)
@@ -140,14 +156,20 @@ position = Vector2(2684, 0)
 [node name="GreenDashOrb" parent="." instance=ExtResource("7")]
 position = Vector2(1952, -1159)
 rotation = -1.57079
+"Is Freefly?" = false
+"Has Custom Ground Radius?" = false
+"Custom Ground Radius" = 0.0
 
 [node name="SwingcopterPortal_0" parent="." instance=ExtResource("9")]
 position = Vector2(-61, 427)
+"Custom Ground Radius" = 0.0
 
 [node name="BluePad" parent="." instance=ExtResource("3")]
 position = Vector2(2501, 244)
 rotation = -1.57079
-reverse = true
+"Is Freefly?" = false
+"Has Custom Ground Radius?" = false
+"Custom Ground Radius" = 0.0
 
 [node name="RegularSpike01_0" parent="." instance=ExtResource("10")]
 position = Vector2(2196, -976)
@@ -159,13 +181,20 @@ position = Vector2(1342, 183)
 
 [node name="ShipPortal_0" parent="." instance=ExtResource("11")]
 position = Vector2(122, -183)
+"Is Freefly?" = true
+"Custom Ground Radius" = 0.0
 
 [node name="SpeedPortal4x_0" parent="." instance=ExtResource("12")]
 position = Vector2(1281, 183)
+"Is Freefly?" = false
+"Has Custom Ground Radius?" = false
+"Custom Ground Radius" = 0.0
 
 [node name="YellowPad" parent="." instance=ExtResource("13")]
 position = Vector2(3050, 244)
-reverse = true
+"Is Freefly?" = false
+"Has Custom Ground Radius?" = false
+"Custom Ground Radius" = 0.0
 
 [node name="JBlock" parent="." instance=ExtResource("14")]
 position = Vector2(2257, -61)
@@ -187,6 +216,9 @@ position = Vector2(1525, -549)
 
 [node name="BlueOrb" parent="." instance=ExtResource("17")]
 position = Vector2(427, -61)
+"Is Freefly?" = false
+"Has Custom Ground Radius?" = false
+"Custom Ground Radius" = 0.0
 
 [node name="GravityPortalB_0" parent="." instance=ExtResource("23")]
 position = Vector2(3172, -549)

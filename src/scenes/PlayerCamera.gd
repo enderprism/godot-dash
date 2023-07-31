@@ -30,7 +30,10 @@ func _process(_delta: float) -> void:
 			enabled = false
 	if player.arrow_trigger_direction == Vector2(0.0, -1.0):
 		x_final_pos = lerp(position.x, player.position.x, horizontal_lerp_weight)
-		x_final_offset = lerp(offset.x, cam_offset.x * player._x_direction, 0.1)
+		if !player.is_platformer:
+			x_final_offset = lerp(offset.x, cam_offset.x * player._x_direction, 0.1)
+		else:
+			x_final_offset = lerp(offset.x, cam_offset.x * 0.3 * -player._x_direction, 0.05)
 		y_final_offset = lerp(offset.y, 0.0, 0.1)
 		var dist = player.position.y - position.y + cam_offset.y
 		y_final_pos = player.position.y + cam_offset.y - sign(dist) * max_dist
@@ -49,12 +52,17 @@ func _process(_delta: float) -> void:
 	
 	elif player.arrow_trigger_direction == Vector2(-1.0, 0.0):
 		y_final_pos = lerp(position.y, player.position.y, horizontal_lerp_weight)
+		y_final_pos = player.position.y
 		y_final_pos = clampf(y_final_pos, MIN_HEIGHT, MAX_HEIGHT)
-		y_final_offset = lerp(offset.y, cam_offset.x * 0.75 * -player._x_direction, 0.1)
-		y_final_offset = clampf(y_final_pos, MIN_HEIGHT, MAX_HEIGHT)
+		if !player.is_platformer:
+			y_final_offset = lerp(offset.y, cam_offset.x * 0.75 * player._x_direction, 0.1)
+		else:
+			y_final_offset = lerp(offset.y, cam_offset.x * 0.75 * 0.3 * player._x_direction, 0.05)
+		y_final_offset = clampf(y_final_offset, MIN_HEIGHT, MAX_HEIGHT)
 		x_final_offset = lerp(offset.x, 0.0, 0.1)
 		var dist = player.position.x - position.x + cam_offset.y
 		x_final_pos = player.position.x + cam_offset.y - sign(dist) * max_dist
+		
 		if CurrentLevel.is_camera_static.x == 0:
 			offset.y = y_final_offset
 			offset.x = x_final_offset

@@ -118,7 +118,7 @@ func _on_trigger_body_entered(_body: Node2D) -> void:
 			initialValue = target.get("global_position")
 		elif property == "follow":
 			initialValue = target.get("global_position")
-		elif property == "toggle":
+		elif property == "toggle" || property == "random":
 			isInterpolating = false
 		else:
 			initialValue = target.get(property)

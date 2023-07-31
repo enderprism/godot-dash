@@ -23,7 +23,6 @@ func _physics_process(_delta: float) -> void:
 					shape.size = Vector2(_shape_y, _shape_x)
 					shape.size = Vector2(_shape_y, _shape_x)
 					shape.size = Vector2(_shape_y, _shape_x)
-					print(true, owner, shape.size)
 				if player.gravity < 0:
 					global_rotation_degrees = 180
 				else:
